@@ -1,0 +1,62 @@
+
+
+/* LESSONS PAGE */
+
+.lessons-list-btn { position:relative;width:520px;margin-left: 20px; font-size: 25px;padding: 20px;background-color:#23BCC1;color:rgba(255, 255, 255, 0.95);padding-top: 30px;padding-bottom: 28px;margin-bottom: 5px;font-family: roboto-bold;border-radius: 15px; } /* border-bottom: solid 1px #189378; background-image:linear-gradient(to top left, #23BCC2, #23D2AE); */
+
+.readed-btn {
+    position:absolute;
+    top:15px;
+    right:15px;
+    opacity: 0.8;
+    display:none;
+}
+
+/* STANDART PAGE */
+
+/* rgba(238, 117, 83, 0.1); */
+
+
+/*
+
+COLORFULL ALERTS
+
+.alert-yellow { position:relative;background-image:linear-gradient(#F5A623, #EE7752);font-family: roboto;margin: 20px;margin-top: 40px;margin-bottom: 40px;padding: 20px;padding-top: 10px;padding-bottom: 10px; color:white;border-radius: 8px;font-size: 18px;text-align: justify; }
+
+.alert-green { position:relative;background-image:linear-gradient(#23D4AB, #23BCC1);font-family: roboto;margin: 20px;margin-top: 40px;margin-bottom: 40px;padding: 20px;padding-top: 10px;padding-bottom: 10px;color:white;border-radius: 8px;font-size: 18px;text-align: justify; }
+
+.alert-italic-text { color:white;font-family: roboto-lightitalic; }
+
+.alert-bold-text { color:white;font-family: roboto-bold; }
+
+.alert-centered-bold-title { display: block;color:white; font-family: roboto-bold;text-align: center;padding-top: 20px}
+
+.alert-centered-item-cont { display:flex;justify-content:center;align-items:center;height: 28px;padding-bottom: 20px;margin-top: 25px; }
+
+.alert-button { position: relative; width: auto; margin-right: auto; margin-left: auto; color:#23BCC1;background-color: white;font-family: roboto-bold;padding: 12px; border-radius: 8px;font-size: 14px;padding-bottom: 10px;}
+
+*/
+
+.alert-img { position:relative; margin: 20px; margin-top: 10px; margin-bottom: 10px;}
+
+.alert-yellow { position:relative;background-color: #F6F6F6;font-family: roboto;margin: 20px;margin-top: 40px;margin-bottom: 40px;padding: 20px;padding-top: 10px;padding-bottom: 10px; color:#4A4A4A;border-radius: 8px;font-size: 18px;text-align: justify;/* line-height: 100%; */ }
+
+.alert-green { position:relative;background-color: #F6F6F6; font-family: roboto;margin: 20px;margin-top: 40px;margin-bottom: 40px;padding: 20px;padding-top: 10px;padding-bottom: 10px;color:#4A4A4A;border-radius: 8px;font-size: 18px;text-align: justify;/* border: solid 1px #4A4A4A; */ }
+
+.alert-italic-text { color:#4A4A4A;font-family: roboto-lightitalic; }
+
+.alert-bold-text { color:#4A4A4A;font-family: roboto-bold; }
+
+.alert-char-text { font-family: roboto;color:#4A4A4A;background-color: white;padding-right: 6px;padding-left: 6px;border-radius: 3px;padding-top: 1px; border:solid 1px #4A4A4A; }
+
+.alert-centered-bold-title { display: block;color:#4A4A4A; font-family: roboto-bold;text-align: center;padding-top: 20px}
+
+.alert-centered-item-cont { display:flex;justify-content:center;align-items:center;height: 28px;padding-bottom: 20px;margin-top: 25px; }
+
+.alert-button { position: relative; width: auto; margin-right: auto; margin-left: auto; color:#FFFFFF;background-color: #EE7553;font-family: roboto;padding: 12px; border-radius: 8px;font-size: 14px;padding-bottom: 10px;}
+
+.next-question { display:flex;justify-content:center; }
+
+/* LESSONS PAGE END */
+
+

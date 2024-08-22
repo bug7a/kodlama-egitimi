@@ -1,0 +1,19 @@
+.draw-area-item {
+    
+    position:absolute;
+    width:10px;
+    height:10px;
+    background-color:white;
+    border: solid 1px #141414;
+    font-family:opensans; 
+    font-size:7px;
+    color:#141414;
+    text-align:center;
+    padding-left: 0px;
+    
+    }
+
+.draw-area-item-title {
+    
+    
+    }
