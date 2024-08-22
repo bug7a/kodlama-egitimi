@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Hakkımızda - Çocuklar için kodlama (programlama)</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <!-- <link rel="stylesheet" type="text/css" href="css/page.css"> -->
+        
+        
+        
+
+    </head>
+    <body>
+        
+        <div class="colored-background"></div>
+        
+        <div id="app-cont">
+            
+            
+            <div style="position:relative;left:0px;top:0px;display:block;"><img src="../img/about.png" width="600" /></div>
+            
+            <div onclick="App.gotoHomePage();" style="position:absolute;width: 70px;height: 70px;background-color: red;opacity: 0;right:20px;top:20px;"></div>
+            
+            <div onclick="App.gotoHomePage();" style="position:absolute;width: 600px;height: 120px;background-color: red;opacity: 0;left:0px;top:120px;"></div>
+            
+            <div onclick="App.gotoURL('http://www.bugraozden.com/');" style="position:absolute;width: 600px;height: 100px;background-color: red;opacity: 0;left:0px;top:350px;"></div>
+            
+            <div onclick="App.gotoURL('https://www.flaticon.com/authors/freepik');" style="position:absolute;width: 600px;height: 32px;background-color: red;opacity: 0;left:0px;top:520px;"></div>
+            <div onclick="App.gotoURL('https://www.flaticon.com/authors/google');" style="position:absolute;width: 600px;height: 32px;background-color: red;opacity: 0;left:0px;top:552px;"></div>
+            <div onclick="App.gotoURL('https://www.flaticon.com/authors/smashicons');" style="position:absolute;width: 600px;height: 32px;background-color: red;opacity: 0;left:0px;top:584px;"></div>
+            <div onclick="App.gotoURL('https://www.flaticon.com/authors/vectors-market');" style="position:absolute;width: 600px;height: 32px;background-color: red;opacity: 0;left:0px;top:619px;"></div>
+            <div onclick="App.gotoURL('https://www.flaticon.com/authors/pixel-perfect');" style="position:absolute;width: 600px;height: 32px;background-color: red;opacity: 0;left:0px;top:653px;"></div>
+            <div onclick="App.gotoURL('https://www.flaticon.com/authors/good-ware');" style="position:absolute;width: 600px;height: 32px;background-color: red;opacity: 0;left:0px;top:689px;"></div>
+            <div onclick="App.gotoURL('https://www.flaticon.com/authors/kiranshastry');" style="position:absolute;width: 600px;height: 32px;background-color: red;opacity: 0;left:0px;top:723px;"></div>
+            
+            
+            <div onclick="App.gotoURL('http://www.flaticon.com');" style="position:absolute;width: 600px;height: 35px;background-color: red;opacity: 0;left:0px;top:755px;"></div>
+        
+        </div><!-- content -->
+            
+            
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script>
+            
+            var Page = function(){};
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("index");
+                
+                //App.setLastPageURL("pages/about.htm");
+                
+                
+            };
+            
+            /* KULLANILMIYOR. Tarayıcıda açmak daha kullanışlı. */
+            Page.openURL = function($url) {
+                
+                //cordova.InAppBrowser.open($url, '_blank', 'location=yes');
+                
+            }
+            
+        </script>
+        
+    </body>
+</html>

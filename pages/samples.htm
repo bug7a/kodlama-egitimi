@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Projeler - Çocuklar için kodlama (programlama)</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Kodlama nedir? - Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Kodlama nedir? - Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <!-- <link rel="stylesheet" type="text/css" href="../css/lessons.css"> -->
+        <link rel="stylesheet" type="text/css" href="../css/samples.css">
+        
+        
+        <style>
+            
+            .project-box { display: block;padding: 20px;padding-top: 10px;padding-bottom: 10px;margin-top: 40px;margin-bottom: 40px;width:560px; }
+            
+            .project-box-right { position:relative;background-color:#FFFFFF; /* #F6F6F6; */font-family: opensans;margin: 0px;padding: 20px;padding-top: 30px;padding-bottom: 1px; color:#4A4A4A;font-size: 18px;text-align: justify;width:360px;display:block;margin-left: 160px;border: solid 1px #FFFFFF;border-radius: 8px; box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.1); /* border-top-left-radius: 2px; */ }
+            
+            .project-box-left { position:absolute; /* background-color: #FFFFFF; */ /* width:135px; */ width:150px;top:0px; left:-170px;/* left:-160px; */ padding-top:20px;padding-bottom: 20px;border: solid 0px rgba(0, 0, 0, 0.2);border-radius: 18px; /*  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.05); */ /* border-top-right-radius: 2px;border-bottom-right-radius: 2px; */ }
+            .project-icon { display:flex;justify-content:center; }
+            .project-icon-text { display:flex;font-family: roboto;font-size: 15px; justify-content:center;text-align: center; margin-top: 7px;padding-right: 15px;padding-left: 15px;color:#4A4A4A; }
+            
+            .project-item { position:relative; padding-left: 80px;margin-bottom: 30px;background-color:; }
+            .project-item-icon { position:absolute;top:0px;left:0px; }
+            .project-item-title { font-family: roboto-bold; color:#4A4A4A; font-size:18px;margin-bottom: 6px; margin-top: 6px;/*margin-top: 10px;*/ }
+            .project-item-text { font-family: opensans; color:#4A4A4A; font-size: 16px;/*margin-bottom: 18px;*/ margin-top: 6px;margin-bottom: 6px; }
+            
+            .my-project-item { position:relative;width:560px;height:45px;border-bottom: solid 0px #B7B7B7; }
+            .my-project-back { position:absolute;width:560px;height:45px; }
+            .my-project-item-icon { position:absolute;top:12px;left:10px; }
+            .my-project-item-title { position:absolute;top:13px;left:35px; }
+            .my-project-item-date { position:absolute;top:10px;right:10px;font-family:roboto-lightitalic;color:#979797; background-color: rgba(255, 255, 255, 0.3);padding-right: 6px;padding-left: 6px;border-radius: 8px;padding-top: 3px;padding-bottom: 3px; border:solid 0px #D8D8D8; }
+            
+        </style>
+
+    </head>
+    <body>
+        
+        <div class="colored-background" style="background-color:#F6F6F6;"></div>
+        
+        <div id="app-cont" style="background-color:#F6F6F6; "> <!-- style="background-color:#FFFCD6;" -->
+            
+            
+             <!-- HEADER style="background-color:#EE7553;border-bottom:solid 2px #4C4C4C;" -->
+            
+            <div class="header-top" style="background-color: #2CA2D2;border-bottom: solid 2px rgba(0, 0, 0, 0.1);">
+                
+                <div onclick="App.gotoHomePage();">
+                <div class="header-icon" style="left:0px;"><img src="../img/samples/sheader-home-icon.png" width="70" height="70" /></div>
+                <div class="header-icon-txt" style="left:55px;color:rgba(255, 255, 255, 0.8);">BAŞLANGIÇ</div><!-- BAŞLANGIÇ -->
+                </div>
+                
+                <div id="my-projects-btn" onclick="Page.changePage('2');" style="position:absolute;right:20px;top:14px;display:none;"><img src="../img/samples/my-projects-btn.png" width="142" />
+                </div>
+                <div id="new-project-btn" onclick="Page.changePage('1');"  style="position:absolute;right:20px;top:14px;display:none;"><img src="../img/samples/new-project-btn.png" width="142" />
+                </div>
+                
+                
+            </div>
+            
+            <!-- HEADER END -->
+            
+            <div id="my-projects-box" style="position:relative;width:560px;margin: 20px;font-family:roboto;font-size:16px;color:#4A4A4A;margin-top: 40px;margin-bottom: 40px;background-color: transparent;display:none;">
+            
+                <!--
+                <div id="project-item" style="position:relative;width:560px;height:45px;border-bottom: solid 1px black;">
+                
+                    <div style="position:absolute;top:12px;left:10px;"><img src="../img/samples/c1-icon.png" width="20" /></div>
+                    <div style="position:absolute;top:13px;left:35px;">Project Name</div>
+                    <div style="position:absolute;top:13px;right:10px;font-family:roboto-lightitalic;">20 Şubar 2020</div>
+                
+                </div>
+                -->
+                
+                <div id="my-project-items">
+                
+                    <!-- <div class="my-project-item">
+
+                        <div class="my-project-item-icon"><img src="../img/samples/c1-icon.png" width="20" /></div>
+                        <div class="my-project-item-title">Project Name</div>
+                        <div class="my-project-item-date">20 Şubar 2020</div>
+
+                    </div> -->
+                
+                </div>
+                
+                <!-- <center><p id="my-project-alert1" style="font-size: 16px;color:#4A4A4A;display:none;">Hiç proje yok.</p></center>-->
+                
+                <div class="normal-text-group"><center><p id="my-project-alert1" style="display:none;">Kayıtlı hiçbir proje bulunmamaktadır.</p></center></div>
+                
+                <center><p id="my-project-alert2" style="margin-top: -15px; font-size: 12px;color:#b8b8b8;font-family:roboto-lightitalic; display:none;"><span id="my-project-alert2-sub">Silmek istediğiniz projenin üzerine basılı tutun.</span></p></center>
+            
+            </div>
+            
+            
+             <!-- <div style="position:relative;height:20px;background-color: white;"></div>-->
+            
+            <div id="new-project-box" style="display:none;">
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+                <center><p id="samples-start-title" style="display:none;">Yeni projeniz için bir şablon seçin veya örnekleri inceleyin.</p></center>
+                
+            </div> <!-- PAGE 2 END -->
+            
+            
+                <div class="project-box">
+             
+                <div class="project-box-right">
+                    
+                     <div class="project-box-left" >
+                
+                        <div class="project-icon"><img src="../img/samples/icon/robot-ico.png" width="60" /></div>
+                        <div class="project-icon-text">Robot Projesi</div>
+                
+                    </div>
+                    
+                    <!-- <div style="position: absolute;background-color:#2CA2D2;top:25px;right:10px;width:380px;height:80px;border-radius: 13px;"></div> -->
+                
+                    <div class="project-item" onclick="NewProject.openNewDialog('1', 'c1');">
+                        <div class="project-item-icon"><img src="../img/samples/icon/robot-new-ico.png" width="60" /></div>
+                        <p class="project-item-title">Yeni Proje</p>
+                        <p class="project-item-text">Boş bir robot projesi şablonu oluştur.</p>
+                        
+                    </div>
+                    
+                    <a href="../samples/c1-1.htm">
+                    <div class="project-item">
+                        <div class="project-item-icon"><img src="../img/samples/icon/robot-sensor-ico.png" width="60" /></div>
+                        <p class="project-item-title">Radar</p>
+                        <p class="project-item-text">Tüm zemini tarayan ve nesnelerin konumlarını tespit edip, ekrana yazdıran algoritma.</p>
+                    </div>
+                    </a>
+                    
+                    <a href="../samples/c1-2.htm">
+                    <div class="project-item">
+                        <div class="project-item-icon"><img src="../img/samples/icon/robot-key-ico.png" width="60" /></div>
+                        <p class="project-item-title">Anahtar Bul</p>
+                        <p class="project-item-text">Anahtarın konumunu tespit eden ve robotu bu konuma yönlendiren algoritma.</p>
+                    </div>
+                    </a>
+                    
+                    <a href="../samples/c1-3.htm">
+                     <div class="project-item">
+                        <div class="project-item-icon"><img src="../img/samples/icon/robot-think-ico.png" width="60" /></div>
+                        <p class="project-item-title">Düşünme Motoru</p>
+                        <p class="project-item-text">Rasgele tasarlanmış harita üzerinde, kendi kararlarını vererek, hedefe ulaşmaya çalışan robot zekası.</p>
+                    </div>
+                    </a>
+                    
+                    <!-- <div class="project-item">
+                        <div class="project-item-icon"><img src="../img/samples/icon/robot-energy-ico.png" width="60" /></div>
+                        <p class="project-item-title">Enerji hesaplaması</p>
+                        <p class="project-item-text">Hedefe ulaşmak için ne kadar enerjiye ihtiyaç olduğunu hesaplayan algoritma.</p>
+                    </div>-->
+                
+                </div>
+                
+            </div>
+            
+            
+
+            <div class="project-box">
+             
+                <div class="project-box-right">
+                    
+                     <div class="project-box-left">
+                
+                        <div class="project-icon"><img src="../img/samples/icon/console-ico.png" width="60" /></div>
+                        <div class="project-icon-text">Yazı Projesi</div>
+                
+                    </div>
+                
+                    <div class="project-item" onclick="NewProject.openNewDialog('1', 'c');">
+                        <div class="project-item-icon"><img src="../img/samples/icon/console-new-ico.png" width="60" /></div>
+                        <p class="project-item-title">Yeni Proje</p>
+                        <p class="project-item-text">Boş bir yazı projesi şablonu oluştur.</p>
+                    </div>
+                    
+                    <a href="../samples/c-1.htm">
+                    <div class="project-item">
+                        <div class="project-item-icon"><img src="../img/samples/icon/console-math-ico.png" width="60" /></div>
+                        <p class="project-item-title">Çarpım Tablosu</p>
+                        <p class="project-item-text">İç içe, iki döngü kullanılarak, tüm çarpım tablosunu ekrana yazdıran algoritma.</p>
+                    </div>
+                    </a>
+                
+                </div>
+                
+            </div>
+            
+            
+            
+<div class="project-box">
+             
+                <div class="project-box-right">
+                    
+                     <div class="project-box-left">
+                
+                        <div class="project-icon"><img src="../img/samples/icon/draw-ico.png" width="60" /></div>
+                        <div class="project-icon-text">Kare Boyama Projesi</div>
+                
+                    </div>
+                
+                    <div class="project-item" onclick="NewProject.openNewDialog('1', 'c2');">
+                        <div class="project-item-icon"><img src="../img/samples/icon/boyama-new-ico.png" width="60" /></div>
+                        <p class="project-item-title">Yeni Proje</p>
+                        <p class="project-item-text">Boş bir kare boyama projesi şablonu oluştur.</p>
+                    </div>
+                    
+                    <a href="../samples/c2-1.htm">
+                    <div class="project-item">
+                        <div class="project-item-icon"><img src="../img/samples/icon/draw-radar-icon.png" width="60" /></div>
+                        <p class="project-item-title">Renk Tara</p>
+                        <p class="project-item-text">İki boyutlu bir alanı tarayan ve istenilen koşullara sahip karelerin koordinatlarını listeleyen algoritma.</p>
+                    </div>
+                    </a>
+                    
+                    <!-- <div class="project-item">
+                        <div class="project-item-icon"><img src="../img/samples/icon/draw-reverse-icon.png" width="60" /></div>
+                        <p class="project-item-title">Renkleri tersine çevir</p>
+                        <p class="project-item-text">Some text and other stuff must be more text. neden ingilizce yazıyorum acaba nalayamadım.</p>
+                    </div> -->
+                    
+                    <a href="../samples/c2-2.htm">
+                    <div class="project-item">
+                        <div class="project-item-icon"><img src="../img/samples/icon/draw-rect-ico.png" width="60" /></div>
+                        <p class="project-item-title">Dikdörtgen Çiz</p>
+                        <p class="project-item-text">Koordinatları, genişliği, yüksekliği ve renk bilgisi ile bir dikdörtgen çizen fonksiyon.</p>
+                    </div>
+                    </a>
+                    
+                    
+                    <!--
+                    <a href="coding2-img.htm">
+                    <div class="project-item">
+                        <div class="project-item-icon"><img src="../img/samples/icon/console-new-ico.png" width="60" /></div>
+                        <p class="project-item-title">Resim dosyası mantığı</p>
+                        <p class="project-item-text">Basit bir resim oluşturma algoritması.</p>
+                    </div>
+                    </a>
+                    -->
+                
+                </div>
+                
+            </div>
+                
+            </div> <!-- PAGE 1 END -->
+            
+             <div class="page-end-spacing"></div>
+            
+            
+            <!--<div class="header-bottom" style="background-color: #2CA2D2;border-top: solid 2px rgba(0, 0, 0, 0.3);"> -->
+                
+                <!--<a href="lesson1.htm"><div class="header-icon" style="left:0px;"><img src="../img/lessons/header-left-icon.png" width="70" height="70" /></div>
+                <div class="header-icon-txt" style="left:55px;">TEXT</div>
+                </a>-->
+                
+                <!-- <a href="lesson2.htm"><div class="header-icon" style="right:0px;"><img src="../img/lessons/header-right-icon.png" width="70" height="70" /></div>
+                <div class="header-icon-txt" style="right:55px;">EKRANA YAZI YAZMAK</div>
+                </a> -->
+                
+                <!-- <a href="../index.html"><div class="header-icon" style="position:absolute;left:265px;top:0px;"><img src="../img/samples/sheader-home-icon.png" width="70" height="70" /></div></a> -->
+                
+            <!-- </div> -->
+        
+        </div><!-- content -->
+
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/newproject.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script>
+            
+            var Page = function(){};
+            
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("samples");
+                
+                //App.setLastPageURL("pages/samples.htm");
+                
+                //storage.setItem("selected-samples-page-id", JSON.stringify("1"));
+                
+                Page.changePage(storage.getItem("selected-samples-page-id"));
+                
+                if(!storage.getItem("alert-samples-page-desc")) {
+                    document.getElementById("samples-start-title").style.display = "block";
+                }
+                
+                storage.setItem("alert-samples-page-desc", "");
+                
+                NewProject.init();
+                //NewProject.reset();
+                
+                //Eğer ilk proje silinmiş ise, artık uyarıya gerek yok.
+                //if(storage.getItem("first-project-deleted") == "1") {
+                //    document.getElementById("my-project-alert2-sub").style.display = "none";
+                //}
+                
+                Page.fillMyProjects();
+                
+            };
+            
+            Page.changePage = function($pageId) {
+                
+                if(!$pageId) $pageId = "1";
+                
+                switch($pageId) {
+                        
+                    case "1":
+                    default:
+                        
+                        document.getElementById("new-project-btn").style.display = "none";
+                        document.getElementById("new-project-box").style.display = "block";
+                        document.getElementById("my-projects-btn").style.display = "block";
+                        document.getElementById("my-projects-box").style.display = "none";
+                        
+                        break;
+                        
+                     case "2":
+                        
+                        document.getElementById("new-project-btn").style.display = "block";
+                        document.getElementById("new-project-box").style.display = "none";
+                        document.getElementById("my-projects-btn").style.display = "none";
+                        document.getElementById("my-projects-box").style.display = "block";
+                        
+                        break;
+                         
+                }
+                
+                storage.setItem("selected-samples-page-id", $pageId);
+                
+            }
+            
+            Page.fillMyProjects = function() {
+                
+                var myProjectItemsElement = document.getElementById("my-project-items");
+                var myProjectItemsHtmlString = "";
+                
+                for (var i = 0; i <= NewProject.projectList.length - 1; i++) {
+                    
+                    var _htmlModel = Page.projectItemHTMLModel;
+                    _htmlModel = _htmlModel.replace("{{project-id}}", NewProject.projectList[i].ID);
+                    _htmlModel = _htmlModel.replace("{{project-id}}", NewProject.projectList[i].ID);
+                    _htmlModel = _htmlModel.replace("{{project-id}}", NewProject.projectList[i].ID);
+                    _htmlModel = _htmlModel.replace("{{project-type}}", NewProject.projectList[i].type);
+                    _htmlModel = _htmlModel.replace("{{project-name}}", NewProject.projectList[i].title);
+                    _htmlModel = _htmlModel.replace("{{project-date}}", NewProject.projectList[i].createdDateStr);
+                    
+                    myProjectItemsHtmlString += _htmlModel;
+                    
+                    //En fazla 100 project göster
+                    if(i >= 100) break;
+                    
+                }         
+                
+                myProjectItemsElement.innerHTML = myProjectItemsHtmlString;
+                
+                if(NewProject.projectList.length <= 0) {
+                    document.getElementById("my-project-alert1").style.display = "block";
+                    document.getElementById("my-project-alert2").style.display = "none";
+                } else {
+                    document.getElementById("my-project-alert1").style.display = "none";
+                    if(storage.getItem("first-project-deleted") != "1") {
+                        document.getElementById("my-project-alert2").style.display = "block";
+                    }
+                }
+                
+            }
+            
+            /* Project hold event and delete project */
+            Page.holdEventMouseTimer = 0;
+            
+            Page.projectButtonMouseDown = function($projectID) {
+                console.log("projectButtonMouseDown");
+                Page.projectButtonMouseUp();
+                Page.holdEventMouseTimer = window.setTimeout(function() { Page.execDeleteProject($projectID); },2000);
+            }
+            
+            Page.projectButtonMouseUp = function() {
+                console.log("projectButtonMouseUp");
+                if (Page.holdEventMouseTimer) window.clearTimeout(Page.holdEventMouseTimer);
+            }
+            
+            Page.execDeleteProject = function($projectID) {
+                console.log("execDeleteProject");
+                NewProject.openDeleteDialog($projectID);
+                
+                //NewProject.deleteProject($projectID);
+                //Page.fillMyProjects();
+            }
+            
+            document.addEventListener("onProjectDeleted", function($e) {
+                Page.fillMyProjects();
+                
+                storage.setItem("first-project-deleted", "1");
+                document.getElementById("my-project-alert2").style.display = "none";
+                
+            });
+            
+            document.body.addEventListener("mouseup", Page.projectButtonMouseUp);
+            document.body.addEventListener("touchend", Page.projectButtonMouseUp);
+            /* Project hold event and delete project end */
+            
+            Page.projectItemHTMLModel = `
+                <div class="my-project-item" ontouchstart="Page.projectButtonMouseDown({{project-id}});" onmousedown="Page.projectButtonMouseDown({{project-id}});" onclick="NewProject.openProject({{project-id}});">
+
+                        <div class="my-project-item-back"><img src="../img/samples/my-project-back.png" width="560" /></div>
+                        <div class="my-project-item-icon"><img src="../img/samples/{{project-type}}-icon.png" width="20" /></div>
+                        <div class="my-project-item-title">{{project-name}}</div>
+                        <div class="my-project-item-date">{{project-date}}</div>
+
+                    </div>`;
+            
+        
+        </script>
+        
+    </body>
+</html>

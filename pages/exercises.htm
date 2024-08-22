@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Alıştırmalar - Çocuklar için kodlama (programlama)</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Alıştırmalar - Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Alıştırmalar - Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/exercises.css">
+        
+        
+        <style>
+
+        </style>
+
+    </head>
+    <body>
+        
+        <div class="colored-background"></div>
+        
+        <div id="app-cont">
+            
+            <!-- HEADER -->
+            
+            <div class="header-top">
+                
+                <div onclick="App.gotoHomePage();" >
+                <div class="header-icon" style="left:0px;"><img src="../img/lessons/header-home-icon.png" width="70" height="70" /></div>
+                <div class="header-icon-txt" style="left:55px;">BAŞLANGIÇ</div><!-- BAŞLANGIÇ -->
+                </div>
+                
+                <!-- <div style="position:absolute;right:20px;top:14px;"><img src="../img/youtube-video-btn.png" width="180" height="43" /></div>-->
+                
+            </div>
+            
+            <!-- HEADER END -->
+            
+            
+            
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+                <!-- <p class="normal-title">Alıştırmalar</p> -->
+                
+                <!-- <p>Bu bölüm, kodlama yaparak çözmen gereken bulmaca tarzında görevlerden oluşuyor.</p> -->
+                
+                <!-- <p>Aşağıdaki oyun modlarından birini seçin.</p> -->
+                
+                <!-- <p>Bir görevi tamamlamanın, her zaman tek bir çözümü olmayabilir.</p>
+                <p>Böyle bir durumda; Görevi tamamlayan en başarılı algoritma, en az kod satırı ile en verimli şekilde çalışandır.</p> -->
+                
+                <!-- <p>Pratik yaptıkça; Tasarladığımız çözümler,</p> -->
+                
+                
+                
+                <!-- <p>Görevi, başarılı bir algoritma ile tamamlamak için; iyi düşünmeli ve en az kod ile en verimli şekilde çalışacak algoritmayı geliştirmeliyiz.</p> -->
+                
+                <!-- <p>Öğrendiğimiz konuları iyice sindirerek ve kullanabileceğimiz sınırsız olasılıkları keşfederek; en az kod ile en verimli şekilde çalışan algoritmayı geliştirmeye çalışmalıyız.</p> -->
+                
+                <!-- <p>Algoritma kurma ve problem çözme yeteneklerini geliştirmek için tasarlanmış eğlenceli görevler.</p>
+                
+                <p>Kodlamada, bir problemin çoğu zaman tek bir çözümü olmaz.</p>
+                
+                <p>Ne kadar çok problem çözersek; o kadar verimli algoritmalar geliştirmeye başlarız.</p>
+                
+                <p>Öğrendiğimiz konuları sindirebilmek ve kullanabileceğimiz olasılıkları keşvetmek için</p> -->
+                
+                <!-- <p>Karşılaştığımız problemlerin çözümünü sağlayacak algoritmalar tasarlayabilmemiz için temel bir kodlama bilgisi ve deneyim kazanmaya çalışacağız.</p> -->
+                
+                <a href="../exercise1/exercise1.htm"><div class="normal-img" ><img src="../img/exercises/exercise1-btn.png" width="560" /></div></a>
+                
+            </div>
+            
+            
+            
+            <div class="page-end-spacing"></div>
+            
+            <!-- <div class="header-bottom"> -->
+                
+                <!-- <a href="index.html"><div class="header-icon" style="position:absolute;left:265px;top:0px;"><img src="img/lessons/header-home-icon.png" width="70" height="70" /></div></a> -->
+                
+            <!-- </div> -->
+        
+        </div><!-- content -->
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script>
+            
+            var Page = function(){};
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("exercises");
+                
+                //App.setLastPageURL("pages/exercises.htm");
+                
+                //okunan sayfaları işaretle
+                /*
+                for(var i = 1; i<=10; i++){
+                    
+                    var score = 0;
+                    
+                    score = App.getPageScore("lesson"+i);
+                    
+                    if(score){
+                        document.getElementById("readed"+i).style.display = "block";
+                    }
+                    
+                } */
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

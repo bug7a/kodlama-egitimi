@@ -1,0 +1,269 @@
+robot.bilgiAl("enerji");
+
+al - sor - yaz
+
+(1)
+robot.ilerle();
+robot.ilerle();
+robot.anahtarAl();
+
+(2)
+robot.ilerle();
+yaz("konum 1");
+robot.ilerle();
+yaz("konum 2");
+
+(3)
+yaz(“Robotun başlangıç konumu: ” + robot.konum);
+yaz(“Robotun başlangıç enerjisi: ” + robot.enerji);
+yaz(“— ayıraç —”);
+robot.ilerle();
+yaz(“Robotun konumu: ” + robot.konum);
+yaz(“Robotun kalan enerjisi: ” + robot.enerji);
+robot.bilgiYaz(“enerji (%” + robot.enerji + ”)”);
+yaz(“— ayıraç —”);
+robot.ilerle();
+robot.enerjiAl();
+yaz(“Robotun konumu: ” + robot.konum);
+yaz(“Robotun kalan enerjisi: ” + robot.enerji);
+robot.etiketeYaz(“enerji (%” + robot.enerji + ”)”);
+ekranaYaz(“— ayıraç —”);
+robot.ilerle();
+yaz(“Robotun konumu: ” + robot.konum);
+yaz(“Robotun kalan enerjisi: ” + robot.enerji);
+robot.yaz(“enerji (%” + robot.enerji + ”)”);
+
+(4)
+var toplamKonum = sensor.toplamKonumSor();
+var enerjiKullanimi = sensor.enerjiIhtiyaciSor();
+var ihtiyacDuyulanEnerji = enerjiKullanimi * sonKonum;
+
+yaz(“Robotun başlangıç konumu: ” + robot.konum);
+yaz(“Robotun başlangıç enerjisi: ” + robot.enerjiDurumu);
+yaz(“Robotun gideceği konum: “ + sonKonum);
+yaz(“Robotun gitmesi gereken birim yol: );
+yaz(“Robotun  konuma gitmek için ihtiyacı olan enerji: 
+yaz(“Robotun konuma ulaştığında enerjiDurumu:
+
+robot.ilerle();
+robot.anahtarAl();
+robot.yaz(“enerji: %” + robot.enerji + ”, konum: ” + robot.konum);
+robot.ilerle();
+robot.yaz(“enerji (%” + robot.enerji + ”), konum: ” + robot.konum);
+robot.ilerle();
+robot.anahtarKullan();
+robot.yaz(“enerji (%” + robot.enerji + ”), konum: ” + robot.konum);
+robot.ilerle();
+robot.yaz(“enerji (%” + robot.enerji + ”), konum: ” + robot.konum);
+
+yaz("Hedefe ulaşıldı.");
+yaz("Hedefe ulaşıldı.");
+
+// ** ÖRNEKLERİ EN BASİT HALİ İLE YAYINLASAN DAHA ANLAŞILIR OLABİLİR.
+
+(5)
+
+robot.geriDon();
+
+//10 adım at ve her adımda objeleri almaya çalış
+for(var i = 1; i <= 10; i++){
+    
+    robot.enerjiAl();
+    robot.anahtarAl();
+    robot.anahtarKullan();
+    robot.ilerle();
+    
+}
+
+robot.geriDon();
+
+//5 adım at ve her adımda objeleri almaya çalış
+for(var k = 0; k <= 10; k++){
+
+    robot.enerjiAl();
+    robot.anahtarAl();
+    robot.anahtarKullan();
+    robot.ilerle();
+
+}
+
+(5 END)
+
+(6)
+
+var zeminIlkKonum = 1;
+var zeminSonKonum = zemin.uzunluk;
+var robotSonrakiKonum;
+
+//50 kere aşağıdaki kodu tekrar et.
+for(var i = 1; i <= 50; i++){
+
+    //Eğer robot hedefe ulaşmış ise
+    if (hedefAra(robot.konum) == 1){
+    
+        //Görev raporunu ekrana yazdır.
+        yaz("-- Robot görev raporu --");
+        yaz("Hedefe ulaşıldı.");
+        yaz("Toplam adım: " + i);
+        yaz("Toplam harcanan enerji: " + (i * robot.enerjiKullanimi));
+        yaz("-- Robot görev raporu sonu --");
+        
+        //Hedefe ulaşıldı döngüden çık.
+        break;
+    
+    //Eğer robot hedefe ulaşamamış ise
+    } else {
+    
+        //ANAHTAR BULURSAN AL
+
+        //Robotun konumunda anahtar var ise
+        if(kamera.anahtarAra(robot.konum) == 1) {
+        
+            //Anahtarı al.
+            robot.anahtarAl();
+            yaz("Anahtar bulundu. Toplam adım: " + i);
+            
+        }
+        
+        //ENERJİ BULURSAN AL
+
+        //Robotun konumunda enerji var ise
+        if(kamera.enerjiAra(robot.konum) == 1){
+        
+            //Enerjiyi al.
+            robot.enerjiAl();
+            yaz("Enerji bulundu. Toplam adım: " + i);
+            
+        }
+        
+        //SONRAKİ KONUMU HESAPLA
+
+        //Eğer robotun baktığı yön sağ doğru ise    
+        if(robot.yon == "sag"){
+        
+            //Robotun sonraki konumu 1 fazladır.
+            robotSonrakiKonum = robot.konum + 1;
+            
+        //Eğer sağ bakmıyor sola bakıyor ise
+        }else if(robot.yon == "sol"){
+        
+            //Robotun sonraki konumu 1 eksiktir.
+            robotSonrakiKonum = robot.konum - 1;
+            
+        }
+
+        //OLASI ENGELLERİ KONTROL ET
+        
+        //Sonraki konumda kilit var ise
+        if(kamera.kilitAra(sonrakiKonum) == 1){
+        
+            //Eğer anahtarın var ise
+            if(robot.anahtar > 0){
+            
+                //Anahtarı kullan.
+                robot.anahtarKullan();
+                yaz("Kilit açıldı. Toplam adım: " + i);
+                
+            //Eğer kilidin önündeyken anahtarın yok ise
+            }else{
+            
+                //Robotun yönünü geri çevir.
+                robot.geriDon();
+                yaz("Bir kilit bulundu ama anahtar yok. Geri dönüyorum.");
+                
+            }
+
+        //Eğer sonraki konum yolun başı ise
+        }else if(sonrakiKonum < zeminIlkKonum){
+        
+            //Robotun yönünü geri çevir.
+            robot.geriDon();
+        
+        }
+        
+        //BİR ADIM DAHA AT
+
+        //Tüm işlemlerden sonra ilerlemeye devam et.
+        robot.ilerle();
+        
+    }
+}
+
+(6 END)
+
+(7)
+
+* bir sonraki konular (fonksiyonlar, diziler) ile birlikte
+robot hedefine ulaşmak için haritayı tarayarak en verimli şekilde
+objeleri toplayıp hedefine ulaşsın.
+
+robot.al("anahtar"); robot.anahtarAl();
+robot.al("enerji"); robot.enerjiAl();
+sensor.bul("konum"); 
+
+sensor.anahtarBul();
+sensor.enerjiBul();
+sensor.
+
+Güzel kelimeler seç. Anlaşılır gerçek dünya ile bağlantılı kelimeler sensor gibi.
+
+-- sensor.onumdeNeVar
+-- sensor.buradaNeVar
+sensor.yurunebilirmi
+-- sensor.buradaAnahtarVarmi
+-- sensor.buradaEnerjiVarMi
+sensor.zeminNeKadarUzun
+sensor.hangiKonumdayim
+
+kamera
+radar
+
+kamera.konumdaNeVar
+
+sensor.konumdaNeVar
+sensor.hangiKonumdayim
+sensor.zeminNeKadarUzun
+sensor.hareketEdilebilirmi
+sensor.neKadarEnerjimVar
+sensor.kacTaneAnahtarimVar
+
+var robot = function(){}
+
+clearGround or
+addGround / zeminOlustur
+putKeyOn / anahtarEkle  
+putEnergyOn / enerjiEkle
+
+zemin / ground
+ground.maximumPosition; / maksimumKoordinat
+ground.whatIsOn(coordinate); / konumdaNeVar
+ground.isWalkable(coordinate) / yurunebilirMi;
+
+robot / robot
+robot.konum / konum   konum, robot isimli nesnenin içindeki bir değişkendir
+robot.enerjiStatus / enerjiDurumu
+robot.updateInfo / bilgiGuncelle("info")
+robot.clearLabel / etiketiTemizle();
+robot.getKey / anahtariAl
+robot.getEnergy / enerjiyiAl
+robot.openLock / kilidiAc
+robot.move / ilerle
+robot.turnBack / geriDon
+robot.turnRight / sagDon
+robot.turnLeft / solaDon
+robot.moveToRight sagHareketEt
+robot.moveToLeft solaHareketEt
+robot.enerjiNeedFor1Step / robot.enerjiIhtiyac = 10
+robot.useKey() / anahtarKullan
+robot.hasKey / anahtar
+robot.rotation = "right/left" / yon
+sensor
+
+anahtar / key
+enerji / energy
+bariyer / roadblock
+
+robot.bilgi("konum");
+robot.bilgi("Enerji ihtiyacı");
+robot.konum / position
+robot.yon / direction

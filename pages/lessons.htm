@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Konular - Çocuklar için kodlama (programlama)</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Konular - Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Konular - Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/lessons.css">
+        
+        
+        <style>
+
+        </style>
+
+    </head>
+    <body>
+        
+        <div class="colored-background"></div>
+        
+        <div id="app-cont">
+            
+            <!-- HEADER -->
+            
+            <div class="header-top">
+                
+                <div onclick="App.gotoHomePage();">
+                <div class="header-icon" style="left:0px;"><img src="../img/lessons/header-home-icon.png" width="70" height="70" /></div>
+                <div class="header-icon-txt" style="left:55px;">BAŞLANGIÇ</div><!-- BAŞLANGIÇ -->
+                </div>
+                
+                
+                <!-- <div style="position:absolute;right:20px;top:14px;"><img src="../img/youtube-video-btn.png" width="180" height="43" /></div>-->
+                
+            </div>
+            
+            <!-- HEADER END -->
+            
+            
+            
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+                <p class="normal-title">Konular</p>
+                
+                <p>Bu bölümlerde; <span class="normal-bold-text">Javascript programlama dili</span> ile yazılmış bazı kodlama örneklerinin, bilgisayar tarafından nasıl çalıştırıldıklarını inceleyeceğiz.</p>
+
+                <p>Karşılaştığımız problemlerin çözümünü sağlayacak algoritmalar tasarlayabilmemiz için temel bir kodlama bilgisi ve deneyim kazanmaya çalışacağız.</p>
+                
+            </div>
+            
+            <!-- TEXT GROUP END -->
+            
+            <a href="../lessons1/lesson1.htm"><div class="lessons-list-btn">Kodlama nedir?
+                <div id="readed1" class="readed-btn"><img src="../img/lessons/readed.png" width="25" height="25" /></div></div></a>
+            <a href="../lessons1/lesson2.htm"><div class="lessons-list-btn">Ekrana yazı yazmak
+                <div id="readed2" class="readed-btn"><img src="../img/lessons/readed.png" width="25" height="25" /></div></div></a>
+            <a href="../lessons1/lesson3.htm"><div class="lessons-list-btn">Değişkenlerin kullanımı
+                <div id="readed3" class="readed-btn"><img src="../img/lessons/readed.png" width="25" height="25" /></div></div></a>
+            <a href="../lessons1/lesson4.htm"><div class="lessons-list-btn">Matematiksel işlemler
+                <div id="readed4" class="readed-btn"><img src="../img/lessons/readed.png" width="25" height="25" /></div></div></a>
+            <a href="../lessons1/lesson5.htm"><div class="lessons-list-btn">Döngüler (for)
+                <div id="readed5" class="readed-btn"><img src="../img/lessons/readed.png" width="25" height="25" /></div></div></a>
+            <a href="../lessons1/lesson6.htm"><div class="lessons-list-btn">Koşullu ifadeler (if)
+                <div id="readed6" class="readed-btn"><img src="../img/lessons/readed.png" width="25" height="25" /></div></div></a>
+            <!-- <div class="lessons-list-btn">Nesneler ile çalışmak</div> -->
+            
+            <div style="position:relative;height:100px;background-color:;"></div>
+            
+            <!-- <div class="header-bottom"> -->
+                
+                <!-- <a href="index.html"><div class="header-icon" style="position:absolute;left:265px;top:0px;"><img src="img/lessons/header-home-icon.png" width="70" height="70" /></div></a> -->
+                
+            <!-- </div> -->
+        
+        </div><!-- content -->
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script>
+            
+            var Page = function(){};
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("lessons-list");
+                
+                //App.setLastPageURL("pages/lessons.htm");
+                
+                //okunan sayfaları işaretle
+                for(var i = 1; i<=10; i++){
+                    
+                    var score = 0;
+                    
+                    score = App.getPageScore("lesson"+i);
+                    
+                    if(score){
+                        document.getElementById("readed"+i).style.display = "block";
+                    }
+                    
+                }
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>
