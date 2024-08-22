@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.bugraozden.cik" version="1.4.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Kodlama</name>
+    <description>
+        Algoritma kurma ve problem çözme yeteneklerini geliştirmek için tasarlanan eğlenceli görevler.
+    </description>
+    <author email="bugra.ozden@gmail.com" href="http://www.bugraozden.com">
+        bugra ozden
+    </author>
+    <content src="index.html" />
+    <icon src="www/icon.png" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <preference name="HideKeyboardFormAccessoryBar" value="true" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="Orientation" value="portrait" />
+</widget>
