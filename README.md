@@ -4,6 +4,9 @@ Bu eğitim uygulaması; çocuklara, gerçek bir programlama dili (JavaScript) ku
 
 Eğlenceli ve daha akılda kalıcı olması için; bulmaca oyunu tarzında simülasyonlar ile, yazılım geliştirmenin temellerini öğretir.
 
+# EĞİTİMİ AÇ:
+bug7a.github.io/kodlama-egitimi/
+
 KİMLER FAYDALANABİLİR?
 - İlkokul, ortaokul ve lise öğrencileri.
 - Hobi olarak, kod yazmak isteyenler.
