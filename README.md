@@ -4,7 +4,7 @@ Bu eğitim uygulaması; çocuklara, gerçek bir programlama dili (JavaScript) ku
 
 Eğlenceli ve daha akılda kalıcı olması için; bulmaca oyunu tarzında simülasyonlar ile, yazılım geliştirmenin temellerini öğretir.<br>
 
-EĞİTİMİ AÇ:
+EĞİTİMİ GÖSTER:
 [bug7a.github.io/kodlama-egitimi/](https://bug7a.github.io/kodlama-egitimi/)
 
 <br><br>
