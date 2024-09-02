@@ -1,0 +1,487 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Anahtar bul - Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Anahtar bul - Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/lessons.css">
+        <link rel="stylesheet" type="text/css" href="../css/samples.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/coding.css">
+        <link rel="stylesheet" type="text/css" href="../css/coding1.css">
+
+    </head>
+    <body>
+        
+        <div id="app-cont">
+            
+            <a href="../pages/samples.htm"><div class="close-btn"><img src="../img/samples/sample-close-btn.png" /></div></a>
+            
+            <!-- HEADER
+            
+            <div class="sheader-top" style="height: 50px;background-color: #141414;">
+                
+                <a href="index.htm">
+                <div class="sheader-icon" style="left:0px;"><img src="../img/samples/sheader-left-icon.png" width="50" height="50" /></div></a>
+                <div class="sheader-icon-txt" style="left:55px;"> </div>
+                
+                <div class="sproject-title">Düşünme motoru (Basit)</div>
+                
+                
+                <!-- <a href="https://www.youtube.com/bugraozd">
+                <div style="position:absolute;right:20px;top:14px;"><img src="../img/lessons/youtube-video-btn2.png" width="180" height="43" />
+                </div>
+                </a> -->
+                
+            <!-- </div>
+            
+            <!-- HEADER END -->
+            
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+                <p class="normal-title">Planlı hareket</p>
+                
+                <!-- <p>Hedefe ulaşmak için en verimli stratejiyi hesaplayıp, uygulayan düşünme algoritması.</p> -->
+                
+                <p>Bu yapay zeka türü; hedefine ulaşması için yapması gerekenleri hesaplamış olarak hareket etmeye başlıyor.</p>
+                
+                <p>Harita, rasgele olarak oluşturulur fakat algoritmanın, büyümemesi için olasılıklar azaltılmıştır.</p>
+                
+                <p><span style="font-family: opensans-bold;">Kurallar:</span><br />
+- Haritada sadece 1 adet hedef olabilir.<br />
+- Haritada sadece 1 adet kilit olabilir.<br />
+- Haritada sadece 1 adet anahtar olabilir.<br />
+- Her nesne farklı bir konumda olmalıdır.<br />
+                    
+                
+                
+                
+                <!-- <p>Düşünme algoritmasının; makul bir boyutta, tüm olasılıkları hesaplayıp, mükemmel bir strateji kurabilmesi için; rasgele oluşturulan harita, bazı kurallar ile kısıtlanarak, olasılıklar azaltılmıştır.</p> -->
+                
+                <!-- <p>Hedefin önünde kilitli bir alan mevcut ve bu alanın açılması için haritanın farklı bir konumunda olabilecek anahtarın alınması gerekiyor.</p>
+                
+                <p>Robot her hareketinde bir miktar enerji harcıyor ve kalan enerjisi, robotun kafasının üzerindeki bilgi alanında görüntüleniyor. Harita üzerinde ayrıca enerji veren nesneler de mevcut.</p> -->
+
+                
+            </div>
+            
+            <!-- TEXT GROUP END -->
+            <!--
+          <div id="editor-ui" style="margin-top:0px;margin-bottom:15px;background-color: blue;">
+            <div class="editor-box" >
+                    
+                    <div id="editorui" class="editor"></div>
+                    
+                </div>
+            </div>
+            -->
+            
+<!-- 1 --><div id="editor-cont1"></div>
+            
+            <div class="normal-text-group">
+                
+                <p>Eğer bilmediğiniz bir kod veya kullanım şekli ile karşılaşırsanız, <br />onu öğrenmek için Google'ı kullanarak araştırma yapabilirsiniz.</p>
+                
+                <p><span style="font-family: opensans-bold;">Örnek aramalar:</span><br />
+- javascript while döngüsü nasıl kullanılır?<br />
+- javascript dizilerin kullanımı<br />
+- javascript ile fonksiyon tanımlama<br />
+                
+                <!-- <p>Bu bölümde, <span class="normal-bold-text">“yaz(mesaj)”</span> kodunu <span class="normal-italic-text">(fonksiyonunu)</span> kullanarak; ekrana, istediğimiz bir cümlenin yazılmasını sağlayacağız.</p>
+
+                <p>Aşağıdaki örnek ile bilgisayardan; ekrana, “Merhaba dünya” cümlesini yazdırmasını isteyelim.</p> -->
+
+                
+            </div>
+            
+     
+            
+            <div class="page-end-spacing"></div>
+        
+        </div><!-- content -->
+
+<div id="code-exampleui" style="display:none"></div>        
+<div id="code-example1" style="display:none">// ---Rasgele Harita Oluştur---
+
+//bazı olasılıklar
+//harita oluşturulurken, robot ile hedef arasında kilit olmak zorunda değil.
+//harita oluşturulurken, hedef ve anahtar kilitlenmiş olabilir. Bu durumda robot hedefe ulaşamaz.
+
+//rasgele zemin uzunluğu belirle
+var rasgeleZeminUzunlugu = 9 + zarAt(5)
+//rasgele dört konum için bir dizi tanımla
+var konumListesi = []
+
+//birbirinden farklı 4 tane rasgele konum diziye eklenene kadar tekrar et.
+while (konumListesi.length &lt; 4) {
+    
+    //not: while bir döngü çeşididir.
+    
+    //rasgele yeni bir konum sec
+    var yeniKonum = zarAt(rasgeleZeminUzunlugu)
+    
+    //eğer bu konum daha önce listeye eklenmemiş ise
+    if (!konumListesi.includes(yeniKonum)) {
+    
+        //not: ! (ünlem) işareti, sonucu tersine çevirir.
+    
+        //konumu diziye ekle
+        konumListesi.push(yeniKonum)
+
+    }
+    
+}
+    
+//bir zemin oluştur.
+zemin.olustur(rasgeleZeminUzunlugu)
+    
+//nesneleri yerleştir.
+zemin.nesneEkle("kilitli", konumListesi[0])
+zemin.nesneEkle("hedef", konumListesi[1])
+zemin.nesneEkle("anahtar", konumListesi[2], 1, "")
+zemin.nesneEkle("robot", konumListesi[3], 100, "")
+
+//en fazla 6 tane ağaç ekle.
+for (var i = 1; i &lt;= zarAt(6); i++) {
+
+    //zemin üzerinde rasgele bir konuma ağaç ekle.
+    zemin.nesneEkle("ağaç", zarAt(zemin.sonKonum))   
+
+}
+
+// ---Düşünme Algoritması---
+
+// ---Değişkenler---
+
+//hedefin konumu
+var hedefKonum = 0
+//anahtarın konumu
+var anahtarKonum = 0
+//kilidin konumu
+var kilitKonum = 0
+    
+var gorevTamamlanamaz = 0
+    
+// ---Fonksiyonlar---
+    
+//robot ile parametre olarak verilen konum arasında kilit var mı? 
+//var ise 1, yok ise 0
+var kilitVarMi = function(pKonum) {
+    
+    //not: p harfi (pKonum) değişkenin parametre olduğunu 
+    //anlamamızı kolaylaştırmak için eklenmiştir.
+
+    //robot ile konum arasında kilit var ise
+    if (kilitKonum &lt; pKonum) {
+
+        if(kilitKonum &gt; robot.konum) {
+    
+            //hedefe ulaşmak için anahtar lazım
+            return 1
+
+        }
+
+    } else {
+
+        if(kilitKonum &lt; robot.konum) {
+
+            //hedefe ulaşmak için anahtar lazım
+            return 1
+
+        }
+
+    }
+    
+    //hiçbir koşul gerçekleşmezse; anahtar lazım değil
+    return 0
+    
+}
+ 
+//robotu parametre olarak verilen konuma ulaştır.
+var konumaGit = function(pKonum) {
+
+    //robotun, konuma olan uzaklığını hesapla.
+    var mesafe = pKonum - robot.konum
+
+    //eğer robot, istenen konumda ise
+    if (mesafe == 0) {
+
+        //hiç hareket etme.
+
+    //mesafe 0 dan küçük ise; gidilecek konum sol tarafta demektir.
+    } else if (mesafe &lt; 0) {
+
+        //robotun yönü sağ doğru ise
+        if (robot.yon == "sağ") {
+
+            //robotu sola döndür.
+            robot.geriDon()
+
+        }
+
+        //mesafe içerğini pozitif sayıya çevir.
+        mesafe = mesafe * -1
+
+    //mesafe 0 dan büyük ise; gidilecek konum sağ tarafta demektir.
+    } else {
+
+        //eğer robotun yönü sola doğru ise
+        if (robot.yon == "sol") {
+
+            //robotun yönünü sağ doğru çevir.
+            robot.geriDon()
+
+        }
+
+    }
+
+    //mesafe kadar tekrar et.
+    for (var i = 1; i &lt;= mesafe; i++) {
+
+        robot.ilerle()
+
+    }
+    
+}
+    
+// ---Bilgi Topla---
+
+//tüm konumları tara ve bilgileri değişkenlerde sakla
+for (var i = 1; i &lt;= zemin.sonKonum; i++) {
+    
+    //hedef var ise
+    if (hedefAra(i) == 1) {
+    
+        //konumu değişkende sakla.
+        hedefKonum = i
+    
+    }
+    
+    //anahtar var ise
+    if (anahtarAra(i) == 1) {
+    
+        //konumu değişkende sakla.
+        anahtarKonum = i
+    
+    }
+    
+    //kilit var ise
+    if (kilitAra(i) == 1) {
+    
+        //konumu değişkende sakla.
+        kilitKonum = i
+    
+    }
+
+}
+    
+// --- Robot ile Hedef Arasındaki Yol Açık mı? ---
+
+//eğer robot ile hedef arasında kilit var ise
+if (kilitVarMi(hedefKonum)) {
+    
+    yaz("Hedef ile aramda kilit var. Anahtara ihtiyacım olacak.")
+    
+    // --- Robot ile Anahtar Arasındaki Yol Açık mı? ---
+    
+    //eğer robot ile anahtar arasında kilit var ise
+    if (kilitVarMi(anahtarKonum)) {
+    
+        //görevin tamamlanamayacağı bilgisini değişkene aktar
+        gorevTamamlanamaz = 1
+        yaz("Anahtarı almak için anahtar lazım. Görev tamamlanamaz.")
+    
+    } else {
+    
+        //anahtarın konumuna git ve anahtarı al
+        yaz("Anahtarı almaya gidiyorum.")
+        konumaGit(anahtarKonum)
+        robot.anahtarAl()
+    
+        var kilitAcmaKonumu = 0
+    
+        //kilidi açmak için robotun durması gereken konumu hesapla
+        if (kilitKonum > robot.konum) { 
+        
+            kilitAcmaKonumu = kilitKonum - 1
+    
+        } else {
+    
+            kilitAcmaKonumu = kilitKonum + 1
+    
+        }
+    
+        //hesaplanan konuma gir ve kilidi aç
+        yaz("Kilidi açmaya gidiyorum.")
+        konumaGit(kilitAcmaKonumu)
+        robot.anahtarKullan()
+    
+    }
+    
+} else {
+    
+    yaz("Hedef ile aramda bir engel yok.")
+    
+}
+
+// Değişkenin içeriği 0 veya boş ise
+if (!gorevTamamlanamaz) {
+
+    // Ünlem işareti (!) sonucu tersine çevirir. 
+    // !1 == 0 eşitlik sağlanmış olarak cevaplanır.
+
+    // Alternatif kullanım: if (gorevTamamlanamaz != 1) {
+        
+    yaz("Hedefe gidiyorum.")
+    konumaGit(hedefKonum)
+    
+}
+
+
+</div>
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/coding.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/coding1.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script>
+            
+            var editor1, editorui;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        //Coding.options.fullScreenMode = 0;
+                        
+                        setConsoleFontSize(16);
+                        
+                        //Coding1.dontUseAnimationEngine = 1;
+                        //Coding1.infoMode = 1;
+                        //zemin.olustur(7);
+                        Coding1.init();
+                        
+                        Coding1.dontUseAnimationEngine = 1;
+                        //zemin.olustur(12);
+                        //zemin.nesneEkle("tree", 2);
+                        //zemin.nesneEkle("locked", 9 + zarAt(2));
+                        //zemin.nesneEkle("energy",2,30);
+                        //zemin.nesneEkle("finish", 7);
+                        //zemin.nesneEkle("key", 3, 1, 'anahtar');
+                        //zemin.nesneEkle("key", 3, 1, 'anahtar2');
+                        //zemin.nesneEkle("energy", 2, 40, 'enerji');
+                        //zemin.nesneEkle("robot", 1, 100, '');
+                        //zemin.nesneEkle("tree", 6);
+                        //zemin.nesneEkle("locked", 6);
+                        Coding1.dontUseAnimationEngine = 0;
+                        
+                        
+                        //zemin.nesneEkle("tree", 7);
+                        //Coding1.dontUseAnimationEngine = 0;
+                        
+                        break;
+                    case "2":
+                        
+                        break;
+                    case "3":
+                        
+                        break;
+                        
+                       }
+                
+            };
+            
+            Page.codingFinished = function($e){ 
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        break;
+                    case "2":
+                        break;
+                    case "3":
+                        break;
+                        
+                       }
+            
+            };
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("sample");
+                
+                Coding.init();
+                
+                document.addEventListener("onGameRefreshed", Page.codingInit);
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                
+                Coding.setOption("1", "resetButtonEnabled", 1);
+                Coding.setOption("1", "fullScreenMode", 1);
+                Coding.createNewEditorHTML("1");
+                //Coding.showEditorButtons("1",["add"]);
+                Coding.setScreenColor("1", "#EE7553");
+                Coding.setScreenHeight("1", "340px");
+                //Coding.changeRunButton("1","play");
+                editor1 = ace.edit("editor1");
+                //editor1.setReadOnly(true);
+                Coding.createNewEditor("1");
+                Coding.setSnippetIDList("1", Coding.snippetCodingIDList.concat(Coding.snippetCoding1IDList));
+                Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"));
+                
+                
+                /*
+                editorui = ace.edit("editorui");
+                
+                editorui.setTheme("ace/theme/twilight");
+                //editorui.setTheme("ace/theme/chrome");
+                editorui.session.setMode("ace/mode/javascript");
+                editorui.setOption("minLines", 8);
+                editorui.setOption("maxLines", 500);
+                editorui.renderer.setShowGutter(false);
+                //Coding.editorInit(editor1, "1");
+
+               //editoru zoomunu geri al
+                document.getElementById("editorui").style.zoom = (1 / App.screenRatio);
+                */
+                
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                
+                //App.setPageScore("lesson2", 1);
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

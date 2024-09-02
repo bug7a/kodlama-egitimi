@@ -1,0 +1,5 @@
+KULLANILAN DOSYALAR
+
+../basic/kutuphane/basic-1.2.css
+../basic/kutuphane/basic-1.2.js
+../js/coding1.js

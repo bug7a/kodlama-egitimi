@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Değişkenlerin kullanımı - Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Değişkenlerin kullanımı - Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/lessons.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/coding.css">
+        <link rel="stylesheet" type="text/css" href="../css/coding1.css">
+
+    </head>
+    <body>
+        
+        <div id="app-cont">
+            
+            <!-- HEADER -->
+            
+            <div class="header-top">
+                
+                <a onclick="App.gotoPage('../pages/lessons.htm')"><div class="header-icon" style="left:0px;"><img src="../img/lessons/header-list-icon.png" width="70" height="70" /></div>
+                <div class="header-icon-txt" style="left:55px;">KONULAR</div>
+                </a>
+                
+                <!-- VİDEO İLE ANTLATIM -->
+
+                
+                <div onclick="App.gotoYouTubeURL('https://youtu.be/d7ur_w3lTRc');" style="position:absolute;right:20px;top:14px;"><img src="../img/lessons/youtube-video-btn2.png" width="180" height="43" />
+                </div>
+                
+            </div>
+            
+            <!-- HEADER END -->
+            
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+            <p class="normal-title">Değişkenlerin kullanımı</p>
+                
+                <p>Değişkenler, oluşturduğumuz algoritmanın içerisinde ihtiyacımız olan bilgileri saklayan etiketlerdir.</p>
+                
+                <div class="normal-img"><img src="../img/lessons/variable-model.svg" width="560" /></div>
+                
+                <p>Aşağıdaki örnekte, <span class="normal-bold-text">toplamAgac</span> isminde bir değişken tanımlıyoruz ve ekrandaki ağaç sayısını değişkenin içine aktarıyoruz.</p>
+                
+                <p>Şimdi elimizdeki bu değişkeni, <span class="normal-bold-text">yaz(mesaj)</span> fonksiyonu ile birlikte kullanarak ekranda göstermeyi deneyelim.</p>
+
+                
+            </div>
+            
+            <!-- TEXT GROUP END -->
+            
+<!-- 1 --><div id="editor-cont1"></div>
+            
+            <!-- ALERT -->
+        
+        <div class="alert-yellow">
+            
+            <p><span class="alert-bold-text">Bilmemiz gereken bazı kurallar</span></p>
+            
+            <p>Kod satırına, iki eğik çizgi <span class="alert-char-text">//</span> ile başladığımız metinler, açıklamalardır. Bilgisayar tarafından işlenmezler.</p>
+            
+            <p>Bir değişkene eşitlediğimiz değerin, sayı olarak algılanmasını istediğimiz zaman, değeri tırnaksız olarak yazmalıyız. <!-- <span class="alert-italic-text">(Örnek: toplamAgac = 3)</span> --></p>
+            
+            <p>Toplama <span class="alert-char-text">+</span> işaretini, bir metin ile birlikte kullandığımızda, birleştirme işlevi görür.</p>
+        
+        </div>
+        
+        <!-- ALERT END -->
+            
+            <div class="normal-text-group">
+                
+                <p>Bir diğer örnekte ise değişkenlerimiz, ekrandaki uzay mekiğinin ismini ve yakıt durumunu taşısın.</p>
+            
+            </div>
+            
+ <!-- 2 --><div id="editor-cont2"></div>
+            
+            <!-- ALERT -->
+            <!--
+            <div class="alert-yellow">
+
+                 <p><span class="alert-bold-text">Not:</span></p> 
+
+                <p><b>Not: </b>Kod içerisinde bırakılan fazladan boş satırlar, yazılan kodları gruplamaya ve daha kolay okunmasına yardımcı olur.</p>
+
+            </div>
+            -->
+
+            <!-- ALERT END -->
+            
+            <div class="normal-text-group">
+                
+                <p>Şimdi ise <span class="normal-bold-text">robot</span> nesnemizin her ilerlemesinde, konumunu ekrana yazdırmak için <span class="normal-bold-text">robot.konum</span> değişkenini kullanmayı deneyelim.</p>
+                
+                <!-- DELETE <div class="normal-img"><img src="../img/coding1/code/m110.png" width="560" /></div> -->
+                
+                <br>
+
+                <div class="snippet-box grey">
+                    <div class="snippet-item-title">robot.konum</div>
+                    <div style="display:block;">
+                        <div class="snippet-item-desc">robotun, zemin üzerindeki konumunu taşıyan değişken.</div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+            
+<!-- 3 --><div id="editor-cont3"></div>
+            
+            <div class="alert-yellow">
+
+                 <p><span class="alert-bold-text">Bilmemiz gereken bir kural</span></p>
+
+                <p>Bir nesnenin, özel fonksiyon ve değişkenlerine ulaşmak için; nesnenin ismini yazdıktan sonra, nokta <span class="alert-char-text">.</span> işaretini kullanıyoruz.</p>
+
+            </div>
+            
+            <!-- <div class="normal-text-group"> -->
+                
+                <!-- <div class="normal-img"><img src="../img/coding1/code/konum.png" width="560" /></div> -->
+                
+                <!-- <div class="normal-img"><img src="../img/coding1/code/robot-ilerle.png" width="560" /></div> -->
+                
+            <!-- </div> -->
+            
+        
+                
+            <div class="normal-text-group">
+                
+                <p><span class="normal-bold-text">robot.konum</span> değişkeni, <span class="normal-bold-text">robot</span> nesnesinin içinde önceden tanımlanmış ve robot, her hareket ettiğinde; otomatik olarak güncellenmektedir.</p>
+                
+            </div>
+            
+            
+            
+            <div class="header-bottom">
+                
+                <a onclick="App.gotoPage('lesson2.htm')"><div class="header-icon" style="left:0px;"><img src="../img/lessons/header-left-icon.png" width="70" height="70" /></div>
+                <div class="header-icon-txt" style="left:55px;">EKRANA YAZI YAZMAK</div>
+                </a>
+                
+                <a onclick="App.gotoPage('lesson4.htm')"><div class="header-icon" style="right:0px;"><img src="../img/lessons/header-right-icon.png" width="70" height="70" /></div>
+                <div class="header-icon-txt" style="right:55px;">MATEMATİKSEL İŞLEMLER</div>
+                </a>
+                
+                <a onclick="App.gotoPage('../pages/lessons.htm')"><div class="header-icon" style="position:absolute;left:265px;top:0px;"><img src="../img/lessons/header-list-icon.png" width="70" height="70" /></div></a>
+                
+            </div>
+        
+        </div><!-- content -->
+
+        
+<div id="code-example1" style="display:none">// toplamAgac isminde bir değişken tanımlayalım.
+var toplamAgac
+
+// Değişkenin içerisine taşıyacağı bilgiyi aktaralım.
+toplamAgac = 3
+
+// Değişkenin taşıdığı bilgiyi ekrana yazdıralım.
+yaz("Ekranda " + toplamAgac + " tane ağaç var.")
+
+</div>
+<div id="code-example2" style="display:none">// Kullanacağımız değişkenleri tanımlayalım.
+var roketAd
+var roketYakitDurum
+
+// Değişkenlerin içerisine taşıyacağı bilgileri aktaralım.
+    
+// Metin tipinde (çeşidinde) bir değişken.
+roketAd = "Süpernova"
+// Sayı tipinde bir değişken.
+roketYakitDurum = 100
+
+// Değişkenlerin taşığıdığı bilgileri ekrana yazdıralım.
+yaz("Uzay mekiğinin adı: " + roketAd)
+yaz("Yakıt durumu: %" + roketYakitDurum)
+
+</div>
+<div id="code-example3" style="display:none">yaz("Başlangıç konumum: " + robot.konum)
+robot.ilerle()
+yaz("Konumum: " + robot.konum)
+robot.ilerle()
+yaz("Konumum: " + robot.konum)
+
+</div>
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/coding.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/coding1.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script>
+            
+            var editor1, editor2, editor3;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        //Coding.options.fullScreenMode = 0;
+                        
+                        document.getElementById("coding-game-box1").innerHTML = `<div style="position:absolute;bottom:-7px;right:110px;"><img src="../img/lessons/les3-ex1-tree.png" width="170" /></div>`;
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                    case "2":
+                        
+                        //Coding.options.fullScreenMode = 0;
+                        
+                        document.getElementById("coding-game-box2").innerHTML = `<div style="position:absolute;bottom:-5px;right:130px;"><img src="../img/lessons/les3-ex2-spaceship.png" width="103" /></div>`;
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                        
+                    case "3":
+                        
+                        //Coding.options.fullScreenMode = 1;
+                        
+                        setConsoleFontSize(16);
+                        
+                        Coding1.dontUseAnimationEngine = 1;
+                        //Coding1.infoMode = 1;
+                        //zemin.olustur(4);
+                        Coding1.init();
+                        zemin.olustur(4, 1);
+                        zemin.nesneEkle("tree", 2);
+                        //zemin.nesneEkle("locked",2);
+                        //zemin.nesneEkle("energy",2,30);
+                        //zemin.nesneEkle("finish", 7);
+                        //zemin.nesneEkle("key", 3, 1, 'anahtar');
+                        //zemin.nesneEkle("key", 3, 1, 'anahtar2');
+                        //zemin.nesneEkle("energy", 2, 40, 'enerji');
+                        zemin.nesneEkle("robot", 1, 100, '');
+                        //zemin.nesneEkle("tree", 6);
+                        //zemin.nesneEkle("locked", 6);
+                        
+                        
+                        //zemin.nesneEkle("tree", 7);
+                        Coding1.dontUseAnimationEngine = 0;
+                        
+                        break;
+                        
+                       }
+                
+            };
+            
+            Page.codingFinished = function($e){ 
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        break;
+                    case "2":
+                        break;
+                    case "3":
+                        break;
+                        
+                       }
+            
+            };
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("lessons");
+                
+                //App.setLastPageURL("lessons1/lesson3.htm");
+                
+                Coding.init();
+                
+                document.addEventListener("onGameRefreshed", Page.codingInit);
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                
+                Coding.setOption("1", "resetButtonEnabled", 1);
+                Coding.createNewEditorHTML("1");
+                //Coding.showEditorButtons("1",["add"]);
+                Coding.setScreenColor("1", "#EE7553");
+                Coding.setScreenHeight("1", "200px");
+                //Coding.changeRunButton("1","play");
+                editor1 = ace.edit("editor1");
+                //editor1.setReadOnly(true);
+                Coding.createNewEditor("1");
+                Coding.setSnippetIDList("1", ["004", "001"]);
+                Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"));
+                
+                Coding.setOption("2", "resetButtonEnabled", 1);
+                Coding.createNewEditorHTML("2");
+                //Coding.showEditorButtons("2",["add"]);
+                Coding.setScreenColor("2", "#EE7553"); //23BCC1
+                Coding.setScreenHeight("2", "200px");
+                //Coding.changeRunButton("2","play");
+                editor2 = ace.edit("editor2");
+                //editor2.setReadOnly(true);
+                Coding.createNewEditor("2");
+                Coding.setSnippetIDList("2", ["004", "001"]);
+                Coding.insertCodeToEditor("2", Coding.getCodeFromDivID("code-example2"));  
+                
+                Coding.setOption("3", "fullScreenMode", 1);
+                Coding.setOption("3", "resetButtonEnabled", 1);
+                Coding.createNewEditorHTML("3");
+                //Coding.showEditorButtons("3",["add"]);
+                Coding.setScreenColor("3", "#EE7553");
+                Coding.setScreenHeight("3", "440px");
+                Coding.changeRunButton("3","play");
+                editor3 = ace.edit("editor3");
+                //editor2.setReadOnly(true);
+                Coding.createNewEditor("3");
+                Coding.setSnippetIDList("3", ["004", "101", "110"]);
+                Coding.insertCodeToEditor("3", Coding.getCodeFromDivID("code-example3")); 
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                Page.codingInit({editorNumber:'2'});
+                Page.codingInit({editorNumber:'3'});
+                
+                App.setPageScore("lesson3", 1);
+
+                App.showAllPage();
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

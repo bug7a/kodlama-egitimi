@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.bugraozden.cik" version="1.9.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Kodlama</name>
+    <description>
+        Algoritma kurma ve problem çözme yeteneklerini geliştirmek için tasarlanan eğlenceli görevler.
+    </description>
+    <author email="bugra.ozden@gmail.com" href="http://www.bugraozden.com">
+        bugra ozden
+    </author>
+    <content src="index.html" />
+
+    <preference name="DisallowOverscroll" value="true" /><!-- Tam ekran içerik sürüklendiğinde yay gibi aşağı yukarı kaydırılabilir: false olursa. -->
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="MediaTypesRequiringUserActionForPlayback" value="true" />
+    <preference name="Orientation" value="portrait" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+        <!-- <preference name="StatusBarStyle" value="darkcontent" /> -->
+        <preference name="SuppressesIncrementalRendering" value="true" />
+        <preference name="UseLegacySwiftLanguageVersion" value="true" />
+        <preference name="UseSwiftLanguageVersion" value="5" />
+        <preference name="KeyboardDisplayRequiresUserAction" value="false" />
+        <preference name="KeyboardShrinksView" value="true" />
+        <preference name="HideKeyboardFormAccessoryBar" value="true" />
+        <!-- <preference name="KeyboardResize" value="true" /> -->
+
+    </platform>
+    <platform name="electron">
+        <preference name="ElectronSettingsFilePath" value="platforms/electron/settings.json" />
+    </platform>
+    <plugin name="cordova-plugin-network-information" spec="~2.0.2" />
+    <plugin name="cordova-plugin-dialogs" spec="~2.0.2" />
+    <plugin name="cordova-plugin-google-play-game-services" spec="~0.0.1">
+        <variable name="APP_ID" value="1013295175834" />
+    </plugin>
+</widget>

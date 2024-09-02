@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Alıştırmalar - Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Alıştırmalar - Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <!-- games.html aynı css dosyasını kullnıyor. exercises.css -->
+        <link rel="stylesheet" type="text/css" href="../css/exercises.css">
+        
+        
+        <style>
+
+        </style>
+
+    </head>
+    <body>
+        
+        <div class="colored-background"></div>
+        
+        <div id="app-cont">
+            
+            <!-- HEADER -->
+            
+            <div class="header-top">
+                
+                <a onclick="App.gotoHomePage();" >
+                <div class="header-icon" style="left:0px;"><img src="../img/lessons/header-home-icon.png" width="70" height="70" /></div>
+                <div class="header-icon-txt" style="left:55px;">BAŞLANGIÇ</div><!-- BAŞLANGIÇ -->
+                </a>
+                
+                <!-- <div style="position:absolute;right:20px;top:14px;">[x] Tümünü Göster</div> -->
+                <!-- <div class="header-icon-txt" style="right:55px;">(X) FİLTRE</div> -->
+                
+            </div>
+            
+            <!-- HEADER END -->
+
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+                <div id="btn1" class="boxbtn-main" style="background-color:#EE7553;">
+                    
+                    <div class="boxbtn-tag">Orta</div>
+                    
+                    <div style="position: absolute;bottom: 50px;"><img src="../img/exercises/exercise1-background.png" width="520" /></div>
+
+                    <div class="boxbtn-centered-bold-title">Robot Zekası Geliştirme</div>
+
+                    <p class="boxbtn-normal-text">Bu alıştırma, tek boyutlu harita üzerine kurulmuş bir robot simülasyonudur.</p>
+
+                    <p class="boxbtn-normal-text">Tasarlayacağın düşünme algoritmaları sayesinde; robot, çevresini algılayacak, kararlar verecek ve ona verilen görevleri yerine getirecek.</p>
+
+                    <div style="height: 100px;"></div>
+
+                    <div class="boxbtn-centered-item-cont">
+                        <!-- <div class="boxbtn-button" style="color:#EE7553;">TANITIM</div> -->
+                        <!-- style="color:#EE7553;" -->
+                        <div onclick="App.gotoYouTubeURL('https://youtu.be/3OMcFzdrW6w');" class="boxbtn-button" >Tanıtım</div>
+                        
+                        <a href="../exercise1/exercise1.htm"><div class="boxbtn-button">40 Görev</div></a>
+                    </div>
+                    
+                    <!-- tanıtım video: https://youtu.be/3OMcFzdrW6w -->
+
+                </div>
+                
+                <!-- <div style="position: relative;">
+                <a href="../exercise1/exercise1.htm"><div class="normal-img" ><img src="../img/exercises/exercise1-btn.webp" width="560" /></div></a>
+                <div style="position: absolute;top:15px;right:15px;"><img src="../img/exercises/intro-btn.png" width="30" /></div>
+                </div> -->
+                
+                <!-- <a href="../pages/member.htm"><div class="normal-img" ><img src="../img/exercises/uyelik-btn1.webp" width="560" /></div></a> -->
+                
+                <div id="member-info" class="boxbtn-main" style="background-color:#FFFFFF;display:none;">
+                    
+                    <!-- <div style="position: absolute;bottom: 50px;"><img src="../img/exercises/exercise1-background.png" width="520" /></div> -->
+
+                    <div class="boxbtn-centered-bold-title" style="color:#4a4a4a;margin-bottom: 0px;">Üyelere Özel İçerikler</div>
+
+                    <p id="member-text-1" class="boxbtn-normal-text" style="display:none; text-align: center;color:#4a4a4a;margin-top: 0px;">İlk <span class="boxbtn-bold-text">15 gün</span> boyunca <span class="boxbtn-bold-text">ücretsiz</span> deneyin.</p>
+                    
+                    <p id="member-text-2" class="boxbtn-normal-text" style="display:none; text-align: center;color:#4a4a4a;margin-top: 0px;">Tüm içerikleri görebilmek için,<br /> üyeliğinizi tekrar aktif etmelisiniz.</p>
+
+                    <div style="height: 0px;"></div>
+
+                    <!--
+                    <div class="boxbtn-centered-item-cont">
+                        <a href="../pages/member.htm"><div class="boxbtn-button" >Daha Fazla Bilgi</div></a>
+                    </div>
+                    -->
+
+                </div>
+
+                
+                <div id="btn4" class="boxbtn-main-gray" >
+                    
+                    <div class="boxbtn-tag-gray">Orta</div>
+                    
+                    <div style="position: absolute;top: 200px;right: 40px;"><img src="../img/exercises/temel.png" width="110" height="110" /></div>
+                    <div style="position: absolute;top: 120px;right: 20px;opacity: 0.3;"><img src="../img/exercises/temela.png" width="50" height="50" /></div>
+                    <div style="position: absolute;top: 340px;right: 30px;opacity: 0.4;"><img src="../img/exercises/temelb.png" width="60" height="60" /></div>
+
+
+                    <div class="boxbtn-centered-bold-title-gray">Temel Alıştırmalar</div>
+
+                    <p class="boxbtn-normal-text-gray" style="width:400px;">Bu alıştırmada; basit problemlerin çözümünü sağlayacak algoritmalar geliştirmen istenecek. <br><br>Bir algoritma geliştirirken; ihtiyacın olacak, önemli bilgi ve becerileri edineceksin.</p>
+
+                    <p class="boxbtn-normal-text-gray" style="width:360px;opacity: 0.5; font-size:16px;">Problemleri çözmeye çalışırken acele etmeyin. Kağıt ve kalem kullanın. Çözüm üzerine düşünmenizin, zihninizi geliştiren bir süreç olduğunu unutmayın.</p>
+
+                    <p class="boxbtn-normal-text-gray" style="width:400px;opacity: 0.5; font-size:16px;">Zihniniz, tıpkı bir kas gibi; yapmaya çalıştığınız şeyi daha kolay yapabilecek şekilde güçlenecektir.</p>
+
+                    <div style="height: 0px;"></div>
+
+                    <div class="boxbtn-centered-item-cont">
+                        
+                        <div onclick="App.gotoYouTubeURL('https://youtu.be/H_8zI7DvanY');" class="boxbtn-button" >Tanıtım</div>
+                        
+                        <a href="../exercise4/exercise4.htm"><div class="boxbtn-button opened" style="display:none;">25 Problem</div></a>
+                        
+                        <a href="../pages/member.htm"><div class="boxbtn-button locked" style="display:none;"><div style="position: absolute;left:12px;top:5px;"><img src="../img/exercises/locked.png" width="40" /></div>25 Problem</div></a>
+                        
+                    </div>
+
+                </div>
+            
+
+
+                <!--
+                <div id="btn3" class="boxbtn-main-gray" >
+                    
+                    <div class="boxbtn-tag-gray">Orta</div>
+                    
+                    <div style="position: absolute;top: 115px;right: 40px;"><img src="../img/exercises/trafik-icon.svg" width="80" height="150" /></div>
+
+                    <div class="boxbtn-centered-bold-title-gray">Trafik Işıkları</div>
+
+                    <p class="boxbtn-normal-text-gray" style="width:380px;">Trafik Işıklarının, henüz icat edilmediği bir zamanda, yollarda büyük bir karmaşa hakimdi. Trafiğin, kontrol altına alınmasına ihtiyaç vardı.</p> 
+                    
+                    <p class="boxbtn-normal-text-gray" style="width:380px;">Eğer, ışıkları yönetecek bir algoritma geliştirilebilir ise, trafik yönlendirilebilir. Ve toplum bu problemden kurtulurdu.</p>
+
+                    <p class="boxbtn-normal-text-gray" style="width:380px;">Bu problemi çözmeye ne dersin?</p>
+
+                    <div style="height: 0px;"></div>
+
+                    <div class="boxbtn-centered-item-cont">
+                        
+                        <div onclick="App.gotoYouTubeURL('https://youtu.be/');" class="boxbtn-button" >Tanıtım</div>
+                        
+                        <a href="../ex3-traffic/index.htm"><div class="boxbtn-button opened" style="display:none;">Çalışmaya Başla</div></a>
+                        
+                        <a href="../pages/member.htm"><div class="boxbtn-button locked" style="display:none;"><div style="position: absolute;left:12px;top:5px;"><img src="../img/exercises/locked.png" width="40" /></div>Çalışmaya Başla</div></a>
+                        
+                    </div>
+
+                </div>
+                -->
+
+
+                
+                <div id="btn2" class="boxbtn-main-gray" > <!-- style="background-color:#55877E;" -->
+                    
+                    <div class="boxbtn-tag-gray">Zor</div>
+                    
+                    <div style="position: absolute;top: 135px;right: 40px;"><img src="../img/exercises/kareboya-icon.svg" width="73" height="97" /></div>
+
+                    <div class="boxbtn-centered-bold-title-gray" style="font-size:28px;">Kare Boyama, Hareket ve Etkileşim</div>
+
+                    <p class="boxbtn-normal-text-gray" style="width:380px;">Bu alıştırma, iki boyutlu bir alan üzerine dizilmiş karelerin, renk özelliklerinin değiştirilmesi ile ilgilidir.</p> 
+                    
+                    <p class="boxbtn-normal-text-gray" style="width:380px;">Kullanılan mekanikler; blok bulmaca (tetris), yılan (snake), tuğla kırıcı (brick breaker) vb. gibi oyunların temel çalışma prensiplerini içerir.</p>
+                    
+                    <div style="height: 0px;"></div>
+
+                    <div class="boxbtn-centered-item-cont">
+                        
+                        <div onclick="App.gotoYouTubeURL('https://youtu.be/gJsDhf5mOkU');" class="boxbtn-button" >Tanıtım</div>
+                        
+                        <a href="../exercise2/exercise2.htm"><div class="boxbtn-button opened" style="display:none;">29 Görev</div></a>
+                        
+                        <a href="../pages/member.htm"><div class="boxbtn-button locked" style="display:none;"><div style="position: absolute;left:12px;top:5px;"><img src="../img/exercises/locked.png" width="40" /></div>29 Görev</div></a>
+                        
+                    </div>
+
+                </div>
+
+
+
+
+                
+            </div>
+            
+            <div class="page-end-spacing"></div>
+        
+        </div><!-- content -->
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/check-member.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script>
+
+            /*
+
+            Toplam 3 buton
+
+            1: Robot Zekası Geliştirme
+            4: Temel Alıştırmalar
+            3: Trafik Işıkları
+            2: Kare Boyama, Hareket ve Etkileşim
+
+
+
+            */
+            
+            var Page = function(){};
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("exercises");
+                
+                //TODO: test amaçlı kod, uygulama yayınlanırken kapatılmalı
+                /*
+                document.getElementById("member-info").style.display = "block";
+                document.getElementById("member-text-1").style.display = "block";
+
+                var lockedButtons = document.getElementsByClassName("boxbtn-button opened");
+                                    
+                for(var i = 0; i < lockedButtons.length; i++) {
+                    lockedButtons[i].style.display = "block";
+                }
+                */
+                
+                checkMember(2, function() {
+
+                    // Üye
+
+                    var lockedButtons = document.getElementsByClassName("boxbtn-button opened");
+                                    
+                    for(var i = 0; i < lockedButtons.length; i++) {
+                        lockedButtons[i].style.display = "block";
+                    }
+
+                }, function() {
+
+                    // Üye DEĞİL
+
+                    document.getElementById("member-info").style.display = "block";
+                                    
+                    var lockedButtons = document.getElementsByClassName("boxbtn-button locked");
+                    
+                    for(var i = 0; i < lockedButtons.length; i++) {
+                        lockedButtons[i].style.display = "block";
+                    }
+                    
+                    //Eğer daha önce ücretsiz denemeyi kullanış ise
+                    if(storage.getItem("member-used-free")) {
+                        document.getElementById("member-text-2").style.display = "block";
+                    }else {
+                        document.getElementById("member-text-1").style.display = "block";
+                    }
+                
+                });
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

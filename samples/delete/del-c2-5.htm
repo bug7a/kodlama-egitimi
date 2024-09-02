@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Renkleri tara - Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Renkleri tara - Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/samples.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/coding.css">
+        <link rel="stylesheet" type="text/css" href="../css/coding2.css">
+
+    </head>
+    <body>
+        
+        <div id="app-cont">
+            
+            <a href="../pages/samples.htm"><div class="close-btn"><img src="../img/samples/sample-close-btn.png" /></div></a>
+            
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+            <p class="normal-title">Blok Kırma Oyunu</p>
+                
+                <p>x Tüm kareleri rasgele renkler ile boyadıktan sonra, her bir kareyi tek tek kontrol ederek, mavi renk olanların koordinatlarını ekrana yazdıran algoritma.</p> 
+                <p>x Mavi renk olmayan kareleri ise siyaha boyuyor.</p>
+                
+            </div>
+            
+            <!-- TEXT GROUP END -->
+            
+<!-- 1 --><div id="editor-cont1"></div>
+            
+            <div class="normal-text-group">
+                
+                <!-- <p>Diğer bir örnekte ise; aradığımız şartın gerçekleştiği <span class="normal-italic-text"></span> veya gerçekleşmediği durumunu ekrana yazdıralım.</p>
+                
+                <p>Bu şart, iki farklı durumda gerçekleşebilir; <span class="normal-bold-text">"sonuc"</span> ismindeki değişkenin içeriği 5'dir veya 5'ten farklıdır.</p> -->
+                
+            </div>
+            
+            
+            <div class="page-end-spacing"></div>
+        
+        </div><!-- content -->
+
+        
+<div id="code-example1" style="display:none">//Çizim alanını yatay 16 kare, dikey 16 kare.
+kareleriOlustur(30, 23)
+//Koordinatları gösterme.
+koordinatSakla()
+//Kare kenarlık çizgilerini gösterme.
+cizgiSakla()
+//kare boyutlarını 2 kat büyüt    
+buyut(2)
+    
+var nokta = {x:15, y:22};
+var yon = "yukarı-sağ"; //yukarı-sağ, yukarı-sol, aşağı-sağ, aşağı-sol
+var renk = "mavi"
+
+//Yılanı bir birim hareket ettir.
+//Bunun için yılanın sonundan bir kare sil ve
+//yılanın gideceği yönde yeni bir kare ekle.
+var ilerle = function() {
+    
+    //yılanın ilerleyeceği sonraki konum.
+    var yeniX = 0
+    var yeniY = 0
+    
+    //Yılanın bir sonraki konumunu hesapla, değişkenlerde sakla.
+    if(yon == "yukarı-sağ") {
+        yeniX = nokta.x + 1
+        yeniY = nokta.y - 1
+    }else if(yon == "yukarı-sol") {
+        yeniX = nokta.x - 1
+        yeniY = nokta.y -1
+    }else if(yon == "aşağı-sağ") {
+        yeniX = nokta.x + 1
+        yeniY = nokta.y + 1
+    }else if(yon == "aşağı-sol") {
+        yeniX = nokta.x - 1
+        yeniY = nokta.y + 1
+    }
+    
+    if (kareNeRenk(yeniX, yeniY) != "siyah") {
+        
+        if (kareNeRenk(yeniX, yeniY) != "turuncu") {
+        
+            kareTemizle(nokta.x, nokta.y)
+            //noktalar.pop();
+        
+        } else {
+    
+            ses("yut")
+    
+        }
+    
+        //Yılanın ilk noktasının, hareket sonrasındaki yeni konumu
+        //Yılanın sonraki hareket ettirmek istediğimiz kareyi, yılanın rengi ile boya.
+        kareBoya(yeniX, yeniY, renk)
+        nokta.x = yeniX
+        nokta.y = yeniY
+        //noktalar.unshift({x:yeniX, y:yeniY})    
+    
+    } else {
+    
+        if(yeniX == 1) {
+    
+            if (yon == "yukarı-sol") {
+                
+                yon = "yukarı-sağ"
+    
+            } else if (yon == "aşağı-sol") {
+                
+                yon = "aşağı-sağ"
+                
+            }
+    
+        } else if(yeniX == 30) {
+    
+            if (yon == "yukarı-sağ") {
+                
+                yon = "yukarı-sol"
+    
+            } else if (yon == "aşağı-sağ") {
+                
+                yon = "aşağı-sol"
+                
+            }
+    
+        } else if (yeniY == 1) {
+    
+            if (yon == "yukarı-sol") {
+                
+                yon = "aşağı-sol"
+    
+            } else if (yon == "yukarı-sağ") {
+                
+                yon = "aşağı-sağ"
+                
+            }
+    
+        } else if (yeniY == 23) {
+    
+            if (yon == "aşağı-sağ") {
+                
+                yon = "yukarı-sağ"
+    
+            } else if (yon == "aşağı-sol") {
+                
+                yon = "yukarı-sol"
+                
+            }
+    
+        }
+    
+    
+    
+    }
+    
+}
+    
+//yılanın yönünü değiştir.
+var yonDegistir = function($yon) {
+    
+    yon = $yon
+    
+}
+    
+var oyunEkraniOlustur = function() {
+    
+    //Animasyonsuz olarak çizim yap.
+    animasyonKapat()
+    
+    for (var y = 1; y &lt;= 23; y++) {
+    
+        for (var x = 1; x &lt;= 30; x++) {
+    
+            kareBoya(x, y, "siyah")
+
+        }
+
+    }
+    
+    for (var y = 2; y &lt;= 22; y++) {
+    
+        for (var x = 2; x &lt;= 29; x++) {
+    
+            kareBoya(x, y, "beyaz")
+
+        }
+
+    }
+    
+    //kareBoya(2, 2)
+    
+    //Animasyonsuz olarak çizim yap.
+    animasyonAc()
+    
+}
+    
+oyunEkraniOlustur()
+    
+//4 tane yem çiz.
+//kareBoya(10, 5, "turuncu")
+//kareBoya(10, 17, "turuncu")
+//kareBoya(18, 5, "turuncu")
+//kareBoya(15, 10, "turuncu")
+
+//Başlangıçta, yılanı çiz. 1 kere çizilmesi yeterli
+//çünkü hareket ettirmek için her seferinde, 
+//yılanın sonundan bir kare silip, başına bir kare ekleyeceğiz.
+//for(var i = 0; i &lt; noktalar.length; i++ ) {
+    kareBoya(nokta.x, nokta.y, renk)
+//}    
+
+//yılan 20 kere ilerlesin
+for (var i = 1; i &lt;= 100; i++) {
+    bekle(100)
+    ilerle()
+}
+
+    
+</div>
+        
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/coding.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/coding2.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script>
+            
+            var editor1;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                    
+                    case "1":
+                        
+                        Coding.options.fullScreenMode = 0;
+                        Coding2.dontUseAnimationEngine = 1;
+                        
+                        Coding2.init();
+                        
+                        //if(document.getElementById("mycanvas1")) document.getElementById("mycanvas1").style.zoom = 2.0;
+                        
+                        Coding2.dontUseAnimationEngine = 0; 
+                        
+                        break;
+                        
+                        }
+                
+            };
+            
+            Page.codingFinished = function($e){ 
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        break;
+                        
+                        
+                       }
+            
+            };
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("sample");
+                
+                Coding.init();
+                
+                document.addEventListener("onGameRefreshed", Page.codingInit);
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                
+                Coding.setOption("1", "resetButtonEnabled", 1);
+                Coding.createNewEditorHTML("1");
+                //Coding.showEditorButtons("1",["reset"]);
+                Coding.setScreenColor("1", "#4A90E2");
+                Coding.setScreenHeight("1", "460px");
+                //Coding.changeRunButton("1","play");
+                editor1 = ace.edit("editor1");
+                //editor1.setReadOnly(true);
+                Coding.createNewEditor("1");
+                Coding.setSnippetIDList("1", Coding.snippetCodingIDList.concat(Coding.snippetCoding2IDList));
+                Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"));
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                
+                //App.setPageScore("lesson6", 1);
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,125 @@
+
+.boxbtn-main { 
+    position:relative;
+    background-color: #F6F6F6;
+    font-family: opensans;
+    margin: 0px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    color:#FFFFFF;
+    border-radius: 13.5px;
+    font-size: 18px;
+    text-align: justify;
+    overflow: hidden; /* line-height: 100%; */ 
+}
+
+.boxbtn-main-gray { 
+    position:relative;
+    background-color:whitesmoke;
+    background-image:radial-gradient(whitesmoke, lightgray);
+    font-family: opensans;
+    margin: 0px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    color:#FFFFFF;
+    border-radius: 13.5px;
+    font-size: 18px;
+    text-align: justify;
+    overflow: hidden;
+}
+
+
+.boxbtn-italic-text { color:#4A4A4A;font-family: roboto-lightitalic; }
+
+.boxbtn-bold-text { color:#4A4A4A;font-family: opensans-bold; }
+
+.boxbtn-char-text { font-family: roboto;color:#4A4A4A;background-color: white;padding-right: 6px;padding-left: 6px;border-radius: 3px;padding-top: 1px; border:solid 1px #4A4A4A; }
+
+.boxbtn-centered-bold-title { display: block;color:#FFFFFF; font-family: opensans-bold;text-align: center;padding-top: 20px;font-size: 30px;padding-bottom: 5px; /* text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1); */ }
+.boxbtn-centered-bold-title-gray { display: block;color:#141414; font-family: opensans-bold;text-align: center;padding-top: 20px;font-size: 30px;padding-bottom: 5px; }
+
+.boxbtn-normal-text { /* text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1); */ opacity: 0.85;font-family: opensans;font-size:18px; }
+.boxbtn-normal-text-gray { opacity: 0.6;font-family: opensans;font-size:18px;color:#141414; }
+
+.boxbtn-centered-item-cont { display:flex;justify-content:center;align-items:center;height: 28px;margin-bottom: 20px;margin-top: 40px; }
+
+.boxbtn-button { position: relative; width: auto; margin-right: 10px; margin-left: 10px; font-family: opensans;padding: 12px; font-size: 20px;padding-bottom: 10px;padding-right: 20px;padding-left: 20px; opacity:0.97;color:#FFFFFF;border: solid 0px black;background-color: rgba(0, 0, 0, 0.85);border-radius: 13.5px;box-shadow: inset 0px -2px 0px 0px rgba(0, 0, 0, 1);background-image: url("../img/exercises/button-background.png"); }
+
+
+/*
+.boxbtn-button {
+    
+    position:relative;
+    overflow: hidden;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-family: opensans;
+    font-size: 20px;
+    text-align: center;
+    background-color:lightgray;
+    color: rgba(0, 0, 0, 0.90);
+    border: 0px solid rgba(0, 0, 0, 0.40);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.40);
+    width: 130px;
+    padding: 12px; font-size: 20px;padding-bottom: 10px;padding-right: 20px;padding-left: 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-image: url("../img/exercises/button-background.png");
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    
+}
+*/
+
+.boxbtn-button.opened {  }
+
+.boxbtn-button.locked { padding-left: 50px; }
+
+.boxbtn-tag {
+    position:absolute;
+    top:2px;
+    right:2px;
+    /*width:auto;*/
+    height:14px;
+    font-family: opensans;
+    /* font-weight: bold; */
+    font-size: 12px;
+    background-color: #ffffff;
+    color: #333;
+    padding: 16px;
+    padding-bottom: 6px;
+    padding-top:3px !important;
+    /* border: solid 1px #ffc42d; */
+    border-radius: 4px;
+    border-top-right-radius:13.5px;
+    border-bottom-left-radius:13.5px;
+    opacity: 0.7;
+}
+
+.boxbtn-tag-gray {
+    position:absolute;
+    top:2px;
+    right:2px;
+    /*width:auto;*/
+    height:14px;
+    font-family: opensans;
+    /* font-weight: bold; */
+    font-size: 12px;
+    background-color:white;
+    color: #141414;
+    padding: 16px;
+    padding-bottom: 6px;
+    padding-top:3px !important;
+    /* border: solid 1px #ffc42d; */
+    border-radius: 4px;
+    border-top-right-radius:13.5px;
+    border-bottom-left-radius:13.5px;
+    opacity: 1;
+}

@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Renkleri tara - Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Renkleri tara - Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/samples.css">
+        <link rel="stylesheet" type="text/css" href="../css/basic-editor.css">
+        <link rel="stylesheet" type="text/css" href="../basic/kutuphane/basic-1.3.css">
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/basic-editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/basic-minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../basic/kutuphane/basic-1.3.js" type="text/javascript" charset="utf-8"></script>
+        
+        <style>
+        
+        .alert-yellow { position:relative;background-color: #F6F6F6;font-family: roboto;margin: 20px;margin-top: 40px;margin-bottom: 40px;padding: 20px;padding-top: 10px;padding-bottom: 10px; color:#4A4A4A;border-radius: 8px;font-size: 18px;text-align: justify;/* line-height: 100%; */ }
+
+        .alert-centered-bold-title { display: block;color:#4A4A4A; font-family: roboto-bold;text-align: center;padding-top: 20px}
+
+        
+        </style>
+        
+        <script>
+            
+            // var start;
+            
+            var editor1;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                    
+                    case "1":
+                        
+                        break;
+                    
+                    }
+                
+            };
+            
+            Page.codingFinished = function($e){
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        break; 
+                        
+                   }
+            
+            };
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("sample");
+                
+                Coding.init();
+                
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameStarted", Page.codingFinished);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                
+                Coding.setOption("1", "resetButtonEnabled", 1);
+                //Coding.setOption("1", "saveButtonEnabled", "code-js-s1"); //sample saving path: "code-e2-1"
+                
+                Coding.createNewEditorHTML("1");
+                Coding.setScreenColor("1", "white"); //#F6F6F6, #D8D8D8
+                Coding.setScreenHeight("1", "260px");
+                editor1 = ace.edit("editor1");
+                //editor1.setReadOnly(true);
+                Coding.createNewEditor("1");
+                Coding.setSnippetIDList("1", Coding.snippetCodingIDList);
+                
+                // Eğer resetButton aktif ise
+                Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"));
+                // Eğer saveButton aktif ise
+                //Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"), "code-js-s1");
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                
+                //App.setPageScore("lesson6", 1);
+                
+            };
+            
+            
+            
+        
+        </script>
+
+    </head>
+    <body>
+        
+        <div id="app-cont">
+            
+            <a href="../pages/samples.htm"><div class="close-btn"><img src="../img/samples/sample-close-btn.png" /></div></a>
+            
+            <div onclick="App.gotoYouTubeURL('https://www.youtube.com/watch?v=zPOKz3w1YmY');" class="video-btn"><img src="../img/samples/video-btn.png" /></div>
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+            <p class="normal-title">Merhaba Dünya</p>
+                
+                <p>Bir düğme (Button) nesnesine basıldığında, bir metin kutusu (TextBox) nesnesinin içine "Merhaba Dünya" yazdıran uygulama.</p>
+                
+                <!-- <p>Yılanı oluşturan karelerin koordinatları, <span class="normal-bold-text">noktalar</span> isminde bir dizi değişkeninde saklanıyor. </p>
+                <p><span class="normal-bold-text">ilerle()</span> fonksiyonu, yılanın bir birim ilerlemesini sağlıyor.</p> -->
+
+            </div>
+            
+            <!-- TEXT GROUP END -->
+            
+<!-- 1 --><div id="editor-cont1"></div>
+            
+            <div class="normal-text-group">
+                
+                <!--
+                <p class="normal-bold-text2">Çalışma mantığı:</p>
+                
+                <p><span class="normal-bold-text">btnYaz</span> isimli nesneye (Button) basıldığında,  <span class="normal-bold-text">mesajYaz()</span> fonksiyonu çalışır.</p>
+                
+                <p><span class="normal-bold-text">mesajYaz()</span> fonksiyonu, <span class="normal-bold-text">txtMesaj</span> isimli nesneye <span class="normal-italic-text">(TextBox)</span> <span class="normal-bold-text2">"Merhaba Dünya"</span> yazdırır.</p>
+
+                -->
+                
+                <p class="normal-bold-text2">Çalışma Mantığı:</p>
+                        
+                <ul>
+                <li>Bir metin kutusu ve bir düğme nesnesi, oluşturuluyor ve istenilen konumlara hizalanıyor.</li>
+                <li>btnYaz isimli düğme nesnesine basıldığında,  mesajYaz() fonksiyonu çalışıyor.</li>
+                <li>mesajYaz() fonksiyonu, txtMesaj isimli metin kutusu nesnesine "Merhaba Dünya" yazdırıyor.</li>
+                </ul>
+
+                <p class="normal-bold-text2">Geliştirme Önerisi:</p>
+                
+                <ul>
+                <li>txtMesaj isimli metin kutusunu (TextBox) temizleyen,
+                    başka bir düğme (Button) nesnesi eklenebilir.
+                    Button ismi, btnTemizle ve çağırdığı fonksiyon ismi, 
+                    mesajTemizle() olabilir.</li>
+                </ul>
+                
+            </div>
+
+            <div class="alert-yellow">
+            
+                <!-- <div class="alert-centered-bold-title">ÖNERİ</div> -->
+                <div class="alert-centered-bold-title">ÇALIŞMA YÖNTEMİ ÖNERİSİ</div>
+            
+                <p>Bu projenin kodlarını, bir deftere not alın:</p>
+                
+                <p>- Yeni bir JavaScript projesi oluşturun.<br>- Aldığınız notlardan, projeyi yeniden yazın.<br>- Ve geliştirme önerisini uygulamaya çalışın.<br>- Bu yöntemi, diğer projeler için de uygulamaya çalışın.</p>
+                    
+                </div>
+            
+            <div class="page-end-spacing"></div>
+        
+        </div><!-- content -->
+
+<div id="code-example1" style="display:none">// Kullanılacak değişkenleri tanımla.
+
+// Metin kutusu (TextBox) nesnesini taşıyacak değişkeni tanımla.
+var txtMesaj
+// Düğme (Button) nesnesini taşıyacak değişkeni tanımla.
+var btnYaz
+
+// NOT: Değişkenlerin başındaki ilk 3 harf (kısaltma)
+// içlerinde taşıdıkları nesneleri, algoritma içinde
+// daha rahat takip edebilmemiz için eklenmiştir.
+
+// İlk çalışan fonksiyon; her şey yüklendiğinde, otomatik çalıştırılır.
+var start = function() {
+
+    // Programın görünümünü oluştur.
+
+    // Metin kutusu (TextBox) nesnesini oluştur.
+    txtMesaj = createTextBox()
+    // Nesnenin sola olan mesafesini belirle. (Pixel cinsinden)
+    txtMesaj.left = 50
+    // Nesnenin yukarıya olan mesafesini belirle. (Pixel cinsinden)
+    txtMesaj.top = 50
+
+    // Düğme (Button) nesnesini oluştur.
+    btnYaz = createButton()
+    // Nesnenin üzerindeki yazıyı belirle.
+    btnYaz.text = "Yaz"
+    // Nesnenin solo olan mesafesini belirle.
+    btnYaz.left = 50
+    // Nesnenin yukarıya olan mesafesini belirle.
+    btnYaz.top = 110
+
+    // Nesneye basıldığında, mesajYaz() fonksiyonun çalışsın.
+    btnYaz.onClick(mesajYaz)
+
+    // NOT: mesajYaz() fonksiyonun sonunda parantez kullandığımızda,
+    // fonksiyonun çalışmasını istemiş oluyoruz.
+    // Parametre olarak bir fonksiyon gönderirken,
+    // parantezleri yazmıyoruz.
+    
+}
+
+// Düğmeye basıldığında, metin kutusunda mesajı gösteren fonksiyon.
+var mesajYaz = function() {
+
+    // Metin kutusunun içine mesajı aktar.
+    txtMesaj.text = "Merhaba Dünya"
+    
+}
+</div>        
+</body>
+</html>

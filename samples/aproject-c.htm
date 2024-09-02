@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Alıştırma - Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Alıştırma - Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/coding.css">
+        <link rel="stylesheet" type="text/css" href="../css/samples.css">
+        
+        <!-- <link rel="stylesheet" type="text/css" href="../css/exercise1.css"> -->
+
+    </head>
+    <body>
+        
+        <div class="colored-background" style="background-color:#141414;"></div>
+        
+        <div id="app-cont" style="background-color:#141414;">
+            
+            <div class="project-title-box">
+                
+                <img src="../img/samples/project-title-black.png" width="600" />
+                
+                <a href="../pages/samples.htm"><div class="project-close-btn"></div></a>
+                
+                <div id="project-title" class="project-title"></div>
+            
+            </div>
+            <!-- TEXT GROUP END -->
+            
+<!-- 1 -->  <div id="editor-cont1"></div>
+                
+            <div class="page-end-spacing"></div>
+        
+        </div><!-- content -->
+
+<div id="code-example1" style="display:none">//ekrana yaz
+yaz("Merhaba dünya!")
+
+
+
+</div>
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/coding.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/newproject.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script>
+            
+            var editor1;
+            
+            var Page = function(){};
+            
+            //Exercise1.exPageID = 1;
+            
+            //Exercise1.exID = "e1";
+            Page.codeSavePath = "";
+            Page.projectItem = "";
+            
+            /*
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        break;
+                       }
+                
+            };
+            
+            Page.codingFinished = function($e){ 
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        break;
+                        
+                       }
+            
+            };
+            */
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("project");
+                
+                Coding.init();
+                
+                Page.projectItem = JSON.parse(storage.getItem("selected-project-item"));
+                
+                if(Page.projectItem){
+                    
+                //alert(Page.projectItem.ID);
+                Page.codeSavePath = "project-" + Page.projectItem.ID; 
+                    
+                document.getElementById("project-title").innerHTML = Page.projectItem.title;
+                
+                //document.addEventListener("onGameRefreshed", Page.codingInit);
+                //document.addEventListener("onGameStarting", Page.codingInit);
+                //document.addEventListener("onGameFinished", Page.codingFinished);
+                
+                //Coding.setOption("1", "isBasicUI", 1);
+                Coding.setOption("1", "fullScreenMode", 0);
+                Coding.setOption("1", "resetButtonEnabled", 0);
+                Coding.setOption("1", "saveButtonEnabled", Page.codeSavePath);
+                Coding.createNewEditorHTML("1");
+                Coding.setScreenColor("1", "#23BCC1");
+                Coding.setScreenHeight("1", "400px");
+                editor1 = ace.edit("editor1");
+                //editor1.setReadOnly(true);
+                Coding.createNewEditor("1");
+                //editor1.setReadOnly(1);
+                
+                //Coding.setSnippetIDList("1", ["101"]); //"004",
+                //Coding.setSnippetIDList("1", Coding.snippetCodingIDList.concat(Coding.snippetCoding1IDList));
+                Coding.setSnippetIDList("1", Coding.snippetCodingIDList);
+                Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"), Page.codeSavePath);
+                    
+                }
+                
+                //Başlangıçta sahneleri oluştur.
+                //Page.codingInit({editorNumber:'1'});
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

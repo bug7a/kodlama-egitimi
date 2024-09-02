@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Alıştırma - Çocuklar için kodlama (programlama oyunu)">
+        <meta name="keywords" content="Alıştırma - Çocuklar için kodlama (programlama oyunu)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/coding.css">
+        <link rel="stylesheet" type="text/css" href="../css/coding1.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/exercise1.css">
+        
+    </head>
+    <body>
+        
+        <div class="colored-background"></div>
+        
+        <div id="app-cont">
+            
+            <!-- CLOSE BUTTON -->
+            
+            <a href="exercise1.htm"><div class="close-btn"><img src="../img/exercisex/close-btn.png" /></div></a>
+            
+            <!-- QUESTION START -->
+            
+            <div class="normal-text-group">
+                
+                <p id="ex-page-number" class="normal-title">40</p>
+                
+                <!-- <div class="normal-img" ><img src="img/mission-btn.png" width="560" /></div> -->
+                
+                <!-- <p class="normal-text">Amaç;<br />Rasgele oluşturulmuş bir harita üzerinde,<br />robotun, anahtarı almasını, kilitli alanı açmasını <br />ve hedefe ulaşmasını sağlayan algoritmanın geliştirilmesi.</p>
+                
+                <p class="normal-text">Bilgi;<br />Harita tek yöne doğru kurgulanmıştır. Harita uzunluğu ve nesne konumları değişse de nesnelerin sırası her zaman aynı kalacaktır ve hedef her zaman, son konumda olacaktır.</p> -->
+                
+                <!-- <p class="normal-text">Adım #1</p> -->
+                
+                <p class="normal-text"><span class="bold">D. </span>Robot, her hareketini tamamladığında; <br />bir sonraki konumunu hesaplayın <br />ve eğer sonraki konumda,<br />kilitli bir alan var ise, anahtarı kullanın.</p>
+                
+                <!-- <p class="normal-text">Robotun, sona olan uzaklığını hesaplayıp, daha sonra kullanmak üzere bir değişkene aktarın ve ekrana yazdırın.</p>
+                
+                <p>Her adım, önceki algoritmanızın üzerine geliştirme yapacaksınız.</p> -->
+                
+                <!-- <p class="normal-text">(Nesne değişkeni kullanılmalı)</p> -->
+                
+                <!-- <p class="normal-text">Robotun sahip olduğu anahtar sayısını, <br />nesne değişkenini kullanarak, ekrana yazdırın. <br />Ardından; robotun, anahtarı almasını sağlayın <br />ve anahtar sayısını tekrar yazdırın.</p> -->
+                
+            </div>
+            
+            <!-- QUESTION END -->
+            
+<!-- EDITOR --><div id="editor-cont1"></div>
+            
+            <!-- TIPS AND VIDEO -->
+            
+            <div class="normal-text-group">
+                
+                <div class="alert-box">
+                
+                    <div class="alert-centered-bold-title">EK AÇIKLAMA</div>
+                    
+                    <p><a href="../pages/samples.htm"><span class="normal-bold-text">Projeler</span></a> bölümündeki örnekleri inceleyerek, algoritma tasarlama konusunda daha fazla bilgi edinebilirsiniz.</p>
+                        
+                </div>
+                <!--
+                <div id="t1-btn" class="normal-img" onclick="Exercise1.openTip('t1');" ><img src="../img/exercisex/tip-btn.png" width="560" /></div>
+                
+                <div id="t1-text" style="display:none;">
+                <div class="tip-basci-box"><p>robot.ilerle() fonksiyonunu, döngünün içine yazmalısın.</p></div>
+                </div>
+                -->
+                <!--
+                <div id="t2-btn" class="normal-sub-img" onclick="Exercise1.openTip('t2');" ><img src="../img/exercisex/tip-btn.png" width="560" /></div>
+                
+                <div id="t2-text" style="display:none;">
+                <div class="tip-basci-box-sub"><p>zemin.sonKonum</p></div>
+                </div>-->
+                
+                 <!-- <div class="normal-sub-img" ><img src="../img/exercisex/video-btn.png" width="560" /></div> -->
+                
+                <div onclick="Exercise1.gotoYouTubeURL('https://www.youtube.com/watch?v=lpEG_wbyGAM');" class="normal-img" ><img src="../img/exercisex/video-btn.png" width="560" /></div>
+                
+            </div>
+                
+            <div class="page-end-spacing"></div>
+        
+        </div><!-- content end -->
+
+<div id="code-example1" style="display:none"></div>
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/coding.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/coding1.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/exercise1.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script>
+            
+            var editor1;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        //setConsoleFontSize(16);
+                        
+                        Coding1.init();
+                        
+                        Coding1.dontUseAnimationEngine = 1;
+                        //Coding1.optionShowRobotEnergy = 1;
+                        //Coding1.optionShowKeyCount = 1;
+                        
+                        //11 birim uzunluğunda bir zemin oluştur.
+                        zemin.olustur(9 + zarAt(5))
+
+                        //haritanın sağ tarafına hedefi ve kilitli alanı yerleştir.
+                        zemin.nesneEkle("kilitli", zemin.sonKonum - 2)
+                        zemin.nesneEkle("hedef", zemin.sonKonum)
+                        //anahtar nesnesini rasgele bir konuma yerleştir.
+                        zemin.nesneEkle("key", 3 + zarAt(zemin.sonKonum - 6), 1, '')
+
+                        //robot nesnesini haritaya yerleştir, rasgele 6, 7, 8 konumlarından birine.
+                        zemin.nesneEkle("robot", zarAt(3), 100, '')
+
+                        //en fazla 6 tane ağaç ekle.
+                        for (var i = 1; i <= zarAt(15); i++) {
+
+                            //zemin üzerinde rasgele bir konuma ağaç ekle.
+                            zemin.nesneEkle("ağaç", zarAt(zemin.sonKonum))   
+
+                        }
+                        
+                        //if (zarAt(2) == 1) { 
+                        //    robot.geriDon();
+                        //}
+                        
+                        //zemin.olustur(5);
+                        //zemin.nesneEkle("tree", 1);
+                        //zemin.nesneEkle("tree", 4);
+                        //zemin.nesneEkle("tree", 7);
+                        //zemin.nesneEkle("tree", 8);
+                        //zemin.nesneEkle("locked", 4);
+                        //zemin.nesneEkle("locked", 6);
+                        //zemin.nesneEkle("locked", 8);
+                        //zemin.nesneEkle("key", 3, 1, '');
+                        //zemin.nesneEkle("key", 5, 1, '');
+                        //zemin.nesneEkle("key", 7, 1, '');
+                        //zemin.nesneEkle("energy", 1, 20, '');
+                        //zemin.nesneEkle("energy", 5, 15, '');
+                        //zemin.nesneEkle("energy", 3, 40, '');
+                        //zemin.nesneEkle("energy", 4, 25, '');
+                        //zemin.nesneEkle("finish", 3);
+                        //zemin.nesneEkle("robot", 2, 20, '');
+                        //robot.bilgiDuzenle("%5");
+                        //bilgiDuzenle("Anahtar: 0");
+                        //robot.geriDon()
+                        //zemin.nesneEkle("tree", 6);
+                        //zemin.nesneEkle("locked", 6);
+                        
+                        Coding1.dontUseAnimationEngine = 0;
+                        
+                        break;
+                       }
+                
+            };
+            
+            Page.codingFinished = function($e){ 
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        //Coding1.robotPosition = 0;
+                        //Coding1.robotEnergy = 0;
+                        //Coding1.robotKeyCount = 0;
+                        //Coding1.robotDirection = "right";
+                        //Coding1.robotEnergySpending = 5;
+                        //Coding1.groundMaxPosition = 0;
+                        //Coding1.groundMinPosition = 0;
+                        
+                        //Kilitli alanın pozisyonunu bul.
+                        /*
+                        var _lastPosition = -1;
+                        for ( var i = 1; i <= Coding1.groundMaxPosition; i++) {
+                            if (kilitAra(i) == 1) {
+                                _lastPosition = i;
+                                break;
+                            } 
+                        }
+                        */
+                        
+                        var consoleText = document.getElementById("coding-console-box1").innerHTML;
+                        //var printed = consoleText.search((_lastPosition - 1));
+                        //var printed2 = consoleText.search("anahtarı bulamadım");
+                        //var printed3 = consoleText.search("75");
+                        
+                        var codeText = editor1.getValue();
+                        var coded = codeText.search("if");
+                        var coded2 = codeText.search("kilitAra");
+                        //var coded3 = codeText.search("for");
+                        
+                        var _keywordCount = 0;
+                        var _keywordSource = editor1.getValue();
+                        var _keyword = "robot.anahtarKullan()";
+                            
+                        do {
+
+                            var _coded = _keywordSource.search(_keyword);
+
+                            if(_coded != -1) {
+                                _keywordSource = _keywordSource.substring(_coded + _keyword.length, _keywordSource.length);
+                                _keywordCount++;
+                            }
+
+                        } while (_coded != -1);
+                        
+                        if (Coding1.robotPosition == Coding1.groundMaxPosition && coded >= 0 && _keywordCount == 1 && coded2 >= 0) {
+                            
+                            Exercise1.showFinishedWindow();
+                            App.setPageScore(Exercise1.exID + "-" + Exercise1.exPageID, 1);
+                            Coding.saveCode("1", Exercise1.codeSavePath);
+                             
+                        }else{
+                            
+                            Exercise1.showFailWindow();
+                            
+                        }
+                        
+                        break;
+                        
+                       }
+            
+            };
+            
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("exercise");
+                
+                Coding.init();
+                Exercise1.init();
+                
+                document.addEventListener("onGameRefreshed", Page.codingInit);
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                document.addEventListener("onAnimationTurnStarted", Page.animationTurnStarted);
+                
+                Exercise1.createStandartEditor();
+                
+                var _prevCode = JSON.parse(storage.getItem("code-e1-39"));
+                Coding.insertCodeToEditor("1", _prevCode, Exercise1.codeSavePath);
+                
+                //Coding.setSnippetIDList("1", ["004","101", "103", "102", "104", "115", "110", "113", "109", "108", "114", "111"]); //"004",
+                Coding.setSnippetIDList("1", Coding.snippetCodingIDList.concat(Coding.snippetCoding1IDList));
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

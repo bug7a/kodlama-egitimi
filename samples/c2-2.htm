@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Dikdörtgen çiz - Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Dikdörtgen çiz - Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/samples.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/coding.css">
+        <link rel="stylesheet" type="text/css" href="../css/coding2.css">
+
+    </head>
+    <body>
+        
+        <div id="app-cont" style="background-color:#F6F6F6;">
+            
+            <a href="../pages/samples.htm"><div class="close-btn"><img src="../img/samples/sample-close-btn.png" /></div></a>
+            
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+            <p class="normal-title">Dikdörtgen çiz</p>
+                
+                <p>Verilen parametreler ile bir dikdörtgen çizen fonksiyon örneği ve bu fonksiyonu birden çok kere kullanarak, farklı boyut ve renklerde dikdörtgenler çizdiren algoritma.</p>
+                
+                <p><span class="normal-bold-text">koordinatSakla()</span> ve <span class="normal-bold-text">cizgiSakla()</span> fonksiyonlarının başına iki eğik çizgi ekleyerek devre dışı bırakabilirsiniz.</p>
+                
+            </div>
+            
+            <!-- TEXT GROUP END -->
+            
+<!-- 1 --><div id="editor-cont1"></div>
+            
+            <div class="normal-text-group">
+                
+                <!-- <p>Diğer bir örnekte ise; aradığımız şartın gerçekleştiği <span class="normal-italic-text"></span> veya gerçekleşmediği durumunu ekrana yazdıralım.</p>
+                
+                <p>Bu şart, iki farklı durumda gerçekleşebilir; <span class="normal-bold-text">"sonuc"</span> ismindeki değişkenin içeriği 5'dir veya 5'ten farklıdır.</p> -->
+                
+            </div>
+            
+            
+            <div class="page-end-spacing"></div>
+        
+        </div><!-- content -->
+
+        
+<div id="code-example1" style="display:none">// ###DİKDÖRTGEN ÇİZEN FONKSİYON BAŞLANGICI###    
+
+var dikdortgenCiz = function(baslaX, baslaY, genislik, yukseklik, renk) {
+    
+    //PARAMETRELER
+    
+    //baslaX parametresi: dikdörtgenin başlangıç x koordinatı
+    //baslaY parametresi: dikdörtgenin başlangıç y koordinatı
+    //genislik parametresi: dikdörtgenin genişliği
+    //yukseklik parametresi: dikdörtgenin yüksekliği
+    //renk parametresi: dikdörtgenin boyalı olacağı renk kodu
+    
+    // İÇİ DOLU BİR DİKDÖRTGEN ÇİZME ALGORİTMASI
+
+    //y koordinatını üreten döngü
+    for (var y = baslaY; y &lt; baslaY + yukseklik; y++) {
+
+        //x koordinatını üreten döngü
+        for (var x = baslaX; x &lt; baslaX + genislik; x++) {
+
+            //dikdörtgenin içindeki her kareyi boya
+            kareBoya(x, y, renk)
+
+            //Her tekrarda 25milisaniye bekle.
+            //bekle(25)
+
+        }
+
+    }
+    
+    
+    // İÇİ BOŞ BİR DİKDÖRTGEN ÇİZME ALGORİTMASI
+
+    //x koordinatını üreten döngü.
+    for (var x = baslaX; x &lt; baslaX + genislik; x++) {
+
+        //dikdörtgenin üst ve alt kenarlarını oluştur.
+        kareBoya(x, baslaY, "siyah")
+        kareBoya(x, baslaY + yukseklik - 1, "siyah")
+
+        //Her tekrarda 25milisaniye bekle.
+        //bekle(25);
+
+    }
+
+    //y koordinatını üreten döngü.
+    for (var y = baslaY; y &lt; baslaY + yukseklik; y++) {
+
+        //dikdörtgenin sağ ve sol kenarlarını oluştur.
+        kareBoya(baslaX, y, "siyah")
+        kareBoya(baslaX + genislik - 1, y, "siyah")
+
+        //Her tekrarda 25milisaniye bekle.
+        //bekle(25);
+
+    }
+    
+    
+}
+    
+// ###DİKDÖRTGEN ÇİZEN FONKSİYON SONU###
+    
+// --
+    
+// ###FONKSİYONU KULLANAN ALGORİTMA BAŞLANGICI###
+
+//Çizim alanını olustur yatay 60 kare, dikey 40 kare.
+kareleriOlustur(60, 40)
+//Koordinatları gösterme.
+koordinatSakla()
+//Kare kenarlık çizgilerini gösterme.
+cizgiSakla()
+//Animasyonsuz olarak çizim yap.
+//animasyonKapat()
+
+//dikdortgenCiz fonksiyonunu 4 kere çalıştır.
+for (var i = 1; i &lt;= 4; i++) {
+    
+    //rasgele parametreler ile dikdörtgen çiz.
+    //x parametresi 1 - 30 arası olabilir.
+    //y parametresi 1 - 30 arası olabilir.
+    //genislik parametresi 7 - 16 arası olabilir.
+    //yükseklik parametresi 7 - 12 arası olabilir.
+    //renk parametresi beyaz (0) ve siyah(1) hariç bir renk.
+    
+    dikdortgenCiz(zarAt(30), zarAt(30), 6 + zarAt(10), 6 + zarAt(6), 1 + zarAt(10))
+    
+}
+    
+</div>
+        
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/coding.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/coding2.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script>
+            
+            var editor1;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                    
+                    case "1":
+                        
+                        Coding.options.fullScreenMode = 0;
+                        Coding2.dontUseAnimationEngine = 1;
+                        
+                        Coding2.init();
+                        
+                        //document.getElementById("mycanvas1").style.zoom = 2.0;
+                        Coding2.dontUseAnimationEngine = 0; 
+                        
+                        break;
+                        
+                        }
+                
+            };
+            
+            Page.codingFinished = function($e){ 
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        break;
+                        
+                        
+                       }
+            
+            };
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("sample");
+                
+                Coding.init();
+                
+                document.addEventListener("onGameRefreshed", Page.codingInit);
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                
+                Coding.setOption("1", "resetButtonEnabled", 1);
+                Coding.createNewEditorHTML("1");
+                //Coding.showEditorButtons("1",["reset"]);
+                Coding.setScreenColor("1", "#FFFFFF");
+                Coding.setScreenHeight("1", "400px");
+                //Coding.changeRunButton("1","play");
+                editor1 = ace.edit("editor1");
+                //editor1.setReadOnly(true);
+                Coding.createNewEditor("1");
+                Coding.setSnippetIDList("1", Coding.snippetCodingIDList.concat(Coding.snippetCoding2IDList));
+                Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"));
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                
+                //App.setPageScore("lesson6", 1);
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

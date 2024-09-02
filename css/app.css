@@ -1,0 +1,363 @@
+/*
+bugra ozden 2020
+*/
+
+@font-face {
+    font-family: opensans;
+    src: url(../font/open-sans/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: opensans-bold;
+    src: url(../font/open-sans/OpenSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: opensans-lightitalic;
+    src: url(../font/open-sans/OpenSans-LightItalic.ttf);
+}
+
+/*
+@font-face {
+    font-family: raleway;
+    src: url(../font/open-sans/Raleway-Regular.ttf);
+}
+*/
+
+@font-face {
+    font-family: roboto;
+    src: url(../font/roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: roboto-bold;
+    src: url(../font/roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: roboto-lightitalic;
+    src: url(../font/roboto/Roboto-LightItalic.ttf);
+}
+
+a {
+    text-decoration: none;
+    cursor: default;
+}
+
+* {
+
+    /* Divlere tıklandığında karanlık çıkmasını engelle */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* -webkit-text-size-adjust: 50%; */
+
+}
+
+body {
+
+    margin: 0px;
+    padding: 0px;
+
+    margin-left: auto;
+    margin-right: auto;    
+
+    background-color: #FFFFFF;
+    font-family: opensans;
+    overflow-x: hidden;
+    overflow-y: scroll; /* overlay */
+    width: 600px;
+    
+    -webkit-text-size-adjust: auto;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+    
+
+}
+
+/* tüm içeriği taşıyan ana div, ekran yeniden boyutlandırıldığında görünür olur. */
+#app-cont {
+
+    display: none;
+    position: relative;
+    width: 600px;
+    background-color: white;
+    padding-top: 1px;
+
+}
+
+@keyframes fade {
+    from {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1.0;
+    }
+}
+
+.blink {
+    animation: fade 3000ms infinite;
+    -webkit-animation: fade 3000ms infinite;
+}
+
+/* STANDART */
+
+.header-top {
+    position: relative;
+    /* EKLEME: projeler bölümü tab çalışmaz. overflow: hidden; */
+    height: 70px;
+    width: 100%;
+    background-color: #F6F6F6;
+    border-bottom: solid 2px rgba(0, 0, 0, 0.1);
+    margin-top: -1px;
+    border-top: solid 1px rgba(0, 0, 0, 0.1);
+    /* border-bottom: solid 2px #B7B7B7 #E5E5E5; */
+}
+
+.header-bottom {
+    position: relative;
+    height: 70px;
+    width: 100%;
+    background-color: #F6F6F6;
+    border-top: solid 2px rgba(0, 0, 0, 0.1);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* border-top: solid 2px #B7B7B7; */
+}
+
+.header-icon {
+    position: absolute;
+    top: 0px;
+}
+
+.header-icon-txt {
+    position: absolute;
+    top: 25px;
+    font-family: opensans;
+    font-size: 14px;
+    color: #626262;
+}
+
+.normal-text-group {
+    position: relative;
+    width: 560px;
+    margin: 20px;
+    font-family: opensans;
+    font-size: 18px;
+    text-align: justify;
+    color: #4A4A4A;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.normal-title {
+    font-size: 30px;
+    font-family: opensans-bold;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.normal-sub-title {
+    font-size: 24px;
+    font-family: opensans-bold;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.normal-bold-text {
+    font-family: opensans-bold;
+    color: #4A4A4A;
+    background-color: #FFFCD6;
+    padding-right: 6px;
+    padding-left: 6px;
+    border-radius: 3px;
+    padding-top: 1px;
+}
+
+/* color:#4A4A4A; border:solid 1px #FFF573; */
+
+.normal-bold-text2 {
+    font-family: opensans-bold;
+    color: #4A4A4A;
+}
+
+/* color:#4A4A4A; border:solid 1px #FFF573; */
+
+.normal-centered-bold-title {
+    display: block;
+    color: #4A4A4A;
+    font-family: opensans-bold;
+    text-align: center;
+    padding-top: 20px
+}
+
+.normal-code-text {
+    font-family: opensans-bold;
+    color: #4A4A4A;
+    background-color: #FFFCD6;
+    padding-right: 6px;
+    padding-left: 6px;
+    border-radius: 3px;
+    padding-top: 1px;
+    border: solid 1px #FFF573;
+}
+
+.normal-italic-text {
+    color: #4A4A4A;
+    font-family: opensans-lightitalic;
+}
+
+/* font-family: opensans-lightitalic; */
+
+.normal-bold-colored {
+    color: #EE7553;
+    font-family: opensans-bold;
+}
+
+/*font-family: opensans-bold;*/
+
+.normal-img {
+    position: relative;
+    margin-left: 0px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.normal-sub-img {
+    position: relative;
+    margin-left: 0px;
+    margin-top: -28px;
+    margin-bottom: 30px;
+}
+
+.colored-background {
+    position: fixed;
+    display: block;
+    top: 0px;
+    width: 600px;
+    height: 100%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 999;
+}
+
+.close-btn img {
+    width: 40px;
+}
+
+.page-end-spacing {
+    position: relative;
+    height: 100px;
+}
+
+/* STANDART END */
+
+/*
+::-webkit-scrollbar,
+{
+    width: 8px;
+    z-index: 1000;
+}
+
+::-webkit-input-placeholder,
+::-webkit-scrollbar-thumb {
+    
+    background-clip: padding-box;
+    border-radius: 8px;
+    border: 4px solid transparent;
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    -webkit-transition: background-color 0.1s ease;
+    transition: background-color 0.1s ease;
+
+}
+*/
+
+/* input[type=text] { */
+.transparent-input {
+    font-family: opensans;
+    font-size: 20px;
+    text-align: center;
+    background-color: transparent;
+    /* border: 1px solid red; */
+    border: none;
+    width: 280px;
+    height: 36px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+/* input[type=text]:focus { */
+.transparent-input {
+
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+}
+
+.box-goto-page-loading {
+    position:fixed;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background-color:rgba(255, 255, 255, 0.8);
+}
+
+.motion-button {
+
+    transition: transform .5s;
+
+} 
+
+.motion-button:hover {
+
+    transform: scale(1.05);
+
+} 
+
+.motion-button:active {
+
+    /* filter: brightness(80%); */
+    transform: scale(1);
+
+}
+
+::-webkit-scrollbar {
+    
+    display:none !important;
+    
+}

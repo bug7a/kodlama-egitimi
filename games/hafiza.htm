@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+
+        <link rel="stylesheet" type="text/css" href="../basic/kutuphane/basic-1.3.css">
+        <script src="../basic/kutuphane/basic-1.3.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/dictionary.js" type="text/javascript" charset="utf-8"></script>
+        
+        <style>
+            
+        /* İçeriğin, web sayfası gibi seçilmesini engelle */
+        
+        * {
+            
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        body {
+
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            visibility: hidden;
+
+        }
+
+        .scene {
+            width: 100%;
+            height: 100%;
+            border: 0px solid #CCC;
+            margin: 0px 0;
+            perspective: 600px;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            transition: transform 1s;
+            transform-style: preserve-3d;
+            /* cursor: pointer; */
+            position: relative;
+        }
+
+        .card.is-flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card__face {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            /* line-height: 260px; */
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border: 0px solid #353435;
+            border-radius: 8px;
+            color: #353435;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .card__face--front {
+            background: #E6E6E6;
+        }
+
+        .card__face--back {
+            color: #C6733D;
+            border: 0px solid #C6733D;
+            background: #F8D369;
+            transform: rotateY(180deg);
+        }
+        
+        </style>
+        
+        <script>
+            
+        // DEĞİŞKENLER
+
+        var Page = {}
+        Page.init = function() {}
+        
+        // Uygulamanın sayfaları.
+        var boxStartPage, boxPage1, boxPage2
+        var finishedDialog
+        var boxDificultSettings
+
+        var lblInfo
+        var btnCheck
+        var lblRefreshButtonCount
+        var lblSolvedProblemsCount
+        
+
+        // oyun zorluğu 0, 1 veya 2
+        var difficulty = 0
+        // kart gösterme zamanı
+        var showCardTimes = [5, 10, 15]
+        var refreshButtonCounts = [2, 4, 7]
+        // 1: showing cards, 2: game playing
+        var gameStartingCount = 0
+        var gameStartingObject
+
+        var canClick = 1
+
+        var cardList = []
+        // cardList ile aynı uzunlukta, seçilmiş kartlar 1
+        var selectedCardIndex = []
+        // Rasgele belirlenmiş toplam kart sayısı
+        var selectedCardCount = 0
+        var openedTrueCardCount = 0
+        var openedFalseCardCount = 0
+
+        var lblInfoClickedTimeOut
+
+        var cardCount = [
+            [3, 3],
+            [4, 5],
+            [5, 7]
+        ];
+
+        var cardColors = [
+            "#23BCC1",
+            "#F9D458",
+            "#EB5569",
+            "#23ACCF",
+            "#F5BF4E",
+            "#FE5D49",
+            "#CC75AA",
+            "#5ABB9F",
+            "#588ABE"
+        ]
+
+        var sndTrue
+        var sndFinish
+        var sndFalse
+
+        var robotIcon
+        
+        // ÖZEL FONKSİYONLARI
+            
+        // İlk çalışan fonksiyon.
+        var start = function() {
+            
+            page.color = "white"
+            
+            // 600px lik içeriğimi, en fazla 900px e kadar ekrana sığdır.
+            page.fit(600, 850)
+            
+            // NOT: tüm mobil cihazlarda, ekrana tam oturur.
+            // - Sayfa 600px genişliğinde tasarlanıyor.
+            // - Cihazın ekran genişliği daha az veya daha çok olduğunda, 
+            //   tüm içeriği, küçültüp, büyütür.
+            
+            // Uygulama kapatılır ise, açılış sayfası bu oyun olur.
+            window.localStorage.setItem("global-last-url", window.location.href.toString());
+
+            sndTrue = new Sound();
+            that.load("../sound/flipcard.wav");
+            sndFinish = new Sound();
+            that.load("../sound/success3.wav");
+            sndFalse = new Sound();
+            that.load("../sound/bip.wav");  
+
+            // Başlangıç sayfasının oluştur.
+            boxStartPage = createBox(0, 0, 600, page.height)
+            // Görünmez olarak ayarla.
+            that.visible = 0
+            that.color = "white"
+            that.border = 0
+            that.scrollY = 1
+            // Sayfanın içeriğini oluştur.
+            createStartPage()
+            
+            // Sayfa1 i oluştur.
+            boxPage1 = createBox(0, 0, 600, page.height)
+            that.visible = 0
+            that.color = "white"
+            that.border = 0
+            // Eğer gerekirse, dikey kaydırma çubuğu çıksın.
+            that.scrollY = 1
+            createPage1()
+            
+            // Sayfa2 yi oluştur.
+            boxPage2 = createBox(0, 0, 600, page.height)
+            that.visible = 0
+            that.color = "white"
+            that.border = 0
+            that.scrollY = 1
+            createPage2()
+
+            finishedDialog = createGameFinishedDialog()
+            finishedDialog.visible = 0
+
+            //boxStartPage.visible = 0
+            //boxPage1.visible = 1
+            
+        }
+        
+        // DİĞER FONKSİYONLAR
+        
+        // Başlangıç sayfasının içeriğini oluştur.
+        var createStartPage = function() {
+
+            // Background
+            var _bg = createImage(0, 0, boxStartPage.width, boxStartPage.height)
+            that.load("hafiza/start-background.jpg")
+            boxStartPage.add(that)
+
+            // CLOSE BUTTON
+            var closeButton = createImage(0, 0, 40, 40)
+            that.load("hafiza/first-close-button.svg")
+            that.top = 40
+            that.right = 40
+            boxStartPage.add(that)
+            that.onClick(function() {
+                go("../pages/games.htm");
+            })
+            
+            // Logo
+            createImage(36, 52, 518, 235)
+            that.load("hafiza/logo.svg")
+            boxStartPage.add(that)
+
+            // Desc
+            createImage(71, 573, 456, 64)
+            that.load("hafiza/start-desc.svg")
+            boxStartPage.add(that)
+
+            // Start Button
+            createImage(209, 662, 182, 89)
+            that.load("hafiza/start-btn.svg")
+            that.onClick(function() {
+                showPage1()
+                startNewGame()
+            })
+            boxStartPage.add(that)
+
+            boxDificultSettings = createBox(205, 440, 190, 59)
+            that.border = 0
+            that.color = "transparent"
+            that.contElement.style.overflow = "visible"
+            boxStartPage.add(that)
+
+            boxDificultSettings.lblTitle = createLabel(0, -40, 190)
+            that.textAlign = "center"
+            that.textColor = "#141414"
+            that.fontSize = 24
+            that.opacity = 0.5
+            
+
+            boxDificultSettings.bt1 = createImage(2, 2, 55, 55)
+            that.load("hafiza/dot-full.svg")
+            that.onClick(function() {
+                setDificulty(0)
+            })
+
+            boxDificultSettings.bt2 = createImage(70, 2, 55, 55)
+            that.load("hafiza/dot-empty.svg")
+            that.onClick(function() {
+                setDificulty(1)
+            })
+
+            boxDificultSettings.bt3 = createImage(135, 2, 55, 55)
+            that.load("hafiza/dot-empty.svg")
+            that.onClick(function() {
+                setDificulty(2)
+            })
+
+            difficulty = data.load("hafiza1-game-dificulty") || 0
+            setDificulty(difficulty)
+
+            //that.text = "Toplam " + (data.load("matematik-yarisi-totalSolvedProblem") || 0) + " matematik sorusu çözüldü.";
+
+            // Robot İcon
+            robotIcon = createImage(51, 0, 100, 100)
+            that.load("hafiza/robot-icon.svg")
+            that.bottom = 0
+            boxStartPage.add(that)
+
+            lblSolvedProblemsCount = createLabel(0, 0, 600, 30)
+            that.textAlign = "center"
+            that.text = (data.load("hafiza1-game-totalSolvedProblem") || 0) + " Bulmaca Çözüldü."
+            that.fontSize = 20
+            that.textColor = "#141414"
+            that.opacity = 0.5
+            that.bottom = 35
+            boxStartPage.add(that)
+
+            // Eğer scroll çıkar ise, arka planı ona göre uzat.
+            setTimeout(function() {
+                if (boxStartPage.element.scrollHeight > boxStartPage.height) {
+                    _bg.height = boxStartPage.element.scrollHeight + 120;
+
+                    // Arka plana göre yeniden konumlandır.
+                    robotIcon.top = _bg.height - robotIcon.height
+                    lblSolvedProblemsCount.top = _bg.height - lblSolvedProblemsCount.height - 35
+
+                }
+            }, 1)
+            
+            // Başlangıç sayfasını oluşturduktan sonra, görünür yap.
+            boxStartPage.visible = 1
+            setTimeout(function() {
+                document.getElementsByTagName("BODY")[0].style.visibility = "visible";
+            }, 40)
+            
+        }
+
+        var setDificulty = function($difficulty) {
+
+            boxDificultSettings.bt2.load("hafiza/dot-empty.svg")
+            boxDificultSettings.bt3.load("hafiza/dot-empty.svg")
+
+            if ($difficulty > -1) {
+                boxDificultSettings.bt1.load("hafiza/dot-full.svg")
+                boxDificultSettings.lblTitle.text = "Zorluk: Kolay"
+            }
+
+            if ($difficulty > 0) {
+                boxDificultSettings.bt2.load("hafiza/dot-full.svg")
+                boxDificultSettings.lblTitle.text = "Zorluk: Orta"
+            }
+
+            if ($difficulty > 1) {
+                boxDificultSettings.bt3.load("hafiza/dot-full.svg")
+                boxDificultSettings.lblTitle.text = "Zorluk: Çok Zor"
+            }
+
+            difficulty = num($difficulty)
+            data.save("hafiza1-game-dificulty", difficulty)
+            //alert(difficulty)
+
+            if (boxPage1) {
+                boxPage1.html = ""
+                createPage1()
+            }
+            
+
+        }
+        
+        
+        // OYUN SAYFASI: Sayfa1 in içeriğini oluştur.
+        var createPage1 = function() {
+
+            var cardWidth = num(( (600 - 50) / cardCount[difficulty][0]), "integer");
+            var cardHeight = num(( (page.height - 140) / cardCount[difficulty][1]), "integer");
+
+            cardWidth -= 10;
+            cardHeight -= 10;
+
+            // Background
+            //createImage(0, 0, boxPage1.width, boxPage1.height)
+            //that.load("ingilizce-kelimeler/background2.jpg")
+            //boxPage1.add(that)
+
+            // REFRESH BUTTON
+            var refreshButton = createImage(40, 40, 118, 40)
+            that.load("hafiza/show-button.svg")
+            boxPage1.add(that)
+            that.onClick(openOneOfSelectedCard)
+            /*
+            that.onClick(function() {
+                closeAllCards();
+                refreshCards();
+            });
+            */
+
+            // REFRESH BUTTON TEXT
+            lblRefreshButtonCount = createLabel(44, 42, 30, 40)
+            that.textAlign = "center"
+            that.text = 6
+            that.fontSize = 26
+            boxPage1.add(that)
+
+            
+            // CLOSE BUTTON
+            var closeButton = createImage(0, 0, 40, 40)
+            that.load("hafiza/second-close-button.svg")
+            that.top = 40
+            that.right = 40
+            boxPage1.add(that)
+            that.onClick(hidePage1)
+
+            // INFO LABEL
+            lblInfo = createLabel(40, 44, 200, 30)
+            boxPage1.add(that)
+            that.text = "1 / 34"
+            that.textAlign = "center"
+            that.fontSize = 25
+            that.center("left")
+            //that.onClick(lblInfoClicked)
+
+            // KONTROL ET BUTTON
+            btnCheck = createButton()
+            that.text = "? / 23"
+            that.width = 180
+            that.top = 40
+            that.minimal = 1
+            that.color = "white"
+            that.center("left")
+            that.visible = 0
+            boxPage1.add(that)
+
+
+            cardList = [];
+
+            for (var y = 1; y <= cardCount[difficulty][1]; y++) {
+                for (var x = 1; x <= cardCount[difficulty][0]; x++) {
+
+                    var cardX = 30 + ((cardWidth + 10) * (x - 1));
+                    var cardY = 120 + ((cardHeight + 10) * (y - 1));
+
+                    // CARD
+                    createBox(cardX, cardY, cardWidth, cardHeight)
+                    that.value = "1"
+                    that.border = 0
+                    that.color = "transparent"
+                    that.contElement.style.overflow = "visible";
+                    that.html = `
+                        <div class="scene scene--card">
+                        <div class="card">
+                            <div class="card__face card__face--front">front</div>
+                            <div class="card__face card__face--back">back</div>
+                        </div>
+                        </div>
+                    `
+                    that.onClick(cardClicked);
+                    boxPage1.add(that)
+                    cardList.push(that);
+
+                }
+            }
+
+            startNewGame();
+            
+        }
+
+        // Yeni bir oyun başlat.
+        var startNewGame = function() {
+
+            openedTrueCardCount = 0
+            openedFalseCardCount = 0
+
+            lblRefreshButtonCount.text = refreshButtonCounts[difficulty]
+
+            if(gameStartingObject) {
+                gameStartingObject = clearInterval(gameStartingObject)
+            }
+
+            closeAllCards();
+            refreshCards();
+            openSelectedCards();
+
+            // Butonlara basılamasın.
+            canClick = 0
+
+            lblInfo.text = ""
+
+            gameStartingCount = showCardTimes[difficulty]
+
+            gameStartingObject = setInterval(function() {
+
+                if (gameStartingCount > -1) {
+                    if (gameStartingCount != 0) {
+                        lblInfo.text = gameStartingCount;
+                    } else {
+                        lblInfo.text = "Başla";
+                    }
+                    gameStartingCount--;
+
+                } else {
+
+                    clearInterval(gameStartingObject);
+
+                    // 3 soru sorulacak.
+                    // 3, 2, 1, soru görünecek.
+                    //gameStarted = 1;
+                    //createQuestion();
+
+                    closeAllCards()
+
+                    // Butonlara basılamasın.
+                    canClick = 1
+
+                }
+
+                }, 1000);
+
+            }
+
+        // Bir karta basıldı.
+        var cardClicked = function(clickedBox) {
+
+            if (canClick) {
+
+                var sndClicked = new Sound();
+                that.load("../sound/flipcard.wav");
+                that.play()
+
+                if(clickedBox.value == "1") {
+                    //sndTrue.stop()
+                    //sndTrue.play()
+                    
+                    clickedBox.value = "2";
+                    clickedBox.contElement.childNodes[1].childNodes[1].setAttribute("class", "card is-flipped");
+                } else {
+                    clickedBox.value = "1";
+                    clickedBox.contElement.childNodes[1].childNodes[1].setAttribute("class", "card");
+                }
+
+                calculateTrueCards()
+
+            }
+        }
+
+        // Kaç kartın doğru açıldığını hesapla.
+        var calculateTrueCards = function() {
+
+            openedTrueCardCount = 0
+            openedFalseCardCount = 0
+
+            for (var i = 0; i < cardList.length; i++) {
+
+                if (cardList[i].value == "2") {
+                    
+                    if (selectedCardIndex[i] == 1) {
+                        openedTrueCardCount++
+                    } else {
+                        // Eğer kapalı olması gereken bir kart açık ise.
+                        openedFalseCardCount++
+                    }
+
+                }
+
+            }
+
+            // Oyunu kazandın.
+            if (openedTrueCardCount == selectedCardCount && openedFalseCardCount == 0) {
+                //alert("Fin")
+                //lblInfo.text = "Tebrikler";
+                // Oyun bitti ise paneli ? siz olarak göster.
+                
+
+                // Çözülmüş problem sayısını bir arttır ve güncelle.
+                var _solvedProblemsCount = num(data.load("hafiza1-game-totalSolvedProblem") || 0)
+                _solvedProblemsCount++
+                data.save("hafiza1-game-totalSolvedProblem", _solvedProblemsCount)
+                lblSolvedProblemsCount.text = _solvedProblemsCount + " Bulmaca Çözüldü."
+
+                clearTimeout(lblInfoClickedTimeOut)
+                lblInfo.text =  openedTrueCardCount + " / " + selectedCardCount
+                setTimeout(function() {
+                    finishedDialog.visible = 1
+                    sndFinish.play()
+                }, 1000)
+                canClick = 0
+            } else {
+                // Oyun bitmedi ise son seçime göre ? li olarak paneli güncelle.
+                lblInfo.text =  "? / " + selectedCardCount
+            }
+
+        }
+
+        
+        // ? / X alanındaki ? kısmını 2sn göster.
+        var lblInfoClicked = function() {
+            if (canClick) {
+                lblInfo.text =  openedTrueCardCount + " / " + selectedCardCount
+                clearTimeout(lblInfoClickedTimeOut)
+                lblInfoClickedTimeOut = setTimeout(function(){ 
+                    lblInfo.text =  "? / " + selectedCardCount
+                }, 2000);
+            }
+        }
+
+        // ipucu için, kapalı bir kartı aç.
+        var openOneOfSelectedCard = function() {
+            if (canClick && lblRefreshButtonCount.text != "0") {
+                for (var i = 0; i < cardList.length; i++) {
+                    if (cardList[i].value == "1") {
+                        if (selectedCardIndex[i] == 1) {
+                            //sndTrue.play()
+                            var sndAutoOpen = new Sound();
+                            that.load("../sound/flipcard.wav");
+                            that.play()
+                            cardList[i].value = "2";
+                            cardList[i].contElement.childNodes[1].childNodes[1].setAttribute("class", "card is-flipped");
+                            calculateTrueCards()
+                            break;
+                        }
+                    } else {
+                        if (selectedCardIndex[i] != 1) {
+                            var sndAutoClose = new Sound();
+                            that.load("../sound/flipcard.wav");
+                            that.play()
+                            cardList[i].value = "1";
+                            cardList[i].contElement.childNodes[1].childNodes[1].setAttribute("class", "card");
+                            calculateTrueCards()
+                            break;
+                        }
+                    }
+
+                }
+                lblInfoClicked()
+                lblRefreshButtonCount.text = str(num(lblRefreshButtonCount.text) - 1)
+            }
+        }
+
+        // Tüm kartları kapat.
+        var closeAllCards = function() {
+
+            for (var i = 0; i < cardList.length; i++) {
+
+                if (cardList[i].value == "2") {
+                    cardList[i].value = "1";
+                    cardList[i].contElement.childNodes[1].childNodes[1].setAttribute("class", "card");
+                }
+
+            }
+
+        }
+
+        // Yeni oyun için, kartları seç ve göster.
+        var refreshCards = function() {
+
+            //var _addedWordIndexList = [];
+            selectedCardIndex = [];
+            selectedCardCount = 0
+
+            for (var i = 0; i < cardList.length; i++) {
+
+                    // seçilmişler listesine yeni bir eleman ekle ve değerini 0 veya 1 yap.
+                    selectedCardIndex.push(0);
+                    selectedCardIndex[i] = random(0, 1)
+
+                    if (selectedCardIndex[i] == 1) {
+                        selectedCardCount++
+                    }
+
+                    // Türkçe Göster:
+                    cardList[i].contElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = "";
+                    cardList[i].contElement.childNodes[1].childNodes[1].childNodes[3].innerHTML = `<img src="hafiza/img/` + random(1, 40) + `.svg" width="80" height="80" />`;
+                    cardList[i].contElement.childNodes[1].childNodes[1].childNodes[3].style.backgroundColor = cardColors[random(0, cardColors.length - 1)];
+
+            }
+
+        }
+
+        // Tüm seçilen kartları aç.
+        var openSelectedCards = function() {
+
+            for (var i = 0; i < cardList.length; i++) {
+
+                if (selectedCardIndex[i] == 1) {
+                    cardList[i].value = "2";
+                    cardList[i].contElement.childNodes[1].childNodes[1].setAttribute("class", "card is-flipped");
+                }
+
+            }
+
+        }
+
+        // BİTİŞ PENCERESİ
+        var createGameFinishedDialog = function() {
+
+            // KBitiş Penceresi: aranlık arka plan
+            var object = createBox(0, 0, 600, page.height)
+            that.color = "rgba(0, 0, 0, 0.8)"
+            that.border = 0
+
+            // Bitiş Penceresi: Beyaz arka kutu
+            object.boxBackground = createBox(0, 0, 600, 350)
+            that.bottom = 0
+            that.color = "white"
+            that.element.style.borderTopLeftRadius = "25px"
+            that.element.style.borderTopRightRadius = "25px"
+
+            // Bitiş Penceresi: Başlığı
+            object.boxBackground.lblTitle = createLabel(0, 60, 600)
+            that.text = "Tebrikler"
+            that.textAlign = "center"
+            that.fontSize = 28
+            //that.textColor = "#1a73e8"
+
+            // Bitiş Penceresi: Açıklaması
+            object.boxBackground.lblDescription = createLabel(0, 105, 600)
+            that.text = "Tüm kartları doğru olarak açtınız."
+            that.textAlign = "center"
+            that.fontSize = 22
+            that.opacity = 0.6
+            //that.textColor = "lightgray"
+
+            // Bitiş Penceresi: Butonu
+            object.boxBackground.btnNewGame = createButton(0, 170)
+            that.width = 240
+            that.height = 90
+            that.minimal = 1
+            that.round = 12
+            that.color = "#1a73e8"
+            that.text = "Yeniden Oyna"
+            that.textColor = "white"
+            that.fontSize = 26
+            that.center("left")
+            that.onClick(function() {
+                object.visible = 0
+                startNewGame()
+            })
+
+            // Bitiş Penceresi: Kapatma butonu
+            object.boxBackground.btnClose = createImage(0, 0, 40, 40)
+            that.load("hafiza/second-close-button.svg")
+            that.top = 30
+            that.right = 30
+            object.boxBackground.btnClose.onClick(function() {
+                object.visible = 0
+                hidePage1() 
+            })
+
+            return object
+
+        }
+        
+        // Sayfa2 nin içeriğini oluştur.
+        var createPage2 = function() {
+            
+            // Kapatma düğmesi.
+            var closeButton = createCloseButton()
+            boxPage2.add(closeButton)
+            closeButton.onClick(hidePage2)
+            
+            // Sayfa2 yazısı.
+            createLabel()
+            boxPage2.add(that)
+            that.text = "Sayfa 2"
+            that.fontSize = 40
+            that.textColor = "white"
+            that.textAlign = "center"
+            that.fontSize = 40
+            that.center()
+            
+            // Ekranın dışına çıkan içerik. yazısı.
+            createLabel()
+            boxPage2.add(that)
+            that.text = "Ekranın dışına çıkan içerik.<br>"
+            that.width = 560
+            that.height = 100
+            that.textColor = "white"
+            that.textAlign = "left"
+            that.fontSize = 20
+            that.left = 20
+            // Sayfanın en altından, 100px daha aşağıya yerleştir.
+            that.bottom = 0
+            that.bottom -= 100
+            
+        }
+        
+        // Sayfa1 i göster.
+        var showPage1 = function() {
+            boxPage1.visible = 1
+            closeAllCards();
+            refreshCards();
+        }
+        
+        // Sayfa2 yi göster.
+        var showPage2 = function() {
+            boxPage2.visible = 1
+            
+        }
+        
+        // Sayfa1 i gizle.
+        var hidePage1 = function() {
+            boxPage1.visible = 0
+            
+        }
+        
+        // Sayfa2 yi gizle.
+        var hidePage2 = function() {
+            boxPage2.visible = 0
+            
+        }
+        
+        var createCloseButton = function() {
+            
+            var createdButton = createLabel()
+            
+            that.text = "X"
+            that.fontSize = 35
+            that.width = DEFAULT.BUTTON_HEIGHT
+            that.top = 30
+            that.right = 30
+            that.textAlign = "center"
+            that.color = "rgba(255, 255, 255, 0.4)"
+            that.minimal = 1
+            that.round = 30
+            that.textColor = "tomato"
+            
+            return createdButton
+            
+        }
+        
+        </script>
+        
+
+    </head>
+    <body>
+        
+        <!-- HTML içeriği -->
+        
+    </body>
+</html>

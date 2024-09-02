@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Çarpım tablosu - Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Çarpım tablosu - Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/samples.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/coding.css">
+
+    </head>
+    <body>
+        
+        <div id="app-cont">
+            
+            <a href="../pages/samples.htm"><div class="close-btn"><img src="../img/samples/sample-close-btn.png" /></div></a>
+            
+            <div onclick="App.gotoYouTubeURL('https://youtu.be/Ah-J6M8tjcs');" class="video-btn"><img src="../img/samples/video-btn.png" /></div>
+            
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+            <p class="normal-title">Çarpım tablosu</p>
+                
+                <p>Tüm çarpım tablosunu hesaplayan ve ekrana yazdıran algoritma.</p>
+                
+            </div>
+            
+            <!-- TEXT GROUP END -->
+            
+<!-- 1 --><div id="editor-cont1"></div>
+            
+            <div class="normal-text-group">
+                
+                <!-- <p>Diğer bir örnekte ise; aradığımız şartın gerçekleştiği <span class="normal-italic-text"></span> veya gerçekleşmediği durumunu ekrana yazdıralım.</p>
+                
+                <p>Bu şart, iki farklı durumda gerçekleşebilir; <span class="normal-bold-text">"sonuc"</span> ismindeki değişkenin içeriği 5'dir veya 5'ten farklıdır.</p> -->
+                
+            </div>
+            
+            
+            <div class="page-end-spacing"></div>
+        
+        </div><!-- content -->
+
+        
+<div id="code-example1" style="display:none">//birinci sayı (i) için 10 kere tekrar et.
+for (var i = 1; i &lt;= 10; i++)
+{
+
+    //ikinci sayı (k) için 10 kere tekrar et.
+    for (var k = 1; k &lt;= 10; k++)
+    {
+
+        //üretilen 2 sayı ile işlemleri yap.
+        yaz(i + " x " + k + " = " + (i * k))
+
+    }
+
+    //her yeni birinci sayı (i) için 
+    //bir boşluk bırak.
+    yaz()
+    //500 milisaniye bekle.
+    bekle(500)
+
+}
+</div>
+        
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/coding.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script>
+            
+            var editor1;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                    
+                    case "1":
+                        
+                        //Coding.options.fullScreenMode = 1;
+                        
+                        break;
+                        
+                        }
+                
+            };
+            
+            Page.codingFinished = function($e){ 
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        break;
+                        
+                        
+                       }
+            
+            };
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("sample");
+                
+                Coding.init();
+                
+                document.addEventListener("onGameRefreshed", Page.codingInit);
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                
+                Coding.setOption("1", "resetButtonEnabled", 1);
+                Coding.setOption("1", "fullScreenMode", 1);
+                Coding.createNewEditorHTML("1");
+                //Coding.showEditorButtons("1",["reset"]);
+                Coding.setScreenColor("1", "#CC75AA");
+                Coding.setScreenHeight("1", "500px");
+                //Coding.changeRunButton("1","play");
+                editor1 = ace.edit("editor1");
+                //editor1.setReadOnly(true);
+                Coding.createNewEditor("1");
+                Coding.setSnippetIDList("1", Coding.snippetCodingIDList);
+                Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"));
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                
+                //App.setPageScore("lesson6", 1);
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

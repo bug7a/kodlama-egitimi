@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+
+        <link rel="stylesheet" type="text/css" href="../basic/kutuphane/basic-1.3.css">
+        <script src="../basic/kutuphane/basic-1.3.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/dictionary.js" type="text/javascript" charset="utf-8"></script>
+        
+        <style>
+            
+        /* İçeriğin, web sayfası gibi seçilmesini engelle */
+        
+        * {
+            
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        body {
+
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+
+        }
+
+        .scene {
+            width: 100%;
+            height: 100%;
+            border: 0px solid #CCC;
+            margin: 0px 0;
+            perspective: 600px;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            transition: transform 1s;
+            transform-style: preserve-3d;
+            /* cursor: pointer; */
+            position: relative;
+        }
+
+        .card.is-flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card__face {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            /* line-height: 260px; */
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border: 0px solid #353435;
+            border-radius: 8px;
+            color: #353435;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .card__face--front {
+            background: #E6E6E6;
+        }
+
+        .card__face--back {
+            color: #C6733D;
+            border: 0px solid #C6733D;
+            background: #F8D369;
+            transform: rotateY(180deg);
+        }
+        
+        </style>
+        
+        <script>
+            
+        // Bu mobil uygulama proje şablonu, Apache Cordova
+        // veya benzeri bir teknoloji ile mobil cihazlarda çalışacak,
+        // bir uygulama geliştirmek için kullanılabilir.
+        // https://cordova.apache.org/
+
+        // Apache Cordova'nın kullanımını anlatan, eğitim serisinden faydalanabilirsiniz.
+        // https://www.youtube.com/watch?v=MP20_9HXj0Q&list=PLlkulm4kNfGMGeh6sn2LSqkXbCw8p8fMc
+            
+        // DEĞİŞKENLER
+
+        var Page = {}
+        Page.init = function() {}
+        
+        // Uygulamanın sayfaları.
+        var boxStartPage, boxPage1, boxPage2
+        
+        // ÖZEL FONKSİYONLARI
+            
+        // İlk çalışan fonksiyon.
+        var start = function() {
+            
+            page.color = "white"
+            
+            // 600px lik içeriğimi, en fazla 900px e kadar ekrana sığdır.
+            page.fit(600, 850)
+            
+            // NOT: tüm mobil cihazlarda, ekrana tam oturur.
+            // - Sayfa 600px genişliğinde tasarlanıyor.
+            // - Cihazın ekran genişliği daha az veya daha çok olduğunda, 
+            //   tüm içeriği, küçültüp, büyütür.
+            
+            // Uygulama kapatılır ise, açılış sayfası bu oyun olur.
+            window.localStorage.setItem("global-last-url", window.location.href.toString());
+
+            // Başlangıç sayfasının oluştur.
+            boxStartPage = createBox(0, 0, 600, page.height)
+            // Görünmez olarak ayarla.
+            that.visible = 0
+            that.color = "white"
+            that.border = 0
+            that.scrollY = 1
+            // Sayfanın içeriğini oluştur.
+            createStartPage()
+            
+            // Sayfa1 i oluştur.
+            boxPage1 = createBox(0, 0, 600, page.height)
+            that.visible = 0
+            that.color = "white"
+            that.border = 0
+            // Eğer gerekirse, dikey kaydırma çubuğu çıksın.
+            that.scrollY = 1
+            createPage1()
+            
+            // Sayfa2 yi oluştur.
+            boxPage2 = createBox(0, 0, 600, page.height)
+            that.visible = 0
+            that.color = "white"
+            that.border = 0
+            that.scrollY = 1
+            createPage2()
+
+            //boxStartPage.visible = 0
+            //boxPage1.visible = 1
+            
+        }
+        
+        // DİĞER FONKSİYONLAR
+        
+        // Başlangıç sayfasının içeriğini oluştur.
+        var createStartPage = function() {
+
+            // Background
+            var _bg = createImage(0, 0, boxStartPage.width, boxStartPage.height)
+            that.load("ingilizce-kelimeler/background.jpg")
+            boxStartPage.add(that)
+
+            // CLOSE BUTTON
+            var closeButton = createImage(0, 0, 40, 40)
+            that.load("ingilizce-kelimeler/first-close-button.svg")
+            that.top = 40
+            that.right = 40
+            boxStartPage.add(that)
+            that.onClick(function() {
+                go("../pages/games.htm");
+            })
+            
+            // Logo
+            createImage(109, 74, 412, 237)
+            that.load("ingilizce-kelimeler/logo.png")
+            boxStartPage.add(that)
+
+            // Desc
+            createImage(80, 491, 439, 105)
+            that.load("ingilizce-kelimeler/desc.png")
+            boxStartPage.add(that)
+
+            // Start Button
+            createImage(186, 653, 228, 111)
+            that.load("ingilizce-kelimeler/start-button.svg")
+            that.onClick(showPage1)
+            boxStartPage.add(that)
+
+            // Eğer scroll çıkar ise, arka planı ona göre uzat.
+            setTimeout(function() {
+                if (boxStartPage.element.scrollHeight > boxStartPage.height) {
+                    _bg.height = boxStartPage.element.scrollHeight + 80;
+                }
+            }, 1)
+            
+            
+            
+            // Başlangıç sayfasını oluşturduktan sonra, görünür yap.
+            boxStartPage.visible = 1
+            
+            
+        }
+
+        var cardList = [];
+        
+        // Sayfa1 in içeriğini oluştur.
+        var createPage1 = function() {
+
+            var cardWidth = num((600 / 3), "integer") - 40;
+            var cardHeight = num((page.height / 3), "integer") - 78;
+
+            // Background
+            createImage(0, 0, boxPage1.width, boxPage1.height)
+            that.load("ingilizce-kelimeler/background2.jpg")
+            boxPage1.add(that)
+
+            // REFRESH BUTTON
+            var refreshButton = createImage(40, 40, 118, 40)
+            that.load("ingilizce-kelimeler/refresh-button.svg")
+            boxPage1.add(that)
+            that.onClick(function() {
+                closeAllCards();
+                refreshCards();
+            });
+            
+            // CLOSE BUTTON
+            var closeButton = createImage(0, 0, 40, 40)
+            that.load("ingilizce-kelimeler/close-button.svg")
+            that.top = 40
+            that.right = 40
+            boxPage1.add(that)
+            that.onClick(hidePage1)
+
+            cardList = [];
+
+            for (var y = 1; y <= 3; y++) {
+                for (var x = 1; x <= 3; x++) {
+
+                    var cardX = 39 + ((cardWidth + 20) * (y - 1));
+                    var cardY = 120 + ((cardHeight + 30) * (x- 1));
+
+                    // CARD
+                    createBox(cardX, cardY, cardWidth, cardHeight)
+                    that.value = "1"
+                    that.border = 0
+                    that.color = "transparent"
+                    that.contElement.style.overflow = "visible";
+                    that.html = `
+                        <div class="scene scene--card">
+                        <div class="card">
+                            <div class="card__face card__face--front">front</div>
+                            <div class="card__face card__face--back">back</div>
+                        </div>
+                        </div>
+                    `
+                    that.onClick(cardClicked);
+                    boxPage1.add(that)
+                    cardList.push(that);
+
+                }
+            }
+
+            refreshCards();
+            
+        }
+
+        var cardClicked = function(clickedBox) {
+            if(clickedBox.value == "1") {
+                clickedBox.value = "2";
+                clickedBox.contElement.childNodes[1].childNodes[1].setAttribute("class", "card is-flipped");
+            } else {
+                clickedBox.value = "1";
+                clickedBox.contElement.childNodes[1].childNodes[1].setAttribute("class", "card");
+            }
+        }
+
+        var closeAllCards = function() {
+
+            for (var i = 0; i < 9; i++) {
+
+                if (cardList[i].value == "2") {
+                    cardList[i].value = "1";
+                    cardList[i].contElement.childNodes[1].childNodes[1].setAttribute("class", "card");
+                }
+
+            }
+
+        }
+
+        var refreshCards = function() {
+
+            var _addedWordIndexList = [];
+
+            for (var i = 0; i < 9; i++) {
+
+                var _wordIndex;
+
+                while(_addedWordIndexList.includes(_wordIndex) || _wordIndex == undefined) {
+                    _wordIndex = random(0, (words.length - 1));
+                }
+
+                _addedWordIndexList.push(_wordIndex);
+
+                if(random(1, 2) == 1) {
+
+                    // Türkçe Göster:
+                    cardList[i].contElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = words[_wordIndex][1];
+                    cardList[i].contElement.childNodes[1].childNodes[1].childNodes[3].innerHTML = words[_wordIndex][0];
+
+                } else {
+
+                    // İngilice Göster:
+                    cardList[i].contElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = words[_wordIndex][0];
+                    cardList[i].contElement.childNodes[1].childNodes[1].childNodes[3].innerHTML = words[_wordIndex][1];
+
+                }
+
+            }
+
+        }
+        
+        // Sayfa2 nin içeriğini oluştur.
+        var createPage2 = function() {
+            
+            // Kapatma düğmesi.
+            var closeButton = createCloseButton()
+            boxPage2.add(closeButton)
+            closeButton.onClick(hidePage2)
+            
+            // Sayfa2 yazısı.
+            createLabel()
+            boxPage2.add(that)
+            that.text = "Sayfa 2"
+            that.fontSize = 40
+            that.textColor = "white"
+            that.textAlign = "center"
+            that.fontSize = 40
+            that.center()
+            
+            // Ekranın dışına çıkan içerik. yazısı.
+            createLabel()
+            boxPage2.add(that)
+            that.text = "Ekranın dışına çıkan içerik.<br>"
+            that.width = 560
+            that.height = 100
+            that.textColor = "white"
+            that.textAlign = "left"
+            that.fontSize = 20
+            that.left = 20
+            // Sayfanın en altından, 100px daha aşağıya yerleştir.
+            that.bottom = 0
+            that.bottom -= 100
+            
+        }
+        
+        // Sayfa1 i göster.
+        var showPage1 = function() {
+            boxPage1.visible = 1
+            closeAllCards();
+            refreshCards();
+        }
+        
+        // Sayfa2 yi göster.
+        var showPage2 = function() {
+            boxPage2.visible = 1
+            
+        }
+        
+        // Sayfa1 i gizle.
+        var hidePage1 = function() {
+            boxPage1.visible = 0
+            
+        }
+        
+        // Sayfa2 yi gizle.
+        var hidePage2 = function() {
+            boxPage2.visible = 0
+            
+        }
+        
+        var createCloseButton = function() {
+            
+            var createdButton = createLabel()
+            
+            that.text = "X"
+            that.fontSize = 35
+            that.width = DEFAULT.BUTTON_HEIGHT
+            that.top = 30
+            that.right = 30
+            that.textAlign = "center"
+            that.color = "rgba(255, 255, 255, 0.4)"
+            that.minimal = 1
+            that.round = 30
+            that.textColor = "tomato"
+            
+            return createdButton
+            
+        }
+        
+        </script>
+        
+
+    </head>
+    <body>
+        
+        <!-- HTML içeriği -->
+        
+    </body>
+</html>

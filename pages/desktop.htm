@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/coding.css">
+        <!-- <link rel="stylesheet" type="text/css" href="css/page.css"> -->
+        
+        <style>
+        
+        .boxbtn-main { position:relative;background-color: #F6F6F6;font-family: opensans;margin: 0px;margin-top: 40px;margin-bottom: -40px;padding: 20px;padding-top: 10px;padding-bottom: 10px; color:#4A4A4A;border-radius: 13.5px;font-size: 18px;text-align: justify; /* line-height: 100%; */ }
+
+        .boxbtn-main.blue { background-image: linear-gradient(lightblue, #FFFFFF); }
+
+        .boxbtn-main.yellow { background-image: linear-gradient(#FFF78F, #FFFFFF); }
+
+        .boxbtn-main.grey { background-image: linear-gradient(#E4E4E4, #FFFFFF); background-color: white; /* border-top: solid 1px #4A4A4A;border-right: solid 1px #4A4A4A;border-left: solid 1px #4A4A4A; */ }
+
+        .boxbtn-main.white { background-color: white; }
+
+        .boxbtn-centered-title { display: block;color:#4A4A4A; font-family: opensans;text-align: center;padding-top: 20px;font-size: 26px;padding-bottom: 0px; margin-bottom: 5px; /* text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1); */ }
+
+        .boxbtn-normal-text { /* text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1); */ opacity: 0.85;font-family: opensans;font-size:18px;text-align: center; margin-top: 5px;}
+            
+        .boxbtn-bold-text { font-family: opensans-bold; }
+
+        .boxbtn-centered-item-cont { display:flex;justify-content:center;align-items:center;height: 28px;margin-bottom: 20px;margin-top: 40px; }
+
+        /* .boxbtn-button { position: relative; width: auto; margin-right: 10px; margin-left: 10px; font-family: opensans-bold;padding: 12px; font-size: 16px;padding-bottom: 10px;padding-right: 20px;padding-left: 20px; box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1); opacity:0.97;color:#4A4A4A;border: solid 1px #4A4A4A;background-image: linear-gradient(#FFFFFF, #FFF78F);border-radius: 13.5px; } */
+        .boxbtn-button { position: relative; width: auto; margin-right: 10px; margin-left: 10px; font-family: opensans;padding: 12px; font-size: 20px;padding-bottom: 10px;padding-right: 20px;padding-left: 20px; box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1); opacity:0.97;color:white;border: solid 0px #4A4A4A;background-color: #1a73e8; border-radius: 6px; } /* 1a73e8 */
+            
+        .turk-lirasi { font-family: arial; }
+        .turk-lirasi-bold { font-family: arial; font-weight: bold; }
+            
+        </style>
+        
+        
+    </head>
+    <body>
+        
+        <div class="colored-background"></div>
+        
+        <div id="app-cont">
+            
+            <div id="desktop0" class="normal-text-group" style="display:block;">
+
+                <div class="boxbtn-main blue" >
+                    
+                    <div class="boxbtn-centered-title"><span class="boxbtn-bold-text">MASAÜSTÜ SÜRÜMÜ</span></div>
+
+                    <p class="boxbtn-normal-text">Bu mobil uygulamanın, bilgisayar (Windows ve MacOS) üzerinde çalışan bir sürümüdür.</p>
+
+                    <ul style="padding-right: 30px;font-size:17px;">
+                        <!--<li>Masaüstü sürümünde, üyelik sistemi yoktur.</li>-->
+                        <!--<li>Tek seferlik ödeme ile tüm içerikler açık olarak kurulur.</li>-->
+                        <li>Desteklenen işletim sistemleri:<br>
+                            <span style="font-family: opensans-bold;">-- Windows 10 - 11 (x64)</span><br>
+                            <span style="font-family: opensans-bold;">-- MacOS 10.11 - 11.6</span></li>
+                    </ul>
+
+                    <span id="buy-desktop-button" style="display:none;">
+
+                    <div id="member-btn0" class="boxbtn-centered-item-cont" style="margin-top:80px;margin-bottom: 70px;">
+                        <div class="boxbtn-button" onclick="Page.buyDesktopVersion();" style="text-align: center;">MASAÜSTÜ SÜRÜMÜNÜ SATIN AL<br><span style="font-family: opensans-bold;">10TL + Vergi</span><br><span style="font-size:16px;">(Tek Seferlik Ödeme)</span></div>
+                    </div>
+
+                    <ul style="padding-right: 30px;font-size:17px;">
+                        <li>Ödeme gerçekleştikten sonra, bu alanda, kurulum dosyalarını indirebileceğiniz bir adres görünecektir.</li>
+                    </ul>
+
+                </span>
+
+                </div>
+
+            </div>
+
+            <div id="download-desktop-link" class="normal-text-group" style="display:block;">
+
+                <div class="boxbtn-main grey" >
+
+                    <div class="boxbtn-centered-title"><span class="boxbtn-bold-text">İNDİRME ADRESİ</span></div>
+
+                    <div class="boxbtn-centered-item-cont">
+                        <div onclick="App.gotoURL('https://github.com/bug7a/basicjs-turkce/releases/tag/kodlama');" class="boxbtn-button" style="text-align: center;margin-top:-30px;"><span style="font-family: opensans-bold;">https://github.com/bug7a/basicjs-turkce/releases/tag/kodlama</span></div>
+                    </div>
+
+                    <ul style="padding-right: 30px;font-size:17px;">
+                        <li>Bu internet adresini, bilgisayarınızda ziyaret edin.</li>
+                        <!-- <li>Bu adresi, bilgisayarınızda, bir tarayıcı programının (Chrome, Firefox, Edge) adres çubuğuna yazın.</li> -->
+                        <li>Ve kullandığınız işletim sistemine uygun sürümü bilgisayarınıza indirin.</li>
+                        <li>İndirme adresinin, ikinci satırı; adresin devamıdır. <br>(Örnek: ...bug7a/basicjs-turkce/rele...)</li>
+                        <!-- <li>Uygulamayı indiremez veya çalıştırırken, bir sorun ile karşılaşırsanız, benimle (bugra.ozden@gmail.com eposta adresinden) irtibata geçebilirsiniz.</li> -->
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="normal-text-group" style="display:none;margin-bottom: 120px;">
+
+                <div class="boxbtn-main grey" style="margin-top: 80px;" >
+
+                    <div class="boxbtn-centered-title"><span class="boxbtn-bold-text">EK BİLGİ</span></div>
+                    <ul style="padding-right: 30px;font-size:17px;">
+                        <li>Lütfen, indirdiğiniz uygulama dosyalarını saklayın.</li>
+                        <li>Desteklenen tüm işletim sistemleri için, uygulama dosyalarını indirebilirsiniz.</li>
+                        <li>Satın aldığınız masaüstü uygulaması, şu an ki aktif sürümdür.</li>
+                        <li>Uygulamayı satın alan kullanıcılar, 1 yıl boyunca, yeni geliştirilen sürümleri de indirebilirler.</li>
+                        <!-- <li>Masaüstü sürümü, internet olmadan çalışabilir. Dış sistemlere bağımlılığı yoktur. Böylece, kurulum dosyasını saklayarak; işletim sisteminiz çalıştırdığı sürece, uygulamayı kullanmaya devam edebilirsiniz.</li> -->
+                    </ul>
+
+                </div>
+
+            </div>
+            
+            <a onclick="App.gotoHomePage();">
+                <div class="close-btn" style="right:15px;top:35px;">
+                    <!-- <img src="../img/member/close-btn.png"/> -->
+                    <div style="width: 40px;height: 40px;background-color: white;border-radius: 30px;border:solid 2px lightblue;font-size: 27px;text-align: center;font-family: opensans;color:#4a4a4a;">x</div>
+                </div>
+            </a>
+            
+            
+        </div><!-- content -->
+            
+            
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        <!-- <script src="../js/check-member.js" type="text/javascript" charset="utf-8"></script> -->
+        
+        
+        <script>
+            
+            var Page = function(){};
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("index");
+                
+                // TEST CODE ***
+                //document.getElementById("member-btn1").style.display = "block";
+                //document.getElementById("member-btn2").style.display = "block";
+                //Page.changeBox(1);
+                //Page.changeBox(1);
+
+                // kutu butonlarını görünür yap.
+                document.getElementById("buy-desktop-button").style.display = "none";
+                document.getElementById("download-desktop-link").style.display = "block";
+
+                //Page.changeBox(2);
+
+                /*
+                canDownloadDesktopApp(function() {
+
+                    // Üye
+                    Page.changeBox(2);
+
+                }, function() {
+
+                    //kullanıcı bir üye değil.
+                    Page.changeBox(1);
+
+                }, function() {
+
+                    //Beklenmedik bir hata oluşur ise
+                    Page.changeBox(3);
+
+                });
+                */
+
+            };
+            
+            Page.changeBox = function(boxID) {
+                
+                document.getElementById("buy-desktop-button").style.display = "none";
+                document.getElementById("download-desktop-link").style.display = "none";
+                
+                switch (App.os) {
+                        
+                        case "android":
+
+                            // Satın alma butonu: 1 veya İndirme adresi: 2
+                            if (boxID == 1) {
+                                document.getElementById("buy-desktop-button").style.display = "block";
+                            } else if (boxID == 2) {
+                                document.getElementById("download-desktop-link").style.display = "block";
+
+                            }
+
+                        break;
+                        case "ios":
+
+                            // Satın alma butonu: 1 veya İndirme adresi.
+                            if (boxID == 1) {
+                                document.getElementById("buy-desktop-button").style.display = "block";
+                            } else if (boxID == 2) {
+                                document.getElementById("download-desktop-link").style.display = "block";
+
+                            }
+
+                        break;
+
+                }
+
+            }
+            
+            Page.buyDesktopVersion = function() {
+
+                /*
+                
+                //android için
+                if(App.os == "android") {
+
+                    Purchases.purchaseProduct("masaustu", ({ productIdentifier, purchaserInfo }) => {
+                        
+                        Page.changeBox(2);
+
+                    }, ({error, userCancelled}) => {
+                        // Error making purchase
+                        navigator.notification.alert(
+                            'Satın alma işlemi tamamlanamadı. Lütfen, daha sonra tekrar deneyin.',  // message
+                            function() {  },     // callback
+                            'Masaüstü Sürüm',    // title
+                            'Tamam'              // buttonName
+                        );
+
+                    }, null, Purchases.PURCHASE_TYPE.INAPP);
+                    
+                } else if(App.os == "ios"){
+                    
+                    //ios sistemi için
+                    
+                } else if(App.os == "electrton" || App.os == "browser") {
+                    
+                    //web
+                    
+                }
+                */
+                
+            }
+            
+            Page.test2 = function() {
+                
+                /*
+                inappbilling.getPurchases(function (result) {
+                   
+                    var strResult = "";
+                    if(typeof result === 'object') {
+                        strResult = JSON.stringify(result);
+                    } else {
+                        strResult = result;
+                    }
+                    alert("SUCCESS: \r\n"+strResult );
+                    
+                }, function (error) {
+                   alert("ERROR: \r\n"+error );
+                } );
+                */
+
+                 
+                
+            }
+            
+            Page.test3 = function() {
+                
+                /*
+                inappbilling.subscribe(function (result) {
+                   
+                    var strResult = "";
+                    if(typeof result === 'object') {
+                        strResult = JSON.stringify(result);
+                    } else {
+                        strResult = result;
+                    }
+                    alert("SUCCESS: \r\n"+strResult );
+                    
+                }, function (error) {
+                   alert("ERROR: \r\n"+error );
+                }, "uyelik");
+                */
+                
+            }
+            
+            /* KULLANILMIYOR. Tarayıcıda açmak daha kullanışlı. */
+            Page.openURL = function($url) {
+                
+                //cordova.InAppBrowser.open($url, '_blank', 'location=yes');
+                
+            }
+            
+        </script>
+        
+    </body>
+</html>

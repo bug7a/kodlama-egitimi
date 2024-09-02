@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Fonksiyon oluşturmak (function) -- Çocuklar için Programlama Eğitimi">
+        <meta name="keywords" content="Fonksiyon oluşturmak (function) -- Çocuklar için Programlama Eğitimi">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/lessons.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/coding.css">
+        <link rel="stylesheet" type="text/css" href="../css/coding1.css">
+        <!-- <link rel="stylesheet" type="text/css" href="../css/coding2.css"> -->
+
+    </head>
+    <body>
+        
+        <div id="app-cont">
+            
+            <!-- HEADER -->
+            
+            <div class="header-top">
+                
+                <a onclick="App.gotoPage('../pages/lessons.htm')"><div class="header-icon" style="left:0px;"><img src="../img/lessons/header-list-icon.png" width="70" height="70" /></div>
+                <div class="header-icon-txt" style="left:55px;">KONULAR</div>
+                </a>
+                
+                <!-- VİDEO İLE ANTLATIM -->
+
+                
+                <!-- <div onclick="App.gotoYouTubeURL('https://youtu.be/AA68Z1s7Xp4');" style="position:absolute;right:20px;top:14px;"><img src="../img/lessons/youtube-video-btn2.png" width="180" height="43" />
+                </div> -->
+                
+            </div>
+            
+            <!-- HEADER END -->
+            
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+                <p class="normal-title">Nesne nedir?</p>
+                
+                <p>Belli görevleri yapmak için tasarlanmış, özel değişken ve fonksiyonları <span class="normal-italic-text">(nesnenin özellik ve metodları)</span> ile iletişim kurulan, paketlenmiş algoritmalardır.</p>
+                
+                <!-- paket algoritmalar -->
+                
+                <p>Bir örnek ile açıklayalım.</p>
+                
+                <div class="normal-img"><img src="../img/lessons2/robot-model.svg" width="560" /></div>
+                
+                <p><span class="normal-bold-text">robot</span> bir nesnedir. Biz, robotun ilerlemesini istediğimizde:</p>
+                
+                <p>Onun, <span class="normal-bold-text">ilerle()</span> fonksiyonunu <span class="normal-italic-text">(metodunu)</span> çalıştırırız ve robot nesnesinin algoritması, arka planda <span class="normal-italic-text">(görmediğimiz bir şekilde)</span> çalışarak, robotu ilerletir.</p>
+                
+                <!-- metodunu çalıştırırız / çağırırız -->
+            </div>
+                
+<!-- 1 --><div id="editor-cont1"></div>
+        
+            <div class="normal-text-group">
+                
+                <p>robot nesnesi gibi, birçok <span class="normal-italic-text">(farklı türde)</span> nesneler oluşturabilir ve onlara görevler vererek, kullanabiliriz.</p>
+                
+                <p>Bu sisteme, nesne tabanlı <span class="normal-italic-text">(object-based)</span> programlama denir.</p>
+                
+                <p style="font-size:15px;">Bu sistem sayesinde, <span class="normal-italic-text">(ön plandaki)</span> algoritmamız, sade ve anlaşılması kolay olarak kalırken; daha çok görevi, daha hızlı ve düzenli olarak yapabiliriz.</p><!-- daha çok görevi, işi -->
+                
+                
+                <!--
+                <p>Aynı robot nesnesine benzer, birçok (farklı türde) nesne oluşturabilir ve onlara görevler vererek, kullanabiliriz.</p>
+                
+                <p>Bu sistem, nesne tabanlı programlama (Object-based) yöntemi olarak adlandırılır.</p>
+                
+                <p>Bu sistem sayesinde, (ön plandaki) algoritmamız, sade ve anlaşılması kolay olarak kalırken; daha çok işi, daha hızlı ve düzenli olarak yapabiliriz.</p>
+                -->
+
+                <!-- <p>Aynı robot nesnesi gibi birçok (farklı türde) nesne oluşturabilir ve onlara görevler vererek, kullanabiliriz.</p> -->
+                
+                <!-- <p>Bu, nesne tabanlı (Object-based) programlama yöntemi sayesinde, (ön plandaki) algoritmamız; sade ve anlaşılması kolay olarak kalır.</p> -->
+
+                <!-- <p>Böylece, daha çok işi, daha hızlı ve düzenli olarak yapabiliriz.</p> -->
+                
+                
+            </div>
+            
+            <!-- TEXT GROUP END -->
+            
+        <div class="header-bottom">
+
+            <a onclick="App.gotoPage('english-words.htm')"><div class="header-icon" style="left:0px;"><img src="../img/lessons/header-left-icon.png" width="70" height="70" /></div>
+            <div class="header-icon-txt" style="left:55px;">İNGİLİZCE KELİMELER</div>
+            </a>
+
+            <a onclick="App.gotoPage('label-object.htm')"><div class="header-icon" style="right:0px;"><img src="../img/lessons/header-right-icon.png" width="70" height="70" /></div>
+            <div class="header-icon-txt" style="right:55px;">ETİKET NESNESİ</div>
+            </a>
+
+            <a onclick="App.gotoPage('../pages/lessons.htm')"><div class="header-icon" style="position:absolute;left:265px;top:0px;"><img src="../img/lessons/header-list-icon.png" width="70" height="70" /></div></a>
+
+        </div>
+        
+        </div><!-- content -->
+
+<div id="code-example1" style="display:none">robot.ilerle()
+
+</div>
+        
+<div id="code-example2" style="display:none">// Fonksiyonu oluştur.
+var ikiKereYaz = function(mesaj) {
+
+	yaz(mesaj)
+	yaz(mesaj)
+
+}
+
+// Fonksiyonu bir parametre ile çalıştır.
+ikiKereYaz("Merhaba Dünya!")
+
+</div>
+        
+<div id="code-example3" style="display:none">// Fonksiyon oluştur.
+var carpimTablosuOlustur = function(sayi) {
+
+    // 5 kere tekrar et.
+	for (var i = 1; i &lt;= 5; i++) {
+		yaz(sayi + " x " + i + " = " + (sayi * i))
+    
+	}
+
+}
+
+// Fonksiyonu 3 kere, farklı parametreler ile çalıştır.
+carpimTablosuOlustur(3)
+carpimTablosuOlustur(7)
+carpimTablosuOlustur(9)
+
+</div>
+        
+<div id="code-example4" style="display:none">// Fonksiyonu oluştur.
+var ortalamaAl = function(say1, say2, say3) {
+
+    // Üç sayının ortalamasını hesapla.
+	var cevap = (say1 + say2 + say3) / 3
+
+    // Sonucu geri gönder.
+	return cevap
+    
+}
+
+// Fonksiyonu çalıştır ve cevabı bir değişkene aktar.
+var ortalama = ortalamaAl(95, 45, 10)
+
+// Cevabı ekrana yazdır.
+yaz("Üç sayının ortalaması: " + ortalama)
+
+</div>
+        
+<div id="code-example5" style="display:none">//kapının durumu açık (1) veya kilitli (0)
+var kapi = 0
+
+</div>
+<div id="code-example6" style="display:none">//kapının durumu açık (1) veya kilitli (0)
+var kapi = 0
+
+</div>
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/coding.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/coding1.js" type="text/javascript" charset="utf-8"></script>
+        <!-- <script src="../js/coding2.js" type="text/javascript" charset="utf-8"></script> -->
+        
+        <script>
+            
+            var editor1, editor2, editor3, editor4, editor5, editor6;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                                            //Coding.options.fullScreenMode = 0;
+                    //Coding.options.isBasicUI = 1;
+                    Coding1.dontUseAnimationEngine = 1;
+                    Coding1.init();
+                    zemin.olustur(2);
+                    //zemin.nesneEkle("tree", 1);
+                    //zemin.nesneEkle("finish", 5);
+                    //zemin.nesneEkle("key", 2);
+                    //zemin.nesneEkle("energy", 2);
+                    zemin.nesneEkle("robot", 1, 100, 'robot');
+                    //zemin.nesneEkle("tree", 6);
+                    //zemin.nesneEkle("tree", 7);
+                    Coding1.dontUseAnimationEngine = 0;
+                        
+                        break;
+                    case "2":
+                        
+                        //Coding.options.fullScreenMode = 0;
+                        
+                        //document.getElementById("coding-game-box2").innerHTML = `<div style="position:absolute;bottom:-5px;right:130px;"><img src="../img/lessons/les3-ex2-spaceship.png" width="103" /></div>`;
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                        
+                    case "3":
+                        
+                        //Coding.options.fullScreenMode = 1;
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                    
+                    case "4":
+                        
+                        //Coding.options.fullScreenMode = 0;
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                
+                    case "5":
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                        
+                        case "6":
+
+                        setConsoleFontSize(20);
+                        
+                        break;
+                        
+                        }
+            };
+            
+            Page.codingFinished = function($e){ 
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        break;
+                    case "2":
+                        break;
+                    case "3":
+                        break;
+                    case "4":
+                        break;
+                    case "5":
+                        break;
+                    case "6":
+                        break;
+
+                       }
+            
+            };
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("lessons");
+                
+                Coding.init();
+                
+                document.addEventListener("onGameRefreshed", Page.codingInit);
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                
+                
+            //Coding.setOption("1", "isBasicUI", 1);
+            //Coding.setOption("1", "fullScreenMode", 1);
+
+                Coding.createNewEditorHTML("1");
+                //Coding.showEditorButtons("2",["add"]);
+                Coding.setScreenColor("1", "#EE7553");
+                Coding.setScreenHeight("1", "300px");
+                //Coding.changeRunButton("1","play");
+                editor1 = ace.edit("editor1");
+                editor1.setReadOnly(true);
+                Coding.createNewEditor("1");
+                //Coding.setSnippetIDList("1", ["101"]);
+                Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"));
+                
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                
+                App.setPageScore("lesson10", 1);
+
+                App.showAllPage();
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

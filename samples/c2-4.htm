@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Renkleri tara - Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Renkleri tara - Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/samples.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/coding.css">
+        <link rel="stylesheet" type="text/css" href="../css/coding2.css">
+
+    </head>
+    <body>
+        
+        <div id="app-cont">
+            
+            <a href="../pages/samples.htm"><div class="close-btn"><img src="../img/samples/sample-close-btn.png" /></div></a>
+            
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+            <p class="normal-title">Yılan Oyunu Mekanikleri</p>
+                
+                <p>Yılanı oluşturan karelerin koordinatları, <span class="normal-bold-text">noktalar</span> isminde bir dizi değişkeninde saklanıyor. </p>
+                <p><span class="normal-bold-text">ilerle()</span> fonksiyonu, yılanın bir birim ilerlemesini sağlıyor.</p>
+                <p>Eğer turuncu renk ile boyalı bir kare ile karşılaşılır ise, yılan boyalı kareyi yutuyor ve bir birim uzayarak yoluna devam ediyor.</p>
+                <p>Eğer siyah renk ile boyalı bir kare ile karşılaşılır ise, yılan ilerlemesini durduruyor.</p>
+                
+            </div>
+            
+            <!-- TEXT GROUP END -->
+            
+<!-- 1 --><div id="editor-cont1"></div>
+            
+            <div class="normal-text-group">
+                
+                <!-- <p>Diğer bir örnekte ise; aradığımız şartın gerçekleştiği <span class="normal-italic-text"></span> veya gerçekleşmediği durumunu ekrana yazdıralım.</p>
+                
+                <p>Bu şart, iki farklı durumda gerçekleşebilir; <span class="normal-bold-text">"sonuc"</span> ismindeki değişkenin içeriği 5'dir veya 5'ten farklıdır.</p> -->
+                
+            </div>
+            
+            
+            <div class="page-end-spacing"></div>
+        
+        </div><!-- content -->
+
+        
+<div id="code-example1" style="display:none">// Çizim alanı yatay 30, dikey 23 kare.
+kareleriOlustur(30, 23)
+// Koordinatları gösterme.
+koordinatSakla()
+// Kare kenarlıklarını gösterme.
+//cizgiSakla()
+// Kare boyutlarını 2 kat büyüt.
+//buyut(2)
+    
+//-- ARKAPLANI BOYA
+
+// Tüm alanı beyaz ile, sınırları siyah ile boya
+for (var y = 1; y &lt;= 23; y++) {
+
+    for (var x = 1; x &lt;= 30; x++) {
+    
+        // Standart boyama rengi beyaz.
+        var arkaplanRenk = "beyaz"
+    
+        // Eğer x konumu sınırda ise
+        if (x == 1) { 
+            arkaplanRenk = "siyah"
+    
+        } else if (x == 30) { 
+            arkaplanRenk = "siyah"
+    
+        }
+    
+        // Eğer y konumu sınırda ise
+        if (y == 1) { 
+            arkaplanRenk = "siyah"
+    
+        } else if (y == 23) { 
+            arkaplanRenk = "siyah"
+    
+        }
+    
+        // Konum, boyanacak renkten farklı ise
+        if (kareNeRenk(x, y) != arkaplanRenk) {
+            //konumu boya
+            kareBoya(x, y, arkaplanRenk)
+    
+        }
+    }
+
+}
+    
+//-- DEĞİŞKENLERİ TANIMLA
+
+// Yılanın hareket yönü
+// İçeriği; yukarı, aşağı, sağ, sol olabilir.
+var yon = "sağ"
+    
+// Yılanın rengi
+var yilanRenk = "mavi"
+    
+// Yılanı oluşturan noktaların konumları
+var noktalar = [{x:4, y:2}, {x:3, y:2}, {x:2, y:2}]
+// GOOGLE'DA ARA: javascript dizi içinde obje kullanımı
+    
+//-- BAŞLANGIÇTA YILANI ÇİZ
+
+// Dizinin uzunluğu kadar tekrar et
+for (var i = 0; i &lt; noktalar.length; i++) {
+    
+    // Not: dizi elemanları 0 dan başlar. 
+    // İlk bilgi: noktalar[0] ve son bilgi: noktalar[noktalar.length - 1]
+    
+    // noktalar dizisindeki tüm konumları boya.
+    kareBoya(noktalar[i].x, noktalar[i].y, yilanRenk)
+    
+}
+    
+//-- FONKSİYONLARI OLUŞTUR
+
+// Yılanın bir birim hareket etmesini sağlayan fonksiyon.
+var ilerle = function() {
+    
+    // Çalışma mantığı: yılanın sonundan bir kare siler ve
+    // yılanın ilerleyeceği yönde yeni bir kare ekler.
+    // eğer yılanın sonundan bir kare silinmez ise; 
+    // yılan bir birim uzamış olur. (Yem yediğinde)
+    
+    // 1. siyah kare ile karşılaşırsa hiç bir işlem yapma.
+    // 2. turuncu kare ile karşılaşırsa al ve yılanı uzat.
+    // 3. beyaz kare ile karşılaşırsa yoluna devam et.
+    
+    // Yılanın ilerleyeceği sonraki konumu taşıyacak değişkenler.
+    var yeniX = 0
+    var yeniY = 0
+    
+    // Yılanın bir sonraki konumunu hesapla, değişkenlerde sakla.
+    if (yon == "sağ") {
+        yeniX = noktalar[0].x + 1
+        yeniY = noktalar[0].y
+    
+    } else if (yon == "sol") {
+        yeniX = noktalar[0].x - 1
+        yeniY = noktalar[0].y
+    
+    } else if (yon == "aşağı") {
+        yeniX = noktalar[0].x
+        yeniY = noktalar[0].y + 1
+    
+    } else if (yon == "yukarı") {
+        yeniX = noktalar[0].x
+        yeniY = noktalar[0].y - 1
+    
+    }
+    
+    // Sonraki karenin rengi siyah değil ise
+    if (kareNeRenk(yeniX, yeniY) != "siyah") {
+        
+        // Sonraki karenin rengi turuncu değil ise
+        if (kareNeRenk(yeniX, yeniY) != "turuncu") {
+        
+            // -- YILANIN ÖNÜNDE ENGEL VEYA YEM YOK.
+    
+            // Yılanın son noktasını, beyaz ile boya
+            kareTemizle(noktalar[noktalar.length - 1].x, noktalar[noktalar.length - 1].y)
+    
+            // Yılanın son noktasını, nokta listesinden sil.
+            noktalar.pop()
+            // GOOGLE'DA ARA: javascript diziler, pop fonksiyonu
+        
+        } else {
+    
+            // -- YILANIN ÖNÜNDE YEM VAR
+    
+            // Yutma sesi çıkar.
+            ses("yut")
+    
+        }
+    
+        //-- YILANI İLERLET 
+        //   (ÖNÜNE SİYAH KARE ÇIKMADIĞI SÜRECE)
+
+        // Sonraki konumu boya.
+        kareBoya(yeniX, yeniY, yilanRenk)
+    
+        // Nokta listesinin başına, yeni konumu ekle.
+        noktalar.unshift({x:yeniX, y:yeniY})
+        // GOOGLE'DA ARA: javascript diziler, unshift fonksiyonu
+    
+    }
+    
+}
+    
+// Yılanın yönünü değiştiren fonksiyon.
+var yonDegistir = function(pYon) {
+    
+    // Not: p harfi (pYon) değişkenin parametre olduğunu 
+    // anlamamızı kolaylaştırmak için eklenmiştir.
+    
+    // Gönderilen parametreyi değişkene aktar
+    yon = pYon
+    
+}
+    
+// -- UYGULANMASI --
+    
+// 4 tane yem ekle.
+kareBoya(10, 5, "turuncu")
+kareBoya(10, 17, "turuncu")
+kareBoya(18, 5, "turuncu")
+kareBoya(15, 10, "turuncu")
+
+// 60 kere tekrar et.
+for (var i = 1; i &lt;= 60; i++) {
+
+    // Bir birim ilerle.
+    ilerle()
+    
+    // Yılanın yönünü çevir.
+    if (i == 6) {
+        yonDegistir("aşağı")
+    
+    } else if (i == 21) {
+        yonDegistir("sağ")
+    
+    } else if (i == 26) {
+        yonDegistir("yukarı")
+    
+    } else if (i == 38) {
+        yonDegistir("sağ")
+    
+    }
+    
+    // 60 milisaniye bekle.
+    bekle(60)
+    
+}
+   
+</div>
+        
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/coding.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/coding2.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script>
+            
+            var editor1;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                    
+                    case "1":
+                        
+                        Coding.options.fullScreenMode = 0;
+                        Coding2.dontUseAnimationEngine = 1;
+                        
+                        Coding2.init();
+                        
+                        //if(document.getElementById("mycanvas1")) document.getElementById("mycanvas1").style.zoom = 2.0;
+                        
+                        Coding2.dontUseAnimationEngine = 0; 
+                        
+                        break;
+                        
+                        }
+                
+            };
+            
+            Page.codingFinished = function($e){ 
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        break;
+                        
+                        
+                       }
+            
+            };
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("sample");
+                
+                Coding.init();
+                
+                document.addEventListener("onGameRefreshed", Page.codingInit);
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                
+                Coding.setOption("1", "resetButtonEnabled", 1);
+                Coding.createNewEditorHTML("1");
+                //Coding.showEditorButtons("1",["reset"]);
+                Coding.setScreenColor("1", "#4A90E2");
+                Coding.setScreenHeight("1", "460px");
+                //Coding.changeRunButton("1","play");
+                editor1 = ace.edit("editor1");
+                //editor1.setReadOnly(true);
+                Coding.createNewEditor("1");
+                Coding.setSnippetIDList("1", Coding.snippetCodingIDList.concat(Coding.snippetCoding2IDList));
+                Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"));
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                
+                //App.setPageScore("lesson6", 1);
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

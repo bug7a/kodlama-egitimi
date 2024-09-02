@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Alıştırma - Çocuklar için kodlama (programlama oyunu)">
+        <meta name="keywords" content="Alıştırma - Çocuklar için kodlama (programlama oyunu)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/coding.css">
+        <link rel="stylesheet" type="text/css" href="../css/coding2.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/exercisex.css">
+        <link rel="stylesheet" type="text/css" href="css/exercise2.css">
+        
+    </head>
+    <body>
+        
+        <div class="colored-background"></div>
+        
+        <div id="app-cont">
+            
+            <!-- CLOSE BUTTON -->
+            
+            <a href="exercise2.htm"><div class="close-btn"><img src="../img/exercisex/close-btn.png" /></div></a>
+            
+            <!-- QUESTION START -->
+            
+            <div class="normal-text-group">
+                
+                <p id="ex-page-number" id-num="18" class="normal-title">18</p>
+                
+                <!-- <div class="normal-img" ><img src="img/mission-btn.png" width="560" /></div> -->
+                
+                <p class="normal-text">Turuncu karenin, aşağıya doğru iki birim<br />düşmesini (hareket etmesini) sağlayın.<!-- <br />Hız: 200 milisaniye/birim --></p>
+                
+                <!-- <p class="normal-text">Örnek; Gri renk ile işaretlenmiş noktaları, <br />mavi, yeşil ve sarı renkler ile boyayan algoritma.</p> -->
+                
+            </div>
+            
+            <!-- QUESTION END -->
+            
+<!-- EDITOR --><div id="editor-cont1"></div>
+            
+            <!-- TIPS AND VIDEO -->
+            
+            <div class="normal-text-group">
+                
+                <div class="alert-box">
+                
+                    <div class="alert-centered-bold-title">EK AÇIKLAMA</div>
+                    
+                    <!-- <p><a href="../lessons1/lesson2.htm"><span class="exercise1-lesson-btn">Değişkenlerin kullanımı</span></a> konusunu tamamlamış olmanız önerilir.</p> -->
+                    
+                    <p>İki boyutlu haritalar, genellikle üstten görünüş (kuş bakışı) veya yandan görünüş olarak kullanılabilir.</p>
+                    
+                    <p>Yandan görünüş (süper mario) tarzında, yer çekimi etkisi olan oyunlar ve üstten görünüş için yılan (snake) oyununu söyleyebiliriz.</p>
+                    
+                    <!-- <p>Bilgisayar ve telefon gibi cihazların ekranları da yan yana dizilmiş bir sürü küçük kareden oluşur.</p>
+                    <p>Algoritmalar, bu kareleri farklı renkler ile boyayarak; ekranda gördüğümüz şekilleri, resimleri, yazıları oluştururlar.</p> -->
+                    
+                    <!-- <p><span class="normal-bold-text">renk</span> parametresi, metin olduğu için tırnak içerisinde yazılır.</p> -->
+                    
+                    <!-- <img src="../img/coding2/code/201-color-table.webp" width="520" /> -->
+
+                    <!-- <p>Robotun sahip olduğu anahtar sayısı, <span class="normal-bold-text">robot.anahtar</span> değişkeninden alınmalı.</p> -->
+
+                    <!--<p>Eğer bu kare şeklini, tek bir döngü ile çizdirebilirsek; daha başarılı bir algoritma kurabilmiş oluruz.</p>-->
+
+                </div>
+                
+                <!-- <div class="btn-centered-item-cont">
+                        
+                    <a href="e2-2.htm"><div class="blackbtn-button">İlk Görevi Aç</div></a>
+                        
+                </div> -->
+                
+                <!--<p><a href="../lessons1/lesson2.htm"><span class="exercise1-lesson-btn">Ekrana yazı yazmak</span></a> ve <a href="../lessons1/lesson3.htm"><span class="exercise1-lesson-btn">Değişkenlerin kullanımı</span></a> konularını tamlamış olmanız önerilir.</p>-->
+                
+                <div id="t1-btn" class="normal-img" onclick="Exercise.openTip('t1');" ><img src="img/tip-btn.webp" width="560" /></div>
+                
+                <div id="t1-text" style="display:none;">
+                    <div class="tip-basci-box"><p>Turuncu karenin son konum x: 4, y: 6 olmalı.</p></div>
+                </div>
+                
+                <!-- <div id="t2-btn" class="normal-sub-img" onclick="Exercise.openTip('t2');" ><img src="img/tip-btn.webp" width="560" /></div>
+                
+                <div id="t2-text" style="display:none;">
+                <div class="tip-basci-box sub"><p>zemin.sonKonum</p></div>
+                </div> -->
+                
+                <div onclick="Exercise.gotoYouTubeURL('https://youtu.be/ezV8m6VT6RY');" class="normal-sub-img" ><img src="img/video-btn.webp" width="560" /></div>
+                
+                
+            </div>
+                
+            <div class="page-end-spacing"></div>
+        
+        </div><!-- content end -->
+
+<div id="code-example1" style="display:none">//karenin rengi
+var kareRenk = "turuncu"    
+//karenin başlangıç konumu
+var kareX = 4
+var kareY = 4
+    
+//karenin hızı (milisaniye)
+var kareHiz = 200
+
+
+
+</div>
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/coding.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/coding2.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="js/exercise2.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script>
+            
+            var editor1;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        Coding2.dontUseAnimationEngine = 1;
+                        
+                        Coding2.init();
+                        
+                        Coding2.createScreen(10, 10);
+                        
+                        /*
+                        kareBoya(3, 4, "gri");
+                        kareBoya(3, 5, "gri");
+                        kareBoya(3, 6, "gri");
+                        
+                        kareBoya(5, 4, "gri");
+                        kareBoya(5, 5, "gri");
+                        kareBoya(5, 6, "gri");
+                        */
+                        
+                        for (var i = 0; i < 1; i++) {
+                        //kareBoya(1, 7 + i, "siyah");
+                        kareBoya(2, 7 + i, "siyah");
+                        kareBoya(3, 7 + i, "siyah");
+                        kareBoya(4, 7 + i, "siyah");
+                        kareBoya(5, 7 + i, "siyah");
+                        kareBoya(6, 7 + i, "siyah");
+                        kareBoya(7, 7 + i, "siyah");
+                        kareBoya(8, 7 + i, "siyah");
+                        kareBoya(9, 7 + i, "siyah");
+                        //kareBoya(10, 7 + i, "siyah");   
+                        }
+                        
+                        kareBoya(4, 4, "turuncu");
+                        
+                        /*
+                        kareBoya(4, 4, "siyah");
+                        kareBoya(6, 4, "siyah");
+                        
+                        kareBoya(3, 5, "siyah");
+                        kareBoya(7, 5, "siyah");
+                        
+                        kareBoya(2, 6, "siyah");
+                        
+                        kareBoya(3, 6, "siyah");
+                        kareBoya(4, 6, "siyah")
+                        kareBoya(5, 6, "siyah")
+                        kareBoya(6, 6, "siyah")
+                        kareBoya(7, 6, "siyah")
+                        
+                        kareBoya(8, 6, "siyah")
+                        */
+                        
+                        
+                        document.getElementById("mycanvas1").style.zoom = 2;
+                        
+                        Coding2.dontUseAnimationEngine = 0; 
+                        
+                        break;
+                       }
+                
+            };
+            
+            Page.codingFinished = function($e){ 
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        /*
+                        var coordinateList = [{x:5,y:4},{x:4,y:5},{x:5,y:5},{x:6,y:5}];
+                        
+                        var count = 0;
+                        
+                        for (var i = 0; i < coordinateList.length; i++) {
+                            if(kareNeRenk(coordinateList[i].x, coordinateList[i].y) == "sarı") {
+                                count++;
+                            }
+                        } */
+                        /*
+                        var coordinateList2 = [{x:3,y:4},{x:4,y:4},{x:5,y:4},{x:6,y:4},{x:3,y:5},{x:6,y:5},{x:3,y:6},{x:6,y:6},{x:3,y:7},{x:4,y:7},{x:5,y:7},{x:6,y:7}];
+                        
+                        var count2 = 0;
+                        
+                        for (var i = 0; i < coordinateList2.length; i++) {
+                            if(kareNeRenk(coordinateList2[i].x, coordinateList2[i].y) == "siyah") {
+                                count2++;
+                            }
+                        }
+                        
+                        var coordinateList3 = [{x:3,y:8},{x:4,y:8},{x:5,y:8},{x:4,y:9}];
+                        
+                        var count3 = 0;
+                        
+                        for (var i = 0; i < coordinateList3.length; i++) {
+                            if(kareNeRenk(coordinateList3[i].x, coordinateList3[i].y) == "pembe") {
+                                count3++;
+                            }
+                        }
+                        */
+                        
+                        if (kareNeRenk(4, 4) == "beyaz" && kareNeRenk(4, 5) == "beyaz" && kareNeRenk(4, 6) == "turuncu") {
+                            
+                            Exercise.success();
+                            
+                        } else {
+                            
+                            Exercise.showFailWindow();
+                            
+                        }
+                        
+                        
+                        //Coding1.robotPosition = 0;
+                        //Coding1.robotEnergy = 0;
+                        //Coding1.robotKeyCount = 0;
+                        //Coding1.robotDirection = "right";
+                        //Coding1.robotEnergySpending = 5;
+                        //Coding1.groundMaxPosition = 0;
+                        //Coding1.groundMinPosition = 0;
+                        /*
+                        var consoleText = document.getElementById("coding-console-box1").innerHTML;
+                        var printed = consoleText.search("0");
+                        var printed2 = consoleText.search("1");
+                        
+                        var codeText = editor1.getValue();
+                        var coded = codeText.search("robot.anahtar");
+                        
+                        if (printed >= 0 && printed2 >= 0 && coded >= 0) {
+                            
+                            Exercise.showSuccessWindow();
+                            App.setPageScore(Exercise.exID + "-" + Exercise.exPageID, 1);
+                            Coding.saveCode("1", Exercise.codeSavePath);
+                             
+                        }else{
+                            
+                            Exercise.showFailWindow();
+                            
+                        }
+                        */
+                        
+                        break;
+                        
+                       }
+            
+            };
+            
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("exercise");
+                
+                Coding.init();
+                Exercise.init();
+                
+                document.addEventListener("onGameRefreshed", Page.codingInit);
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                document.addEventListener("onAnimationTurnStarted", Page.animationTurnStarted);
+                
+                Exercise.createStandartEditor();
+                
+                Coding.setSnippetIDList("1", ["202", "203", "201", "204", "006"]); //"004",
+                //Coding.setSnippetIDList("1", Coding.snippetCodingIDList.concat(Coding.snippetCoding1IDList));
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                
+                //Başlangıçta otomatik, okundu olarak işaretle.
+                //App.setPageScore(Exercise.exID + "-" + Exercise.exPageID, 1);
+                
+                //kayoport aalışveriş merkezi - bodrum sibel hanım
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

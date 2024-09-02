@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Temel Programlamaya Giriş">
+        <meta name="keywords" content="Temel Programlamaya Giriş">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/coding.css">
+        <link rel="stylesheet" type="text/css" href="../css/coding1.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/exercisex.css">
+        <link rel="stylesheet" type="text/css" href="css/exercise4.css">
+        
+    </head>
+    <body>
+        
+        <div class="colored-background"></div>
+        
+        <div id="app-cont">
+            
+            <!-- CLOSE BUTTON -->
+            
+            <a href="exercise4.htm"><div class="close-btn"><img src="../img/exercisex/close-btn.png" /></div></a>
+            
+            <!-- QUESTION START -->
+            
+            <div class="normal-text-group">
+                
+                <p id="ex-page-number" id-num="21" class="normal-title">21</p>
+                
+                <p class="normal-text">Rasgele belirlenen 3 sayıdan <span class="normal-bold-text2">en büyüğünü</span><br><span class="normal-italic-text">-Koşullu ifadeleri kullanarak-</span> bulun. Ve ekrana yazdırın.</p>
+                
+            </div>
+            
+            <!-- QUESTION END -->
+            
+<!-- EDITOR --><div id="editor-cont1"></div>
+            
+            <!-- TIPS AND VIDEO -->
+
+                        <!--
+                <span class="normal-italic-text">(dizi, nesne)</span>
+                <span class="normal-bold-text">test</span>
+                <span class="normal-bold-text2">"bal"</span>
+                <span class="alert-char-text">(...)</span>
+            -->
+            
+            <div class="normal-text-group">
+                <!--
+                <div class="normal-centered-bold-title">EK BİLGİ</div>
+                
+                <ul class="ul-box">
+                    <li>Sayı ve Metin tipindeki değişkenler, birbirlerine eşitlendiğinde; içlerindeki bilgi kopyalanır.</li>
+                    <li>Gelişmiş veri tiplerinde <span class="normal-italic-text">(dizi, nesne)</span> ise, sadece bir bağlantı bilgisi aktarılır. Yani; iki değişkende aynı kaynaktaki veri ile çalışır. Biri değiştirildiğinde, öteki de değişir.</li>
+                </ul>
+-->
+                <div id="answer-button" onclick="Exercise.showAnswer();" class="normal-centered-bold-title">ÇÖZÜMÜ GÖSTER</div>
+
+            </div>
+
+<!-- CEVAP EDITOR --><div id="answer-box" class="editor-box" style="display:none;padding-bottom: 10px;margin-top:-18px;"><div id="answer-editor1" class="editor"></div></div>
+                
+            <div class="page-end-spacing"></div>
+        
+        </div><!-- content end -->
+
+<div id="code-example1" style="display:none">var s1 = random(1, 100)
+var s2 = random(1, 100)
+var s3 = random(1, 100)
+print("s1: " + s1 + ", s2: " + s2 + ", s3: " + s3)
+</div>
+
+<div id="code-answer1" style="display:none">var s1 = random(1, 100)
+var s2 = random(1, 100)
+var s3 = random(1, 100)
+print("s1: " + s1 + ", s2: " + s2 + ", s3: " + s3)
+
+if (s1 > s2) {
+    if (s1 > s3) {
+        print("En büyük s1: " + s1)
+    } else {
+        print("En büyük s3: " + s3)
+    }
+} else {
+    if (s2 > s3) {
+        print("En büyük s2: " + s2)
+    } else {
+        print("En büyük s3: " + s3)
+    }
+}
+</div>
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/coding.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/coding1.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="js/exercise4.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script>
+            
+            var editor1, editor2;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                    case "1":
+                            setConsoleFontSize(25);
+                        break;
+                       }
+            };
+            
+            Page.codingFinished = function($e){ 
+                switch($e.editorNumber){  
+                    case "1":
+                    break;
+                }
+            };
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("exercise");
+                
+                Coding.init();
+                Exercise.init();
+                
+                document.addEventListener("onGameRefreshed", Page.codingInit);
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                document.addEventListener("onAnimationTurnStarted", Page.animationTurnStarted);
+                
+                Exercise.createStandartEditor();
+                Coding.setSnippetIDList("1", ["010", "011", "012", "013"]); //"004"
+                //Coding.setSnippetIDList("1", Coding.snippetCodingIDList.concat(Coding.snippetCoding1IDList));
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+
+                // Cevap editorunu oluştur.
+                editor2 = Exercise.createAnswerEditor("answer-editor1", "code-answer1");
+                
+                //Başlangıçta otomatik, okundu olarak işaretle.
+                App.setPageScore(Exercise.exID + "-" + Exercise.exPageID, 1);
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

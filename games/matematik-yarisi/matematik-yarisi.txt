@@ -1,0 +1,4 @@
+KULLANILAN DOSYALAR
+
+../basic/kutuphane/basic-1.3.css
+../basic/kutuphane/basic-1.3.js

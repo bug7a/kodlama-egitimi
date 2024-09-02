@@ -1,0 +1,42 @@
+
+.text-normal {}
+.text-normal-bold {}
+.text-title {}
+
+.motion-zoomOnMouseOver-forButton {
+
+    transition: transform .5s;
+
+} 
+
+.motion-zoomOnMouseOver-forButton:hover {
+
+    transform: scale(1.15) !important;
+
+} 
+
+.motion-zoomOnMouseOver-forButton:active {
+    
+    transform: scale(1) !important;
+
+}
+
+.motion-zoomOnMouseOver-forKeyboard {
+
+    transition: transform .5s;
+
+} 
+
+.motion-zoomOnMouseOver-forKeyboard:hover {
+
+    transform: scale(1.6) !important;
+    color: #141414 !important;
+    background-color: white !important;
+
+} 
+
+.motion-zoomOnMouseOver-forKeyboard:active {
+    
+    transform: scale(1) !important;
+
+}

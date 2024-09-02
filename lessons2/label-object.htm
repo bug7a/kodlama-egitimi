@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Fonksiyon oluşturmak (function) -- Çocuklar için Programlama Eğitimi">
+        <meta name="keywords" content="Fonksiyon oluşturmak (function) -- Çocuklar için Programlama Eğitimi">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/lessons.css">
+        <link rel="stylesheet" type="text/css" href="../css/basic-editor.css">
+        <link rel="stylesheet" type="text/css" href="../basic/kutuphane/basic-1.3.css">
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/basic-editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/basic-minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../basic/kutuphane/basic-1.3.js" type="text/javascript" charset="utf-8"></script>
+
+    </head>
+    <body>
+        
+        <div id="app-cont">
+            
+            <!-- HEADER -->
+            
+            <div class="header-top">
+                
+                <a onclick="App.gotoPage('../pages/lessons.htm')"><div class="header-icon" style="left:0px;"><img src="../img/lessons/header-list-icon.png" width="70" height="70" /></div>
+                <div class="header-icon-txt" style="left:55px;">KONULAR</div>
+                </a>
+                
+                <!-- VİDEO İLE ANTLATIM -->
+
+                
+                <!-- <div onclick="App.gotoYouTubeURL('https://youtu.be/AA68Z1s7Xp4');" style="position:absolute;right:20px;top:14px;"><img src="../img/lessons/youtube-video-btn2.png" width="180" height="43" />
+                </div> -->
+                
+            </div>
+            
+            <!-- HEADER END -->
+            
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+                <p class="normal-title">Etiket (Label)</p>
+                
+                <!-- <p>Ekrana, bir metin <span class="normal-italic-text">(yazı)</span> yerleştirmemizi sağlayan nesne.</p> -->
+                
+                <p>Ekrana, bir bilgi <span class="normal-italic-text">(yazı)</span> yerleştirmemizi sağlayan nesne.</p>
+                
+                <!-- <p>Ekranda istediğimiz bir konuma, metin <span class="normal-italic-text">(yazı)</span> yerleştirmemizi sağlayan nesne.</p> -->
+                
+                <!-- <p>Bu nesne ile; bir başlık, açıklama metni veya daha sonradan değerini değiştirebileceğimiz bilgi alanları oluşturabiliriz.</p> -->
+                <p>Bu nesne ile; başlık, açıklama metni veya sonradan içeriğini değiştirebileceğimiz bir bilgi alanı oluşturabiliriz.</p><!-- değerini -->
+                
+                <p>Şimdi, bir örnek yapalım.</p>
+                
+                <!-- sonradan değerini değiştirebileceğimiz bir bilgi alanı oluşturabiliriz. -->
+                
+                <!-- <p>gösterdiği bilgiyi sonradan değiştirebileceğimiz (güncelleyebileceğimiz) bir alan oluşturabiliriz.</p> -->
+                
+                <!-- <p>Bir örnek yapalım:</p> -->
+                
+                <!-- <p>Soldan 40px (piksel), yukarıdan 130px konumuna bir etiket nesnesi yerleştirelim ve içine portakal rengi yazı ile "Merhaba Dünya" yazdıralım. Yazı tipi boyutu da 30px olsun.</p> -->
+                
+                <!-- <div class="normal-img"><img src="../img/lessons2/robot-model.svg" width="560" /></div> -->
+                
+                <!-- metodunu çalıştırırız / çağırırız -->
+            </div>
+                
+<!-- 1 --><div id="editor-cont1"></div>
+        
+            
+            <div class="normal-text-group">
+                
+                <!-- <p><span class="normal-bold-text">start()</span> fonksiyonu, tüm içerik yüklenip, değişken ve fonksiyonlar tanımlandıktan sonra, otomatik olarak çalıştırılmaktadır.</p> -->
+                
+                <p><span class="normal-bold-text">start()</span> fonksiyonu, <!--tüm içerik hazır olduğunda -->otomatik olarak çalıştırılmaktadır.</p>
+                
+                <!-- <p style="font-size:15px;">Öğrendiklerinizi uygulamak için, Projeler bölümünde, Yeni bir JavaScript projesi oluşturun.</p> -->
+                
+                <p style="font-size:15px;">Projeler bölümünden, yeni bir JavaScript projesi oluşturarak; öğrendiklerinizi pekiştirecek algoritmalar geliştirebilirsiniz.</p>
+                
+                <!-- <p><span class="normal-bold-text">mesaj</span> değişkeni, Bu sistem, nesne tabanlı programlama (Object-based) yöntemi olarak adlandırılır.</p>
+                
+                <p>Bu sistem sayesinde, (ön plandaki) algoritmamız, sade ve anlaşılması kolay olarak kalırken; daha çok işi, daha hızlı ve düzenli olarak yapabiliriz.</p> -->
+                
+            </div>
+        
+            
+            <!-- TEXT GROUP END -->
+            
+        <div class="header-bottom">
+
+            <a onclick="App.gotoPage('what-is-object.htm')"><div class="header-icon" style="left:0px;"><img src="../img/lessons/header-left-icon.png" width="70" height="70" /></div>
+            <div class="header-icon-txt" style="left:55px;">NESNE NEDİR?</div>
+            </a>
+
+            <a onclick="App.gotoPage('textbox-object.htm')"><div class="header-icon" style="right:0px;"><img src="../img/lessons/header-right-icon.png" width="70" height="70" /></div>
+            <div class="header-icon-txt" style="right:55px;">METİN KUTUSU NESNESİ</div>
+            </a>
+
+            <a onclick="App.gotoPage('../pages/lessons.htm')"><div class="header-icon" style="position:absolute;left:265px;top:0px;"><img src="../img/lessons/header-list-icon.png" width="70" height="70" /></div></a>
+
+        </div>
+        
+        </div><!-- content -->
+
+<div id="code-example1" style="display:none">// Nesneyi taşıyacak değişkeni tanımla.
+var mesaj
+
+// İlk çalıştırılan özel fonksiyon.
+var start = function() {
+    
+    // Bir etiket nesnesi oluştur ve değişkene aktar.
+    mesaj = createLabel()
+    // Nesnenin içinde görünecek metni belirle.
+    mesaj.text = "Merhaba Dünya"
+    // Nesnenin sola olan mesafesini (piksel cinsinden) belirle.
+    mesaj.left = 40
+    // Nesnenin yukarıya olan mesafesini belirle.
+    mesaj.top = 130
+    
+    // Metin rengini portakal kırmızısı olarak belirle.
+    mesaj.textColor = "orangered"
+    // Yazı tipi boyutunu (piksel cinsinden) belirle.
+    mesaj.fontSize = 30
+    
+}
+
+</div>
+        
+        <script>
+            
+            var editor1;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                    
+                    case "1":
+                        
+                        break;
+                    
+                    }
+                
+            };
+            
+            Page.codingFinished = function($e){
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        break; 
+                        
+                   }
+            
+            };
+            
+            /*
+            starting = `
+                var mesaj2 = createLabel();
+            `;
+            
+            started = `
+                mesaj.textColor = "blue";mesaj2.text="bug";
+            `;
+            */
+            
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+
+                //storage.setItem = storage.save;
+                //storage.getItem = storage.load;
+                
+                App.makePageFit("lessons");
+                
+                Coding.init();
+                
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameStarted", Page.codingFinished);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                
+                Coding.setOption("1", "resetButtonEnabled", 1);
+                //Coding.setOption("1", "saveButtonEnabled", "code-js-s1"); //sample saving path: "code-e2-1"
+                
+                Coding.createNewEditorHTML("1");
+                Coding.setScreenColor("1", "#D8D8D8"); //#F6F6F6, D8D8D8
+                Coding.setScreenHeight("1", "300px");
+                editor1 = ace.edit("editor1");
+                //editor1.setReadOnly(true);
+                Coding.createNewEditor("1");
+                Coding.setSnippetIDList("1", ["113", "107", "102", "104", "112", "120", "123", "124"]);
+                
+                // Eğer resetButton aktif ise
+                Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"));
+                // Eğer saveButton aktif ise
+                //Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"), "code-js-s1");
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                
+                
+                /*
+                setTimeout(function(){ 
+                
+                    Coding.runCode("1", 0);
+                
+                }, 200);
+                */
+                
+                App.setPageScore("lesson11", 1);
+
+                App.showAllPage();
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Renkleri tara - Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Renkleri tara - Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/samples.css">
+        <link rel="stylesheet" type="text/css" href="../css/basic-editor.css">
+        <link rel="stylesheet" type="text/css" href="../basic/kutuphane/basic-1.3.css">
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/basic-editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/basic-minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../basic/kutuphane/basic-1.3.js" type="text/javascript" charset="utf-8"></script>
+        
+        <style>
+        
+        .alert-yellow { position:relative;background-color: #F6F6F6;font-family: roboto;margin: 20px;margin-top: 40px;margin-bottom: 40px;padding: 20px;padding-top: 10px;padding-bottom: 10px; color:#4A4A4A;border-radius: 8px;font-size: 18px;text-align: justify;/* line-height: 100%; */ }
+
+        .alert-centered-bold-title { display: block;color:#fcdede; font-family: roboto-bold;text-align: center;padding-top: 20px}
+
+        
+        </style>
+        
+        <script>
+            
+            // var start;
+            
+            var editor1;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                    
+                    case "1":
+                        
+                        break;
+                    
+                    }
+                
+            };
+            
+            Page.codingFinished = function($e){
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        break; 
+                        
+                   }
+            
+            };
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("sample");
+                
+                Coding.init();
+                
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameStarted", Page.codingFinished);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                
+                Coding.setOption("1", "resetButtonEnabled", 1);
+                //Coding.setOption("1", "saveButtonEnabled", "code-js-s1"); //sample saving path: "code-e2-1"
+                
+                Coding.createNewEditorHTML("1");
+                Coding.setScreenColor("1", "white"); //#F6F6F6, #D8D8D8
+                Coding.setScreenHeight("1", "260px");
+                editor1 = ace.edit("editor1");
+                //editor1.setReadOnly(true);
+                Coding.createNewEditor("1");
+                Coding.setSnippetIDList("1", Coding.snippetCodingIDList);
+                
+                // Eğer resetButton aktif ise
+                Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"));
+                // Eğer saveButton aktif ise
+                //Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"), "code-js-s1");
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                
+                //App.setPageScore("lesson6", 1);
+                
+            };
+            
+            
+            
+        
+        </script>
+
+    </head>
+    <body>
+        
+        <div id="app-cont">
+            
+            <a href="../pages/samples.htm"><div class="close-btn"><img src="../img/samples/sample-close-btn.png" /></div></a>
+            
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+            <p class="normal-title">Sayaç</p>
+                
+                <p>Her saniye, etiket (Label) üzerindeki sayının bir arttırılması ve düğmeye (Button) basıldığında sıfırlanması.</p>
+                
+                <!-- <p>Yılanı oluşturan karelerin koordinatları, <span class="normal-bold-text">noktalar</span> isminde bir dizi değişkeninde saklanıyor. </p>
+                <p><span class="normal-bold-text">ilerle()</span> fonksiyonu, yılanın bir birim ilerlemesini sağlıyor.</p> -->
+
+            </div>
+            
+            <!-- TEXT GROUP END -->
+            
+<!-- 1 --><div id="editor-cont1"></div>
+            
+            <div class="normal-text-group">
+                
+                <p class="normal-bold-text2">Çalışma Mantığı:</p>
+                        
+                <ul>
+                <li>Düğmeye basıldığında, sıfırlama işlemini yapacak fonksiyon çalıştırılır.</li>
+                <li>Sayıyı bir arttıran başka bir fonksiyon ise, her saniye çalıştırılan loop() fonksiyonunun içine eklenmiştir.</li>
+                </ul>
+
+            </div>
+            
+            
+            <div class="page-end-spacing"></div>
+        
+        </div><!-- content -->
+
+<div id="code-example1" style="display:none">// Görünen sayı.
+var lblSayi
+// Sıfırlama butonu.
+var btnArttir
+
+// İlk çalışan fonksiyon.
+var start = function() {
+    
+    // Sayfa rengini açık mavi olarak düzenle.
+    page.color = "lightblue"
+
+    // Bir etiket nesnesi oluştur. Parametreler: left, top
+    lblSayi = createLabel(50, 50)
+    that.text = "0"
+    // Yazıyı, kendi genişliğinin içerisinde ortalanmış olarak yaz.
+    that.textAlign = "center"
+    // Yazının boyutunu, 40px yap.
+    that.fontSize = 40
+
+    // Bir düğme nesnesi oluştur. Parametreler: left, top
+    btnArttir = createButton(50, 120)
+    that.text = "Sıfırla"
+    that.onClick(sayiSifirla)
+
+    // lblSayi nesnesini, btnArttir ile uyumlu hale getirelim.
+    
+    // Yazının rengini, düğmenin rengi ile aynı yap.
+    lblSayi.textColor = btnArttir.color
+    // Yazının kapladığı genişliği, düğmenin genişliği ile aynı yap.
+    lblSayi.width = btnArttir.width
+    
+    // Not: Bu örnekte, hızlı kod yazabilmek için 
+    // bazı kısa yazımlar kullanılmıştır.
+    
+    // Not: that değişkeni, son oluşturulan nesneyi taşımaktadır.
+    
+}
+
+// Her saniye çalışan fonksiyon. (Otomatik çalıştırılır.)
+var loop = function() {
+    
+    // Sayıyı 1 arttır.
+    sayiArttir()
+    
+}
+
+// Düğmeye basıldığında sayinın 1 arttırılmasını sağlayan fonksiyon.
+var sayiArttir = function() {
+    
+    // Etiket (Label) nesnesindeki değeri 1 ile topla ve geri yaz.
+    lblSayi.text = num(lblSayi.text) + 1
+
+    // Not: Nesnenin .text özelliği, taşıdığı bilgiyi
+    // otomatik metin (string) veri tipine dönüştürülür.
+    
+}
+
+// Düğmeye basıldığında, sayinın 0 olmasını sağlayan fonksiyon.
+var sayiSifirla = function() {
+    
+    // Etiket (Label) nesnesindeki değeri "0" yap.
+    lblSayi.text = "0"
+    
+}
+</div>        
+</body>
+</html>

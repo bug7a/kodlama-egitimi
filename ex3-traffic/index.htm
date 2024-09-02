@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Kodlama">
+        <meta name="keywords" content="Kodlama">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../basic/kutuphane/basic-1.6.3.css">
+        <link rel="stylesheet" type="text/css" href="../css-v2/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/exercisex.css">
+        <link rel="stylesheet" type="text/css" href="css/ex3-shared.css">
+        <link rel="stylesheet" type="text/css" href="../css-v2/coding.css">
+
+        <script src="../basic/kutuphane/basic-1.6.3.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js-v2/app.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js-v2/minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <style>
+            
+
+        </style>
+
+        <script>
+
+            let pageBack;
+            let a0;
+            let motionShowTime = 0;
+
+            const typeBtn_gray = {
+                "fontSize": 28,
+                "color": "#E9EAEA",
+                "textColor": "#0E0E10",
+                "minimal": 1,
+                "round": 30
+            }
+
+            const typeBtn_white = {
+                "fontSize": 28,
+                "color": "#FFFFFF",
+                "textColor": "#0E0E10",
+                "border": 1,
+                "borderColor": "#262628",
+                "minimal": 1,
+                "round": 30
+            }
+
+            const appOnReady = function() {
+
+                app.start();
+
+                pageBack = cbox(0, 0, page.width, page.height);
+                that.color = "transparent";
+                that.element.display = "fixed";
+                selectBox(that);
+                
+                // BOX: Sayfa
+                a0 = cbox(0, 0, 600, page.height);
+                that.scrollY = 1;
+                that.center("left");
+                createPage_a0();
+
+                miniKeyboard.create();
+
+            }
+
+            const createPage_a0 = function() {
+
+                // IMAGE: Arkaplan resmi.
+                a0.imgBackground = cimg(a0.left, 0, a0.width, a0.height);
+                that.load("images/background.jpg");
+                // Kaydırma çubuğu hareket ettiğinde, resim sabit kalsın.
+                that.element.style.position = "fixed";
+                that.setMotion("opacity .5s");
+                that.opacity = 0;
+                that.withMotion(function(self) {
+                    self.opacity = 1;
+                })
+
+                // IMAGE: Logo resmi.
+                a0.imgLogo = cimg(72, 56, 459, 115);
+                that.load("images/logo.png");
+                that.setMotion("transform .5s, opacity 0.5s");
+                that.element.style.transform = "scale(0.3)";
+                that.opacity = 0;
+                that.withMotion(function(self) {
+                    self.element.style.transform = "scale(1)";
+                    self.opacity = 1;
+                });
+
+                // IMAGE: Kapatma butonu.
+                a0.imgbtnClose = cimg(0, 0, 50, 50);
+                that.load("images/close-btn.png")
+                that.top = 20;
+                that.right = 20;
+                that.onClick(function(self) {
+                    app.gotoPage("../pages/exercises.htm")
+                });
+
+                // LABEL: Yazılım Projesi.
+                a0.lblLogoSubTitle = clbl(0, 0, a0.imgLogo.width);
+                that.text = "Yazılım Projesi";
+                that.textAlign = "center";
+                that.element.style.fontFamily = "opensans-bold";
+                that.textColor = "#585858";
+                that.setMotion("top .5s, opacity .5s");
+                that.opacity = 0;
+                that.aline(a0.imgLogo, "bottom", -30);
+                that.withMotion(function(self) {
+                    self.opacity = 1;
+                    self.aline(a0.imgLogo, "bottom", -10);
+                });
+                
+                // LABEL: İhtiyacın olan bilgileri öğren:
+                a0.lblTitle1 = clbl(20, 270, a0.width); // 20, 234
+                that.text = "İhtiyacın olan bilgileri öğren:";
+                showObjectWithMotion(that, getNext_motionShowTime());
+
+                // BUTTON: Temel Konular
+                a0.btnInfo1 = cbtn(0, 0, 560, 84);
+                that.text = "Temel Konular";
+                that.prop(typeBtn_gray);
+                that.element.style.fontFamily = "opensans-bold";
+                that.element.classList.add("motion-zoomOnMouseOver-forButton");
+                that.aline(a0.lblTitle1, "bottom", 25);
+                showObjectWithMotion(that, getNext_motionShowTime());
+
+                // BUTTON: Proje ile İlgili Konular
+                a0.btnInfo2 = cbtn(0, 0, 560, 84);
+                that.text = "Proje ile İlgili Konular";
+                that.prop(typeBtn_gray);
+                that.element.style.fontFamily = "opensans-bold";
+                that.element.classList.add("motion-zoomOnMouseOver-forButton");
+                that.aline(a0.btnInfo1, "bottom", 15);
+                showObjectWithMotion(that, getNext_motionShowTime());
+
+                // LABEL: Öğrendiklerini nasıl kullanabileceğini test et:
+                a0.lblTitle2 = clbl(20, 234, a0.width);
+                that.text = "Öğrendiklerini nasıl kullanabileceğini test et:";
+                that.aline(a0.btnInfo2, "bottom", 50);
+                showObjectWithMotion(that, getNext_motionShowTime());
+
+                for (var i = 1; i <= 5; i++) {
+
+                    // BUTTON: Test butonları
+                    a0["btnTest" + i] = cbtn(0, 0, 80, 84);
+                    that.text = str(i);
+                    that.prop(typeBtn_gray);
+                    that.element.style.fontFamily = "opensans-bold";
+                    that.element.classList.add("motion-zoomOnMouseOver-forButton");
+
+                    if (i == 1) {
+                        that.text = "Test " + that.text;
+                        that.width = 132;
+                        that.aline(a0.lblTitle2, "bottom", 25);
+
+                    } else {
+                        that.aline(a0["btnTest" + (i - 1)], "right", 4);
+
+                    }
+
+                    showObjectWithMotion(that, getNext_motionShowTime());
+
+                }
+
+                // LABEL: Trafiği kontrol edecek teknolojiyi üret:
+                a0.lblTitle3 = clbl(20, 234, a0.width);
+                that.text = "Trafiği kontrol edecek teknolojiyi üret:";
+                that.aline(a0["btnTest1"], "bottom", 50);
+                showObjectWithMotion(that, getNext_motionShowTime());
+
+                // BUTTON: Üç Işıklı Trafik Lambası
+                a0.btnQuestion1 = cbtn(0, 0, 560, 84);
+                that.text = "Üç Işıklı Trafik Lambası";
+                that.prop(typeBtn_white);
+                that.element.style.fontFamily = "opensans-bold";
+                that.element.classList.add("motion-zoomOnMouseOver-forButton");
+                that.aline(a0.lblTitle3, "bottom", 25);
+                showObjectWithMotion(that, getNext_motionShowTime());
+
+                // BUTTON: Birlikte Çalışan Trafik Lambaları
+                a0.btnQuestion2 = cbtn(0, 0, 560, 84);
+                that.text = "Birlikte Çalışan Trafik Lambaları";
+                that.prop(typeBtn_white);
+                that.element.style.fontFamily = "opensans-bold";
+                that.element.classList.add("motion-zoomOnMouseOver-forButton");
+                that.aline(a0.btnQuestion1, "bottom", 15);
+                showObjectWithMotion(that, getNext_motionShowTime());
+
+                // BOX: Sayfanın en altındaki boşluk.
+                a0.boxBottomSpace = cbox(0, 0, 120, 120);
+                that.opacity = 0;
+                that.aline(a0.btnQuestion2, "bottom", 0);
+
+                reset_motionShowTime();
+
+            }
+
+            const showObjectWithMotion = function(object, time) {
+
+                // var objectTop = object.top;
+                object.setMotion("transform .5s, opacity 0.5s, top 0.5s");
+                object.element.style.transform = "scale(0.3)";
+                object.opacity = 0;
+
+                setTimeout(function() {
+
+                    object.withMotion(function(self) {
+                        // self.top = objectTop;
+                        self.element.style.transform = "scale(1)";
+                        self.opacity = 1;
+                        
+                    });
+
+                }, time);
+
+            };
+
+            const getNext_motionShowTime = function() {
+
+                motionShowTime += 15;
+                return motionShowTime;
+
+            };
+
+            const reset_motionShowTime = function() {
+
+                motionShowTime = 0;
+
+            };
+
+        </script>
+
+    </head>
+    <body>
+
+
+        
+    </body>
+</html>

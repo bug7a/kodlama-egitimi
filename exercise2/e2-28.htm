@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Alıştırma - Çocuklar için kodlama (programlama oyunu)">
+        <meta name="keywords" content="Alıştırma - Çocuklar için kodlama (programlama oyunu)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/coding.css">
+        <link rel="stylesheet" type="text/css" href="../css/coding2.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/exercisex.css">
+        <link rel="stylesheet" type="text/css" href="css/exercise2.css">
+        
+    </head>
+    <body>
+        
+        <div class="colored-background"></div>
+        
+        <div id="app-cont">
+            
+            <!-- CLOSE BUTTON -->
+            
+            <a href="exercise2.htm"><div class="close-btn"><img src="../img/exercisex/close-btn.png" /></div></a>
+            
+            <!-- QUESTION START -->
+            
+            <div class="normal-text-group">
+                
+                <p id="ex-page-number" id-num="28" class="normal-title">28</p>
+                
+                <!-- <div class="normal-img" ><img src="img/mission-btn.png" width="560" /></div> -->
+                
+                <p class="normal-text"><span class="normal-bold-text2x">Etkileşim;</span> yolu takip etmek.</p>
+                
+                <!-- <p class="normal-text">Gözümüz kareyi hareket ediyormuş gibi algılayacaktır.</p> -->
+                
+                
+            
+                <p class="normal-text"><span class="normal-bold-text2">Örnek;</span> gri yolun üzerinde ilerleyen, mavi kare algoritması.</p>
+                
+                <p class="normal-text" style="font-size:15px">Yer çekimi etkisi olmadığı için; bu örnek, yılan (snake) oyunu gibi<br />üstten görünüş (kuş bakışı) olarak düşünülebilir.</p>
+                
+            </div>
+            
+            <!-- QUESTION END -->
+            
+<!-- EDITOR --><div id="editor-cont1"></div>
+            
+            <!-- TIPS AND VIDEO -->
+            
+            <div class="normal-text-group">
+                
+                <div class="alert-box">
+                
+                    <div class="alert-centered-bold-title">EK AÇIKLAMA</div>
+                    
+                    <!-- <p><a href="../lessons1/lesson2.htm"><span class="exercise1-lesson-btn">Değişkenlerin kullanımı</span></a> konusunu tamamlamış olmanız önerilir.</p> -->
+                    
+                    <p><a href="../lessons2/conditional-statement.htm"><span class="normal-bold-text">İleri koşullu ifadeler</span></a> konusunu tamamlamış olmanız önerilir.</p>
+                    
+                    <!-- <p>Yer çekimi etkisi olmadığı için; bu örnek, yılan (snake) oyunu gibi üstten görünüş (kuş bakışı) olarak düşünülebilir.</p> -->
+                    
+                    <p>Bu algoritmada, beş farklı olasılık programlanmıştır;</p>
+                    
+                    <p style="font-size:15px">Gri yol, hareket eden karenin sağında, solunda, aşağısında veya yukarısında devam ediyor olabilir.</p>
+                    
+                    <p style="font-size:15px">Bunların hiç biri tespit edilemez ise, gri yol bitmiştir.</p>
+                    
+                    <!-- <p>Eğer birden fazla yön, gri olarak boyanmış ise; koşullu ifadenin kontrol sırasına göre ilk tespit edilen yön seçilir.</p> -->
+                    
+                    
+                    
+                    <!-- <p>Böylece hareket eden karenin rengini değiştirmek istediğimizde; tüm <span class="normal-bold-text">kareBoya(x, y, renk)</span> fonksiyonlarındaki <span class="normal-bold-text">renk</span> parametrelerini değiştirmek yerine, <span class="normal-bold-text">kareRenk</span> değişkeninin içeriğini değiştirmemiz yeterli olacaktır.</p> -->
+                    
+                    <!-- <img src="../img/coding2/code/201-color-table.webp" width="520" /> -->
+
+                    <!-- <p>Robotun sahip olduğu anahtar sayısı, <span class="normal-bold-text">robot.anahtar</span> değişkeninden alınmalı.</p> -->
+
+                    <!--<p>Eğer bu kare şeklini, tek bir döngü ile çizdirebilirsek; daha başarılı bir algoritma kurabilmiş oluruz.</p>-->
+
+                </div>
+                
+                <div class="normal-img" style="margin-bottom: -30px;"><img src="img/move-model.webp" width="560" /></div>
+                
+                <div onclick="Exercise.gotoYouTubeURL('https://youtu.be/l08PP4zoE14');" class="normal-img" ><img src="img/desc-video-btn.webp" width="560" /></div>
+                
+                <a href="e2-29.htm"><div class="normal-sub-img" ><img src="img/next-video-btn.webp" width="560" /></div></a>
+                
+                <!--<p><a href="../lessons1/lesson2.htm"><span class="exercise1-lesson-btn">Ekrana yazı yazmak</span></a> ve <a href="../lessons1/lesson3.htm"><span class="exercise1-lesson-btn">Değişkenlerin kullanımı</span></a> konularını tamlamış olmanız önerilir.</p>-->
+                
+                <!-- <div id="t1-btn" class="normal-img" onclick="Exercise.openTip('t1');" ><img src="img/tip-btn.webp" width="560" /></div>
+                
+                <div id="t1-text" style="display:none;">
+                <div class="tip-basci-box"><p>Kare şeklinin ortası beyaz kalmalı.</p></div>
+                </div> -->
+                
+                <!-- <div id="t2-btn" class="normal-sub-img" onclick="Exercise.openTip('t2');" ><img src="img/tip-btn.webp" width="560" /></div>
+                
+                <div id="t2-text" style="display:none;">
+                <div class="tip-basci-box-sub"><p>zemin.sonKonum</p></div>
+                </div> -->
+                
+                <!-- <div onclick="Exercise.gotoYouTubeURL('https://youtu.be/xQs-J2Mn3zQ');" class="normal-sub-img" ><img src="img/video-btn.webp" width="560" /></div> -->
+                
+                
+            </div>
+                
+            <div class="page-end-spacing"></div>
+        
+        </div><!-- content end -->
+
+<div id="code-example1" style="display:none">//karenin rengi
+var kareRenk = "mavi"
+//karenin koordinatları
+var kareX = 2
+var kareY = 14
+    
+//karenin hızı (milisaniye)
+var kareHiz = 60
+
+//takip edilecek karenin (yolun) rengi
+var takipEdilenRenk = "gri"
+
+//30 kere tekrar et
+for (var i = 1; i &lt;= 46; i++) {
+    
+    //mavi kareyi eski konumundan temizle
+    kareTemizle(kareX, kareY)
+    
+    //sağdaki bitişik kare rengi gri ise
+    if (kareNeRenk(kareX + 1, kareY) == takipEdilenRenk) {
+    
+        //karenin x koordinatını 1 arttır (hesaplaması)
+        kareX = kareX + 1
+    
+    //soldaki bitişik kare rengi gri ise
+    } else if (kareNeRenk(kareX - 1, kareY) == takipEdilenRenk) {
+    
+        //karenin x koordinatını 1 eksilt (hesaplaması)
+        kareX = kareX - 1
+    
+    //aşağıdaki bitişik kare rengi gri ise
+    } else if (kareNeRenk(kareX, kareY + 1) == takipEdilenRenk) {
+    
+        //karenin y koordinatını 1 arttır (hesaplaması)
+        kareY = kareY + 1
+    
+    //yukarıdaki bitişik kare rengi gri ise
+    } else if (kareNeRenk(kareX, kareY - 1) == takipEdilenRenk) {
+    
+        //karenin y koordinatını 1 eksilt (hesaplaması)
+        kareY = kareY - 1
+    
+    } else {
+        
+        //takip edilecek gri kare bulunamadı
+        ses("bip")
+    
+    }
+    
+    //hesaplanan yeni kareyi mavi renk ile boya
+    kareBoya(kareX, kareY, kareRenk)
+    
+    //60 milisaniye bekle
+    bekle(kareHiz)
+    
+}
+</div>
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/coding.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/coding2.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="js/exercise2.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script>
+            
+            var editor1;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        Coding2.dontUseAnimationEngine = 1;
+                        
+                        Coding2.init();
+                        
+                        Coding2.createScreen(14, 15);
+                        
+                        kareBoya(2, 14, "mavi");
+                        //kareBoya(12, 4, "turuncu");
+                        
+                        var _kareX = 2;
+                        var _kareY = 14;
+                        var _kareYon = "sağ";
+                        
+                        for (var i = 1; i <= 45; i++) {
+                            
+                            if (_kareYon == "sağ") {
+                                _kareX = _kareX + 1;
+                            } else if (_kareYon == "aşağı") {
+                                _kareY = _kareY + 1;
+                            } else if (_kareYon == "sol") {
+                                _kareX = _kareX - 1;
+                            } else if (_kareYon == "yukarı") {
+                                _kareY = _kareY - 1;
+                            }
+                            
+                            switch(i) {
+                                case 5:
+                                    _kareYon = "yukarı";
+                                    break;
+                                case 9:
+                                    _kareYon = "sol";
+                                    break;
+                                case 12:
+                                    _kareYon = "yukarı";
+                                    break;
+                                case 20:
+                                    _kareYon = "sağ";
+                                    break;
+                                case 26:
+                                    _kareYon = "aşağı";
+                                    break;
+                                case 30:
+                                    _kareYon = "sol";
+                                    break;
+                                case 34:
+                                    _kareYon = "aşağı";
+                                    break;
+                                case 36:
+                                    _kareYon = "sağ";
+                                    break;
+                                case 42:
+                                    _kareYon = "yukarı";
+                                    break;
+                            }
+                            
+                            kareBoya(_kareX, _kareY, "gri");
+                            
+                        }
+                        
+                        
+                        document.getElementById("mycanvas1").style.zoom = 1.5;
+                        
+                        Coding2.dontUseAnimationEngine = 0; 
+                        
+                        break;
+                       }
+                
+            };
+            
+            Page.codingFinished = function($e){ 
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        /*
+                        var coordinateList = [{x:3,y:4},{x:4,y:4},{x:5,y:4},{x:3,y:5},{x:5,y:5},{x:3,y:6},{x:4,y:6},{x:5,y:4}];
+                        
+                        var count = 0;
+                        
+                        for (var i = 0; i < coordinateList.length; i++) {
+                            if(kareNeRenk(coordinateList[i].x, coordinateList[i].y) == "siyah") {
+                                count++;
+                            }
+                        }
+                        
+                        if (count == 8 && kareNeRenk(4, 5) == "beyaz") {
+                            
+                            //Exercise.showSuccessWindow();
+                            //App.setPageScore(Exercise.exID + "-" + Exercise.exPageID, 1);
+                            //Coding.saveCode("1", Exercise.codeSavePath);
+                            
+                        } else {
+                            
+                            //Exercise.showFailWindow();
+                            
+                        }
+                        */
+                        
+                        //Coding1.robotPosition = 0;
+                        //Coding1.robotEnergy = 0;
+                        //Coding1.robotKeyCount = 0;
+                        //Coding1.robotDirection = "right";
+                        //Coding1.robotEnergySpending = 5;
+                        //Coding1.groundMaxPosition = 0;
+                        //Coding1.groundMinPosition = 0;
+                        /*
+                        var consoleText = document.getElementById("coding-console-box1").innerHTML;
+                        var printed = consoleText.search("0");
+                        var printed2 = consoleText.search("1");
+                        
+                        var codeText = editor1.getValue();
+                        var coded = codeText.search("robot.anahtar");
+                        
+                        if (printed >= 0 && printed2 >= 0 && coded >= 0) {
+                            
+                            Exercise.showSuccessWindow();
+                            App.setPageScore(Exercise.exID + "-" + Exercise.exPageID, 1);
+                            Coding.saveCode("1", Exercise.codeSavePath);
+                             
+                        }else{
+                            
+                            Exercise.showFailWindow();
+                            
+                        }
+                        */
+                        
+                        break;
+                        
+                       }
+            
+            };
+            
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("exercise");
+                
+                Coding.init();
+                Exercise.init();
+                
+                document.addEventListener("onGameRefreshed", Page.codingInit);
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                document.addEventListener("onAnimationTurnStarted", Page.animationTurnStarted);
+                
+                Exercise.createStandartEditor();
+                
+                Coding.setSnippetIDList("1", ["202", "203", "201", "204", "006", "206"]); //"004",
+                //Coding.setSnippetIDList("1", Coding.snippetCodingIDList.concat(Coding.snippetCoding1IDList));
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                
+                //Başlangıçta otomatik, okundu olarak işaretle.
+                App.setPageScore(Exercise.exID + "-" + Exercise.exPageID, 1);
+                
+                //kayoport aalışveriş merkezi - bodrum sibel hanım
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

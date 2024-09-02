@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Fonksiyon oluşturmak (function) -- Çocuklar için Programlama Eğitimi">
+        <meta name="keywords" content="Fonksiyon oluşturmak (function) -- Çocuklar için Programlama Eğitimi">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../basic/kutuphane/basic-1.6.3.css">
+        <script src="../basic/kutuphane/basic-1.6.3.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/dictionary.js" type="text/javascript" charset="utf-8"></script>
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/lessons.css">
+        <link rel="stylesheet" type="text/css" href="../css/dictionary.css">
+
+        <!-- <link rel="stylesheet" type="text/css" href="../css/coding.css"> -->
+        <!-- <link rel="stylesheet" type="text/css" href="../css/coding1.css">
+        <link rel="stylesheet" type="text/css" href="../css/coding2.css"> -->
+
+    </head>
+    <body>
+        
+        <div class="colored-background"></div>
+        
+        <div id="app-cont">
+            
+            <!-- HEADER -->
+            
+            <div class="header-top">
+                
+                <a onclick="App.gotoPage('../pages/lessons.htm')"><div class="header-icon" style="left:0px;"><img src="../img/lessons/header-list-icon.png" width="70" height="70" /></div>
+                <div class="header-icon-txt" style="left:55px;">KONULAR</div>
+                </a>
+                
+                <!-- VİDEO İLE ANTLATIM -->
+
+                <!-- <div onclick="App.gotoYouTubeURL('https://youtu.be/AA68Z1s7Xp4');" style="position:absolute;right:20px;top:14px;"><img src="../img/lessons/youtube-video-btn2.png" width="180" height="43" />
+                </div> -->
+                
+            </div>
+            
+            <!-- HEADER END -->
+            
+            <div class="normal-text-group">
+                
+            <p class="normal-title">İngilizce kelimeler</p>
+                
+                <!-- <p>Programlamada kullanılan, terimleşmiş bazı ingilizce kelimelerin, türkçe karşılıkları.</p> -->
+                
+                <p>Sık kullanılan bazı kelimelerin, türkçe karşılıkları.</p>
+                
+            </div>
+            
+            <div id="dictionary-app"></div>
+            
+            <!-- <div style="position: relative;height:100%"></div> -->
+            
+        <div class="header-bottom" style="position: fixed;bottom:0px;width:600px;">
+
+            <a onclick="App.gotoPage('function.htm')"><div class="header-icon" style="left:0px;"><img src="../img/lessons/header-left-icon.png" width="70" height="70" /></div>
+            <div class="header-icon-txt" style="left:55px;">FONKSİYON OLUŞTURMAK</div>
+            </a>
+
+            <a onclick="App.gotoPage('what-is-object.htm')"><div class="header-icon" style="right:0px;"><img src="../img/lessons/header-right-icon.png" width="70" height="70" /></div>
+            <div class="header-icon-txt" style="right:55px;">NESNE NEDİR?</div>
+            </a>
+
+            <a onclick="App.gotoPage('../pages/lessons.htm')"><div class="header-icon" style="position:absolute;left:265px;top:0px;"><img src="../img/lessons/header-list-icon.png" width="70" height="70" /></div></a>
+
+        </div>
+        
+        </div><!-- content -->
+
+<div id="code-example1" style="display:none">// Bir fonksiyon oluştur.
+var selamVer = function() {
+
+	yaz("Merhaba Dünya!")
+
+}
+
+// Fonksiyonu çalıştır.
+selamVer()
+</div>
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        <!-- <script src="../js/coding.js" type="text/javascript" charset="utf-8"></script> -->
+        <!-- <script src="../js/minikeyboard.js" type="text/javascript" charset="utf-8"></script> -->
+        
+        <script>
+            
+            var editor1;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                        }
+            };
+            
+            Page.codingFinished = function($e){ 
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        break;
+                       }
+            
+            };
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("lessons");
+                
+                // Kelimeleri kısıtlamalarını ayarla.
+                //selectEnglishWords(["left", "top", "string"])
+                
+                startDictionary("dictionary-app");
+
+                App.setPageScore("lesson9", 1);
+                
+                App.showAllPage();
+                
+            };
+            
+            
+            
+        
+        </script>
+        
+    </body>
+</html>

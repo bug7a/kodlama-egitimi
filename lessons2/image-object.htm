@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Fonksiyon oluşturmak (function) -- Çocuklar için Programlama Eğitimi">
+        <meta name="keywords" content="Fonksiyon oluşturmak (function) -- Çocuklar için Programlama Eğitimi">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/lessons.css">
+        <link rel="stylesheet" type="text/css" href="../css/basic-editor.css">
+        <link rel="stylesheet" type="text/css" href="../basic/kutuphane/basic-1.3.css">
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/basic-editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/basic-minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../basic/kutuphane/basic-1.3.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+
+    </head>
+    <body>
+        
+        <div id="app-cont">
+            
+            <!-- HEADER -->
+            
+            <div class="header-top">
+                
+                <a onclick="App.gotoPage('../pages/lessons.htm')"><div class="header-icon" style="left:0px;"><img src="../img/lessons/header-list-icon.png" width="70" height="70" /></div>
+                <div class="header-icon-txt" style="left:55px;">KONULAR</div>
+                </a>
+                
+                <!-- VİDEO İLE ANTLATIM -->
+
+                
+                <!-- <div onclick="App.gotoYouTubeURL('https://youtu.be/AA68Z1s7Xp4');" style="position:absolute;right:20px;top:14px;"><img src="../img/lessons/youtube-video-btn2.png" width="180" height="43" />
+                </div> -->
+                
+            </div>
+            
+            <!-- HEADER END -->
+            
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+                <p class="normal-title">Resim (Image)</p>
+                
+                <p>Bir resim dosyasını <span class="normal-italic-text">(.png, .jpg, .gif, .svg)</span> ekranda gösteren nesne.</p>
+                
+                <!-- <p>Bu nesne ile, çizim programlarında yaptığımız tasarımları parça parça yükleyip, hizalayarak; algoritmalar ile yönetilebilecek dinamik uygulamalara dönüştürebiliriz.</p> -->
+                
+                <p>Bu nesne ile, çizim programlarında <!--<span class="normal-italic-text">(figma)</span> -->yaptığımız tasarımları parça parça yükleyip, hizalayarak; yazdığımız kodlar ile yönetilebilen dinamik uygulamalara dönüştürebiliriz.</p>
+                
+                <p>Şimdi, bir örnek yapalım:</p>
+                
+                <p>Bir roket resmini ekrana yükleyip, soldan-sağa hareket ettirelim.</p>
+                
+                </div>
+                
+<!-- 1 --><div id="editor-cont1"></div>
+        
+            
+            <div class="normal-text-group">
+                
+                
+                
+                <!-- <p><span class="normal-bold-text">start()</span> fonksiyonu, tüm içerik yüklenip, değişken ve fonksiyonlar tanımlandıktan sonra, otomatik olarak çalıştırılmaktadır.</p> -->
+                
+                <!-- <p> özel fonksiyonu, her 1000 ms'de bir tekrar çalışır.<!--<span class="normal-italic-text">(Standart değer: 1000 milisaniye)</span>--><!--</p>-->
+                
+                <!-- <p><span class="normal-bold-text">setLoopTimer(milisaniye)</span> fonksiyonu, belli aralıklar ile tekrar çalıştırılan <span class="normal-bold-text">loop()</span> fonksiyonunun aralık süresini değiştirir.</p> -->
+                
+                <p><span class="normal-bold-text">setLoopTimer(milisaniye)</span> fonksiyonu, <span class="normal-bold-text">loop()</span> fonksiyonunun ne kadar sürede bir tekrar çalışacağını ayarlar.<!-- ne kadar sürede bir tekrar çalışacağını --></p>
+                
+                <!-- <p>İngilizcede i'nin büyük hali I'dır. Büyük İ yoktur. image (resim) kelimesinin büyük harf ile başyalan hali Image'dir.</p> -->
+                
+                <!-- <p><span class="normal-bold-text">mesaj</span> değişkeni, Bu sistem, nesne tabanlı programlama (Object-based) yöntemi olarak adlandırılır.</p>
+                
+                <p>Bu sistem sayesinde, (ön plandaki) algoritmamız, sade ve anlaşılması kolay olarak kalırken; daha çok işi, daha hızlı ve düzenli olarak yapabiliriz.</p> -->
+                
+            </div>
+        
+            
+            <!-- TEXT GROUP END -->
+            
+        <div class="header-bottom">
+
+            <a onclick="App.gotoPage('button-object.htm')"><div class="header-icon" style="left:0px;"><img src="../img/lessons/header-left-icon.png" width="70" height="70" /></div>
+            <div class="header-icon-txt" style="left:55px;">DÜĞME NESNESİ</div>
+            </a>
+
+            <a onclick="App.gotoPage('box-object.htm')"><div class="header-icon" style="right:0px;"><img src="../img/lessons/header-right-icon.png" width="70" height="70" /></div>
+            <div class="header-icon-txt" style="right:55px;">KUTU NESNESİ</div>
+            </a>
+
+            <a onclick="App.gotoPage('../pages/lessons.htm')"><div class="header-icon" style="position:absolute;left:265px;top:0px;"><img src="../img/lessons/header-list-icon.png" width="70" height="70" /></div></a>
+
+        </div>
+        
+        </div><!-- content -->
+
+<div id="code-example1" style="display:none">
+// Nesneyi taşıyacak değişkeni tanımla.
+var roket
+
+// İlk çalıştırılan özel fonksiyon.
+var start = function() {
+    
+    // Sayfayı siyah renk ile boya.
+    page.color = "black"
+
+	// Bir resim nesnesi oluştur.
+	roket = createImage()
+    
+    // Not: ingilizcede i nin büyük hali I dır. Büyük İ yoktur.
+    // image (resim) kelimesinin büyük harf ile başlayan hali Image dir.
+    
+	// Resim dosyasını yükle.
+	roket.load("roket.png")
+	// Boyutlandır.
+	roket.width = 100
+	roket.height = 100
+	// Roketi ekranın ortasına hizala.
+	// Sayfa genişliğinden, roketin genişliğini çıkar ve 2 ye böl.
+	roket.left = (page.width - roket.width) / 2
+	// Sayfa yuksekliğinden, roketin yüksekliğini çıkar ve 2 ye böl.
+	roket.top = (page.height - roket.height) / 2
+    // Nesneyi, saat yönünde 90 derece döndür.
+    roket.rotate = 90
+    
+    // Not: Yüklenen roket resminin yönü yukarıya bakıyor.
+    // resmi, 90 derece saat yönünde çevirerek;
+    // roketin yönünü sağa doğru çevirmiş oluyoruz.
+    
+    // loop() fonksiyonun çalıştırılma zamanını, 
+    // her 10 milisaniyede bir olarak ayarla.
+    setLoopTimer(10)
+
+}
+
+// Her saniye tekrar çalışan özel fonksiyon.
+var loop = function() {
+
+	// Roketin sola olan mesafesine 1px daha ekle.
+	roket.left += 1
+
+	// Eğer roket sayfanın dışına çıkmış ise
+	// Yani; roketin sola olan mesafesi büyükse 
+	// sayfa genişliği + roketin genişliğinden
+	if (roket.left > (page.width + roket.width)) {
+
+		// Roketi, sol tarafta sayfanın dışına taşı.
+		// Yani; roketin sola olan mesafesini, 0 dan 
+		// roketin genişliği kadar daha küçük yap.
+		roket.left = roket.width * -1
+    
+        // Not: Bir sayının -1 ile çarpımı,
+        // o sayının işaretini tersine çevirir.
+        // -5 * -1 = 5 veya 5 * -1 = -5 dir.
+
+	}
+
+}
+
+</div>
+        
+        <script>
+            
+            var editor1;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                    
+                    case "1":
+                        
+                        break;
+                    
+                    }
+                
+            };
+            
+            Page.codingFinished = function($e){
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        break; 
+                        
+                   }
+            
+            };
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("lessons");
+                
+                Coding.init();
+                
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameStarted", Page.codingFinished);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                
+                Coding.setOption("1", "resetButtonEnabled", 1);
+                //Coding.setOption("1", "saveButtonEnabled", "code-js-s1"); //sample saving path: "code-e2-1"
+                
+                Coding.createNewEditorHTML("1");
+                Coding.setScreenColor("1", "#D8D8D8"); //#F6F6F6, D8D8D8
+                Coding.setScreenHeight("1", "300px");
+                editor1 = ace.edit("editor1");
+                //editor1.setReadOnly(true);
+                Coding.createNewEditor("1");
+                Coding.setSnippetIDList("1", ["110", "108", "111", "113", "109", "114", "101", "102", "104", "115", "106", "105", "107", "112", "120", "121", "125", "122", "123", "124", "125", "126", "127", "128", "129"]);
+                
+                // Eğer resetButton aktif ise
+                Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"));
+                // Eğer saveButton aktif ise
+                //Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"), "code-js-s1");
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                
+                App.setPageScore("lesson14", 1);
+
+                App.showAllPage();
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

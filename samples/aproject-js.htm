@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Alıştırma - Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Alıştırma - Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../basic/kutuphane/basic-1.6.3.css">
+        <script src="../basic/kutuphane/basic-1.6.3.js" type="text/javascript" charset="utf-8"></script>
+
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/coding.css">
+        <link rel="stylesheet" type="text/css" href="../css/samples.css">
+        <link rel="stylesheet" type="text/css" href="../css/basic-editor.css">
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/basic-editor-aproject.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/basic-minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/newproject.js" type="text/javascript" charset="utf-8"></script>
+        
+    </head>
+    <body>
+        
+        <div class="colored-background" style="background-color:#141414;"></div>
+        
+        <div id="app-cont" style="background-color:#141414;">
+            
+            <div class="project-title-box">
+                
+                <img src="../img/samples/project-title-black.png" width="600" />
+                
+                <a href="../pages/samples.htm"><div class="project-close-btn"></div></a>
+                
+                <div id="project-title" class="project-title"></div>
+            
+            </div>
+            
+            <!-- CLOSE BUTTON -->
+            <!-- <a href="../pages/samples.htm"><div class="close-btn"><img src="../img/samples/project-close-btn.png" /></div></a> -->
+            
+            <!-- TEXT GROUP START -->
+            <!-- <div class="normal-text-group" style="margin-top: 32px;margin-bottom: -10px;"> -->
+                
+                
+                
+            <!-- </div> -->
+            <!-- TEXT GROUP END -->
+            
+<!-- 1 -->  <div id="editor-cont1"></div>
+
+            <!-- <p style="color:gray;text-align: center;font-size:14px;">basic.js v1.6.3</p> -->
+                
+            <div class="page-end-spacing"></div>
+        
+        </div><!-- content -->
+
+<div id="code-example1" style="display:none">// Bir kutu nesnesi
+var box1
+    
+// İlk çalışan fonksiyon.
+var start = function() {
+    
+    // loop() fonksiyonu 40ms süre ile tekrarlasın.
+    setLoopTimer(40)
+    
+    // Sayfanın yükseklik ve rengini ayarla.
+    page.height = 350
+    page.color = "#D8D8D8"
+    
+    // Bir kare nesnesi oluştur.
+    box1 = createBox()
+    that.width = 50
+    that.height = 50
+    that.color = "orange"
+    that.border = 4
+    that.borderColor = "#141414"
+    that.round = 8
+    // Nesneyi, sayfanın ortasında konumlandır.
+    that.center()
+    
+    // Nesnenin taşıdığı bilgi.
+    that.value = "Turuncu Kare"
+    that.onClick(printHello)
+    
+}
+
+// Belli aralıklarla tekar eden fonksiyon.
+var loop = function() {
+    
+    // Nesneyi, 10 derece saat yönünde çevir.
+    box1.rotate += 10
+    
+}
+
+// Ekrana, merhaba yazdır.
+var printHello = function(clickedObject) {
+    
+    // Basılan nesnenin taşıdığı bilgiyi de ekle.
+    print("Merhaba, " + clickedObject.value)
+    
+}
+
+</div>
+        
+        <script>
+            
+            var editor1;
+            
+            var Page = function(){};
+            
+            //Exercise1.exPageID = 1;
+            
+            //Exercise1.exID = "e1";
+            Page.codeSavePath = "";
+            Page.projectItem = "";
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("project");
+                
+                Coding.currentEditorNumber = "1";
+                
+                Coding.init();
+                
+                Page.projectItem = JSON.parse(storage.getItem("selected-project-item"));
+                
+                if(Page.projectItem){
+                    
+                //alert(Page.projectItem.ID);
+                Page.codeSavePath = "project-" + Page.projectItem.ID; 
+                    
+                document.getElementById("project-title").innerHTML = Page.projectItem.title;
+                
+                //document.addEventListener("onGameRefreshed", Page.codingInit);
+                //document.addEventListener("onGameStarting", Page.codingInit);
+                //document.addEventListener("onGameFinished", Page.codingFinished);
+                
+                //Coding.setOption("1", "resetButtonEnabled", 0);
+                Coding.setOption("1", "saveButtonEnabled", Page.codeSavePath);
+                Coding.createNewEditorHTML("1");
+                Coding.setScreenColor("1", "#D8D8D8");
+                Coding.setScreenHeight("1", "350px");
+                editor1 = ace.edit("editor1");
+                //editor1.setReadOnly(true);
+                Coding.createNewEditor("1");
+                //editor1.setReadOnly(1);
+                
+                //Coding.setSnippetIDList("1", ["101"]); //"004",
+                Coding.setSnippetIDList("1", Coding.snippetCodingIDList);
+                Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"), Page.codeSavePath);
+                    
+                }
+                
+                //Başlangıçta sahneleri oluştur.
+                //Page.codingInit({editorNumber:'1'});
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

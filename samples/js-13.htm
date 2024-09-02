@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Renkleri tara - Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Renkleri tara - Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/samples.css">
+        <link rel="stylesheet" type="text/css" href="../css/basic-editor.css">
+        <link rel="stylesheet" type="text/css" href="../basic/kutuphane/basic-1.3.css">
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/basic-editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/basic-minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../basic/kutuphane/basic-1.3.js" type="text/javascript" charset="utf-8"></script>
+        
+        <style>
+        
+        .alert-yellow { position:relative;background-color: #F6F6F6;font-family: roboto;margin: 20px;margin-top: 40px;margin-bottom: 40px;padding: 20px;padding-top: 10px;padding-bottom: 10px; color:#4A4A4A;border-radius: 8px;font-size: 18px;text-align: justify;/* line-height: 100%; */ }
+
+        .alert-centered-bold-title { display: block;color:#4A4A4A; font-family: roboto-bold;text-align: center;padding-top: 20px}
+
+        
+        </style>
+        
+        <script>
+            
+            // var start;
+            
+            var editor1;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                    
+                    case "1":
+                        
+                        break;
+                    
+                    }
+                
+            };
+            
+            Page.codingFinished = function($e){
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        break; 
+                        
+                   }
+            
+            };
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("sample");
+                
+                Coding.init();
+                
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameStarted", Page.codingFinished);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                
+                Coding.setOption("1", "resetButtonEnabled", 1);
+                //Coding.setOption("1", "saveButtonEnabled", "code-js-s1"); //sample saving path: "code-e2-1"
+                
+                Coding.createNewEditorHTML("1");
+                Coding.setScreenColor("1", "white"); //#F6F6F6, #D8D8D8
+                Coding.setScreenHeight("1", "660px");
+                editor1 = ace.edit("editor1");
+                //editor1.setReadOnly(true);
+                Coding.createNewEditor("1");
+                Coding.setSnippetIDList("1", Coding.snippetCodingIDList);
+                
+                // Eğer resetButton aktif ise
+                Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"));
+                // Eğer saveButton aktif ise
+                //Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"), "code-js-s1");
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                
+                //App.setPageScore("lesson6", 1);
+                
+            };
+            
+            
+            
+        
+        </script>
+
+    </head>
+    <body>
+        
+        <div id="app-cont">
+            
+            <div class="project-title-box">
+                
+                <img src="../img/samples/project-title-black.png" width="600" />
+                
+                <a href="../pages/samples.htm"><div class="project-close-btn"></div></a>
+                
+                <div id="project-title" class="project-title">Satranç</div>
+            
+            </div>
+            
+<!-- 1 --><div id="editor-cont1"></div>
+            
+            <div class="normal-text-group">
+                
+            </div>
+            
+            
+            <div class="page-end-spacing"></div>
+        
+        </div><!-- content -->
+
+<div id="code-example1" style="display:none">// tasAnahtar ile ulaşılabilir. 
+// Her bir taş nesnesinin saklandığı nesne
+// Örnek anahtar: "kale1-siyah" veya "fil2-beyaz" vb.
+var tas = {}
+
+// kareAnahtar ile ulaşılabilir. 
+// Hangi karede, hangi taşın olduğu bilgisi.
+// Örnek anahtar: "1-1" veya "6-5" vb.
+var karedekiTas = {}
+
+// Not: Sol üst kare 1-1 (x-y) konumundadır. Orjinal adres a8 dir.
+// Sağa doğru 2-1, 3-1, 4-1 şeklinde ilk koordinat artar.
+// Aşağıya doğru 1-2, 1-3, 1-4 şeklinde ikinci koordinat artar.
+
+// kareAnahtar ile ulaşılır. 
+// Tahta üzerindeki tüm seçim (ışık yakmak için kullanılan) alanları.
+var karedekiSecim = {}
+
+// Hamle yapmak üzere bir taş seçildiğinde, anahtar bilgilerini sakla.
+var secilenTasAnahtar = ""
+var secilenKareAnahtar = ""
+
+// Satranç tahtasının, adres bilgileri.
+var yatayKonumlar = ["a", "b", "c", "d", "e", "f", "g", "h"]
+var dikeyKonumlar = ["8", "7", "6", "5", "4", "3", "2", "1"]
+
+// Satrançta kullanılan taşların bilgileri.
+var taslarBilgi = []
+// Siyah taşları listeye ekle.
+taslarBilgi.push({anahtar: "kale1-siyah", x:1, y:1, tip:"kale", renk:"siyah"})
+taslarBilgi.push({anahtar: "at1-siyah", x:2, y:1, tip:"at", renk:"siyah"})
+taslarBilgi.push({anahtar: "fil1-siyah", x:3, y:1, tip:"fil", renk:"siyah"})
+taslarBilgi.push({anahtar:"vezir-siyah", x:4, y:1, tip:"vezir", renk:"siyah"})
+taslarBilgi.push({anahtar:"sah-siyah", x:5, y:1, tip:"sah", renk:"siyah"})
+taslarBilgi.push({anahtar:"fil2-siyah", x:6, y:1, tip:"fil", renk:"siyah"})
+taslarBilgi.push({anahtar:"at2-siyah", x:7, y:1, tip:"at", renk:"siyah"})
+taslarBilgi.push({anahtar:"kale2-siyah", x:8, y:1, tip:"kale", renk:"siyah"})
+taslarBilgi.push({anahtar:"piyon1-siyah", x:1, y:2, tip:"piyon", renk:"siyah"})
+taslarBilgi.push({anahtar:"piyon2-siyah", x:2, y:2, tip:"piyon", renk:"siyah"})
+taslarBilgi.push({anahtar:"piyon3-siyah", x:3, y:2, tip:"piyon", renk:"siyah"})
+taslarBilgi.push({anahtar:"piyon4-siyah", x:4, y:2, tip:"piyon", renk:"siyah"})
+taslarBilgi.push({anahtar:"piyon5-siyah", x:5, y:2, tip:"piyon", renk:"siyah"})
+taslarBilgi.push({anahtar:"piyon6-siyah", x:6, y:2, tip:"piyon", renk:"siyah"})
+taslarBilgi.push({anahtar:"piyon7-siyah", x:7, y:2, tip:"piyon", renk:"siyah"})
+taslarBilgi.push({anahtar:"piyon8-siyah", x:8, y:2, tip:"piyon", renk:"siyah"})
+
+// Beyaz taşları listeye ekle.
+taslarBilgi.push({anahtar:"kale1-beyaz", x:1, y:8, tip:"kale", renk:"beyaz"})
+taslarBilgi.push({anahtar:"at1-beyaz", x:2, y:8, tip:"at", renk:"beyaz"})
+taslarBilgi.push({anahtar:"fil1-beyaz", x:3, y:8, tip:"fil", renk:"beyaz"})
+taslarBilgi.push({anahtar:"vezir-beyaz", x:4, y:8, tip:"vezir", renk:"beyaz"})
+taslarBilgi.push({anahtar:"sah-beyaz", x:5, y:8, tip:"sah", renk:"beyaz"})
+taslarBilgi.push({anahtar:"fil2-beyaz", x:6, y:8, tip:"fil", renk:"beyaz"})
+taslarBilgi.push({anahtar:"at2-beyaz", x:7, y:8, tip:"at", renk:"beyaz"})
+taslarBilgi.push({anahtar:"kale2-beyaz", x:8, y:8, tip:"kale", renk:"beyaz"})
+taslarBilgi.push({anahtar:"piyon1-beyaz", x:1, y:7, tip:"piyon", renk:"beyaz"})
+taslarBilgi.push({anahtar:"piyon2-beyaz", x:2, y:7, tip:"piyon", renk:"beyaz"})
+taslarBilgi.push({anahtar:"piyon3-beyaz", x:3, y:7, tip:"piyon", renk:"beyaz"})
+taslarBilgi.push({anahtar:"piyon4-beyaz", x:4, y:7, tip:"piyon", renk:"beyaz"})
+taslarBilgi.push({anahtar:"piyon5-beyaz", x:5, y:7, tip:"piyon", renk:"beyaz"})
+taslarBilgi.push({anahtar:"piyon6-beyaz", x:6, y:7, tip:"piyon", renk:"beyaz"})
+taslarBilgi.push({anahtar:"piyon7-beyaz", x:7, y:7, tip:"piyon", renk:"beyaz"})
+taslarBilgi.push({anahtar:"piyon8-beyaz", x:8, y:7, tip:"piyon", renk:"beyaz"})
+
+// İlk çalışan fonksiyon; herşey yüklendiğinde, otomatik çalıştırılır.
+var start = function() {
+    
+    // Arkaplan rengini belirle.
+    page.color = "whitesmoke"
+    
+    // Tahtadaki ilk karenin bayanacağı renk. (a8)
+    var kareRenk = "white"
+    
+    // Tahtanın karelerini oluştur.
+    for (var dikeySira = 1; dikeySira &lt;= 8; dikeySira++) {
+        for (var yataySira = 1; yataySira &lt;= 8; yataySira++) {
+            
+            // Bir kare oluştur.
+            var birKare = new Box()
+            birKare.width = 60
+            birKare.height = 60
+            // Döngünün ürettiği sayılara göre konumlandır.
+            birKare.left = yataySira * 60
+            birKare.top = dikeySira * 60
+            birKare.borderColor = "cadetblue"
+
+            // Her yeni karede rengi değiştir. (Bir kare beyaz, bir kare renkli)
+            // Satır sonuna geldiğinde, renk değiştirilmez. if (x &lt; 8)
+            // Böylece; sonraki satırda, önceki satırın bittiği renk kullanılmış olur.
+            if (kareRenk == "white") {
+                birKare.color = "white"
+                if (yataySira &lt; 8) {
+                    kareRenk = "cadetblue"
+                    
+                }
+                
+            } else {
+                birKare.color = "cadetblue"
+                if (yataySira &lt; 8) {
+                    kareRenk = "white"
+                    
+                }
+                
+            }
+            // Koşullu ifade sonu
+            
+            // Not: kareler daha sonra, tekrar kullanılmayacağı için
+            // karelerin nesneleri bir değişkende saklanmamıştır.
+            
+        }
+    }
+    
+    // Tahtanın adres işaretlerini oluştur. (a1 - h8)
+    for (var i = 0; i &lt; 8; i++) {
+        
+        // a, b, c..
+        var lblYatayAdres = new Label()
+        lblYatayAdres.text = yatayKonumlar[i]
+        lblYatayAdres.left = 60 + (i * 60) + 20
+        lblYatayAdres.top = 60 + (8 * 60) + 10
+
+        // 1, 2, 3..
+        var lblDikeyAdres = new Label()
+        lblDikeyAdres.text = dikeyKonumlar[i]
+        lblDikeyAdres.left = 35
+        lblDikeyAdres.top = 60 + (i * 60) + 15
+        
+    }
+    
+    // Tüm taşları başlangıç konumlarında oluştur.
+    for (var i = 0; i &lt; taslarBilgi.length; i++) {
+        
+        // Bir tas oluştur.
+        var birTas = new Image()
+        // Oluşturulan taşın resmini yükle.
+        birTas.load("resimler/satranc/" + taslarBilgi[i].tip + "-" + taslarBilgi[i].renk + ".png")
+        birTas.width = 60
+        birTas.height = 60
+        birTas.top = 60 * taslarBilgi[i].y
+        birTas.left = 60 * taslarBilgi[i].x
+        birTas.value = taslarBilgi[i]
+        
+        // Her bir taş resminin nesnesini, 
+        // tasAnahtar ile çağırılmak üzere tas değişkenine ekle.
+        var tasAnahtar = taslarBilgi[i].anahtar
+        tas[tasAnahtar] = birTas
+        
+        // Taşın bulunduğu konum ile taşın kendisi arasındaki bağlantıyı sakla.
+        var kareAnahtar = taslarBilgi[i].x + "-" + taslarBilgi[i].y
+        karedekiTas[kareAnahtar] = tasAnahtar
+        
+    }
+
+    // Basılan karelerin ışık yakmasını sağlayacak, seçim alanı karelerini oluştur.
+    for (var x = 1; x &lt;= 8; x++) {
+        for (var y = 1; y &lt;= 8; y++) {
+            
+            var birSecim = new Box()
+            birSecim.width = 60
+            birSecim.height = 60
+            birSecim.left = x * 60
+            birSecim.top = y * 60
+            // value değeri olarak, kareAnahtar
+            birSecim.value = x + "-" + y
+            birSecim.color = "yellow"
+            birSecim.opacity = 0.0
+            birSecim.onClick(kareSec)
+            
+            // Oluşturulan nesneleri daha sonra kullanmak üzere,
+            // bir değişkende sakla.
+            var kareAnahtar = birSecim.value
+            karedekiSecim[kareAnahtar] = birSecim
+            
+        }
+    }
+    
+
+}
+
+// Her saniye çalışan fonksiyon.
+var loop = function() {
+    
+    // birşey yapma.
+    
+}
+
+var kareSec = function(basilanKare) {
+    
+    
+// Algoritma Olasılıkları ve Kuralları:
+    
+    // Eğer seçilen karede bir taş var ise
+        // Eğer daha önce bir taş SEÇİLMEMİŞ ise
+            // Tıklanan taşı seç.
+        // Eğer daha önce bir taş seçilmiş ise
+            // Eğer daha önce seçilen taş ile aynı renk ise
+                // Yeni tıklanan taşı seç.
+            // Eğer farklı renk ise
+                // Taşı sil ve hamle yap.
+    // Eğer seçilen bir taş değil ise
+        // Eğer daha önce bir taş seçilmiş ise
+            // Hamle yap.
+        // Eğer SEÇİLMEMİŞ ise
+            // Hiçbir şey yapma.
+    
+                
+    kareAnahtar = basilanKare.value
+    
+    // Eğer seçilen karede bir taş var ise
+    if (karedekiTas[kareAnahtar]) {
+        // Eğer daha önce bir taş seçilmiş ise
+        if (secilenKareAnahtar) {
+            
+            var eskiTasRenk = tas[karedekiTas[secilenKareAnahtar]].value.renk
+            var yeniTasRenk = tas[karedekiTas[kareAnahtar]].value.renk
+            
+            // Eğer daha önce seçilen taş ile aynı renk ise
+            if (eskiTasRenk == yeniTasRenk) {
+                // Yeni tıklanan taşı seç.
+                karedekiSecim[secilenKareAnahtar].opacity = 0.0
+                tasSec(basilanKare)
+                
+            // Eğer farklı renk ise
+            } else {
+                // Taşı sil ve hamle yap.
+                var bosKareAnahtar = basilanKare.value
+                tas[karedekiTas[bosKareAnahtar]].visible = 0
+                karedekiTas[bosKareAnahtar] = ""
+                
+                hamleYap(basilanKare)
+                
+            }
+        
+        // Eğer daha önce bir taş SEÇİLMEMİŞ ise
+        } else {
+            // Tıklanan taşı seç.
+            tasSec(basilanKare)
+
+        }
+
+    // Eğer seçilen bir taş değil ise
+    } else {
+        // Eğer daha önce bir taş seçilmiş ise
+        if (secilenKareAnahtar) {
+            // Hamle yap.
+            hamleYap(basilanKare)
+            
+        // Eğer SEÇİLMEMİŞ ise
+        } else {
+            // Hiçbir şey yapma
+        
+        }
+        
+    }
+    
+}
+
+// Üzerine tıklanan taşı seçer.
+var tasSec = function(basilanKare) {
+    
+    var kareAnahtar = basilanKare.value
+    
+    // Seçilen taşın bilgilerini sakla ve konumunda ışık yak.
+    basilanKare.opacity = 0.4
+    secilenKareAnahtar = kareAnahtar
+    secilenTasAnahtar = karedekiTas[kareAnahtar]
+    
+}
+
+// Önceden seçilmiş taşı, seçilen konuma hareket ettirir.
+var hamleYap = function(basilanKare) {
+    
+    var bosKareAnahtar = basilanKare.value
+    
+    // Önceden seçilmiş taşın konumunu düzenle ve seçimi temizle.
+    karedekiSecim[secilenKareAnahtar].opacity = 0.0
+    tas[secilenTasAnahtar].top = basilanKare.top
+    tas[secilenTasAnahtar].left = basilanKare.left
+    karedekiTas[bosKareAnahtar] = karedekiTas[secilenKareAnahtar]
+    karedekiTas[secilenKareAnahtar] = ""
+    secilenTasAnahtar = ""
+    secilenKareAnahtar = ""
+    
+}
+</div>        
+</body>
+</html>

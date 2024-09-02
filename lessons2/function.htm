@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Fonksiyon oluşturmak (function) -- Çocuklar için Programlama Eğitimi">
+        <meta name="keywords" content="Fonksiyon oluşturmak (function) -- Çocuklar için Programlama Eğitimi">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/lessons.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/coding.css">
+        <!-- <link rel="stylesheet" type="text/css" href="../css/coding1.css">
+        <link rel="stylesheet" type="text/css" href="../css/coding2.css"> -->
+
+    </head>
+    <body>
+        
+        <div id="app-cont">
+            
+            <!-- HEADER -->
+            
+            <div class="header-top">
+                
+                <a onclick="App.gotoPage('../pages/lessons.htm')"><div class="header-icon" style="left:0px;"><img src="../img/lessons/header-list-icon.png" width="70" height="70" /></div>
+                <div class="header-icon-txt" style="left:55px;">KONULAR</div>
+                </a>
+                
+                <!-- VİDEO İLE ANTLATIM -->
+
+                
+                <!-- <div onclick="App.gotoYouTubeURL('https://youtu.be/AA68Z1s7Xp4');" style="position:absolute;right:20px;top:14px;"><img src="../img/lessons/youtube-video-btn2.png" width="180" height="43" />
+                </div> -->
+                
+            </div>
+            
+            <!-- HEADER END -->
+            
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+                <p class="normal-title">Fonksiyon oluşturmak (function)</p>
+                
+                <p>Fonksiyonlar, bir kod grubuna, isim vererek; onu, ismi ile istediğimiz yerlerde <span class="normal-italic-text">(kod satırlarında)</span> çalıştırabilmemizi sağlayan yapılardır.</p>
+                
+                <p>Aşağıdaki örneği inceleyelim:</p>
+                
+                <p><span class="normal-bold-text">selamVer()</span> isminde bir fonksiyon oluşturalım. Bu fonksiyon, çalıştırıldığında ekrana "Merhaba Dünya!" cümlesini yazdırsın.</p>
+                
+            </div>
+            
+            <!-- TEXT GROUP END -->
+            
+<!-- 1 --><div id="editor-cont1"></div>
+            
+            <div class="normal-text-group">
+                
+                <!-- <p class="normal-bold-text2">Fonksiyonun, parametre ile çalıştırılması</p> -->
+                <p class="normal-sub-title">Fonksiyonun, parametre ile çalışması</p>
+                
+                <p>Oluşturduğumuz fonksiyonun, çalışırken kullanması için ona bilgiler <span class="normal-italic-text">(parametreler)</span> gönderebiliriz.</p>
+                
+                <p>Şimdi, bir örnek yapalım:</p>
+                
+                <p><span class="normal-bold-text">ikiKereYaz(mesaj)</span> isminde bir fonksiyon oluşturalım. Ona, parametre olarak gönderdiğimiz bilgiyi ekrana iki kere yazdırsın.</p>
+                <!-- mesaj değişkenini <span class="normal-italic-text">(mesaj)</span> -->
+                
+            </div>
+            
+<!-- 2 --><div id="editor-cont2"></div>
+            
+            <!-- ALERT -->
+        
+            <div class="alert-yellow">
+
+                <p><span class="alert-bold-text">Bilmemiz gereken bir kural</span></p>
+
+                <p>Bir değişken veya fonksiyon ismi, sayı ile başlayamaz.</p>
+
+            </div>
+
+            <!-- ALERT END -->
+            
+            <div class="normal-text-group">
+                
+                <!-- <p><span class="normal-bold-text">mesaj</span> parametresi, ismini bizim belirlediğimiz bir değişkendir. İçeriği fonksiyon çalıştırılırken aktarılır. Ve sadece, fonksiyona ait süslü parantezin içerisinde kullanılabilir.</p>-->
+                
+                <!-- mesaj değişkeninin içeriği, fonksiyon -->
+                
+                <p><span class="normal-bold-text">mesaj</span> isimli parametrenin içeriği, fonksiyon çalıştırılırken aktarılır. Ve sadece, fonksiyona ait süslü parantezin içerisinde kullanılabilir.</p>
+                
+            
+            </div>
+            
+            <div class="next-question"><img src="../img/lessons/next-question.png" style="width:20px;height:18px;" /></div>
+            
+            <div class="normal-text-group">
+
+                <p>Şimdi, başka bir örnek yapalım:</p>
+
+                <p><span class="normal-bold-text">carpimTablosuOlustur(sayi)</span> ismindeki fonksiyonumuz; ona gönderilen sayının, 1'den 5’e kadar bütün sayılar ile çarpımını ekrana yazdırsın.</p>
+                
+            </div>
+                
+                <!-- <div class="next-question"><img src="../img/lessons/next-question.png" width="20" /></div> -->
+            
+<!-- 3 --><div id="editor-cont3"></div>
+                
+            <div class="normal-text-group">
+                
+                <p class="normal-sub-title">Fonksiyonun, cevap vermesi</p>
+                
+                <!-- <p>**Yapılan işlemler sonucu elde edilen bilgiyi</p> -->
+                
+                <p>Yaptığı işlemler sonucunda elde ettiği bilgiyi, <span class="normal-bold-text">return</span> kelimesini kullanarak, fonksiyonun çalıştırıldığı kod satırına geri gönderebiliriz.</p>
+                
+                <p>Şimdi, bir örnek yapalım:</p>
+                
+                <p>Üç sayının ortalamasını hesaplayan ve cevabı geri gönderen bir fonksiyon oluşturalım.</p>
+                
+            </div>
+            
+ <!-- 4 --><div id="editor-cont4"></div>
+            
+            <div class="normal-text-group">
+                
+                <p><span class="normal-bold-text">cevap</span> değişkeni, geçici kullanım için tanımlanmış olup, tanımlandığı süslü parentezin dışından ulaşılamaz.</p>
+                
+            </div>
+            
+            <!--
+            <div class="next-question"><img src="../img/lessons/next-question.png" width="20" /></div>
+            
+            <div class="normal-text-group">
+                
+                <p>Çok iyi gidiyorsun, bir programcı olmana az kaldı.</p>
+                
+            </div>
+            -->
+            
+        <div class="header-bottom">
+
+            <a onclick="App.gotoPage('conditional-statement.htm')"><div class="header-icon" style="left:0px;"><img src="../img/lessons/header-left-icon.png" width="70" height="70" /></div>
+            <div class="header-icon-txt" style="left:55px;">İLERİ KOŞULLU İFADELER</div>
+            </a>
+
+            <a onclick="App.gotoPage('english-words.htm')"><div class="header-icon" style="right:0px;"><img src="../img/lessons/header-right-icon.png" width="70" height="70" /></div>
+            <div class="header-icon-txt" style="right:55px;">İNGİLİZCE KELİMELER</div>
+            </a>
+
+            <a onclick="App.gotoPage('../pages/lessons.htm')"><div class="header-icon" style="position:absolute;left:265px;top:0px;"><img src="../img/lessons/header-list-icon.png" width="70" height="70" /></div></a>
+
+        </div>
+        
+        </div><!-- content -->
+
+<div id="code-example1" style="display:none">// Bir fonksiyon oluştur.
+var selamVer = function() {
+
+	yaz("Merhaba Dünya!")
+
+}
+
+// Fonksiyonu çalıştır.
+selamVer()
+
+</div>
+<div id="code-example2" style="display:none">// Fonksiyonu oluştur.
+var ikiKereYaz = function(mesaj) {
+
+	yaz(mesaj)
+	yaz(mesaj)
+
+}
+
+// Fonksiyonu bir parametre ile çalıştır.
+ikiKereYaz("Merhaba Dünya!")
+
+</div>
+        
+<div id="code-example3" style="display:none">// Fonksiyon oluştur.
+var carpimTablosuOlustur = function(sayi) {
+
+    // 5 kere tekrar et.
+	for (var i = 1; i &lt;= 5; i++) {
+		yaz(sayi + " x " + i + " = " + (sayi * i))
+    
+	}
+
+}
+
+// Fonksiyonu 3 kere, farklı parametreler ile çalıştır.
+carpimTablosuOlustur(3)
+carpimTablosuOlustur(7)
+carpimTablosuOlustur(9)
+
+</div>
+        
+<div id="code-example4" style="display:none">// Fonksiyonu oluştur.
+var ortalamaAl = function(say1, say2, say3) {
+
+    // Üç sayının ortalamasını hesapla.
+	var cevap = (say1 + say2 + say3) / 3
+
+    // Sonucu geri gönder.
+	return cevap
+    
+}
+
+// Fonksiyonu çalıştır ve cevabı bir değişkene aktar.
+var ortalama = ortalamaAl(95, 45, 10)
+
+// Cevabı ekrana yazdır.
+yaz("Üç sayının ortalaması: " + ortalama)
+
+</div>
+        
+<div id="code-example5" style="display:none">//kapının durumu açık (1) veya kilitli (0)
+var kapi = 0
+
+</div>
+<div id="code-example6" style="display:none">//kapının durumu açık (1) veya kilitli (0)
+var kapi = 0
+
+</div>
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/coding.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <!-- <script src="../js/coding1.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/coding2.js" type="text/javascript" charset="utf-8"></script> -->
+        
+        <script>
+            
+            var editor1, editor2, editor3, editor4, editor5, editor6;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                    case "2":
+                        
+                        //Coding.options.fullScreenMode = 0;
+                        
+                        //document.getElementById("coding-game-box2").innerHTML = `<div style="position:absolute;bottom:-5px;right:130px;"><img src="../img/lessons/les3-ex2-spaceship.png" width="103" /></div>`;
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                        
+                    case "3":
+                        
+                        //Coding.options.fullScreenMode = 1;
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                    
+                    case "4":
+                        
+                        //Coding.options.fullScreenMode = 0;
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                
+                    case "5":
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                        
+                        case "6":
+
+                        setConsoleFontSize(20);
+                        
+                        break;
+                        
+                        }
+            };
+            
+            Page.codingFinished = function($e){ 
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        break;
+                    case "2":
+                        break;
+                    case "3":
+                        break;
+                    case "4":
+                        break;
+                    case "5":
+                        break;
+                    case "6":
+                        break;
+
+                       }
+            
+            };
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("lessons");
+                
+                Coding.init();
+                
+                document.addEventListener("onGameRefreshed", Page.codingInit);
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                
+                Coding.setOption("1", "resetButtonEnabled", 1);
+                Coding.createNewEditorHTML("1");
+                //Coding.showEditorButtons("1",["reset"]);
+                Coding.setScreenColor("1", "#23BCC1");
+                Coding.setScreenHeight("1", "240px");
+                //Coding.changeRunButton("1","play");
+                editor1 = ace.edit("editor1");
+                //editor1.setReadOnly(true);
+                //Coding.editorInit(editor1, "1");
+                Coding.createNewEditor("1");
+                Coding.setSnippetIDList("1", ["004", "001", "002"]);
+                Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"));
+
+                Coding.setOption("2", "resetButtonEnabled", 1);
+                Coding.createNewEditorHTML("2");
+                //Coding.showEditorButtons("2",["add"]);
+                Coding.setScreenColor("2", "#23BCC1"); //23BCC1
+                Coding.setScreenHeight("2", "240px");
+                //Coding.changeRunButton("2","play");
+                editor2 = ace.edit("editor2");
+                //editor2.setReadOnly(true);
+                Coding.createNewEditor("2");
+                Coding.setSnippetIDList("2", ["004", "001", "002"]);
+                Coding.insertCodeToEditor("2", Coding.getCodeFromDivID("code-example2"));  
+
+                
+                Coding.setOption("3", "resetButtonEnabled", 1);
+                Coding.setOption("3", "fullScreenMode", 0);
+                Coding.createNewEditorHTML("3");
+                //Coding.showEditorButtons("3",["add"]);
+                Coding.setScreenColor("3", "#23BCC1");
+                Coding.setScreenHeight("3", "420px");
+                //Coding.changeRunButton("3","play");
+                editor3 = ace.edit("editor3");
+                //editor2.setReadOnly(true);
+                Coding.createNewEditor("3");
+                Coding.setSnippetIDList("3", ["001","002","004"]);
+                Coding.insertCodeToEditor("3", Coding.getCodeFromDivID("code-example3"));
+
+                Coding.createNewEditorHTML("4");
+                Coding.setScreenColor("4", "#23BCC1");
+                Coding.setScreenHeight("4", "240px");
+                editor4 = ace.edit("editor4");
+                Coding.createNewEditor("4");
+                Coding.setSnippetIDList("4", ["001","002","004"]);
+                Coding.insertCodeToEditor("4", Coding.getCodeFromDivID("code-example4"));
+                
+                /*
+                Coding.createNewEditorHTML("5");
+                //Coding.showEditorButtons("1",["add"]);
+                Coding.setScreenColor("5", "#EE7553");
+                Coding.setScreenHeight("5", "300px");
+                //Coding.changeRunButton("1","play");
+                editor5 = ace.edit("editor5");
+                //editor1.setReadOnly(true);
+                Coding.createNewEditor("5");
+                Coding.insertCodeToEditor("5", Coding.getCodeFromDivID("code-example5"));
+                */
+                
+                /*
+                Coding.setOption("6", "resetButtonEnabled", 1);
+                Coding.createNewEditorHTML("6");
+                Coding.setScreenColor("6", "#23BCC1");
+                Coding.setScreenHeight("6", "400px");
+                editor6 = ace.edit("editor6");
+                Coding.createNewEditor("6");
+                Coding.setSnippetIDList("6", ["004", "001", "002", "003", "206", "201"]);
+                Coding.insertCodeToEditor("6", Coding.getCodeFromDivID("code-example6"));
+                */
+                
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                Page.codingInit({editorNumber:'2'});
+                Page.codingInit({editorNumber:'3'});
+                Page.codingInit({editorNumber:'4'});
+                //Page.codingInit({editorNumber:'5'});
+                //Page.codingInit({editorNumber:'6'});
+                
+                App.setPageScore("lesson8", 1);
+
+                App.showAllPage();
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Fonksiyon oluşturmak (function) -- Çocuklar için Programlama Eğitimi">
+        <meta name="keywords" content="Fonksiyon oluşturmak (function) -- Çocuklar için Programlama Eğitimi">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/lessons.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/coding.css">
+        <!-- <link rel="stylesheet" type="text/css" href="../css/coding1.css">
+        <link rel="stylesheet" type="text/css" href="../css/coding2.css"> -->
+
+    </head>
+    <body>
+        
+        <div id="app-cont">
+            
+            <!-- HEADER -->
+            
+            <div class="header-top">
+                
+                <a onclick="App.gotoPage('../pages/lessons.htm')"><div class="header-icon" style="left:0px;"><img src="../img/lessons/header-list-icon.png" width="70" height="70" /></div>
+                <div class="header-icon-txt" style="left:55px;">KONULAR</div>
+                </a>
+                
+                <!-- VİDEO İLE ANTLATIM -->
+
+                
+                <!-- <div onclick="App.gotoYouTubeURL('https://youtu.be/AA68Z1s7Xp4');" style="position:absolute;right:20px;top:14px;"><img src="../img/lessons/youtube-video-btn2.png" width="180" height="43" />
+                </div> -->
+                
+            </div>
+            
+            <!-- HEADER END -->
+            
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+                <p class="normal-title">Kendi nesnemizi oluşturmak</p>
+                
+                <p>Nesneler, bir birleri ile ilişkili değişken ve fonksiyonları tek bir isim altında gruplamamıza olanak sağlar.</p>
+                
+                <p>Aşağıdaki modeli inceleyelim.</p>
+                
+                <p style="font-size:15px;">- Nesnenin yapısı; süslü parantez içinde, virgül ile ayrılan elemanlardan oluşur.<br>
+                    - Her bir eleman, ismi ile ulaşılabilir ve değiştirilebilir.<br>
+                    - Bir eleman; sayı, metin, dizi, fonksiyon veya başka bir nesne taşıyabilir.<br>
+                    - Eleman ismi ve taşıdığı bilgi, iki nokta üst üste ile ayrılır.</p>
+                
+                <div class="normal-img"><img src="../img/lessons2/object-model.svg" width="560" /></div>
+                
+                <!-- <p class="normal-bold-text2">Nesnenin, hızlı yazım şekli:</p>
+                <p class="normal-bold-text2">Nesnenin, hızlı yazılma biçimi:</p> -->
+                
+                <p>Şimdi, bir örnek yapalım:</p>
+
+                <p>Üç elemana sahip bir nesne oluşturalım ve elemanlarından birinin içeriğini oluşturulduktan sonra değiştirelim.</p>
+                <!-- 
+                <p>Nesne yapısını, sadece bilgileri gruplamak için kullanalım.</p>
+                <p>Nesne yapısını, sadece sayı ve metin tipindeki verileri gruplamak için kullanalım.</p>
+                -->
+            </div>
+            
+<!-- 2 --><div id="editor-cont2"></div>
+            
+            <!-- ALERT -->
+        
+            <div class="alert-yellow">
+
+                <p><span class="alert-bold-text">Ek bilgi</span></p>
+
+                <!-- <p>Bu yazım şekli, JSON (JavaScript Object Notation) olarak adlandırılır. Ayrıca veri alışverişi (Bir sunucuya bilgi göndermek, veri tabanından bilgi almak) için de kullanılan formatlardan biridir.</p> -->
+                <p>Bu paketleme şekli, veri alışverişi <span class="normal-italic-text">(Bir sunucuya bilgi göndermek, veri tabanından bilgi almak)</span> için de kullanılabilir.</p><!-- kullanılan formatlardan biridir -->
+                
+                <!-- <p>Tam sayı <span class="normal-italic-text">(integer)</span>, ondalıklı sayı <span class="normal-italic-text">(float)</span> ve metin <span class="normal-italic-text">(string)</span> basit veri tipleridir. Nesne <span class="normal-italic-text">(object)</span> ve dizi <span class="normal-italic-text">(array)</span> gelişmiş veri tipleridir.</p> -->
+                
+                <!-- <p><span class="normal-italic-text">(Google'da ara: JSON)</span></p> -->
+
+            </div>
+
+            <!-- ALERT END -->
+            
+            <!-- <div class="next-question"><img src="../img/lessons/next-question.png" width="20" /></div> -->
+                
+                
+            <div class="normal-text-group">
+                
+                <p class="normal-sub-title">Robot nesnesi</p>
+                
+                <p>Birlikte, basit <span class="normal-italic-text">(metin tabanlı)</span> bir robot nesnesi tasarlayalım.</p>
+                
+                
+                <!-- <p>Aşağıdaki nesne modelini inceleyelim.</p> -->
+                
+                <div class="normal-img"><img src="../img/lessons2/robot-model.svg" width="560" /></div>
+                
+                <!--
+                <p>Şimdi, bu nesneyi; <span class="normal-bold-text">konum</span>, <span class="normal-bold-text">yon</span> değişkenleri <span class="normal-italic-text">(özellik)</span> ve <span class="normal-bold-text">ilerle()</span>, <span class="normal-bold-text">geriDon()</span> fonksiyonları <span class="normal-italic-text">(metod)</span> olacak şekilde kodlayalım.</p>
+                -->
+
+                <p>Şimdi, bu nesneyi kodlayalım.</p>
+                
+                <!-- <p>Nesnemizin; <span class="normal-bold-text">konum</span>, <span class="normal-bold-text">yon</span> değişkenleri <span class="normal-italic-text">(özellik)</span> ve <span class="normal-bold-text">ilerle()</span>, <span class="normal-bold-text">geriDon()</span> fonksiyonları <span class="normal-italic-text">(metod)</span> olacak.</p> -->
+                <!--
+                <p>robot nesnemizin; <span class="normal-bold-text">konum</span>, <span class="normal-bold-text">yon</span> isimlerinde değişkenleri ve <span class="normal-bold-text">ilerle</span>, <span class="normal-bold-text">geriDon</span> isimlerinde fonksiyonları olacak.</p>
+                <p>Nesnemizin; <span class="normal-bold-text">konum</span>, <span class="normal-bold-text">yon</span> özellikleri <span class="normal-italic-text">(değişken)</span> ve <span class="normal-bold-text">ilerle()</span>, <span class="normal-bold-text">geriDon()</span> metodları <span class="normal-italic-text">(fonksiyon)</span> olacak.</p>
+                -->
+                
+            </div>
+            
+            <!-- TEXT GROUP END -->
+            
+<!-- 1 --><div id="editor-cont1"></div>
+
+<!--
+            <div class="normal-text-group">
+
+                <p class="normal-sub-title">Anahtar ile bilgiye erişmek</p>
+            
+                <p>Bir elemanın ismini, bir değişkenin içerisinde saklayabiliriz.</p>
+
+            </div>
+-->            
+<!-- 3 --><!-- <div id="editor-cont3"></div> -->
+
+            <div class="normal-text-group">
+
+                <!-- <p>Bir nesnede olmayan bir eleman ismi ile veri aktarıldığında o eleman oluşturulur.</p> -->
+
+                <p>Tebrikler, yazılım projeleri geliştirmek için gereken, tüm temel konuları tamamladınız.</p>
+                
+            <!-- </div>
+
+            <div class="next-question"><img src="../img/lessons/next-question.png" width="20" /></div>
+                
+            <div class="normal-text-group"> -->
+
+                <p>Öğrendikleriniz ile neler yapılabileceğini keşfetmek ve tekniğinizi geliştirmek için, projeler bölümündeki JavaScript örneklerini inceleyebilirsiniz. İyi çalışmalar.</p>
+
+                <p style="font-size: 15px;">Algoritma geliştirebilmek, tüm programlama dillerinde kullanabileceğiniz bir yetenektir. Ve pratik yapmak, daha iyi algoritmalar geliştirebilmenizi sağlar.</p>
+
+                <!-- <p>İyi çalışmalar.</p> -->
+
+                <!-- <p>Algoritma geliştirme becerileri, her hangi bir programlama dilinde işinize yarayacaktır.</p> -->
+                
+                <!--
+                <p>Sayı <span class="normal-italic-text">(integer, float)</span> ve metin <span class="normal-italic-text">(string)</span> basit veri <span class="normal-italic-text">(bilgi)</span> tipleri olarak adlandırılır. Nesne <span class="normal-italic-text">(object)</span> ve dizi <span class="normal-italic-text">(array)</span> ise gelişmiş veri tipleridir.</p>
+                -->
+
+                <!-- <p>JavaScript programlama dilinin detaylarını öğrenmek için şu adresi ziyaret edebilirsiniz.</p>
+                <p>https://tr.javascript.info/</p> -->
+                
+            </div>
+            
+            <!--
+            <div class="next-question"><img src="../img/lessons/next-question.png" width="20" /></div>
+            
+            <div class="normal-text-group">
+                
+                <p>Çok iyi gidiyorsun, bir programcı olmana az kaldı.</p>
+                
+            </div>
+            -->
+            
+        <div class="header-bottom">
+
+            <a onclick="App.gotoPage('array.htm')"><div class="header-icon" style="left:0px;"><img src="../img/lessons/header-left-icon.png" width="70" height="70" /></div>
+            <div class="header-icon-txt" style="left:55px;">DİZİLERİN KULLANIMI</div>
+            </a>
+
+            <!-- <a href="lesson6.htm"><div class="header-icon" style="right:0px;"><img src="../img/lessons/header-right-icon.png" width="70" height="70" /></div>
+            <div class="header-icon-txt" style="right:55px;">KOŞULLU İFADELER</div>
+            </a>-->
+
+            <a onclick="App.gotoPage('../pages/lessons.htm')"><div class="header-icon" style="position:absolute;left:265px;top:0px;"><img src="../img/lessons/header-list-icon.png" width="70" height="70" /></div></a>
+
+        </div>
+        
+        </div><!-- content -->
+
+<div id="code-example1" style="display:none">// Boş bir nesne oluştur.
+var robot = {}
+
+// Değişkenleri nesneye ekle.
+robot.konum = 1
+robot.yon = "sağ"
+
+// Fonksiyonları nesneye ekle.
+robot.ilerle = function() {
+	
+	// Eğer robot sağa doğru bakıyor ise
+	if (robot.yon == "sağ") {
+		// Konumu bir attır.
+		robot.konum++
+
+	} else {
+		// Konumu bir eksilt.
+		robot.konum--
+
+	}
+	
+	// Son konumu ekrana yazdır.
+	print("robot, ilerledi. Yeni konum: " + robot.konum)
+
+}
+
+robot.geriDon = function() {
+	
+	// Eğer robot sağa doğru bakıyor ise
+	if (robot.yon == "sağ") {
+		robot.yon = "sol"
+
+	} else {
+		robot.yon = "sağ"
+
+	}
+
+	print("robot geri döndü. Yeni yön: " + robot.yon)
+
+}
+
+// Nesneyi kullan.
+
+// Bilgileri ekrana yazdır.
+print("robot ilk konum: " + robot.konum)
+print("robot ilk yön: " + robot.yon)
+
+// robotu yönet.
+robot.ilerle()
+robot.ilerle()
+robot.geriDon()
+
+// Bilgileri tekrar ekrana yazdır.
+print("robot son konum: " + robot.konum)
+print("robot son yön: " + robot.yon)
+
+</div>
+<div id="code-example2" style="display:none">// Bir nesne oluştur ve içine 3 eleman ekle.
+var konum = {x: 15, y: 2, zemin: "toprak"}
+
+// Bilgileri ekrana yazdır.
+print(konum.x)
+print(konum.y)
+print(konum.zemin)
+
+// zemin elemanının içeriğini değiştir.
+konum.zemin = "çimen"
+
+// zemin elemanını tekrar yazdır.
+print(konum.zemin)
+
+</div>
+        
+<div id="code-example3" style="display:none">// Bir nesne oluştur ve içine 3 eleman ekle.
+var araba = {
+
+    isim: "Tesla", 
+    model: "S", 
+    renk: "kırmızı"
+
+}
+
+// Bir anahtar oluştur.
+var anahtar = "zemin"
+
+// zemin elemanını ekrana yazdır.
+print(konum[anahtar])
+
+</div>
+        
+<div id="code-example4" style="display:none">// Fonksiyonu oluştur.
+var ortalamaAl = function(say1, say2, say3) {
+
+	var cevap = (say1 + say2 + say3) / 3
+
+	return cevap
+    
+}
+
+// Fonksiyonu çalıştır ve cevabı bir değişkene aktar.
+var ortalama = ortalamaAl(95, 45, 10)
+
+// Cevabı ekrana yazdır.
+print("Üç sayının ortalaması: " + ortalama)
+
+</div>
+        
+<div id="code-example5" style="display:none">//kapının durumu açık (1) veya kilitli (0)
+var kapi = 0
+
+</div>
+<div id="code-example6" style="display:none">//kapının durumu açık (1) veya kilitli (0)
+var kapi = 0
+
+</div>
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/coding.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <!-- <script src="../js/coding1.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/coding2.js" type="text/javascript" charset="utf-8"></script> -->
+        
+        <script>
+            
+            var editor1, editor2, editor3, editor4, editor5, editor6;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                    case "2":
+                        
+                        //Coding.options.fullScreenMode = 0;
+                        
+                        //document.getElementById("coding-game-box2").innerHTML = `<div style="position:absolute;bottom:-5px;right:130px;"><img src="../img/lessons/les3-ex2-spaceship.png" width="103" /></div>`;
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                        
+                    case "3":
+                        
+                        //Coding.options.fullScreenMode = 1;
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                    
+                    case "4":
+                        
+                        //Coding.options.fullScreenMode = 0;
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                
+                    case "5":
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                        
+                        case "6":
+
+                        setConsoleFontSize(20);
+                        
+                        break;
+                        
+                        }
+            };
+            
+            Page.codingFinished = function($e){ 
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        break;
+                    case "2":
+                        break;
+                    case "3":
+                        break;
+                    case "4":
+                        break;
+                    case "5":
+                        break;
+                    case "6":
+                        break;
+
+                       }
+            
+            };
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("lessons");
+                
+                Coding.init();
+                
+                document.addEventListener("onGameRefreshed", Page.codingInit);
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                
+                Coding.setOption("1", "resetButtonEnabled", 1);
+                Coding.createNewEditorHTML("1");
+                //Coding.showEditorButtons("1",["reset"]);
+                Coding.setScreenColor("1", "#23BCC1");
+                Coding.setScreenHeight("1", "240px");
+                //Coding.changeRunButton("1","play");
+                editor1 = ace.edit("editor1");
+                //editor1.setReadOnly(true);
+                //Coding.editorInit(editor1, "1");
+                Coding.createNewEditor("1");
+                Coding.setSnippetIDList("1", ["010"]);
+                Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"));
+
+                Coding.setOption("2", "resetButtonEnabled", 1);
+                Coding.createNewEditorHTML("2");
+                //Coding.showEditorButtons("2",["add"]);
+                Coding.setScreenColor("2", "#23BCC1"); //23BCC1
+                Coding.setScreenHeight("2", "240px");
+                //Coding.changeRunButton("2","play");
+                editor2 = ace.edit("editor2");
+                //editor2.setReadOnly(true);
+                Coding.createNewEditor("2");
+                Coding.setSnippetIDList("2", ["010"]);
+                Coding.insertCodeToEditor("2", Coding.getCodeFromDivID("code-example2"));  
+
+                /*
+                Coding.setOption("3", "resetButtonEnabled", 1);
+                Coding.setOption("3", "fullScreenMode", 0);
+                Coding.createNewEditorHTML("3");
+                //Coding.showEditorButtons("3",["add"]);
+                Coding.setScreenColor("3", "#23BCC1");
+                Coding.setScreenHeight("3", "240px");
+                //Coding.changeRunButton("3","play");
+                editor3 = ace.edit("editor3");
+                //editor2.setReadOnly(true);
+                Coding.createNewEditor("3");
+                Coding.setSnippetIDList("3", ["010"]);
+                Coding.insertCodeToEditor("3", Coding.getCodeFromDivID("code-example3"));
+                */
+
+                /*
+                Coding.createNewEditorHTML("4");
+                Coding.setScreenColor("4", "#23BCC1");
+                Coding.setScreenHeight("4", "240px");
+                editor4 = ace.edit("editor4");
+                Coding.createNewEditor("4");
+                Coding.setSnippetIDList("4", ["001","002","004"]);
+                Coding.insertCodeToEditor("4", Coding.getCodeFromDivID("code-example4"));
+                */
+                
+                /*
+                Coding.createNewEditorHTML("5");
+                //Coding.showEditorButtons("1",["add"]);
+                Coding.setScreenColor("5", "#EE7553");
+                Coding.setScreenHeight("5", "300px");
+                //Coding.changeRunButton("1","play");
+                editor5 = ace.edit("editor5");
+                //editor1.setReadOnly(true);
+                Coding.createNewEditor("5");
+                Coding.insertCodeToEditor("5", Coding.getCodeFromDivID("code-example5"));
+                */
+                
+                /*
+                Coding.setOption("6", "resetButtonEnabled", 1);
+                Coding.createNewEditorHTML("6");
+                Coding.setScreenColor("6", "#23BCC1");
+                Coding.setScreenHeight("6", "400px");
+                editor6 = ace.edit("editor6");
+                Coding.createNewEditor("6");
+                Coding.setSnippetIDList("6", ["004", "001", "002", "003", "206", "201"]);
+                Coding.insertCodeToEditor("6", Coding.getCodeFromDivID("code-example6"));
+                */
+                
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                Page.codingInit({editorNumber:'2'});
+                //Page.codingInit({editorNumber:'3'});
+                //Page.codingInit({editorNumber:'4'});
+                //Page.codingInit({editorNumber:'5'});
+                //Page.codingInit({editorNumber:'6'});
+                
+                App.setPageScore("lesson17", 1);
+
+                App.showAllPage();
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

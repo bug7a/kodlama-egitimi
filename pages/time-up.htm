@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <!-- <link rel="stylesheet" type="text/css" href="css/page.css"> -->
+        
+        <style>
+            
+            body {
+                font-family: opensans;
+                font-size: 20px;
+                text-align: center;
+                color: #333;
+            }
+        
+            .txt-title {
+                
+                position: relative;
+                margin-top: 40px;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+            }
+            
+            .txt-normal {
+                font-family: opensans-bold;
+            }
+            
+            .txt-desc {
+                
+            }
+            
+            .txt-link {
+                font-family: opensans-lightitalic;
+                font-size: 18px;
+                color: steelblue;
+                margin-bottom: 10px;
+            }
+            
+            .txt-cut {
+                font-family: opensans-bold;
+                margin-top: 40px;
+                margin-bottom:40px;
+            }
+        
+            .boxbtn-main { position:relative;background-color: #F6F6F6;font-family: opensans;margin: 0px;margin-top: 40px;margin-bottom: -40px;padding: 20px;padding-top: 10px;padding-bottom: 10px; color:#4A4A4A;border-radius: 13.5px;font-size: 18px;text-align: justify; /* line-height: 100%; */ }
+
+            .boxbtn-main.blue { background-image: linear-gradient(lightblue, #FFFFFF); }
+
+            .boxbtn-main.yellow { background-image: linear-gradient(#FFF78F, #FFFFFF); }
+
+            .boxbtn-main.grey { background-image: linear-gradient(#E4E4E4, #FFFFFF); background-color: white; /* border-top: solid 1px #4A4A4A;border-right: solid 1px #4A4A4A;border-left: solid 1px #4A4A4A; */ }
+
+            .boxbtn-main.white { background-color: white; }
+
+            .boxbtn-centered-title { display: block;color:#4A4A4A; font-family: opensans;text-align: center;padding-top: 20px;font-size: 26px;padding-bottom: 0px; margin-bottom: 5px; /* text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1); */ }
+
+            .boxbtn-normal-text { /* text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1); */ opacity: 0.85;font-family: opensans;font-size:18px;text-align: center; margin-top: 5px;}
+                
+            .boxbtn-bold-text { font-family: opensans-bold; }
+
+            .boxbtn-centered-item-cont { display:flex;justify-content:center;align-items:center;height: 28px;margin-bottom: 20px;margin-top: 40px; }
+
+            /* .boxbtn-button { position: relative; width: auto; margin-right: 10px; margin-left: 10px; font-family: opensans-bold;padding: 12px; font-size: 16px;padding-bottom: 10px;padding-right: 20px;padding-left: 20px; box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1); opacity:0.97;color:#4A4A4A;border: solid 1px #4A4A4A;background-image: linear-gradient(#FFFFFF, #FFF78F);border-radius: 13.5px; } */
+            .boxbtn-button { position: relative; width: auto; margin-right: 10px; margin-left: 10px; font-family: opensans;padding: 12px; font-size: 20px;padding-bottom: 10px;padding-right: 20px;padding-left: 20px; box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1); opacity:0.97;color:white;border: solid 0px #4A4A4A;background-color: #1a73e8; border-radius: 6px; } /* 1a73e8 */
+                
+            .turk-lirasi { font-family: arial; }
+            .turk-lirasi-bold { font-family: arial; font-weight: bold; }
+
+        
+        </style>
+        
+        
+    </head>
+    <body>
+        
+        <div class="colored-background"></div>
+        
+        <div id="app-cont">
+            
+            
+            <div style="position:relative;left:0px;top:0px;display:block;"><img src="../img/about.webp" width="600" /></div>
+            
+            <div style="position:absolute;width: 70px;height: 70px;background-color: white;opacity: 1;right:0px;top:0px;"></div>
+            <!--
+            <div onclick="App.gotoHomePage();" style="position:absolute;width: 600px;height: 120px;background-color: red;opacity: 0;left:0px;top:120px;"></div>
+            -->
+            
+        <!--
+<p style="padding: 50px;text-align: left;padding-bottom: 10px;font-size:16px;">UYGULAMANIN AMACI NEDİR?<br>1. Oyunlar ile zeka geliştirme ve kod yazmaya ön hazırlık.<br>
+2. Programlama dillerindeki, temel birimleri öğretmek.<br>
+3. Algoritma geliştirme ve problem çözme deneyimi kazandırmak.
+</p>
+-->
+
+                <div id="member0" class="normal-text-group" style="display:block;">
+
+                    <div class="boxbtn-main white" >
+                        
+                        <div class="boxbtn-centered-title"><span class="boxbtn-bold-text">KULLANIM SÜRESİ BİTMİŞTİR.</span></div>
+
+                        <p class="boxbtn-normal-text">Uygulamayı, kullanmaya devam etmek için;<br> süre satın alabilirsiniz.</p>
+
+                        <div id="member-btn0" class="boxbtn-centered-item-cont">
+                            <a onclick="App.gotoPage('../pages/buy-time.htm');"><div class="boxbtn-button">DAHA FAZLA BİLGİ</div></a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+        </div><!-- content -->
+            
+            
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script>
+            
+            var Page = function(){};
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("index");
+                
+                //App.setLastPageURL("pages/about.htm");
+                
+                
+            };
+            
+            /* KULLANILMIYOR. Tarayıcıda açmak daha kullanışlı. */
+            Page.openURL = function($url) {
+                
+                //cordova.InAppBrowser.open($url, '_blank', 'location=yes');
+                
+            }
+            
+        </script>
+        
+    </body>
+</html>

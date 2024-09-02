@@ -1,0 +1,451 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/coding.css">
+        <!-- <link rel="stylesheet" type="text/css" href="css/page.css"> -->
+        
+        <style>
+        
+        .boxbtn-main { position:relative;background-color: #F6F6F6;font-family: opensans;margin: 0px;margin-top: 40px;margin-bottom: -40px;padding: 20px;padding-top: 10px;padding-bottom: 10px; color:#4A4A4A;border-radius: 13.5px;font-size: 18px;text-align: justify; /* line-height: 100%; */ }
+
+        .boxbtn-main.blue { background-image: linear-gradient(lightblue, #FFFFFF); }
+
+        .boxbtn-main.yellow { background-image: linear-gradient(#FFF78F, #FFFFFF); }
+
+        .boxbtn-main.grey { background-image: linear-gradient(#E4E4E4, #FFFFFF); background-color: white; /* border-top: solid 1px #4A4A4A;border-right: solid 1px #4A4A4A;border-left: solid 1px #4A4A4A; */ }
+
+        .boxbtn-main.white { background-color: white; }
+
+        .boxbtn-centered-title { display: block;color:#4A4A4A; font-family: opensans;text-align: center;padding-top: 20px;font-size: 26px;padding-bottom: 0px; margin-bottom: 5px; /* text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1); */ }
+
+        .boxbtn-normal-text { /* text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1); */ opacity: 0.85;font-family: opensans;font-size:18px;text-align: center; margin-top: 5px;}
+            
+        .boxbtn-bold-text { font-family: opensans-bold; }
+
+        .boxbtn-centered-item-cont { display:flex;justify-content:center;align-items:center;height: 28px;margin-bottom: 20px;margin-top: 40px; }
+
+        /* .boxbtn-button { position: relative; width: auto; margin-right: 10px; margin-left: 10px; font-family: opensans-bold;padding: 12px; font-size: 16px;padding-bottom: 10px;padding-right: 20px;padding-left: 20px; box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1); opacity:0.97;color:#4A4A4A;border: solid 1px #4A4A4A;background-image: linear-gradient(#FFFFFF, #FFF78F);border-radius: 13.5px; } */
+        .boxbtn-button { position: relative; width: auto; margin-right: 10px; margin-left: 10px; font-family: opensans;padding: 12px; font-size: 20px;padding-bottom: 10px;padding-right: 20px;padding-left: 20px; box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1); opacity:0.97;color:white;border: solid 0px #4A4A4A;background-color: #1a73e8; border-radius: 6px; } /* 1a73e8 */
+            
+        .turk-lirasi { font-family: arial; }
+        .turk-lirasi-bold { font-family: arial; font-weight: bold; }
+            
+        </style>
+        
+        
+    </head>
+    <body>
+        
+        <div class="colored-background"></div>
+        
+        <div id="app-cont">
+            
+            <div id="membertest" class="normal-text-group" style="display:none;">
+
+                <div class="boxbtn-main yellow" >
+                    
+                    <div class="boxbtn-centered-title"><span class="boxbtn-bold-text">ÜYELİK TEST SAYFASI</span></div>
+
+                    <p class="boxbtn-normal-text">1: google play üyelik sayfası bağlantısı<br />2: üyelik durumunu kontrol et.<br />3: id:uyelik olan ürüne üye ol.<br />4:  </p>
+
+                    <div class="boxbtn-centered-item-cont">
+                        <a href="https://play.google.com/store/account/subscriptions?sku=uyelik&package=com.bugraozden.cik"><div class="boxbtn-button">Test1</div></a>
+                        <div onclick="Page.test2();" class="boxbtn-button">Test2</div>
+                        <div onclick="Page.test3();" class="boxbtn-button">Test3</div>
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <div id="member0" class="normal-text-group" style="display:none;">
+
+                <div class="boxbtn-main blue" >
+                    
+                    <div class="boxbtn-centered-title"><span class="boxbtn-bold-text">ÜYELİK</span></div>
+
+                    <p class="boxbtn-normal-text">Üyeliğiniz şu anda aktif.</p>
+
+                    <div id="member-btn0" class="boxbtn-centered-item-cont">
+                        <a href="https://play.google.com/store/account/subscriptions?sku=uyelik&package=com.bugraozden.cik"><div class="boxbtn-button">ÜYELİK DETAYLARI</div></a>
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <div id="member1" class="normal-text-group" style="display:none;">
+
+                <div class="boxbtn-main blue" >
+                    
+                    <div class="boxbtn-centered-title"><span class="boxbtn-bold-text">ÜYELİK</span></div>
+
+                    <p class="boxbtn-normal-text">Üyeler, tüm özel içeriklere ulaşabilirler.</p>
+
+                </div>
+                
+                <div class="boxbtn-main white" >
+                    
+                    <div class="boxbtn-centered-title">İlk <span class="boxbtn-bold-text">15 gün</span> boyunca <span class="boxbtn-bold-text">ücretsiz</span> deneyin.</div>
+
+                    <p class="boxbtn-normal-text">15 günün sonunda, üyeliğinizi iptal etmemişseniz;<br />aylık üyelik bedeli olan 5 TL + vergi tahsil edilir.</p>
+                    
+                    <!-- <span class="turk-lirasi">₺</span> -->
+                    
+                    <p class="boxbtn-normal-text" style="font-size: 18px;">Vergi oranı, bulunduğunuz ülkeye göre hesaplanıp;<br /> bir sonraki adımda, size gösterilecektir.</p>
+                    
+                    <!-- <p class="boxbtn-normal-text">Vergilendirme, Türkiye için %18 olarak hesaplanır.</p> -->
+                    
+                    <!-- <p><span class="turk-lirasi">₺</span>0,89</p> -->
+
+                    <div class="boxbtn-centered-item-cont">
+                        <div id="member-btn1" onclick="Page.startMembership();" class="boxbtn-button" style="display:none;">SONRAKİ ADIM</div><!-- DENEMEYİ BAŞLAT -->
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <div id="member2" class="normal-text-group" style="display:none;">
+
+                <div class="boxbtn-main blue" >
+                    
+                    <div class="boxbtn-centered-title"><span class="boxbtn-bold-text">ÜYELİK</span></div>
+
+                    <p class="boxbtn-normal-text">Üyeler, tüm özel içeriklere ulaşabilirler.</p>
+
+                </div>
+                
+                <div class="boxbtn-main white" >
+                    
+                    <div class="boxbtn-centered-title">Üyelik bedeli, <span class="boxbtn-bold-text">Aylık 5 TL + vergi</span></div><!-- <span class="turk-lirasi-bold">₺</span> -->
+
+                    <p class="boxbtn-normal-text">Üyeliğinizi istediğiniz zaman iptal edebilirsiniz.</p>
+                    
+                    <p class="boxbtn-normal-text" style="font-size: 18px;">Vergi oranı, bulunduğunuz ülkeye göre hesaplanıp;<br /> bir sonraki adımda, size gösterilecektir.</p>
+                    
+                    <div class="boxbtn-centered-item-cont">
+                        <div id="member-btn2" onclick="Page.startMembership();" class="boxbtn-button" style="display:none;">SONRAKİ ADIM</div><!-- ÜYELİĞİ BAŞLAT -->
+                    </div>
+                    
+                </div>
+
+            </div>
+            
+            <div id="member3" class="normal-text-group" style="display:none;">
+
+                <div class="boxbtn-main blue" >
+                    
+                    <div class="boxbtn-centered-title"><span class="boxbtn-bold-text">ÜYELİK</span></div>
+
+                    <p class="boxbtn-normal-text">Beklenmedik bir hata oluştu. <br />Lütfen, daha sonra tekrar deneyin.</p>
+
+                </div>
+                
+            </div>
+
+            <div id="google-play-desc" class="normal-text-group" style="display:none;">
+
+                <div class="boxbtn-main grey" style="margin-top: 80px;" >
+
+                    <div class="boxbtn-centered-title"><span class="boxbtn-bold-text">ÜYE OLMA İŞLEMİ GÜVENLİ Mİ?</span></div>
+                    <ul style="padding-right: 30px;font-size:17px;">
+                        <li>Tüm ödeme işlemleri, Google Play'in kendi sistemi üzerinde yapılmaktadır.</li>
+                        <li>Bu uygulama, sizi, Google Play'in abone olma arayüzüne yönlendirmektedir.</li>
+                        <li>Bu uygulama, bir kullanıcının, abone olup/olmadığı bilgisini Google Play sistemi üzerinden öğrenir.</li>
+                        <li>Üyeliğinizi, bu uygulamanın dışında; Google Play hesabınızın, aboneliklerim bölümünde de görebilir ve iptal edebilirsiniz.</li>
+                        <!--<li>Üyelik işleminiz tamamlandığında veya iptal edildiğinde, Google Play tarafından, eposta ile bilgilendirilirsiniz.</li>-->
+                        <!-- <li>Bu uygulama, sizi, Google Play ödeme sayfasına yönlendirmek veya abone olup/olmadığınızı öğrenmek dışında bir yetkiye sahip değildir.</li>
+                        <li>Bu uygulama, sizin kişisel bilgilerinize (adres, telefon, kredi kartı) ulaşamaz.</li>
+                        <li>Bu uygulama, Google Play sistemi dışında sizden bir ödeme alamaz.</li> -->
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div id="app-store-desc" class="normal-text-group" style="display:none;">
+
+                <div class="boxbtn-main grey" style="margin-top: 80px;" >
+
+                    <div class="boxbtn-centered-title">ÜYE OLMA İŞLEMİ GÜVENLİ Mİ?</div>
+                    <ul style="padding-right: 30px;font-size:17px;">
+                        <li>Tüm ödeme işlemleri, Apple Store'un kendi sistemi üzerinde yapılmaktadır.</li>
+                        <li>Bu uygulama, sizi, Google Play'in abone olma arayüzüne yönlendirmektedir.</li>
+                        <li>Bu uygulama, bir kullanıcının, abone olup/olmadığı bilgisini Google Play sistemi üzerinden öğrenir.</li>
+                        <li>Üyeliğinizi, bu uygulamanın dışında; Google Play hesabınızın, aboneliklerim bölümünde de görebilir ve iptal edebilirsiniz.</li>
+                        <!--<li>Üyelik işleminiz tamamlandığında veya iptal edildiğinde, Google Play tarafından, eposta ile bilgilendirilirsiniz.</li>-->
+                        <!-- <li>Üyelik işlemleriniz sırasında, Google Play tarafından, eposta ile bilgilendirilirsiniz.</li> -->
+                        <!-- <li>Bu uygulama, sizi, Google Play ödeme sayfasına yönlendirmek veya abone olup/olmadığınızı öğrenmek dışında bir yetkiye sahip değildir.</li>
+                        <li>Bu uygulama, sizin kişisel bilgilerinize (adres, telefon, kredi kartı) ulaşamaz.</li>
+                        <li>Bu uygulama, Google Play sistemi dışında sizden bir ödeme alamaz.</li> -->
+                    </ul>
+
+                </div>
+
+            </div>
+            <!-- 
+            <div id="desktop0" class="normal-text-group" style="display:block;margin-top: 80px;margin-bottom: 120px;">
+
+                <div class="boxbtn-main blue" >
+                    
+                    <div class="boxbtn-centered-title"><span class="boxbtn-bold-text">MASAÜSTÜ SÜRÜMÜ</span></div>
+
+                    <p class="boxbtn-normal-text">Bu mobil uygulamanın, bilgisayar (Windows ve MacOS) üzerinde çalışan bir sürümü mevcuttur.</p>
+
+                    <div id="member-btn0" class="boxbtn-centered-item-cont">
+                        <a href="desktop.htm"><div class="boxbtn-button">DAHA FAZLA BİLGİ</div></a>
+                    </div>
+
+                </div>
+
+            </div>
+            -->
+            
+            <a onclick="App.gotoHomePage();">
+                <div class="close-btn" style="right:15px;top:35px;">
+                    <!-- <img src="../img/member/close-btn.png"/> -->
+                    <div style="width: 40px;height: 40px;background-color: white;border-radius: 30px;border:solid 2px lightblue;font-size: 27px;text-align: center;font-family: opensans;color:#4a4a4a;">x</div>
+                </div>
+            </a>
+            
+        </div><!-- content -->
+            
+            
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/check-member.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script>
+            
+            var Page = function(){};
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("index");
+                
+                // TEST CODE ***
+                //document.getElementById("member-btn1").style.display = "block";
+                //document.getElementById("member-btn2").style.display = "block";
+                //Page.changeBox(1);
+                //Page.changeBox(1);
+
+                // kutu butonlarını görünür yap.
+                document.getElementById("member-btn1").style.display = "block";
+                document.getElementById("member-btn2").style.display = "block";
+
+                checkMember(1, function() {
+
+                    // Üye
+                    Page.changeBox(0);
+
+                }, function() {
+
+                    //kullanıcı bir üye değil.
+
+                    //Eğer daha önce ücretsiz denemeyi kullanış ise
+                    if(storage.getItem("member-used-free")) {
+                        Page.changeBox(2);
+                    }else {
+                        Page.changeBox(1);
+                    }
+
+                }, function() {
+
+                    //Beklenmedik bir hata oluşur ise
+                    Page.changeBox(3);
+
+                });
+
+            };
+            
+            Page.changeBox = function(boxID) {
+                
+                document.getElementById("member0").style.display = "none";
+                document.getElementById("member1").style.display = "none";
+                document.getElementById("member2").style.display = "none";
+                document.getElementById("member3").style.display = "none";
+                
+                document.getElementById("member" + boxID).style.display = "block";
+
+                
+                switch (App.os) {
+                        
+                        case "android":
+
+                            // Üye Olma İşlemi Güvenli mi? Açıklaması
+                            if (boxID == 1 || boxID == 2) {
+                                document.getElementById("google-play-desc").style.display = "block";
+
+                            } else {
+                                document.getElementById("google-play-desc").style.display = "none";
+
+                            }
+
+
+                        break;
+                        case "ios":
+
+                            // Üye Olma İşlemi Güvenli mi? Açıklaması
+                            if (boxID == 1 || boxID == 2) {
+                                document.getElementById("app-store-desc").style.display = "block";
+
+                            } else {
+                                document.getElementById("app-store-desc").style.display = "none";
+
+                            }
+
+
+                        break;
+
+                }
+
+                // TEST: ÜYE OLMA İŞLEMİ GÜVENLİ Mİ?
+                // document.getElementById("google-play-desc").style.display = "block";
+                
+            }
+            
+            Page.startMembership = function() {
+                
+                //android için
+                if(App.os == "android") {
+
+                    try {
+
+                        Purchases.getOfferings(
+                        offerings => {
+
+                            Purchases.purchasePackage(offerings.current.monthly, ({ productIdentifier, purchaserInfo }) => {
+
+                                if (typeof purchaserInfo.entitlements.active["full-access"] !== "undefined") {
+
+                                  storage.setItem("member-used-free", 1);
+                                  Page.changeBox(0);
+
+                                }
+
+                            },
+                            ({error, userCancelled}) => {
+
+                                // Error making purchase
+                                navigator.notification.alert(
+                                    'Üyelik işlemi tamamlanamadı. Lütfen, daha sonra tekrar deneyin.',  // message
+                                    function() {  },     // callback
+                                    'Üyelik',            // title
+                                    'Tamam'              // buttonName
+                                );
+
+                            });
+
+                        },
+                        error => {
+
+                                // Error making purchase
+                                navigator.notification.alert(
+                                    'Üyelik işlemi tamamlanamadı. Lütfen, daha sonra tekrar deneyin.',  // message
+                                    function() {  },     // callback
+                                    'Üyelik',            // title
+                                    'Tamam'              // buttonName
+                                );
+
+                        });
+
+                    } catch (e) {
+
+                        // alert(JSON.stringify(e));
+
+                    }        
+
+                    /*
+                    try {
+                        Purchases.purchaseProduct("uyelik", ({ productIdentifier, purchaserInfo }) => {
+                        
+                        storage.setItem("member-used-free", 1);
+                        Page.changeBox(0);
+
+                        }, ({error, userCancelled}) => {
+                            // Error making purchase
+                            navigator.notification.alert(
+                                'Üyelik işlemi tamamlanamadı. Lütfen, daha sonra tekrar deneyin.',  // message
+                                function() {  },     // callback
+                                'Üyelik',            // title
+                                'Tamam'              // buttonName
+                            );
+
+                            alert(JSON.stringify(error));
+                            alert(JSON.stringify(productIdentifier));
+                            alert(JSON.stringify(purchaserInfo));
+
+                        }, null, Purchases.PURCHASE_TYPE.INAPP);
+                    } catch (e) {
+                        alert(JSON.stringify(e));
+                    }        
+                    */            
+                    
+                } else if(App.os == "ios"){
+                    
+                    //ios sistemi için
+                    
+                } else if(App.os == "electrton" || App.os == "browser") {
+                    
+                    //web
+                    
+                }
+                
+            }
+            
+            Page.test2 = function() {
+
+                
+            }
+            
+            Page.test3 = function() {
+                
+                /*
+                inappbilling.subscribe(function (result) {
+                   
+                    var strResult = "";
+                    if(typeof result === 'object') {
+                        strResult = JSON.stringify(result);
+                    } else {
+                        strResult = result;
+                    }
+                    alert("SUCCESS: \r\n"+strResult );
+                    
+                }, function (error) {
+                   alert("ERROR: \r\n"+error );
+                }, "uyelik");
+                */
+                
+            }
+            
+            /* KULLANILMIYOR. Tarayıcıda açmak daha kullanışlı. */
+            Page.openURL = function($url) {
+                
+                //cordova.InAppBrowser.open($url, '_blank', 'location=yes');
+                
+            }
+            
+        </script>
+        
+    </body>
+</html>

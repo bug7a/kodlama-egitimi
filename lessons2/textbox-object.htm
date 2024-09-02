@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Fonksiyon oluşturmak (function) -- Çocuklar için Programlama Eğitimi">
+        <meta name="keywords" content="Fonksiyon oluşturmak (function) -- Çocuklar için Programlama Eğitimi">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/lessons.css">
+        <link rel="stylesheet" type="text/css" href="../css/basic-editor.css">
+        <link rel="stylesheet" type="text/css" href="../basic/kutuphane/basic-1.3.css">
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/basic-editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/basic-minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../basic/kutuphane/basic-1.3.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+
+    </head>
+    <body>
+        
+        <div id="app-cont">
+            
+            <!-- HEADER -->
+            
+            <div class="header-top">
+                
+                <a onclick="App.gotoPage('../pages/lessons.htm')"><div class="header-icon" style="left:0px;"><img src="../img/lessons/header-list-icon.png" width="70" height="70" /></div>
+                <div class="header-icon-txt" style="left:55px;">KONULAR</div>
+                </a>
+                
+                <!-- VİDEO İLE ANTLATIM -->
+
+                
+                <!-- <div onclick="App.gotoYouTubeURL('https://youtu.be/AA68Z1s7Xp4');" style="position:absolute;right:20px;top:14px;"><img src="../img/lessons/youtube-video-btn2.png" width="180" height="43" />
+                </div> -->
+                
+            </div>
+            
+            <!-- HEADER END -->
+            
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+                <p class="normal-title">Metin kutusu (TextBox)</p>
+                
+                <p>Kullanıcının, içine bir şeyler yazabildiği<!-- bir--> nesne.</p><!-- metin <span class="normal-italic-text">(yazı)</span> -->
+                
+                <!-- <p>Bu nesne ile, kullanıcıdan bilgi alabilir ve algoritmamızda bu bilgileri kullanabiliriz.</p> -->
+                
+                <p>Bu nesne ile, kullanıcıdan istediğimiz bilgileri alabilir ve algoritmamızda kullanabiliriz.</p>
+                
+                <p>Şimdi, bir örnek yapalım.</p>
+                
+                <!-- <p>Bu nesne ile, kullanıcıdan bilgi alabilir ve bunu, algoritmamızda kullanabiliriz (işleyebiliriz).</p> -->
+                
+            </div>
+                
+<!-- 1 --><div id="editor-cont1"></div>
+        
+            
+            <div class="normal-text-group">
+                
+                <!-- <p><span class="normal-bold-text">start()</span> fonksiyonu, tüm içerik yüklenip, değişken ve fonksiyonlar tanımlandıktan sonra, otomatik olarak çalıştırılmaktadır.</p> -->
+                
+                <!-- <p>mesajYaz() fonksiyonun sonunda parantez kullandığımızda, fonksiyonun çalışmasını istemiş oluyoruz. Parametre olarak bir fonksiyon gönderirken, parantezleri yazmıyoruz.</p> -->
+                
+                <!--<p>Bir fonksiyonunun sonunda parantez kullandığımızda, fonksiyonun çalıştırılmasını istemiş oluruz.</p><!-- <span class="normal-bold-text">selamVer()</span>  -->
+                
+                <!--<p>Parametre olarak, bir fonksiyon göndermek istediğimizde ise parantezleri yazmıyoruz.</p>-->
+                
+                
+                <!-- <p><span class="normal-bold-text">selamVer()</span> fonksiyonunun sonunda parantez kullandığımızda, onun çalıştırılmasını istemiş oluruz. Parametre olarak göndermek istediğimizde ise parantezleri yazmıyoruz.</p> -->
+                
+                <!-- <p><span class="normal-bold-text">selamVer()</span> fonksiyonunun sonunda kullandığımız parantezler ile onun çalıştırılmasını istemiş oluyoruz. Parametre olarak göndermek istediğimizde ise parantezleri yazmıyoruz.</p>-->
+                <p>Fonksiyonların sonunda kullandığımız parantezler ile onların çalıştırılmasını istemiş oluyoruz. Parametre olarak göndermek istediğimizde ise parantezleri yazmıyoruz.</p>
+                
+                
+                <!-- <p><span class="normal-bold-text">mesaj</span> değişkeni, Bu sistem, nesne tabanlı programlama (Object-based) yöntemi olarak adlandırılır.</p>
+                
+                <p>Bu sistem sayesinde, (ön plandaki) algoritmamız, sade ve anlaşılması kolay olarak kalırken; daha çok işi, daha hızlı ve düzenli olarak yapabiliriz.</p> -->
+                
+            </div>
+        
+            
+            <!-- TEXT GROUP END -->
+            
+        <div class="header-bottom">
+
+            <a onclick="App.gotoPage('label-object.htm')"><div class="header-icon" style="left:0px;"><img src="../img/lessons/header-left-icon.png" width="70" height="70" /></div>
+            <div class="header-icon-txt" style="left:55px;">ETİKET NESNESİ</div>
+            </a>
+
+            <a onclick="App.gotoPage('button-object.htm')"><div class="header-icon" style="right:0px;"><img src="../img/lessons/header-right-icon.png" width="70" height="70" /></div>
+            <div class="header-icon-txt" style="right:55px;">DÜĞME NESNESİ</div>
+            </a>
+
+            <a onclick="App.gotoPage('../pages/lessons.htm')"><div class="header-icon" style="position:absolute;left:265px;top:0px;"><img src="../img/lessons/header-list-icon.png" width="70" height="70" /></div></a>
+
+        </div>
+        
+        </div><!-- content -->
+
+<div id="code-example1" style="display:none">// Nesneyi taşıyacak değişkeni tanımla.
+var metinKutusu
+
+// İlk çalıştırılan özel fonksiyon.
+var start = function() {
+    
+    // Bir metin kutusu nesnesi oluştur ve değişkene aktar.
+    metinKutusu = createTextBox()
+    // Nesnenin başlığını belirle.
+    metinKutusu.title = "İsminiz nedir?"
+    // Nesnenin sola olan mesafesini (piksel cinsinden) belirle.
+    metinKutusu.left = 40
+    // Nesnenin yukarıya olan mesafesini belirle.
+    metinKutusu.top = 130
+    
+    // Nesnenin içeriği değiştiğinde, fonksiyonu çalıştır.
+    metinKutusu.onChange(selamVer)
+
+}
+
+// Selam veren fonksiyon.
+var selamVer = function() {
+
+    // Ekrana yazdır.
+    print("Merhaba, " + metinKutusu.text)
+    
+}
+
+</div>
+        
+        <!-- 
+    // Nesnenin içinde görünecek metni belirle.
+    metinKutusu.text = "Robot" -->
+        
+        <script>
+            
+            var editor1;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                    
+                    case "1":
+                        
+                        break;
+                    
+                    }
+                
+            };
+            
+            Page.codingFinished = function($e){
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        break; 
+                        
+                   }
+            
+            };
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("lessons");
+                
+                Coding.init();
+                
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameStarted", Page.codingFinished);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                
+                Coding.setOption("1", "resetButtonEnabled", 1);
+                //Coding.setOption("1", "saveButtonEnabled", "code-js-s1"); //sample saving path: "code-e2-1"
+                
+                Coding.createNewEditorHTML("1");
+                Coding.setScreenColor("1", "#D8D8D8"); //#F6F6F6, D8D8D8
+                Coding.setScreenHeight("1", "300px");
+                editor1 = ace.edit("editor1");
+                //editor1.setReadOnly(true);
+                Coding.createNewEditor("1");
+                Coding.setSnippetIDList("1", ["110", "108", "113", "109", "102", "104", "115", "106", "105", "107", "112", "120", "121", "125", "122", "123", "124", "125", "128"]);
+                
+                // Eğer resetButton aktif ise
+                Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"));
+                // Eğer saveButton aktif ise
+                //Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"), "code-js-s1");
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                
+                // TODO: DELETE
+                //setInterval(function(){ 
+
+                    //editor1.moveCursorToPosition(editor1.getCursorPosition());
+                    //console.log(editor1.getCursorPosition())
+                    //console.log(editor1.getCursorPositionScreen())
+                    //myeditor.alignCursors()
+
+                //}, 500);
+                
+                App.setPageScore("lesson12", 1);
+
+                App.showAllPage();
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

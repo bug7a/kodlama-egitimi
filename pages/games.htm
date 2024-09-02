@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Alıştırmalar - Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Alıştırmalar - Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <!-- kendi css dosyası yok. çünkü exercises sayfası ile aynı yapıya sahiptir. -->
+        <link rel="stylesheet" type="text/css" href="../css/games.css">
+        
+        <style>
+
+        </style>
+
+    </head>
+    <body>
+        
+        <div class="colored-background"></div>
+        
+        <div id="app-cont">
+            
+            <!-- HEADER -->
+            
+            <div class="header-top">
+                
+                <a onclick="App.gotoHomePage();" >
+                <div class="header-icon" style="left:0px;"><img src="../img/lessons/header-home-icon.png" width="70" height="70" /></div>
+                <div class="header-icon-txt" style="left:55px;">BAŞLANGIÇ</div><!-- BAŞLANGIÇ -->
+                </a>
+                
+                <!-- <div style="position:absolute;right:20px;top:14px;">[x] Tümünü Göster</div> -->
+                <!-- <div class="header-icon-txt" style="right:55px;">(X) FİLTRE</div> -->
+                
+            </div>
+            
+            <!-- HEADER END -->
+
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+                <div id="btn1" class="boxbtn-main" style="background-image: radial-gradient(#EE7553, IndianRed);">
+                    
+                    <div class="boxbtn-tag-gray">Kolay</div>
+                    
+                    <div style="position: absolute;bottom:-54px;right:-90px;opacity:0.7;"><img src="../img/games/icon1.png" width="400" /></div>
+
+                    <!-- <div class="boxbtn-icon"><img src="../img/games/icon1.png" style="height:100%;margin-left:-35px;" /></div> -->
+
+                    <div class="boxbtn-centered-bold-title" style="font-family: opensans-bold">Robot</div>
+
+                    <p class="boxbtn-normal-text">Kod yazmak için, ön hazırlık oyunu.</p>
+
+                    <p class="boxbtn-normal-text">Kodların, görevlerini nasıl yerine getirdiğini ve değişkenlerin bilgileri nasıl sakladığını göreceğiz.</p>
+                    
+                    <p class="boxbtn-normal-text">Bu oyunu, biraz oynadıktan sonra; kodlama nedir? konusunu okuyabilirsiniz.</p>
+
+                    <!-- <div style="height: 100px;"></div> -->
+
+                    <div class="boxbtn-centered-item-cont" style="justify-content:center;margin-left:0px;">
+
+                        <div onclick="App.gotoYouTubeURL('https://youtu.be/qDiFTJgg9Tk');" class="boxbtn-button" >Tanıtım</div>
+                        
+                        <a href="../games/robot.htm"><div class="boxbtn-button">Oyunu Aç</div></a>
+                        
+                    </div>
+                    
+                </div>
+                
+
+                
+                <div id="member-info" class="boxbtn-main" style="background-color:#FFFFFF;display:none;">
+                    
+                    <div class="boxbtn-centered-bold-title" style="color:#4a4a4a;margin-bottom: 0px;">Üyelere Özel İçerikler</div>
+
+                    <p id="member-text-1" class="boxbtn-normal-text" style="display:none; text-align: center;color:#4a4a4a;margin-top: 0px;">İlk <span class="boxbtn-bold-text">15 gün</span> boyunca <span class="boxbtn-bold-text">ücretsiz</span> deneyin.</p>
+                    
+                    <p id="member-text-2" class="boxbtn-normal-text" style="display:none; text-align: center;color:#4a4a4a;margin-top: 0px;">Tüm içerikleri görebilmek için,<br /> üyeliğinizi tekrar aktif etmelisiniz.</p>
+
+                    <div style="height: 0px;"></div>
+
+                    <!--
+                    <div class="boxbtn-centered-item-cont">
+                        <a href="../pages/member.htm"><div class="boxbtn-button" >Daha Fazla Bilgi</div></a>
+                    </div>
+                    -->
+
+                </div>
+                
+                <!-- MATEMATİK YARIŞI -->
+                <div id="btn2" class="boxbtn-main-gray"> <!-- style="background-image: radial-gradient(Teal, seagreen);" -->
+                    
+                    <div class="boxbtn-tag-gray" >Kolay</div>
+
+                    <!-- <div style="position: absolute;top:0px;left:0px;opacity:0.8;"><img src="../img/games/matematik-yarisi.png" width="560" height="284" /></div> -->
+                    <div class="boxbtn-icon">
+                        <div style="border-radius: 13.5px;height:100%;overflow:hidden;">
+                        <img src="../img/games/icon2.png" style="height:190%;margin-left: -15px;" />
+                        </div>
+                    </div>
+
+                    <div class="boxbtn-centered-bold-title-gray" style="font-family: opensans-bold;">Matematik Yarışı</div>
+
+                    <p class="boxbtn-normal-text-gray" >İki arabanın, bir sokak boyunca yarıştığı bir oyun.</p>
+
+                    <p class="boxbtn-normal-text-gray" >Aracınızın ilerlemesi, matematik işlemlerini hızlı çözebilmenize bağlı. Yarış başlasın mı?</p>
+
+                    <!-- <p class="boxbtn-normal-text-gray" >Bu oyun, kodlama yaparken; nesnelerin konum ve boyutlarının hesaplanmasında bize yardımcı olacaktır.</p> -->
+                    <!-- <p class="boxbtn-normal-text-gray" >Not: Nesnelerin konum ve boyutlarının hesaplanmasında bize yardımcı olacaktır.</p> -->
+
+                    <div class="boxbtn-centered-item-cont">
+                        
+                        <div onclick="App.gotoYouTubeURL('https://youtu.be/pxyk1t0kC9A');" class="boxbtn-button" >Tanıtım</div>
+                        
+                        <a href="../games/matematik-yarisi.htm"><div class="boxbtn-button opened" style="display:none;">Oyunu Aç</div></a>
+                        
+                        <a href="../pages/member.htm"><div class="boxbtn-button locked" style="display:none;"><div style="position: absolute;left:12px;top:5px;"><img src="../img/exercises/locked.png" width="40" /></div>Oyunu Aç</div></a>
+                        
+                    </div>
+
+                </div>
+
+
+                <!-- İNGİLİZCE KELİMELER -->
+                <div id="btn3" class="boxbtn-main-gray">
+                                    
+                    <div class="boxbtn-tag-gray" >Kolay</div>
+
+                    <!-- <div style="position: absolute;top:0px;left:0px;opacity:0.06;"><img src="../img/games/ingilizce-kelimeler.png" width="560" height="284" /></div> -->
+                    <div class="boxbtn-icon"><img src="../img/games/icon3.png" style="height:170%;margin-left:-30px;margin-top:0px;" /></div>
+
+                    <div class="boxbtn-centered-bold-title-gray" style="font-family: opensans-bold;">İngilizce Kelimeler</div>
+
+                    <!-- <p class="boxbtn-normal-text-gray" >Sık kullanılan bazı kelimelerin, türkçe karşılıkları.</p> -->
+
+                    <p class="boxbtn-normal-text-gray" >Kodlamada kullanılan bazı kelimelerin, türkçe karşılıklarını oyun oynuyormuş gibi öğrenmenin bir yolu.</p>
+
+                    <!-- <p class="boxbtn-normal-text-gray" >Programlamanın dili ingilizcedir. Bir çok program ve kaynak sadece ingilizce olarak ulaşılabilir. İlerlemek için kelimeleri gördüğümüzde türkçe karşılıklarını bilmemiz gerekiyor.</p> -->
+
+                    <div class="boxbtn-centered-item-cont">
+                        
+                        <div onclick="App.gotoYouTubeURL('https://youtu.be/Y6wteo9Z4hM');" class="boxbtn-button" >Tanıtım</div>
+                        
+                        <a href="../games/ingilizce-kelimeler.htm"><div class="boxbtn-button opened" style="display:none;">Oyunu Aç</div></a>
+                        
+                        <a href="../pages/member.htm"><div class="boxbtn-button locked" style="display:none;"><div style="position: absolute;left:12px;top:5px;"><img src="../img/exercises/locked.png" width="40" /></div>Oyunu Aç</div></a>
+                        
+                    </div>
+
+                </div>
+
+                <!-- HAFIZA -->
+                <div id="btn3" class="boxbtn-main-gray">
+                                    
+                    <div class="boxbtn-tag-gray" >Kolay</div>
+
+                    <!-- <div style="position: absolute;top:0px;left:0px;opacity:0.08;"><img src="../img/games/hafiza1.png" width="560" height="484" /></div> -->
+                    <div class="boxbtn-icon"><img src="../img/games/icon4.png" style="height:180%;margin-left:-30px;margin-top:-100px;" /></div>
+
+                    <div class="boxbtn-centered-bold-title-gray" style="font-family: opensans-bold;">Hafıza</div>
+
+                    <p class="boxbtn-normal-text-gray" >Görsel hafızamızı güçlendirecek bir oyun.</p>
+
+                    <p class="boxbtn-normal-text-gray" >Bakalım, kısa bir süreliğine gösterilen kartları doğru hatırlayabilecek misin?<!-- Kartlar arasında, hatırlamanı kolaylaştıracak bağlantılar kurabilirsin. --></p>
+
+                    <!-- <p class="boxbtn-normal-text-gray" >Farklı renk ve ikonları taşıyan kartlar ile doldurulmuş bir alanda; amaç, gösterilen kartları hafızanızda tutabilmek.</p> -->
+                    <!-- <p class="boxbtn-normal-text-gray" >Ekran farklı renk ve ikonları taşıyan kartlar ile bölünmüş; amaç, gösterilen kartları hafızanızda tutabilmek.</p> -->
+
+                    <div class="boxbtn-centered-item-cont">
+                        
+                        <div onclick="App.gotoYouTubeURL('https://youtu.be/1VnkPdjWyiA');" class="boxbtn-button" >Tanıtım</div>
+                        
+                        <a href="../games/hafiza.htm"><div class="boxbtn-button opened" style="display:none;">Oyunu Aç</div></a>
+                        
+                        <a href="../pages/member.htm"><div class="boxbtn-button locked" style="display:none;"><div style="position: absolute;left:12px;top:5px;"><img src="../img/exercises/locked.png" width="40" /></div>Oyunu Aç</div></a>
+                        
+                    </div>
+
+                </div>
+
+
+            <!-- GROUP SONU -->
+            </div>
+            
+            
+            
+            <div class="page-end-spacing"></div>
+        
+        </div><!-- content -->
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/check-member.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script>
+            
+            var Page = function(){};
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("games");
+
+                //TODO: test amaçlı kod, uygulama yayınlanırken kapatılmalı
+                //document.getElementById("member-info").style.display = "block";
+                //document.getElementById("member-text-2").style.display = "block";
+                
+                /*TODO: TEST BAŞLANGIÇ */
+                
+                /*
+                // ÜYE
+                var lockedButtons = document.getElementsByClassName("boxbtn-button opened");
+                                    
+                for(var i = 0; i < lockedButtons.length; i++) {
+                    lockedButtons[i].style.display = "block";
+                }
+                */
+                
+                /*
+                // ÜYE DEĞİL
+                //kullanıcı bir üye değil.
+                document.getElementById("member-info").style.display = "block";
+
+                var lockedButtons = document.getElementsByClassName("boxbtn-button locked");
+
+                for(var i = 0; i < lockedButtons.length; i++) {
+                    lockedButtons[i].style.display = "block";
+                }
+
+                //Eğer daha önce ücretsiz denemeyi kullanış ise
+                if(storage.getItem("member-used-free")) {
+                    document.getElementById("member-text-2").style.display = "block";
+                }else {
+                    document.getElementById("member-text-1").style.display = "block";
+                }
+                */
+                
+                /* TEST SONU */ 
+
+                checkMember(2, function() {
+
+                    // Üye
+                    var lockedButtons = document.getElementsByClassName("boxbtn-button opened");
+                                    
+                    for(var i = 0; i < lockedButtons.length; i++) {
+                        lockedButtons[i].style.display = "block";
+                    }
+
+                }, function() {
+
+                    // Üye DEĞİL
+                    document.getElementById("member-info").style.display = "block";
+                                    
+                    var lockedButtons = document.getElementsByClassName("boxbtn-button locked");
+                    
+                    for(var i = 0; i < lockedButtons.length; i++) {
+                        lockedButtons[i].style.display = "block";
+                    }
+                    
+                    //Eğer daha önce ücretsiz denemeyi kullanış ise
+                    if(storage.getItem("member-used-free")) {
+                        document.getElementById("member-text-2").style.display = "block";
+                    }else {
+                        document.getElementById("member-text-1").style.display = "block";
+                    }
+
+                });
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

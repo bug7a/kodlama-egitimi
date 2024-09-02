@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Renkleri tara - Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Renkleri tara - Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/samples.css">
+        <link rel="stylesheet" type="text/css" href="../css/basic-editor.css">
+        <link rel="stylesheet" type="text/css" href="../library/basic/basic.css">
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/basic-editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/basic-minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../library/basic/basic.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script>
+            
+            // var start;
+            
+            var editor1;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                    
+                    case "1":
+                        
+                        break;
+                    
+                    }
+                
+            };
+            
+            Page.codingFinished = function($e){
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        break; 
+                        
+                   }
+            
+            };
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("sample");
+                
+                Coding.init();
+                
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameStarted", Page.codingFinished);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                
+                //Coding.setOption("1", "resetButtonEnabled", 1);
+                Coding.setOption("1", "saveButtonEnabled", "code-js-s1"); //sample saving path: "code-e2-1"
+                
+                Coding.createNewEditorHTML("1");
+                Coding.setScreenColor("1", "#D8D8D8"); //#F6F6F6
+                Coding.setScreenHeight("1", "500px");
+                editor1 = ace.edit("editor1");
+                //editor1.setReadOnly(true);
+                Coding.createNewEditor("1");
+                Coding.setSnippetIDList("1", Coding.snippetCodingIDList.concat(Coding.snippetCoding2IDList));
+                
+                // Eğer resetButton aktif ise
+                //Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"));
+                // Eğer saveButton aktif ise
+                Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example1"), "code-js-s1");
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                
+                //App.setPageScore("lesson6", 1);
+                
+            };
+            
+            
+            
+        
+        </script>
+
+    </head>
+    <body>
+        
+        <div id="app-cont">
+            
+            <a href="../pages/samples.htm"><div class="close-btn"><img src="../img/samples/sample-close-btn.png" /></div></a>
+            
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+            <p class="normal-title">basic.js test alanı</p>
+                
+                <p>Yılanı oluşturan karelerin koordinatları, <span class="normal-bold-text">noktalar</span> isminde bir dizi değişkeninde saklanıyor. </p>
+                <p><span class="normal-bold-text">ilerle()</span> fonksiyonu, yılanın bir birim ilerlemesini sağlıyor.</p>
+
+            </div>
+            
+            <!-- TEXT GROUP END -->
+            
+<!-- 1 --><div id="editor-cont1"></div>
+            
+            <div class="normal-text-group">
+                
+                <!-- <p>Diğer bir örnekte ise; aradığımız şartın gerçekleştiği <span class="normal-italic-text"></span> veya gerçekleşmediği durumunu ekrana yazdıralım.</p>
+                
+                <p>Bu şart, iki farklı durumda gerçekleşebilir; <span class="normal-bold-text">"sonuc"</span> ismindeki değişkenin içeriği 5'dir veya 5'ten farklıdır.</p> -->
+                
+            </div>
+            
+            
+            <div class="page-end-spacing"></div>
+        
+        </div><!-- content -->
+
+<div id="code-example1" style="display:none">// Çizim alanı yatay 30, dikey 23 kare.
+    
+var btn1
+var lblTest
+    
+var start = function() {
+    
+    setLoopTimer(1000)
+    
+    btn1 = createButton()
+    that.top = 50
+    that.left = 50
+    that.text = "Bana tıkla"
+    //that.color = "pink"
+    that.onClick(gonder)
+
+    lblTest = createLabel()
+    that.text = "1"
+    lblTest.aline(btn1, "bottom", 20)
+    
+}
+
+var loop = function() {
+    lblTest.text = num(lblTest.text) + 1
+}
+    
+var gonder = function() {
+
+    lblTest.text = "selam"
+    
+}
+
+</div>        
+</body>
+</html>

@@ -1,0 +1,21 @@
+.draw-area-item {
+    
+    position:absolute;
+    /* yuksekli ve genişlik normal değerler 10px dir ama kenarlıksız, bazı boşluk çizgiler oluştuğu için çözüm olarak 11px yapılmıştır.*/
+    width:11px;
+    height:11px;
+    background-color:white;
+    border: solid 1px #141414;
+    font-family:opensans; 
+    font-size:7px;
+    color:#141414;
+    text-align:center;
+    padding: 0px;
+    padding-left: 0px;
+    
+    }
+
+.draw-area-item-title {
+    
+    
+    }

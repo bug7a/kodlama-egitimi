@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <!-- <link rel="stylesheet" type="text/css" href="css/page.css"> -->
+        
+        <style>
+            
+            body {
+                font-family: opensans;
+                font-size: 20px;
+                text-align: center;
+                color: #333;
+            }
+        
+            .txt-title {
+                
+                position: relative;
+                margin-top: 40px;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+            }
+            
+            .txt-normal {
+                font-family: opensans-bold;
+            }
+            
+            .txt-desc {
+                
+            }
+            
+            .txt-link {
+                font-family: opensans-lightitalic;
+                font-size: 18px;
+                color: steelblue;
+                margin-bottom: 10px;
+            }
+            
+            .txt-cut {
+                font-family: opensans-bold;
+                margin-top: 40px;
+                margin-bottom:40px;
+            }
+            
+        
+        </style>
+        
+        
+    </head>
+    <body>
+        
+        <div class="colored-background"></div>
+        
+        <div id="app-cont">
+            
+            
+            <div style="position:relative;left:0px;top:0px;display:block;"><img src="../img/about.webp" width="600" /></div>
+            
+            <a onclick="App.gotoHomePage();" style="position:absolute;width: 70px;height: 70px;background-color: red;opacity: 0;right:20px;top:20px;"></a>
+            
+            <div onclick="App.gotoHomePage();" style="position:absolute;width: 600px;height: 120px;background-color: red;opacity: 0;left:0px;top:120px;"></div>
+            
+            <!--
+            
+            <p style="padding: 50px;text-align: justify;padding-bottom: 30px;">Merhaba arkadaşlar, bu eğitim uygulaması ile, Programlama dillerindeki temel birimleri öğreneceğiz. Algoritma geliştirme ve problem çözme deneyimi kazanacağız. Ve yazılım projeleri üretmeye başlayacağız. Keyifli çalışmalar dilerim.</p>
+
+            -->
+            
+            
+            
+<p style="padding: 50px;text-align: left;padding-bottom: 10px;font-size:16px;">UYGULAMANIN AMACI NEDİR?<br>1. Oyunlar ile zeka geliştirme ve kod yazmaya ön hazırlık.<br>
+2. Programlama dillerindeki, temel birimleri öğretmek.<br>
+3. Algoritma geliştirme ve problem çözme deneyimi kazandırmak.
+</p>
+
+<!-- <p style="padding: 50px;text-align: justify;padding-top:0px;padding-bottom: 30px;font-size:16px;">KİMLER FAYDALANABİLİR?<br>- İlkokul, ortaokul ve lise öğrencileri.<br>
+- Hobi olarak, kod yazmak isteyenler.<br>
+- Programlamaya yeni başlayanlar.<br>
+- Eğitim içeriği olarak kullanmak isteyen, öğretmen ve ebeveynler.
+</p> -->
+            
+            <!--
+
+            KODLAMA: OYUNLAŞTIRILMIŞ PROGRAMLAMA EĞİTİMİ
+
+            not: nesne tabanlı programlamayı ve bilgisayarda kod yazmayı devreye aldıktan sonra uygulamanın ismi değiştirilebilir.
+            Uygulamanın amacı gibi bir yazım şekli, google play açıklamada, daha etkili ve sade bir anlatım şekli olabilir.
+
+            ÖN AÇIKLAMA:
+
+            Merhaba, bu eğitim uygulaması; çocuklara, gerçek bir programlama dili (JavaScript) kullanarak, algoritma geliştirme ve problem çözme deneyimi kazandırmak için tasarlanmıştır.
+
+            Eğlenceli ve daha akılda kalıcı olması için; bulmaca oyunu tarzında simülasyonlar ile, kodlamanın temellerini öğrenmenize yardımcı olur. İyi çalışmalar.
+
+            UYGULAMANIN AMACI NEDİR?
+            1. Oyunlar ile zeka geliştirme ve kod yazmaya ön hazırlık.
+            2. Programlama dillerindeki temel birimleri öğretmek.
+            3. Algoritma geliştirme ve problem çözme deneyimi kazandırmak.
+            // 4. Yazılım projeleri (Nesne tabanlı) üretebilmenizi sağlamak.
+            // 4. Öğrencileri, (Nesne tabanlı) yazılım projeleri üretebilecek bir seviyeye ulaştırmak.
+            4. Nesne tabanlı yazılım projeleri üretebilecek bir seviyeye ulaştırmak.
+
+            KİMLER FAYDALANABİLİR?
+            - İlkokul, ortaokul ve lise öğrencileri.
+            - Hobi olarak, kod yazmak isteyenler.
+            - Programlamaya yeni başlayanlar.
+            - Eğitim içeriği olarak kullanmak isteyen, öğretmen ve ebeveynler.
+            // - Sadeleştirilmiş JavaScript ile nesne tabanlı ve dinamik yazılım projeleri üretmek isteyenler.
+            - Sadeleştirilmiş JavaScript ile, dinamik kullanıcı arayüzleri üretmek isteyenler.
+
+            YENİ BAŞLAYANLAR İÇİN REHBER:
+            - Robot oyunu ile, değişken ve fonksiyonlar hakkında ön bilgi edinin.
+            - İlk 6 konuyu çalışın, önemli bölümleri not alın ve pratik yapın.
+              PRATİK: Örnekleri, not alın ve yeni proje oluşturarak, aldığınız notlardan bakarak yeniden yazın.
+            - Robot zekası geliştirme alıştırmasını tamamlayın.
+            - 7. Konuyu çalışın (ve isteğe bağı olarak kare boyama, hareket ve etkileşim alıştırmasını tamamlayın.)
+            - Öğrendiklerinizin nasıl kullanıldığını pekiştirmek için, projeler bölümündeki algoritmaları inceleyin.
+            - 8 ve üzerindeki konuları tamamlayın.
+
+            İÇERİĞİNDE NELER VAR?
+
+            Uygulama, 4 ana bölümden oluşmaktadır.
+
+            1. Konular; kodlamanın temel birimlerini anlatan ders ve uygulamalar.
+
+            - Kodlama nedir?
+            - Ekrana yazı yazdırmak
+            - Değişkenlerin kullanımı
+            - Matematiksel işlemler
+            - Döngüler (for)
+            - Koşullu ifadeler (if)
+            - İleri koşullu ifadeler
+
+            2. Alıştırmalar; algoritma kurma ve problem çözme yeteneklerini geliştirmek için tasarlanmış  eğlenceli görevler.
+
+            - Robot zekası geliştirme
+            - Kare boyama, hareket ve etkileşim (Özel içerik)
+
+            3. Projeler; serbest algoritma geliştirme ve örnek kodlar.
+
+            4. Oyunlar; zeka geliştiren, kodlamaya ön hazırlık oyunları.
+
+            - Robot
+
+            EK AÇIKLAMA:
+
+            Not: Bu eğitim içerikleri, Öğretmenler veya ebeveynler eşliğinde daha yararlı olur. Çocuklar bazı konularda takılabilir ve sıkılabilirler. Buda motivasyonlarını düşürebilir.
+
+            -->
+
+                <div class="txt-title">GELİŞTİRİCİ</div>
+                <a onclick="App.gotoURL('https://bug7a.github.io/');" class="txt-normal">Buğra Özden</a>
+                <!-- <div onclick="App.gotoURL('http://www.bugraozden.com/');" class="txt-link">bugraozden.com</div> -->
+
+                <div class="txt-title">İKONLAR / GÖRSEL MATERYAL</div>
+                <div onclick="App.gotoURL('https://www.flaticon.com/authors/freepik');" class="txt-normal">Freepik</div>
+                <div onclick="App.gotoURL('https://www.flaticon.com/authors/google');" class="txt-normal">Google</div>
+                <div onclick="App.gotoURL('https://www.flaticon.com/authors/smashicons');" class="txt-normal">Smashicons</div>
+                <div onclick="App.gotoURL('https://www.flaticon.com/authors/vectors-market');" class="txt-normal">Vectors Market</div>
+                <div onclick="App.gotoURL('https://www.flaticon.com/authors/pixel-perfect');" class="txt-normal">Pixel Perfect</div>
+                <div onclick="App.gotoURL('https://www.flaticon.com/authors/good-ware');" class="txt-normal">Good Ware</div>
+                <div onclick="App.gotoURL('https://www.flaticon.com/authors/kiranshastry');" class="txt-normal">Kiranshastry</div>
+                <div onclick="App.gotoURL('http://www.flaticon.com');" class="txt-link">flaticon.com</div>
+            
+                <div onclick="App.gotoURL('https://www.kenney.nl/assets');" class="txt-normal">Kenney</div>
+                <div onclick="App.gotoURL('https://www.kenney.nl/assets');" class="txt-link">kenney.nl</div>
+
+                <div class="txt-title">SES EFEKLERİ / MÜZİKLER</div>
+                <div onclick="App.gotoURL('http://www.freesound.org/people/rhodesmas/');" class="txt-normal">rhodesmas</div>
+                <div onclick="App.gotoURL('http://www.freesound.org/people/elmasmalo1/');" class="txt-normal">elmasmalo1</div>
+                <div onclick="App.gotoURL('http://www.freesound.org/people/yummie/');" class="txt-normal">yummie</div>
+                <div onclick="App.gotoURL('http://www.freesound.org');" class="txt-link">freesound.org</div>
+                
+                <!-- https://freesound.org/people/yummie/ -->
+                <!-- <div class="txt-title">MÜZİKLER</div> -->
+
+            
+                <!-- <div class="txt-cut">*</div> -->
+
+                <div class="txt-title">GELİŞTİRME ORTAMI</div>
+                <div onclick="App.gotoURL('http://brackets.io/');" class="txt-normal">Brackets</div>
+                <div onclick="App.gotoURL('http://brackets.io/');" class="txt-link">brackets.io</div>
+                <div onclick="App.gotoURL('https://code.visualstudio.com/');" class="txt-normal">Visual Studio Code</div>
+                <div onclick="App.gotoURL('https://code.visualstudio.com/');" class="txt-link">code.visualstudio.com</div>
+                <div onclick="App.gotoURL('https://developer.android.com/studio');" class="txt-normal">Android Studio</div>
+                <div onclick="App.gotoURL('https://developer.android.com/studio');" class="txt-link">developer.android.com</div>
+            
+                <div class="txt-title">ARAYÜZ TASARIM ARACI</div>
+                <div onclick="App.gotoURL('https://www.figma.com/');" class="txt-normal">Figma</div>
+                <div onclick="App.gotoURL('https://www.figma.com/');" class="txt-link">figma.com</div>
+
+                <div class="txt-title">KULLANILAN TEKNOLOJİLER</div>
+                <!-- <div onclick="App.gotoURL('https://cordova.apache.org/');"  class="txt-normal">basic.js</div>
+                <div onclick="App.gotoURL('https://cordova.apache.org/');" class="txt-link">bug7a.github.org</div> -->
+                <div onclick="App.gotoURL('https://cordova.apache.org/');"  class="txt-normal">Apache Cordova</div>
+                <div onclick="App.gotoURL('https://cordova.apache.org/');" class="txt-link">cordova.apache.org</div>
+                <div onclick="App.gotoURL('https://bug7a.github.io/basicjs-turkce/');" class="txt-normal">BasicJS</div>
+                <div onclick="App.gotoURL('https://bug7a.github.io/basicjs-turkce/');" class="txt-link">bug7a.github.io/basicjs-turkce</div>
+                <div onclick="App.gotoURL('https://ace.c9.io/');" class="txt-normal">Ace</div>
+                <div onclick="App.gotoURL('https://ace.c9.io/');" class="txt-link">ace.c9.io</div>
+            
+            
+            
+            <!-- <div class="txt-cut">*</div> -->
+            
+            <!-- <p>E-Posta: bugra.ozden@gmail.com</p> -->
+            <div style="font-size:17px;margin-top: 80px;"><span style="background-image: linear-gradient(to top, lightgray, white);padding: 8px;border-radius:8px;"><b>E-Posta:</b> bugra.ozden@gmail.com</span></div>
+            
+            <div style="font-size:17px;margin-top: 30px;">Karşılaştığınız bir hatayı bildirin veya uygulamayı<br>daha iyi hale getirmemize yardım edin.</div>
+            
+            <!-- <div class="txt-cut"> </div> -->
+
+            <div style="font-size:18px;margin-top: 50px;margin-bottom:100px;">Bu uygulama, <span class="txt-normal">JavaScript programlama dili</span> ile geliştirilmiştir.</div>
+
+        </div><!-- content -->
+            
+            
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        
+        <script>
+            
+            var Page = function(){};
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("index");
+                
+                //App.setLastPageURL("pages/about.htm");
+                
+                
+            };
+            
+            /* KULLANILMIYOR. Tarayıcıda açmak daha kullanışlı. */
+            Page.openURL = function($url) {
+                
+                //cordova.InAppBrowser.open($url, '_blank', 'location=yes');
+                
+            }
+            
+        </script>
+        
+    </body>
+</html>

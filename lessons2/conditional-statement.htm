@@ -1,0 +1,1127 @@
+
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <title>Kodlama</title>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="description" content="Koşullu ifadeler (if) - Çocuklar için kodlama (programlama)">
+        <meta name="keywords" content="Koşullu ifadeler (if) - Çocuklar için kodlama (programlama)">
+        <meta name="author" content="Buğra ÖZDEN">        
+        
+        <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <link rel="stylesheet" type="text/css" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="../css/lessons.css">
+        
+        <link rel="stylesheet" type="text/css" href="../css/coding.css">
+        <link rel="stylesheet" type="text/css" href="../css/coding1.css">
+        <link rel="stylesheet" type="text/css" href="../css/coding2.css">
+
+    </head>
+    <body>
+        
+        <div id="app-cont">
+            
+            <!-- HEADER -->
+            
+            <div class="header-top">
+                
+                <a onclick="App.gotoPage('../pages/lessons.htm')"><div class="header-icon" style="left:0px;"><img src="../img/lessons/header-list-icon.png" width="70" height="70" /></div>
+                <div class="header-icon-txt" style="left:55px;">KONULAR</div>
+                </a>
+                
+                <!-- VİDEO İLE ANTLATIM -->
+
+                
+                <div onclick="App.gotoYouTubeURL('https://youtu.be/IpIAqFKTQGQ');" style="position:absolute;right:20px;top:14px;"><img src="../img/lessons/youtube-video-btn2.png" width="180" height="43" />
+                </div>
+                
+            </div>
+            
+            <!-- HEADER END -->
+            
+            
+            <!-- TEXT GROUP START -->
+            
+            <div class="normal-text-group">
+                
+            <p class="normal-title">İleri koşullu ifadeler</p>
+                
+                <p>Belli bir görevi yerine getirmek için bir algoritma tasarlanırken; programcı, algoritmanın karşılaşabileceği durumları tespit eder ve her durum için, algoritmanın neler yapması gerektiğini belirler.</p>
+                
+                <!-- 
+                <p class="normal-bold-text2">Bir örnek ile açıklayalım;</p>
+                
+                <p>Önce, yerine getirilmesini istediğimiz görev için; algoritmanın karşılaşabileceği durumları ve bu durumlar karşısından yapması gerekenleri listeleyelim.</p>
+                -->
+                
+                <p>Birlikte, bir algoritma tasarlayalım:</p>
+                
+                <p style="font-size:15px;"><span class="normal-bold-text2">Görev;</span><br />Kapıdan içeri girmek.</p>
+                <p style="font-size:15px;"><span class="normal-bold-text2">Durumlar;</span><br />1. Kapı açık <span class="normal-italic-text">(kapi == 1)</span>
+<br />2. Kapı kilitli ve anahtar var <span class="normal-italic-text">(kapi == 0, anahtar == 1)</span>
+<br />3. Kapı kilitli ve anahtar yok <span class="normal-italic-text">(kapi == 0, anahtar == 0)</span></p>
+                <p style="font-size:15px;"><span class="normal-bold-text2">Kurallar;</span><br />1. Kapı açık ise kapıdan içeri gir.
+<br />2. Kapı kilitli ve anahtar var ise anahtar ile kapıyı aç ve içeri gir.
+<br />3. Kapı kilitli ve anahtar yok ise anahtarı bul, kapıyı aç ve içeri gir.</p>
+                
+                <div class="normal-img"><img src="../img/lessons2/used-objects.webp" width="560" /></div>
+                
+                <p class="normal-bold-text2">Akış Şeması</p>
+                
+                <p>Algoritmanın, karşılaşabileceği durumlara göre izleyeceği yolları daha rahat görebilmemiz için bir diyagram çizelim.</p>
+                
+                <div class="normal-img"><img src="../img/lessons2/diagram.webp" width="560" /></div>
+                
+                <p class="normal-bold-text2">Algoritma</p>
+                
+                <p>Şimdi, tasarladığımız bu algoritmanın, çalışan halini kodlayalım.</p>
+                
+                
+                
+            </div>
+            
+            <!-- TEXT GROUP END -->
+            
+<!-- 1 --><div id="editor-cont1"></div>
+            
+            <div class="normal-text-group">
+                
+                <p class="normal-bold-text2">Alternatif Algoritma</p>
+                
+                <!-- <p>Kodlama yaparken; bir sorunun birden çok çözüm yolu olabilir. Seçmemiz gerek yol; kolay anlaşılan, verimli ve kısa olan olmalıdır.</p> -->
+                
+                <!-- Bizim için en kolay anlaşılan, kısa ve verimli yolu seçmeliyiz. -->
+                                
+                <!-- <p>Bizim için ev verimli yolu seçmeliyiz. </p>
+                
+                <p>Kolay anlaşılır, temiz yazılmış kod, ileride ekleme yapmak kolay olmalı, değişken vve fonksiyon isimleri anlaşılır seçilmeli, en az kaynak kullanan, en az kod tekrarı ve kısa algoritma</p> -->
+                
+                <p>Kodlama yaparken; bir sorunun birden çok çözüm yolu olabilir. Aynı görevi, farklı bir mantık kullanarak yapmaya çalışalım. </p>
+                
+                <!-- <p style="font-size:15px;">Özellikleri; anlaşılması daha zor, az kod tekrarı ve kısa.</p> -->
+                
+                <!-- <p style="font-size:15px;">Kodlama yaparken; bir sorunun birden çok çözüm yolu olabilir. Bizim için en kolay anlaşılan, kısa ve verimli yolu seçmeliyiz.</p> -->
+                
+                <!-- <p>Aynı görevi yapabilen, birden fazla çözüm algoritması olabilir.</p> -->
+                
+                <!-- <p>Aynı görevi, farklı bir mantık ile yapan başka bir algoritma tasarlayalım.</p> -->
+                
+            </div>
+            
+            <!-- 1 --><div id="editor-cont12"></div>
+            
+            <div class="normal-text-group">
+                
+                <!-- <p>Değişken içerikleri ile durumu değiştirelim ve algoritmayı yeniden çalıştıralım.</p> -->
+                
+                <!-- <p>Yukarıdaki örnekte; aynı işi yapan iki farklı algoritma gösterilmiştir.</p> -->
+                
+                <p>Diğer sonuçları da görmek için; <span class="normal-bold-text">kapi</span> ve <span class="normal-bold-text">anahtar</span> değişkenlerinin taşıdığı değerleri değiştirebilir <!--değiştirelim-->ve algoritmayı yeniden çalıştırabilirsiniz.<!--çalıştıralım.--></p>
+                
+                <!-- <p>Algoritmayı satır, satır inceleyerek; nasıl çalışacağını aklımızda canlandıralım.</p> -->
+                
+                <!-- <p>Algoritmanın içerdiği kodlar, satır sırasına göre sıra ile çalıştırılır.</p> -->
+                
+                <p>İç içe, iki koşullu ifade kullandığımızda; iç koşulun kontrol edilmesi için önce dış koşulun gerçekleşmiş olması gerekir.</p>
+                
+                <p style="font-size:15px;">Örnekte olduğu gibi; eğer anahtarın durumu kontrol ediliyor ise, kapı kilitli olarak tespit edilmiş demektir.</p>
+                
+                <!--
+                <p>İlk algoritma, kısa ve hiç kod tekrarı yapılmamıştır.</p>
+                
+                <p>İkinci algoritma; bizim için okuması ve anlaması daha kolay ve ileriye yönelik yeni durumlar eklemeye (geliştirmeye) daha müsait olarak geliştirilmiştir.</p>
+                
+                <p>* değişkenlerin içeriğini değiştirerek, sonucu değiştirebilirsiniz.</p>
+                
+                <p>* Yukarıdaki örnekte, aynı işi yapan iki farklı algoritma geliştirilmiştir.</p>
+                -->
+                
+            </div>
+                
+                <div class="next-question"><img src="../img/lessons/next-question.png" style="width:20px;height:18px;" /></div>
+            
+            <div class="normal-text-group">
+                
+                <p>İkiden fazla durumu kontrol etmemiz gerektiğinde ise; koşullu ifadeyi <span class="normal-bold-text">else if</span> kelimesi ile ihtiyacımız kadar uzatabiliriz.</p>
+                
+                <p>Aşağıdaki modeli inceleyelim.</p>
+                
+                <div class="normal-img"><img src="../img/lessons2/else-if-model.svg" width="560" /></div>
+                
+            </div>
+                
+            <div class="normal-text-group">
+                
+                <p>Şimdi, bir örnek yapalım:</p>
+                
+                <p>Koşullu ifadeyi bir döngü içerisinde kullanarak, 1'den 10'a kadar olan sayıları kontrol edelim ve 5 sayısına göre durumlarını ekrana yazdıralım.</p>
+                
+            </div>
+            
+            <div id="editor-cont4"></div> 
+                
+            <div class="normal-text-group">
+                
+                <!-- <p>Durumlar; kontrol edilen sayı 5 ten büyük, küçük veya 5 e eşit olabilir.</p> -->
+                
+                <p>Bu örnekte kullanılan koşullu ifade, <span class="normal-bold-text">i</span> değişkeninin 3 farklı durumunu kontrol etmektedir.</p>
+                
+                <p style="font-size:15px;"><span class="normal-bold-text2">Durumlar;</span><br />1. Üretilen sayı, 5 ten küçük <span class="normal-italic-text">(i &lt; 5)</span>
+<br />2. Üretilen sayı, 5 ten büyük <span class="normal-italic-text">(i > 5)</span>
+                    <br />3. Üretilen sayı, bu iki durumdan farklı <span class="normal-italic-text">(i == 5)</span></p>
+                
+            </div>
+                
+            <div class="next-question"><img src="../img/lessons/next-question.png" style="width:20px;height:18px;" /></div>
+            
+            <div class="normal-text-group">
+                
+                <p>Başka bir örnek daha yapalım:</p>
+                
+                <p>Bir kişinin, <span class="normal-bold-text">yas</span> değişkeninde saklanan yaşını kontrol ederek; hayatının hangi döneminde <span class="normal-italic-text">(çocuk, genç, yetişkin veya yaşlı)</span> olduğunu tespit etmeye çalışalım.</p>
+                
+            </div>
+            
+            
+ <!-- 2 --><div id="editor-cont2"></div>
+            
+            <div class="normal-text-group">
+                
+                <p><span class="normal-bold-text">yas</span> değişkeninin içeriğini değiştirerek; algoritmayı yeniden çalıştırabilir <!--çalıştıralım-->ve diğer sonuçları da görebilirsiniz.<!--görelim.--></p>
+                
+            </div>
+            
+            <div class="next-question"><img src="../img/lessons/next-question.png" style="width:20px;height:18px;" /></div>
+            
+            
+            <!-- İÇ İÇE İKİ DÖNGÜ İLE RENKLERİ TERS ÇEVİRME ÖRNEĞİ -->
+            <!--
+            <div class="normal-text-group">
+                
+                <p>Aşağıdaki 20x20 <span class="normal-italic-text">(toplam 400)</span> kareden oluşan alanı, döngüler yardımı ile tarayalım.</p>
+        
+                <p>Koordinatlarını verdiğimiz her bir karenin rengini tespit etmek için; <span class="normal-bold-text">"kareNeRenk(x, y)"</span> fonksiyonunu, koşullu ifade ile birlikte kullanalım.</p>
+                
+                <p>Tüm kareleri, tespit ettiğimiz renklerin zıttı <span class="normal-italic-text">(Beyaz ise siyah veya mavi ise turuncu)</span> ile yeniden boyayalım. </p>
+                
+            </div>
+            
+            <div id="editor-cont5"></div>
+        
+            
+            <div class="normal-text-group">
+                
+                <p>İki döngüyü iç içe yazdığımızda; tekrarlama sayılarının çarpımı kadar <span class="normal-italic-text">(20x20 = 400)</span> işlem yapabiliriz. </p>
+                
+                <p>Döngülerden ilki, hangi satırda olduğumuz bilgisini <span class="normal-italic-text">(y koordinatını)</span> verirken, içerideki ikinci döngü ise; her satır için kaçıncı karede olduğumuz bilgisini <span class="normal-italic-text">(x koordinatını)</span> bize vermektedir.</p>
+                
+                
+            </div>
+            -->
+            
+            <!-- ÖRNEK 4
+            <div class="normal-text-group">
+                
+                <p>#4 örnek</p>
+                
+            </div>
+            
+            <div id="editor-cont6"></div>
+            
+            
+        <div class="normal-text-group">
+
+            <p>Cevap veren fonksiyonlar, görevlerini tamamladıktan sonra bir değişken gibi ulaşılabilir bir bilgiye dönüşürler.</p>
+
+        </div>
+
+        -->
+            
+        <!-- İLERİ ÖRNEKLER (EKSTRA BİLGİ) 
+
+        <div class="next-question"><img src="../img/lessons/next-question.png" width="20" /></div>
+
+        <div class="normal-text-group">
+
+            <p>#5 Örnek:</p>
+
+        </div>
+            
+        <div id="editor-cont3"></div>
+            
+        <div class="normal-text-group">
+            
+                <div class="normal-img"><img src="../img/lessons2/logic-table.webp" width="560" /></div>
+                
+                <p>#7</p>
+                
+            </div>
+            
+        <div id="editor-cont7"></div>
+            
+        <div class="normal-text-group">
+                
+                <p>#8</p>
+                
+            </div>
+            
+        <div id="editor-cont8"></div>
+
+        -->
+            
+            
+        <div class="normal-text-group">
+
+            <!-- <p>Bir çok programlama dilinde (JavaScript, Java, C, C++, C#, PHP, ASP.NET vb.) yazılmış algoritmayı, gördüğünüzde içinde koşullu ifadeleri seçebilirsiniz. Koşullu ifadeleri seçebilirsiniz.</p>
+
+            <p>Koşullu ifadeler bir çok programlama dilinde, benzer bir yazıma sahiptir. Sizde farklı dillerde yazılmış algoritma örneklerindeki koşullu ifadeleri okuyup, anlamaya çalışabilirsiniz.</p> -->
+            
+            <p>Koşullu ifadeler, bir çok programlama dilinde <span class="normal-italic-text">(JavaScript, C, C++, C#, Java, Python, Swift, PHP, ASP.NET vb.);</span> uyguladığımız örneklere çok benzer bir kullanıma sahiptir.</p>
+            
+            <!-- <p>Tebrikler; Kare Boyama, Hareket ve Etkileşim alıştırmasını çözebilecek bir seviyeye ulaştınız.</p> -->
+            
+            <p style="font-size:15px;">Kare Boyama, Hareket ve Etkileşim alıştırması; algoritmaların işleyişlerini daha iyi anlamamıza ve koşullu ifadeleri, daha etkin kullanabilmemize yardımcı olmak için tasarlanmıştır.</p><!-- olmak için -->
+            
+            <p></p>
+            
+        </div>
+            
+        <div class="header-bottom">
+
+            <a onclick="App.gotoPage('../lessons1/lesson6.htm')"><div class="header-icon" style="left:0px;"><img src="../img/lessons/header-left-icon.png" width="70" height="70" /></div>
+            <div class="header-icon-txt" style="left:55px;">KOŞULLU İFADELER</div>
+            </a>
+
+            <a onclick="App.gotoPage('function.htm')"><div class="header-icon" style="right:0px;"><img src="../img/lessons/header-right-icon.png" width="70" height="70" /></div>
+            <div class="header-icon-txt" style="right:55px;">FONKSİYON OLUŞTURMAK</div>
+            </a>
+
+            <a onclick="App.gotoPage('../pages/lessons.htm')"><div class="header-icon" style="position:absolute;left:265px;top:0px;"><img src="../img/lessons/header-list-icon.png" width="70" height="70" /></div></a>
+
+        </div>
+        
+        </div><!-- content -->
+
+<div id="code-example10" style="display:none">// Kapının durumu açık (1) veya kilitli (0)
+var kapi = 0
+// Anahtar var (1) veya yok (0)
+var anahtar = 1
+
+// Eğer kapı açık ise
+if (kapi == 1) {
+    
+	// Kapıdan içeri gir.
+    kapidanIceriGir()
+    
+} else {
+
+	// Eğer anahtar var ise
+	if (anahtar == 1) {
+        // Anahtar ile kapıyı aç ve içeri gir.
+		kapiAc()
+		kapidanIceriGir()
+	} else {
+        // Anahtarı bul, kapıyı aç ve içeri gir.
+		anahtarBul()
+		kapiAc()
+        kapidanIceriGir()
+	}
+
+}
+
+</div>
+<div id="code-example12" style="display:none">// Kapının durumu açık (1) veya kilitli (0)
+var kapi = 0
+// Anahtar var (1) veya yok (0)
+var anahtar = 1
+
+// Eğer kapı kilitli ise
+if (kapi == 0) {
+    
+    // Eğer anahtar yok ise
+    if (anahtar == 0) {
+        // Anahtarı bul.
+        anahtarBul()
+    }
+    
+    // Anahtar ile kapıyı aç.
+    kapiAc()
+    
+}
+// Kapıdan içeri gir
+kapidanIceriGir()
+
+</div>
+<div id="code-example1" style="display:none">//değişken tanımla ve içine değer ata.
+var degisken1 = "a"
+var degisken2 = "a"
+var degisken3 = "c"
+    
+//KOŞULLU İFADE #1
+if (degisken1 == "a") {
+	yaz("degisken1: a ")
+} else {
+    yaz("degisken1: a değil ")
+}
+
+//KOŞULLU İFADE #2
+if (degisken2 == "b") {
+	yaz("degisken2: b ")
+} else {
+    yaz("degisken2: b değil ")
+}
+
+//KOŞULLU İFADE #3
+if (degisken3 == "c") { 
+	yaz("degisken3: c ")
+} else {
+    yaz("degisken3: c değil ")   
+}
+    
+if (degisken1 == "a") {
+    yaz("degisken1: a ")
+    
+    if (degisken2 == "b") {
+        yaz("degisken2: b ")
+    
+        if (degisken3 == "c") {
+            yaz("degisken3: c ")
+        }
+    
+    } 
+    
+}
+
+//ALTERNATİF KULLANIM
+if (degisken1 == "a") {
+    yaz("degisken1: a ")
+    
+    if (degisken2 == "b") {
+        yaz("degisken2: b ")
+    
+        if (degisken3 == "c") {
+            yaz("degisken3: c ")
+        } else {
+            yaz("degisken3: c değil ")
+        }
+    
+    } else {
+        yaz("degisken2: b değil ")
+    }
+    
+} else {
+    yaz("degisken1: a değil ")
+}
+
+</div>
+<div id="code-example2" style="display:none">// Değişken tanımla ve içine yaş ata.
+var yas = 40
+
+// Yaşı kontrol et.
+if (yas &lt; 1) {
+	yaz("Kontrol edilen yaş geçersiz. Yaş en az 1 olmalı.")
+    
+} else if (yas &lt;= 13) {
+    yaz("Bu kişi bir çocuk.")
+    
+} else if (yas &lt;= 30) {
+    yaz("Bu kişi bir genç.")
+    
+} else if (yas &lt;= 50) {
+    yaz("Bu kişi bir yetişkin.")
+    
+} else {
+    yaz("Bu kişi bir yaşlı (Yaş: " + yas + ")")
+    
+}
+
+</div>
+        
+<!-- Yukarıdaki algoritmanın devamı
+
+yaz("--")
+        
+//ALTERNATİF KULLANIM
+//NOT: Aşağıdaki algoritma "else if" kullanılmadan geliştirilmiştir.
+    
+//Yaşı kontrol et
+if (yas &lt; 1) {
+	yaz("Alternatif: Kontrol edilen yaş geçersiz. Yaş en az 1 olmalı.")
+} else {
+    
+    if (yas &lt;= 13) {
+    yaz("Alternatif: Bu kişi bir çocuk.")
+    } else {
+    
+        if (yas &lt;= 30) {
+            yaz("Alternatif: Bu kişi bir genç.")
+        } else {
+    
+            if (yas &lt;= 50) {
+                yaz("Alternatif: Bu kişi bir yetişkin.")
+            } else {
+                yaz("Alternatif: Bu kişi bir yaşlı (Yaş: " + yas + ")")
+            }
+    
+        }
+    
+    }
+    
+}
+
+-->
+        
+<div id="code-example3" style="display:none">//5 kere tekrar et.
+for (var i = 1; i &lt;= 5; i++) {
+    
+    //bir adım at.
+    robot.ilerle()
+    
+    //eğer robot son konumda ise
+    if (robot.konum == zemin.sonKonum) {
+        
+        //robotun yönünü geri döndür.
+        robot.geriDon()
+    
+        //geri döndüğünü ekrana yaz.
+        yaz("Yol bitti. Geri döndüm.")
+    
+    }
+    
+    //her tekrarda konumu ekrana yaz.
+    yaz("Konumum: " + robot.konum)
+    
+}
+
+</div>
+<div id="code-example5" style="display:none">//20 kere tekrar et (her satır için)
+for ( var y = 1; y &lt;= 20; y++ ) {
+
+	//20 kere tekrar et
+    for ( var x = 1; x &lt;= 20; x++ ) {
+
+        //eğer koordinatları verilen karenin rengi mavi ise
+        if(kareNeRenk(x, y) == "mavi") {
+    
+            //kareyi kırmızıya boya.
+            kareBoya(x, y, "kırmızı");
+    
+        }else{
+    
+            //kareyi siyaha boya.
+            kareBoya(x, y, "siyah");
+    
+        } //koşullu ifade sonu
+
+    } //iç döngünün sonu
+    
+    //her satır tamamlandığında 300 milisaniye bekle.
+    bekle(300);
+
+}
+
+</div>
+<div id="code-example4" style="display:none">// 1 den 10 a kadar tekrar et.
+for (var i = 1; i &lt;= 10; i++) {
+    
+    // Eğer değişkenin içeriği 5 ten küçük ise
+    if (i &lt; 5) {
+        yaz(i + " sayısı, 5 ten küçüktür.")
+    	
+    // Eğer değişkenin içeriği 5 ten büyük ise
+    } else if (i &gt; 5) {
+        yaz(i + " sayısı, 5 ten büyüktür.")
+    
+    // Eğer değişkenin içeriği bu iki durumdan farklı ise
+    } else {
+        yaz("Sayının 5 olduğu tespit edildi.")
+        
+    }
+    
+}
+
+</div>
+<div id="code-example6" style="display:none">//karenin rengi
+var kareRenk = "mavi"
+//karenin koordinatları
+var kareX = 2
+var kareY = 14
+    
+//karenin hızı (milisaniye)
+var kareHiz = 60
+
+//takip edilecek karenin (yolun) rengi
+var takipEdilenRenk = "gri"
+
+//30 kere tekrar et
+for (var i = 1; i &lt;= 46; i++) {
+    
+    //mavi kareyi eski konumundan temizle
+    kareTemizle(kareX, kareY)
+    
+    //NOT: Alttaki koşullu ifade, bir bütündür. 
+    //Sadece bir koşul gerçekleşebilir. 
+    //Bir koşulun gerçekleştiği tespit edildiğinde, sıra ile 
+    //aşağıya doğru diğer koşullar kontrol edilmez. 
+    //Birden fazla koşulun gerçekleşebileceği durumlarda, 
+    //sadece ilk tespit edilen koşulun kodları çalıştırılır.
+    
+    //sağdaki bitişik kare rengi gri ise
+    if (kareNeRenk(kareX + 1, kareY) == takipEdilenRenk) {
+    
+        //karenin x koordinatını 1 arttır (hesaplaması)
+        kareX = kareX + 1
+    
+    //soldaki bitişik kare rengi gri ise
+    } else if (kareNeRenk(kareX - 1, kareY) == takipEdilenRenk) {
+    
+        //karenin x koordinatını 1 eksilt (hesaplaması)
+        kareX = kareX - 1
+    
+    //aşağıdaki bitişik kare rengi gri ise
+    } else if (kareNeRenk(kareX, kareY + 1) == takipEdilenRenk) {
+    
+        //karenin y koordinatını 1 arttır (hesaplaması)
+        kareY = kareY + 1
+    
+    //yukarıdaki bitişik kare rengi gri ise
+    } else if (kareNeRenk(kareX, kareY - 1) == takipEdilenRenk) {
+    
+        //karenin y koordinatını 1 eksilt (hesaplaması)
+        kareY = kareY - 1
+    
+    }
+    
+    //hesaplanan yeni kareyi mavi renk ile boya
+    kareBoya(kareX, kareY, kareRenk)
+    
+    //60 milisaniye bekle
+    bekle(kareHiz)
+    
+}
+
+</div>
+<div id="code-example7" style="display:none">//değişken tanımla ve içine değer ata.
+    //not: 1 anahtar var 0 anahtar yok olarak kullanılmıştır.
+var anahtar1 = 1
+var anahtar2 = 1
+var anahtar3 = 1
+    
+//kapının açılabilmesi için 3 anahtarada aynı anda ihtiyaç var.
+        
+//anahtarların hangisi mevcut veya hangisi mevcut değil tek tek tespit edilebilir ve her
+//olasılık için kod eklenebilir.
+if (anahtar1 == 1) {
+    yaz("anahtar1: mevcut")
+    
+    if (anahtar2 == 1) {
+        yaz("anahtar2: mevcut")
+    
+        if (anahtar3 == 1) {
+            yaz("anahtar3: mevcut")
+            yaz("KAPI AÇILDI")
+        }
+    
+    }
+    
+}
+    
+yaz("--")
+
+//sadece toplu olarak tüm anahtar var veya bazıları eksik olduğu algılanabilir. Hangi anahtarın //olmadığı bilinemez.
+//ALTERNATİF KULLANIM
+if (anahtar1 == 1 &amp;&amp; anahtar2 == 1 &amp;&amp; anahtar3 == 1) {
+    yaz("anahtarların hepsi mevcut")
+    yaz("KAPI AÇILDI")
+} else {
+    yaz("anahtarlardan bazıları eksik. Kapı açılamıyor.")
+}
+
+</div>
+<div id="code-example8" style="display:none">//bir değişken tanımla
+var sayi = -20
+var isaret
+
+//KULLANIM
+if (sayi > 0) {
+    isaret = "artı"
+} else {
+    isaret = "eksi"
+}
+    
+//ALTERNATİF KULLANIM
+if (sayi > 0) isaret = "artı" 
+else isaret = "eksi"
+
+//ALTERNATİF KULLANIM #2
+isaret = (sayi > 0) ? "arti" : "eksi"
+    
+//SONUÇ
+yaz("Sayının işareti: " + isaret)
+
+</div>
+<div id="code-example9" style="display:none">//bir değişken tanımla
+var degisken1 = "a"
+var degisken2 = "b"
+    
+//KOŞULLU İFADE VEYA KULLANIMI (OR)
+if (degisken1 == "a" || degisken2 == "b") {
+    yaz("değişkenlerden bir tanesi doğru")
+} else {
+    yaz("değişkenlerden ikisi de yanlış")
+}
+    
+//ALTERNATİF VEYA KULLANIM  (OR)
+if (degisken1 == "a") {
+    yaz("değişkenlerden bir tanesi (a) doğru")
+} else {
+    yaz("değişkenlerden biri (b) yanlış")
+}
+
+if (degisken2 == "b") {
+    yaz("değişkenlerden bir tanesi (b) doğru")
+} else {
+    yaz("değişkenlerden biri (b) yanlış")
+}
+
+//KOŞULLU İFADE VE KULLANIMI (AND)
+if (degisken1 == "a" && degisken2 == "b") {
+    yaz("değişkenlerin ikisi de doğru")
+} else {
+    yaz("değişkenlerden biri yanlış")
+}
+
+//ALTERNATİF VE KULLANIM  (AND)
+if(degisken1 == "a") {
+    if(degisken2 == "b") {
+        yaz("değişkenlerin ikisi de doğru")
+    } else {
+        yaz("değişkenlerden biri (b) yanlış")
+    }
+} else {
+    yaz("değişkenlerden biri (a) yanlış")
+}
+
+</div>
+<div id="code-example11" style="display:none">//bir değişken tanımla
+var masterAnahtar = 1
+var normalAnahtar1 = 1
+var normalAnahtar2 = 1
+
+if ((normalAnahtar == 1 && normalAnahtar2 == 1) || masterAnahtar == 1) {
+    
+}
+    
+//KOŞULLU İFADE VEYA KULLANIMI (OR)
+if (degisken1 == "a" || degisken2 == "b") {
+    yaz("değişkenlerden bir tanesi doğru")
+} else {
+    yaz("değişkenlerden ikisi de yanlış")
+}
+    
+//ALTERNATİF VEYA KULLANIM  (OR)
+if (degisken1 == "a") {
+    yaz("değişkenlerden bir tanesi (a) doğru")
+} else {
+    yaz("değişkenlerden biri (b) yanlış")
+}
+
+if (degisken2 == "b") {
+    yaz("değişkenlerden bir tanesi (b) doğru")
+} else {
+    yaz("değişkenlerden biri (b) yanlış")
+}
+
+//KOŞULLU İFADE VE KULLANIMI (AND)
+if (degisken1 == "a" && degisken2 == "b") {
+    yaz("değişkenlerin ikisi de doğru")
+} else {
+    yaz("değişkenlerden biri yanlış")
+}
+
+//ALTERNATİF VE KULLANIM  (AND)
+if(degisken1 == "a") {
+    if(degisken2 == "b") {
+        yaz("değişkenlerin ikisi de doğru")
+    } else {
+        yaz("değişkenlerden biri (b) yanlış")
+    }
+} else {
+    yaz("değişkenlerden biri (a) yanlış")
+}
+
+</div>
+        
+        <script src="../library/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../cordova.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../js/coding.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/minikeyboard.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/coding1.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/coding2.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script>
+            
+            var anahtarBul = function () {
+                yaz("Anahtar bulundu.")
+            }
+            
+            var kapiAc = function () {
+                yaz("Kapı açıldı.")
+            }
+            
+            var kapidanIceriGir = function () {
+                yaz("Tebrikler. Görev Tamamlandı.")
+            }
+            
+            var editor1, editor2, editor3, editor4, editor5, editor6, editor7, editor8, editor12;
+            
+            var Page = function(){};
+            
+            Page.codingInit = function($e){ 
+                 
+                Coding.currentEditorNumber = $e.editorNumber;
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        
+                        //Coding.options.fullScreenMode = 0;
+                        
+                        /* document.getElementById("coding-game-box1").innerHTML = `<div style="position:absolute;bottom:-7px;right:0px;"><img src="../img/lessons/les6-ex1-rainbow.png" width="100" /></div>`; */
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                    case "2":
+                        
+                        //Coding.options.fullScreenMode = 0;
+                        
+                        //document.getElementById("coding-game-box2").innerHTML = `<div style="position:absolute;bottom:-5px;right:130px;"><img src="../img/lessons/les3-ex2-spaceship.png" width="103" /></div>`;
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                        
+                    case "3":
+                        
+                        //Coding.options.fullScreenMode = 1;
+                        
+                        //setConsoleFontSize(20);
+                        
+                        break;
+                    
+                    case "4":
+                        
+                        //Coding.options.fullScreenMode = 0;
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                
+                    case "5":
+                        
+                        /*
+                        Coding2.dontUseAnimationEngine = 1;
+                        
+                        Coding2.init();
+                        
+                        Coding2.createScreen(20,20);
+                        
+                        for(var x = 5; x<=15; x++){
+                            
+                            for(var y = 5; y<=15; y++){
+                            
+                            //kareBoya(x, y, "siyah");
+                            
+                            }
+                            
+                        }
+                        
+                        for(var k = 5; k<=16; k++){
+                            
+                            //kareBoya(k, 5, "siyah");
+                            //kareBoya(k, 16, "siyah");
+                            //kareBoya(5, k, "siyah");
+                            //kareBoya(16, k, "siyah");
+                            kareBoya(k, 5, "mavi");
+                            kareBoya(k, 16, "mavi");
+                            kareBoya(5, k, "mavi");
+                            kareBoya(16, k, "mavi");
+                            
+                        }
+                
+                        //document.getElementById("mycanvas5").style.zoom = 2;
+                        Coding2.dontUseAnimationEngine = 0; 
+                        
+                        */
+                        
+                        break;
+                        
+                        case "6":
+                        
+                        /*
+                        //Coding.options.fullScreenMode = 0;
+                        Coding2.dontUseAnimationEngine = 1;
+                        
+                        setConsoleFontSize(16);
+                        
+                        Coding2.init();
+                        
+                        Coding2.createScreen(14, 15);
+                        
+                        kareBoya(2, 14, "mavi");
+                        //kareBoya(12, 4, "turuncu");
+                        
+                        var _kareX = 2;
+                        var _kareY = 14;
+                        var _kareYon = "sağ";
+                        
+                        for (var i = 1; i <= 45; i++) {
+                            
+                            if (_kareYon == "sağ") {
+                                _kareX = _kareX + 1;
+                            } else if (_kareYon == "aşağı") {
+                                _kareY = _kareY + 1;
+                            } else if (_kareYon == "sol") {
+                                _kareX = _kareX - 1;
+                            } else if (_kareYon == "yukarı") {
+                                _kareY = _kareY - 1;
+                            }
+                            
+                            switch(i) {
+                                case 5:
+                                    _kareYon = "yukarı";
+                                    break;
+                                case 9:
+                                    _kareYon = "sol";
+                                    break;
+                                case 12:
+                                    _kareYon = "yukarı";
+                                    break;
+                                case 20:
+                                    _kareYon = "sağ";
+                                    break;
+                                case 26:
+                                    _kareYon = "aşağı";
+                                    break;
+                                case 30:
+                                    _kareYon = "sol";
+                                    break;
+                                case 34:
+                                    _kareYon = "aşağı";
+                                    break;
+                                case 36:
+                                    _kareYon = "sağ";
+                                    break;
+                                case 42:
+                                    _kareYon = "yukarı";
+                                    break;
+                            }
+                            
+                            kareBoya(_kareX, _kareY, "gri");
+                            
+                        }
+                        
+                        
+                        document.getElementById("mycanvas6").style.zoom = 2;
+                        
+                        Coding2.dontUseAnimationEngine = 0;
+                        
+                        */
+                        
+                        break;
+                        
+                        case "7":
+                        
+                            //setConsoleFontSize(20);
+                        
+                        break;
+                        
+                        case "8":
+                        
+                            //setConsoleFontSize(20);
+                        
+                        break;
+                        case "12":
+                        
+                        //Coding.options.fullScreenMode = 0;
+                        
+                        /* document.getElementById("coding-game-box1").innerHTML = `<div style="position:absolute;bottom:-7px;right:0px;"><img src="../img/lessons/les6-ex1-rainbow.png" width="100" /></div>`; */
+                        
+                        setConsoleFontSize(20);
+                        
+                        break;
+                        
+                        }
+            };
+            
+            Page.codingFinished = function($e){ 
+                
+                switch($e.editorNumber){
+                       
+                    case "1":
+                        break;
+                    case "2":
+                        break;
+                    case "3":
+                        break;
+                    case "4":
+                        break;
+                    case "5":
+                        break;
+                    case "6":
+                        break;
+                    case "7":
+                        break;
+                    case "8":
+                        break;
+                        
+                        
+                       }
+            
+            };
+            
+            //App.js içerisinden sayfa yüklendiğinde otomatik çalıştırılıyor.
+            Page.init = function() {
+                
+                App.makePageFit("lessons");
+                
+                //App.setLastPageURL("lessons1/lesson6.htm");
+                
+                Coding.init();
+                
+                document.addEventListener("onGameRefreshed", Page.codingInit);
+                document.addEventListener("onGameStarting", Page.codingInit);
+                document.addEventListener("onGameFinished", Page.codingFinished);
+                
+                Coding.setOption("1", "resetButtonEnabled", 1);
+                Coding.createNewEditorHTML("1");
+                //Coding.showEditorButtons("1",["reset"]);
+                Coding.setScreenColor("1", "#23BCC1");
+                Coding.setScreenHeight("1", "240px");
+                //Coding.changeRunButton("1","play");
+                editor1 = ace.edit("editor1");
+                //editor1.setReadOnly(true);
+                //Coding.editorInit(editor1, "1");
+                Coding.createNewEditor("1");
+                Coding.setSnippetIDList("1", ["004", "001", "002"]);
+                Coding.insertCodeToEditor("1", Coding.getCodeFromDivID("code-example10"));
+                
+                Coding.setOption("12", "resetButtonEnabled", 1);
+                Coding.createNewEditorHTML("12");
+                //Coding.showEditorButtons("1",["reset"]);
+                Coding.setScreenColor("12", "#23BCC1");
+                Coding.setScreenHeight("12", "240px");
+                //Coding.changeRunButton("1","play");
+                editor12 = ace.edit("editor12");
+                //editor1.setReadOnly(true);
+                Coding.createNewEditor("12");
+                Coding.setSnippetIDList("12", ["004", "001", "002"]);
+                Coding.insertCodeToEditor("12", Coding.getCodeFromDivID("code-example12"));
+                
+                Coding.setOption("2", "resetButtonEnabled", 1);
+                Coding.createNewEditorHTML("2");
+                //Coding.showEditorButtons("2",["add"]);
+                Coding.setScreenColor("2", "#23BCC1"); //23BCC1
+                Coding.setScreenHeight("2", "240px");
+                //Coding.changeRunButton("2","play");
+                editor2 = ace.edit("editor2");
+                //editor2.setReadOnly(true);
+                Coding.createNewEditor("2");
+                Coding.setSnippetIDList("2", ["004", "001", "002"]);
+                Coding.insertCodeToEditor("2", Coding.getCodeFromDivID("code-example2"));  
+                
+                /*
+                Coding.setOption("3", "resetButtonEnabled", 1);
+                Coding.setOption("3", "fullScreenMode", 1);
+                Coding.createNewEditorHTML("3");
+                //Coding.showEditorButtons("3",["add"]);
+                Coding.setScreenColor("3", "#23BCC1");
+                Coding.setScreenHeight("3", "240px");
+                Coding.changeRunButton("3","play");
+                editor3 = ace.edit("editor3");
+                //editor2.setReadOnly(true);
+                Coding.createNewEditor("3");
+                Coding.setSnippetIDList("3", ["001","002","003", "004"]);
+                Coding.insertCodeToEditor("3", Coding.getCodeFromDivID("code-example7"));
+                */
+                
+                
+                Coding.createNewEditorHTML("4");
+                Coding.setScreenColor("4", "#23BCC1");
+                Coding.setScreenHeight("4", "300px");
+                editor4 = ace.edit("editor4");
+                Coding.createNewEditor("4");
+                Coding.setSnippetIDList("4", ["004", "001", "002"]);
+                Coding.insertCodeToEditor("4", Coding.getCodeFromDivID("code-example4"));
+                
+                /*
+                Coding.createNewEditorHTML("5");
+                //Coding.showEditorButtons("1",["add"]);
+                Coding.setScreenColor("5", "#EE7553");
+                Coding.setScreenHeight("5", "300px");
+                //Coding.changeRunButton("1","play");
+                editor5 = ace.edit("editor5");
+                //editor1.setReadOnly(true);
+                Coding.createNewEditor("5");
+                Coding.insertCodeToEditor("5", Coding.getCodeFromDivID("code-example5"));
+                */
+                
+                /*
+                Coding.setOption("6", "resetButtonEnabled", 1);
+                Coding.createNewEditorHTML("6");
+                Coding.setScreenColor("6", "#23BCC1");
+                Coding.setScreenHeight("6", "400px");
+                editor6 = ace.edit("editor6");
+                Coding.createNewEditor("6");
+                Coding.setSnippetIDList("6", ["004", "001", "002", "003", "206", "201"]);
+                Coding.insertCodeToEditor("6", Coding.getCodeFromDivID("code-example6"));
+                */
+                
+                /*
+                Coding.createNewEditorHTML("7");
+                Coding.setScreenColor("7", "#23BCC1");
+                Coding.setScreenHeight("7", "300px");
+                editor7 = ace.edit("editor7");
+                Coding.createNewEditor("7");
+                Coding.insertCodeToEditor("7", Coding.getCodeFromDivID("code-example9"));
+                */
+                
+                /*
+                Coding.createNewEditorHTML("8");
+                Coding.setScreenColor("8", "#23BCC1");
+                Coding.setScreenHeight("8", "300px");
+                editor8 = ace.edit("editor8");
+                Coding.createNewEditor("8");
+                Coding.insertCodeToEditor("8", Coding.getCodeFromDivID("code-example11"));
+                */
+                
+                //Başlangıçta sahneleri oluştur.
+                Page.codingInit({editorNumber:'1'});
+                Page.codingInit({editorNumber:'2'});
+                //Page.codingInit({editorNumber:'3'});
+                Page.codingInit({editorNumber:'4'});
+                //Page.codingInit({editorNumber:'5'});
+                //Page.codingInit({editorNumber:'6'});
+                Page.codingInit({editorNumber:'12'});
+                
+                App.setPageScore("lesson7", 1);
+
+                App.showAllPage();
+                
+            };
+        
+        </script>
+        
+    </body>
+</html>

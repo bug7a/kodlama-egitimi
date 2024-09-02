@@ -1,0 +1,42 @@
+input[type=text] {
+            
+    position:absolute;
+    font-family: opensans;
+    font-size: 20px;
+    text-align: left;
+    color:#4A4A4A;
+    background-color: #FFFFFF;
+    left:0px;
+    right:0px;
+    border: 1px solid #4A4A4A;
+    /* border: none; */
+    width: 270px;
+    height: 50px;    
+    padding: 12px 15px;
+    margin: 0px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-image: url("../basic/kutuphane/img/textbox-background.png");
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+
+}
+
+input[type=text]:focus { 
+
+    /* border: none; */
+    outline: none;
+    padding: 12px 14px;
+    /* background-color: transparent; */
+    background-color: #FFFFFF;
+    border: 2px solid steelblue;
+
+}
+
+
+#dictionary-app {
+    
+    position:relative;height:100px;width:560px;margin-left:20px;margin-top:0px;overflow: hidden;box-sizing: border-box;
+    
+}
