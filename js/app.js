@@ -476,8 +476,8 @@ App.generate_miniKeyBoardHTMLModel = function() {
 
     switch (App.os) {
 
-        case "electron":
-        case "browser":
+        case "electron-del":
+        case "browser-del":
     
         return `<div id="keyboard-box" class="keyboard-box" style="display:none;height:25px;">
         
@@ -538,6 +538,8 @@ App.generate_miniKeyBoardHTMLModel = function() {
         break;
         
     case "android":
+    case "electron":
+    case "browser":
     
         return `<div id="keyboard-box" class="keyboard-box" style="display:none;">
         <div style="position:relative;height: 50px;width:910px;display:inline-block;">    
